@@ -117,7 +117,7 @@
             z-index: 1;
         }
 
-        /* ——— Контент поверх фото ——— */
+        /* ——— Контент поверх фото с анимацией ——— */
         .content-overlay {
             position: relative;
             z-index: 5;
@@ -131,19 +131,31 @@
             text-align: center;
             color: #4a1a1a;
             pointer-events: none;
+        }
+
+        /* ——— Анимация для элементов поверх фото ——— */
+        .content-overlay .names,
+        .content-overlay .date-section {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
         }
 
-        .content-overlay.visible {
+        .content-overlay.visible .names {
             opacity: 1;
             transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+
+        .content-overlay.visible .date-section {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
         }
 
         /* ——— Имена (МАКСИМАЛЬНО БОЛЬШОЙ ШРИФТ) ——— */
         .names {
-            font-size: clamp(5rem, 14vw, 14rem);
+            font-size: clamp(6rem, 16vw, 16rem);
             line-height: 1.05;
             letter-spacing: 0.02em;
             margin-bottom: 1.5rem;
@@ -151,14 +163,14 @@
         }
 
         .names .vladislav {
-            font-size: clamp(4.5rem, 12vw, 12rem);
+            font-size: clamp(5.5rem, 14vw, 14rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             font-weight: 700;
         }
 
         .names .and-ksenia {
-            font-size: clamp(5.5rem, 15vw, 15rem);
+            font-size: clamp(6.5rem, 17vw, 17rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             display: flex;
@@ -170,7 +182,7 @@
         }
 
         .names .and-ksenia .and {
-            font-size: clamp(1.4rem, 3vw, 3.2rem);
+            font-size: clamp(1.6rem, 3.5vw, 3.6rem);
             text-transform: lowercase;
             letter-spacing: 0.2em;
             opacity: 0.6;
@@ -215,7 +227,7 @@
         }
 
         .bottom-row .left .text {
-            font-size: clamp(2rem, 4vw, 4.2rem);
+            font-size: clamp(2.4rem, 4.5vw, 4.8rem);
             letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
@@ -233,7 +245,7 @@
         }
 
         .bottom-row .center .month {
-            font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+            font-size: clamp(2.2rem, 3.8vw, 3.8rem);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             opacity: 0.7;
@@ -243,14 +255,14 @@
         }
 
         .bottom-row .center .day-number {
-            font-size: clamp(6rem, 12vw, 13rem);
+            font-size: clamp(7rem, 14vw, 15rem);
             font-weight: 900;
             color: #4a1a1a;
             line-height: 1;
         }
 
         .bottom-row .center .year {
-            font-size: clamp(1.5rem, 2.6vw, 2.6rem);
+            font-size: clamp(1.8rem, 3vw, 3rem);
             letter-spacing: 0.08em;
             opacity: 0.5;
             color: #4a1a1a;
@@ -274,7 +286,7 @@
         }
 
         .bottom-row .right .text {
-            font-size: clamp(2rem, 4vw, 4.2rem);
+            font-size: clamp(2.4rem, 4.5vw, 4.8rem);
             letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
@@ -284,37 +296,29 @@
         /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
         .text-section {
             width: 100%;
-            min-height: 70vh;
+            min-height: 75vh;
             flex-shrink: 0;
             background: #4a1a1a;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 3rem 2rem 0 2rem;
+            padding: 4rem 2rem 0 2rem;
             text-align: center;
             z-index: 2;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
             position: relative;
         }
 
-        .text-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ——— Анимация для каждого элемента ——— */
+        /* ——— Анимация для каждого элемента текстового блока ——— */
         .text-section .greeting {
-            font-size: clamp(2.8rem, 5vw, 6rem);
+            font-size: clamp(3.5rem, 6.5vw, 8rem);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #ffffff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+            transform: translateY(40px);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 700;
             font-style: italic;
         }
@@ -325,13 +329,13 @@
         }
 
         .text-section .message {
-            font-size: clamp(1.6rem, 3vw, 3.6rem);
+            font-size: clamp(2rem, 3.8vw, 4.5rem);
             line-height: 1.5;
             letter-spacing: 0.04em;
             color: #ffffff;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+            transform: translateY(40px);
+            transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
             max-width: 90%;
             font-weight: 400;
         }
@@ -342,16 +346,16 @@
         }
 
         .text-section .message-bold {
-            font-size: clamp(1.6rem, 3vw, 3.6rem);
+            font-size: clamp(2rem, 3.8vw, 4.5rem);
             line-height: 1.5;
             letter-spacing: 0.04em;
             color: #ffffff;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+            transform: translateY(40px);
+            transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
             max-width: 90%;
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .text-section.visible .message-bold {
@@ -370,8 +374,8 @@
             border-radius: 0;
             padding: 0;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+            transform: translateY(40px);
+            transition: opacity 1s ease 0.8s, transform 1s ease 0.8s;
         }
 
         .text-section.visible .calendar-img {
@@ -547,25 +551,25 @@
             }
             .bottom-row .left .text,
             .bottom-row .right .text {
-                font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+                font-size: clamp(1.4rem, 3vw, 1.8rem);
             }
             .bottom-row .center .day-number {
-                font-size: clamp(4rem, 10vw, 6rem);
+                font-size: clamp(4.5rem, 11vw, 6.5rem);
             }
             .bottom-row .center .month {
-                font-size: clamp(1rem, 2.2vw, 1.4rem);
+                font-size: clamp(1.2rem, 2.5vw, 1.6rem);
             }
             .bottom-row .center .year {
-                font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+                font-size: clamp(1rem, 2vw, 1.3rem);
             }
             .names .vladislav {
-                font-size: clamp(3rem, 8vw, 4.5rem);
+                font-size: clamp(3.5rem, 9vw, 5rem);
             }
             .names .and-ksenia {
-                font-size: clamp(3.5rem, 10vw, 5.5rem);
+                font-size: clamp(4rem, 11vw, 6rem);
             }
             .names .and-ksenia .and {
-                font-size: clamp(1rem, 2.5vw, 1.4rem);
+                font-size: clamp(1.1rem, 2.8vw, 1.5rem);
             }
             .date-section {
                 padding-left: 2%;
@@ -573,19 +577,19 @@
                 margin-bottom: 0.3rem;
             }
             .text-section {
-                min-height: 60vh;
-                padding: 2rem 1.2rem 0 1.2rem;
+                min-height: 65vh;
+                padding: 2.5rem 1.2rem 0 1.2rem;
             }
             .text-section .greeting {
-                font-size: clamp(1.8rem, 4vw, 2.8rem);
-                margin-bottom: 1rem;
+                font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+                margin-bottom: 1.5rem;
             }
             .text-section .message {
-                font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+                font-size: clamp(1.3rem, 2.5vw, 1.8rem);
             }
             .text-section .message-bold {
-                font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-                margin-bottom: 1rem;
+                font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -601,25 +605,25 @@
             }
             .bottom-row .left .text,
             .bottom-row .right .text {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             .bottom-row .center .day-number {
-                font-size: 3.2rem;
+                font-size: 3.5rem;
             }
             .bottom-row .center .month {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
             .bottom-row .center .year {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
             }
             .names .vladislav {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             .names .and-ksenia {
-                font-size: 3rem;
+                font-size: 3.2rem;
             }
             .names .and-ksenia .and {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
             .date-section {
                 padding-left: 0;
@@ -627,56 +631,56 @@
                 margin-bottom: 0.2rem;
             }
             .text-section {
-                min-height: 55vh;
-                padding: 1.5rem 0.8rem 0 0.8rem;
+                min-height: 60vh;
+                padding: 2rem 0.8rem 0 0.8rem;
             }
             .text-section .greeting {
-                font-size: 1.4rem;
-                margin-bottom: 0.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
             }
             .text-section .message {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             .text-section .message-bold {
-                font-size: 0.9rem;
-                margin-bottom: 0.8rem;
+                font-size: 1rem;
+                margin-bottom: 1rem;
             }
         }
 
         /* Для очень больших экранов */
         @media (min-width: 1400px) {
             .names .vladislav {
-                font-size: 12rem;
+                font-size: 14rem;
             }
             .names .and-ksenia {
-                font-size: 15rem;
+                font-size: 17rem;
             }
             .bottom-row .center .day-number {
-                font-size: 13rem;
+                font-size: 15rem;
             }
             .bottom-row .left .text,
             .bottom-row .right .text {
-                font-size: 4.2rem;
+                font-size: 4.8rem;
             }
             .bottom-row .center .month {
-                font-size: 3.2rem;
+                font-size: 3.8rem;
             }
             .bottom-row .center .year {
-                font-size: 2.6rem;
+                font-size: 3rem;
             }
             .bottom-row .left .line,
             .bottom-row .right .line {
-                width: 60px;
+                width: 70px;
                 height: 2px;
             }
             .text-section .greeting {
-                font-size: 6rem;
+                font-size: 8rem;
             }
             .text-section .message {
-                font-size: 3.6rem;
+                font-size: 4.5rem;
             }
             .text-section .message-bold {
-                font-size: 3.6rem;
+                font-size: 4.5rem;
             }
         }
     </style>
@@ -725,7 +729,7 @@
                         </div>
                     </div>
 
-                    <!-- Дата (опущена ниже) -->
+                    <!-- Дата -->
                     <div class="date-section">
                         <div class="bottom-row">
                             <div class="left">
@@ -756,9 +760,9 @@
                 <div class="message">Случилось невероятное — мы решили связать наши судьбы и начать новую главу нашей жизни вместе.</div>
                 <div class="message-bold">Будем очень рады, если вы разделите с нами этот теплый и важный день.</div>
                 
-                <!-- Фото календарь.png -->
+                <!-- Фото IMG_8833.PNG -->
                 <div class="calendar-img">
-                    <img src="календарь.PNG" alt="календарь" />
+                    <img src="IMG_8833.PNG" alt="календарь" />
                 </div>
             </div>
 
