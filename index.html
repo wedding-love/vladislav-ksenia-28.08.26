@@ -425,31 +425,36 @@
             width: 100%;
         }
 
-        /* ===== ЕДИНАЯ СТРУКТУРА ДЛЯ ВСЕХ УСТРОЙСТВ ===== */
+        /* ===== НОВАЯ СТРУКТУРА С FLEXBOX ===== */
         .program-row {
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             min-height: 650px;
+            position: relative;
+            gap: 0;
         }
 
-        /* Линия строго по центру */
+        /* Левая пустая колонка для баланса */
+        .program-left-empty {
+            flex: 0 0 calc(50% - 40px);
+            height: 100%;
+        }
+
+        /* Линия по центру */
         .program-divider {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
+            flex-shrink: 0;
             width: 3px;
             height: 100%;
+            min-height: 400px;
             background: #6d2030;
             z-index: 2;
         }
 
-        /* Текст справа от линии */
+        /* Правая колонка с текстом */
         .program-right-text {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: calc(50% - 40px);
+            flex: 0 0 calc(50% - 40px);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -684,20 +689,37 @@
                 font-size: clamp(2.5rem, 5vw, 3.2rem);
                 margin-bottom: 2rem;
             }
-            /* Сохраняем структуру: линия по центру, текст справа */
             .program-row {
-                min-height: 400px;
+                flex-direction: column;
+                min-height: auto;
+                gap: 1.5rem;
+                padding: 0.5rem 0;
+            }
+            .program-left-empty {
+                display: none;
+            }
+            .program-divider {
+                width: 80%;
+                height: 2px;
+                min-height: auto;
             }
             .program-right-text {
-                width: calc(50% - 20px);
-                gap: 30px;
-                padding-left: 30px;
+                flex: 0 0 auto;
+                width: 100%;
+                padding-left: 0;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .program-item {
+                align-items: center;
             }
             .program-item .title {
                 font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                text-align: center;
             }
             .program-item .time {
                 font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                text-align: center;
             }
         }
 
@@ -760,13 +782,11 @@
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
             }
-            .program-row {
-                min-height: 300px;
+            .program-divider {
+                width: 90%;
             }
             .program-right-text {
-                width: calc(50% - 15px);
-                gap: 20px;
-                padding-left: 20px;
+                gap: 1rem;
             }
             .program-item .title {
                 font-size: 1.1rem;
@@ -824,6 +844,9 @@
             }
             .program-row {
                 min-height: 750px;
+            }
+            .program-divider {
+                min-height: 500px;
             }
         }
     </style>
@@ -908,6 +931,9 @@
                     <div class="program-title">Программа дня</div>
 
                     <div class="program-row">
+                        <!-- Левая пустая колонка для баланса -->
+                        <div class="program-left-empty"></div>
+
                         <!-- Линия строго по центру -->
                         <div class="program-divider"></div>
 
