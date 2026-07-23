@@ -413,7 +413,7 @@
             align-items: center;
             justify-content: flex-start;
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             padding-top: 1rem;
         }
 
@@ -431,21 +431,21 @@
         /* Строка: линия + события справа */
         .program-row {
             display: flex;
-            align-items: stretch;
-            justify-content: flex-start;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             gap: 2.5rem;
-            padding-left: 2rem;
+            padding: 0 1rem;
         }
 
-        /* Вертикальная линия */
+        /* Вертикальная линия (растянута) */
         .program-divider {
             width: 2px;
             flex-shrink: 0;
             background: #4a1a1a;
             opacity: 0.5;
-            align-self: stretch;
-            min-height: 300px;
+            height: 550px;
+            min-height: 400px;
         }
 
         /* Список событий справа */
@@ -453,8 +453,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.2rem;
             flex: 1;
+            padding-left: 0.5rem;
         }
 
         .program-item {
@@ -473,7 +474,7 @@
         }
 
         .program-item .time {
-            font-size: clamp(1.6rem, 2.8vw, 3rem);
+            font-size: clamp(2rem, 3.4vw, 3.8rem);
             color: #4a1a1a;
             font-weight: 400;
             opacity: 0.7;
@@ -683,19 +684,20 @@
             }
             .program-row {
                 gap: 1.5rem;
-                padding-left: 0.5rem;
+                padding: 0 0.5rem;
             }
             .program-divider {
-                min-height: 200px;
+                height: 350px;
+                min-height: 250px;
             }
             .program-right {
                 gap: 1.5rem;
             }
             .program-item .title {
-                font-size: clamp(1.5rem, 3vw, 2rem);
+                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
             }
             .program-item .time {
-                font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
             }
         }
 
@@ -760,19 +762,20 @@
             }
             .program-row {
                 gap: 1rem;
-                padding-left: 0.3rem;
+                padding: 0 0.3rem;
             }
             .program-divider {
-                min-height: 150px;
+                height: 250px;
+                min-height: 180px;
             }
             .program-right {
                 gap: 1rem;
             }
             .program-item .title {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             .program-item .time {
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
         }
 
@@ -817,10 +820,14 @@
                 font-size: 3.8rem;
             }
             .program-item .time {
-                font-size: 3rem;
+                font-size: 3.8rem;
             }
             .program-section {
                 padding: 4rem 6rem 5rem 6rem;
+            }
+            .program-divider {
+                height: 650px;
+                min-height: 500px;
             }
         }
     </style>
@@ -905,7 +912,7 @@
                     <div class="program-title">Программа дня</div>
                     
                     <div class="program-row">
-                        <!-- Вертикальная линия -->
+                        <!-- Вертикальная линия (растянута) -->
                         <div class="program-divider"></div>
 
                         <!-- Список событий справа -->
