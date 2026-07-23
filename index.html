@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главный экран</title>
+    <style>
+        /* ——— Сброс и базовые стили ——— */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, sans-serif;
+        }
+
+        /* ——— Контейнер для двух экранов ——— */
+        .screen-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        /* ——— Общий класс для экранов ——— */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.2s ease;
+            will-change: opacity;
+        }
+
+        /* ——— Главный экран (первый) ——— */
+        #mainScreen {
+            background: #ffffff;
+            z-index: 2;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ——— Второй экран (новый) ——— */
+        #secondScreen {
+            background: #1a1a2e;
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+            color: #f0e6d0;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #secondScreen h1 {
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 20px rgba(128, 0, 32, 0.6);
+        }
+
+        #secondScreen p {
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        /* ——— Картинка на главном экране (фон) ——— */
+        .main-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            transition: opacity 1.2s ease;
+            will-change: opacity;
+        }
+
+        /* ——— КОНТЕЙНЕР ДЛЯ КНОПКИ ——— */
+        .btn-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* ——— ПОЛНОСТЬЮ ПРОЗРАЧНАЯ КРУГЛАЯ КНОПКА ——— */
+        .circle-btn {
+            position: absolute;
+            top: 56%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            pointer-events: auto;
+            
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        .circle-btn:hover,
+        .circle-btn:active,
+        .circle-btn:focus {
+            background: transparent;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* ——— Мерцающие бордовые точки ——— */
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #800020;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 6px #80002088;
+            opacity: 0; /* изначально скрыты */
+            transition: opacity 0.8s ease;
+            z-index: 1;
+        }
+
+        /* Класс для запуска очень медленного мерцания */
+        .dot.active {
+            opacity: 1;
+            animation: twinkleSlow 4.5s infinite alternate ease-in-out;
+            will-change: opacity, transform;
+        }
+
+        /* Очень медленное и спокойное мерцание */
+        @keyframes twinkleSlow {
+            0% { opacity: 0.15; transform: scale(0.9); }
+            50% { opacity: 0.5; transform: scale(1.15); }
+            100% { opacity: 0.15; transform: scale(0.9); }
+        }
+
+        /* Разные задержки для естественного хаоса */
+        .dot:nth-child(1) { top: 12%; left: 8%; width: 10px; height: 10px; animation-delay: 0.0s; }
+        .dot:nth-child(2) { top: 25%; left: 85%; width: 6px; height: 6px; animation-delay: 0.6s; }
+        .dot:nth-child(3) { top: 55%; left: 5%; width: 12px; height: 12px; animation-delay: 1.2s; }
+        .dot:nth-child(4) { top: 78%; left: 20%; width: 7px; height: 7px; animation-delay: 0.3s; }
+        .dot:nth-child(5) { top: 40%; left: 92%; width: 9px; height: 9px; animation-delay: 1.8s; }
+        .dot:nth-child(6) { top: 88%; left: 70%; width: 11px; height: 11px; animation-delay: 0.9s; }
+        .dot:nth-child(7) { top: 15%; left: 45%; width: 5px; height: 5px; animation-delay: 2.1s; }
+        .dot:nth-child(8) { top: 70%; left: 55%; width: 8px; height: 8px; animation-delay: 0.15s; }
+        .dot:nth-child(9) { top: 5%; left: 70%; width: 7px; height: 7px; animation-delay: 1.5s; }
+        .dot:nth-child(10) { top: 45%; left: 35%; width: 10px; height: 10px; animation-delay: 2.7s; }
+        .dot:nth-child(11) { top: 92%; left: 45%; width: 6px; height: 6px; animation-delay: 0.45s; }
+        .dot:nth-child(12) { top: 32%; left: 60%; width: 9px; height: 9px; animation-delay: 1.9s; }
+        .dot:nth-child(13) { top: 62%; left: 78%; width: 11px; height: 11px; animation-delay: 1.1s; }
+        .dot:nth-child(14) { top: 18%; left: 28%; width: 7px; height: 7px; animation-delay: 0.75s; }
+        .dot:nth-child(15) { top: 82%; left: 92%; width: 8px; height: 8px; animation-delay: 2.4s; }
+
+        /* ——— Адаптив ——— */
+        @media (max-width: 600px) {
+            .circle-btn {
+                width: 110px;
+                height: 110px;
+                min-width: 80px;
+                min-height: 80px;
+                top: 58%;
+            }
+            .dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="screen-container">
+
+    <!-- ====== ГЛАВНЫЙ ЭКРАН ====== -->
+    <div id="mainScreen" class="screen">
+        <!-- Картинка -->
+        <img class="main-bg" id="mainImage" src="главная.png" alt="фон" />
+
+        <!-- Мерцающие точки -->
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+
+        <!-- Обёртка с кнопкой -->
+        <div class="btn-wrapper">
+            <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
+        </div>
+    </div>
+
+    <!-- ====== ВТОРОЙ ЭКРАН ====== -->
+    <div id="secondScreen" class="screen">
+        <h1>Новый экран</h1>
+        <p>Добро пожаловать!</p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const mainScreen = document.getElementById('mainScreen');
+        const secondScreen = document.getElementById('secondScreen');
+        const mainImage = document.getElementById('mainImage');
+        const fadeBtn = document.getElementById('fadeBtn');
+        const dots = document.querySelectorAll('.dot');
+
+        let isTransitioning = false;
+        let dotsActivated = false;
+
+        function activateDots() {
+            if (dotsActivated) return;
+            dotsActivated = true;
+            dots.forEach(dot => {
+                dot.classList.add('active');
+            });
+        }
+
+        function switchToSecondScreen() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            // 1. Сначала исчезает картинка (становится белый фон)
+            mainImage.style.opacity = '0';
+
+            // 2. Ждём, пока картинка полностью исчезнет (1.2с), затем активируем точки
+            setTimeout(() => {
+                // Запускаем мерцание точек на белом фоне
+                activateDots();
+            }, 1300); // чуть больше времени перехода картинки
+
+            // 3. Ещё немного ждём, чтобы точки успели появиться, затем затухает весь экран
+            setTimeout(() => {
+                // Главный экран затухает
+                mainScreen.style.opacity = '0';
+                mainScreen.style.pointerEvents = 'none';
+
+                // Второй экран появляется
+                secondScreen.style.opacity = '1';
+                secondScreen.style.pointerEvents = 'auto';
+
+                // Скрываем главный экран после анимации
+                setTimeout(() => {
+                    mainScreen.style.display = 'none';
+                    isTransitioning = false;
+                }, 1300);
+            }, 1800); // 1300 (исчезновение картинки) + 500 (пауза для появления точек)
+        }
+
+        // Клик по кнопке
+        fadeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            switchToSecondScreen();
+        });
+
+        // Для отладки (двойной клик по второму экрану для возврата)
+        /*
+        secondScreen.addEventListener('dblclick', function() {
+            mainScreen.style.display = 'flex';
+            mainScreen.style.opacity = '0';
+            mainScreen.style.pointerEvents = 'none';
+            mainImage.style.opacity = '0';
+            secondScreen.style.opacity = '0';
+            secondScreen.style.pointerEvents = 'none';
+            
+            // Сбрасываем точки
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            dotsActivated = false;
+            
+            setTimeout(() => {
+                mainScreen.style.opacity = '1';
+                mainScreen.style.pointerEvents = 'auto';
+                mainImage.style.opacity = '1';
+            }, 50);
+        });
+        */
+    })();
+</script>
+</body>
+</html>
