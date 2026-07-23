@@ -66,12 +66,15 @@
             pointer-events: auto;
         }
 
-        /* ——— ВТОРОЙ ЭКРАН (первая.png + контент) ——— */
+        /* ——— ВТОРОЙ ЭКРАН (первая.png + контент + текст) ——— */
         #secondScreen {
             background: #ffffff;
             z-index: 2;
             opacity: 0;
             pointer-events: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
         }
 
         /* ——— Фото на экранах ——— */
@@ -87,8 +90,33 @@
             z-index: 1;
         }
 
-        /* ——— Контент на втором экране (поверх первая.png) ——— */
-        .content-wrapper {
+        /* ——— Верхняя часть с фото и контентом поверх ——— */
+        .top-section {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .top-section .main-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        /* ——— Контент поверх фото ——— */
+        .content-overlay {
             position: relative;
             z-index: 5;
             display: flex;
@@ -97,7 +125,7 @@
             justify-content: center;
             width: 100%;
             height: 100%;
-            padding: 1.5rem;
+            padding: 1rem;
             text-align: center;
             color: #4a1a1a;
             pointer-events: none;
@@ -106,7 +134,7 @@
             transition: opacity 1s ease, transform 1s ease;
         }
 
-        .content-wrapper.visible {
+        .content-overlay.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -243,37 +271,56 @@
             color: #4a1a1a;
         }
 
-        /* ——— Текстовый блок (Дорогие гости + сообщение + приглашение) ——— */
-        .text-block {
-            max-width: 85%;
-            margin-top: 0.5rem;
+        /* ——— НИЖНИЙ БЛОК С ТЕКСТОМ (на белом фоне) ——— */
+        .bottom-text {
+            width: 100%;
+            height: 40vh;
+            flex-shrink: 0;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
         }
 
-        .text-block .greeting {
-            font-size: clamp(1.4rem, 2.8vw, 3rem);
+        .bottom-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bottom-text .greeting {
+            font-size: clamp(1.8rem, 3.5vw, 4rem);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             color: #4a1a1a;
-            margin-bottom: 0.3rem;
-            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            opacity: 0.85;
         }
 
-        .text-block .message {
-            font-size: clamp(0.9rem, 1.6vw, 1.8rem);
-            line-height: 1.4;
-            letter-spacing: 0.05em;
+        .bottom-text .message {
+            font-size: clamp(1.2rem, 2.2vw, 2.6rem);
+            line-height: 1.5;
+            letter-spacing: 0.04em;
             color: #4a1a1a;
             opacity: 0.7;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
+            max-width: 90%;
         }
 
-        .text-block .invitation {
-            font-size: clamp(1.1rem, 2vw, 2.2rem);
+        .bottom-text .invitation {
+            font-size: clamp(1.4rem, 2.5vw, 3rem);
             line-height: 1.4;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             color: #4a1a1a;
             opacity: 0.6;
             font-style: italic;
+            max-width: 90%;
         }
 
         /* ——— ПРОЗРАЧНАЯ КНОПКА (без обводок) ——— */
@@ -410,6 +457,13 @@
                 width: 140px;
                 height: 140px;
             }
+            .top-section {
+                height: 55vh;
+            }
+            .bottom-text {
+                height: 45vh;
+                padding: 1rem 1.2rem;
+            }
             .bottom-row {
                 width: 92%;
                 gap: 0.3rem;
@@ -442,21 +496,18 @@
             .names .and-ksenia .and {
                 font-size: clamp(1rem, 2.5vw, 1.4rem);
             }
-            .text-block {
-                max-width: 90%;
-            }
-            .text-block .greeting {
-                font-size: clamp(1rem, 2.2vw, 1.6rem);
-            }
-            .text-block .message {
-                font-size: clamp(0.7rem, 1.4vw, 1rem);
-            }
-            .text-block .invitation {
-                font-size: clamp(0.8rem, 1.6vw, 1.2rem);
-            }
             .date-section {
                 padding-left: 2%;
                 margin: 0.1rem 0 0.5rem 0;
+            }
+            .bottom-text .greeting {
+                font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+            }
+            .bottom-text .message {
+                font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            }
+            .bottom-text .invitation {
+                font-size: clamp(1rem, 2vw, 1.4rem);
             }
         }
 
@@ -464,6 +515,13 @@
             .circle-btn {
                 width: 100px;
                 height: 100px;
+            }
+            .top-section {
+                height: 50vh;
+            }
+            .bottom-text {
+                height: 50vh;
+                padding: 0.8rem 1rem;
             }
             .bottom-row .left .line,
             .bottom-row .right .line {
@@ -492,18 +550,18 @@
             .names .and-ksenia .and {
                 font-size: 0.8rem;
             }
-            .text-block .greeting {
-                font-size: 0.8rem;
-            }
-            .text-block .message {
-                font-size: 0.6rem;
-            }
-            .text-block .invitation {
-                font-size: 0.7rem;
-            }
             .date-section {
                 padding-left: 0;
                 margin: 0.1rem 0 0.3rem 0;
+            }
+            .bottom-text .greeting {
+                font-size: 1rem;
+            }
+            .bottom-text .message {
+                font-size: 0.75rem;
+            }
+            .bottom-text .invitation {
+                font-size: 0.85rem;
             }
         }
 
@@ -533,14 +591,14 @@
                 width: 60px;
                 height: 2px;
             }
-            .text-block .greeting {
+            .bottom-text .greeting {
+                font-size: 4rem;
+            }
+            .bottom-text .message {
+                font-size: 2.6rem;
+            }
+            .bottom-text .invitation {
                 font-size: 3rem;
-            }
-            .text-block .message {
-                font-size: 1.8rem;
-            }
-            .text-block .invitation {
-                font-size: 2.2rem;
             }
         }
     </style>
@@ -572,50 +630,55 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ====== ВТОРОЙ ЭКРАН (первая.png + имена + дата + текст) ====== -->
+        <!-- ====== ВТОРОЙ ЭКРАН ====== -->
         <div id="secondScreen" class="screen">
-            <img class="main-bg" src="первая.png" alt="фон" />
 
-            <div class="content-wrapper" id="contentWrapper">
-                <!-- Имена -->
-                <div class="names">
-                    <div class="vladislav">VLADISLAV</div>
-                    <div class="and-ksenia">
-                        <span class="and">and</span>
-                        <span>KSENIA</span>
-                    </div>
-                </div>
+            <!-- Верхняя часть: фото + имена + дата -->
+            <div class="top-section">
+                <img class="main-bg" src="первая.png" alt="фон" />
 
-                <!-- Дата (смещена чуть левее и ниже) -->
-                <div class="date-section">
-                    <div class="bottom-row">
-                        <div class="left">
-                            <span class="line"></span>
-                            <span class="text">ПЯТНИЦА</span>
-                            <span class="line"></span>
-                        </div>
-
-                        <div class="center">
-                            <span class="month">АВГУСТА</span>
-                            <span class="day-number">28</span>
-                            <span class="year">2026</span>
-                        </div>
-
-                        <div class="right">
-                            <span class="line"></span>
-                            <span class="text">16:00</span>
-                            <span class="line"></span>
+                <div class="content-overlay" id="contentOverlay">
+                    <!-- Имена -->
+                    <div class="names">
+                        <div class="vladislav">VLADISLAV</div>
+                        <div class="and-ksenia">
+                            <span class="and">and</span>
+                            <span>KSENIA</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Текстовый блок -->
-                <div class="text-block">
-                    <div class="greeting">ДОРОГИЕ ГОСТИ</div>
-                    <div class="message">28 августа состоится долгожданное событие — день нашей свадьбы.</div>
-                    <div class="invitation">Приглашаем вас разделить с нами этот особенный день.</div>
+                    <!-- Дата -->
+                    <div class="date-section">
+                        <div class="bottom-row">
+                            <div class="left">
+                                <span class="line"></span>
+                                <span class="text">ПЯТНИЦА</span>
+                                <span class="line"></span>
+                            </div>
+
+                            <div class="center">
+                                <span class="month">АВГУСТА</span>
+                                <span class="day-number">28</span>
+                                <span class="year">2026</span>
+                            </div>
+
+                            <div class="right">
+                                <span class="line"></span>
+                                <span class="text">16:00</span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Нижний блок: текст на белом фоне -->
+            <div class="bottom-text" id="bottomText">
+                <div class="greeting">ДОРОГИЕ ГОСТИ</div>
+                <div class="message">28 августа состоится долгожданное событие — день нашей свадьбы.</div>
+                <div class="invitation">Приглашаем вас разделить с нами этот особенный день.</div>
+            </div>
+
         </div>
 
     </div>
@@ -625,7 +688,8 @@
             const firstScreen = document.getElementById('firstScreen');
             const secondScreen = document.getElementById('secondScreen');
             const dotsLayer = document.getElementById('dotsLayer');
-            const contentWrapper = document.getElementById('contentWrapper');
+            const contentOverlay = document.getElementById('contentOverlay');
+            const bottomText = document.getElementById('bottomText');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
@@ -667,8 +731,12 @@
                     secondScreen.style.pointerEvents = 'auto';
 
                     setTimeout(() => {
-                        contentWrapper.classList.add('visible');
+                        contentOverlay.classList.add('visible');
                     }, 200);
+
+                    setTimeout(() => {
+                        bottomText.classList.add('visible');
+                    }, 500);
 
                     isTransitioning = false;
                 }, 3200);
