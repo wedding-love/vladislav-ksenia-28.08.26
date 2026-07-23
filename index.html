@@ -66,7 +66,7 @@
             pointer-events: auto;
         }
 
-        /* ——— ВТОРОЙ ЭКРАН (первая.png + прокрутка + текст) ——— */
+        /* ——— ВТОРОЙ ЭКРАН ——— */
         #secondScreen {
             background: #ffffff;
             z-index: 2;
@@ -93,7 +93,7 @@
             border-radius: 10px;
         }
 
-        /* ——— ФОТО НА ВТОРОМ ЭКРАНЕ (весь экран) ——— */
+        /* ——— ФОТО НА ВТОРОМ ЭКРАНЕ ——— */
         .second-bg {
             position: relative;
             width: 100%;
@@ -118,7 +118,7 @@
             z-index: 1;
         }
 
-        /* ——— Контент поверх фото с анимацией ——— */
+        /* ——— Контент поверх фото ——— */
         .content-overlay {
             position: relative;
             z-index: 5;
@@ -293,7 +293,7 @@
             font-weight: 700;
         }
 
-        /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
+        /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ) ——— */
         .text-section {
             width: 100%;
             height: 100vh;
@@ -392,16 +392,15 @@
             padding: 0;
         }
 
-        /* ——— БЛОК ПРОГРАММА ДНЯ (фон #faf5f2) ——— */
+        /* ——— БЛОК ПРОГРАММА ДНЯ ——— */
         .program-section {
             width: 100%;
-            min-height: 100vh;
             flex-shrink: 0;
             background: #faf5f2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 4rem 2rem 3rem 2rem;
+            padding: 4rem 2rem 4rem 2rem;
             z-index: 2;
             position: relative;
             opacity: 0;
@@ -428,9 +427,9 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             position: relative;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         /* Единая вертикальная линия по центру */
@@ -442,7 +441,7 @@
             bottom: 0;
             width: 2px;
             background: #4a1a1a;
-            opacity: 0.3;
+            opacity: 0.25;
             transform: translateX(-50%);
         }
 
@@ -451,9 +450,8 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             position: relative;
-            gap: 0;
         }
 
         /* Левая часть: иконка */
@@ -461,29 +459,29 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            width: 45%;
-            padding-right: 2rem;
+            width: 42%;
+            padding-right: 2.5rem;
         }
 
         .program-item .icon {
             flex-shrink: 0;
-            width: 80px;
-            height: 80px;
+            width: 140px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .program-item .icon img {
-            width: 70px;
-            height: 70px;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
             filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
 
         .program-item .icon .firework-icon {
-            width: 80px;
-            height: 80px;
+            width: 140px;
+            height: 140px;
             object-fit: contain;
             filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
@@ -493,8 +491,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: 45%;
-            padding-left: 2rem;
+            width: 42%;
+            padding-left: 2.5rem;
         }
 
         .program-item .right-part .title {
@@ -510,6 +508,7 @@
             color: #4a1a1a;
             opacity: 0.6;
             font-weight: 400;
+            margin-top: 0.1rem;
         }
 
         /* ——— Фото на первом экране ——— */
@@ -652,7 +651,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив для телефонов ——— */
+        /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -710,40 +709,40 @@
                 margin-bottom: 1.5rem;
             }
             .program-section {
-                padding: 3rem 1rem 2rem 1rem;
+                padding: 2.5rem 1rem 2.5rem 1rem;
             }
             .program-title {
                 font-size: clamp(2.2rem, 4.5vw, 3rem);
                 margin-bottom: 2rem;
             }
-            .program-list {
-                padding: 0 0.5rem;
+            .program-item {
+                padding: 0.8rem 0;
             }
             .program-item .left-part {
-                width: 40%;
+                width: 30%;
                 padding-right: 1rem;
             }
             .program-item .right-part {
-                width: 40%;
+                width: 50%;
                 padding-left: 1rem;
             }
             .program-item .icon {
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
             }
             .program-item .icon img {
-                width: 50px;
-                height: 50px;
+                width: 65px;
+                height: 65px;
             }
             .program-item .icon .firework-icon {
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
             }
             .program-item .right-part .title {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
             }
             .program-item .right-part .time {
-                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                font-size: clamp(1.2rem, 2.4vw, 1.5rem);
             }
         }
 
@@ -799,44 +798,43 @@
                 margin-bottom: 1rem;
             }
             .program-section {
-                padding: 2rem 0.5rem 1.5rem 0.5rem;
+                padding: 2rem 0.5rem 2rem 0.5rem;
             }
             .program-title {
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-list {
-                padding: 0;
+            .program-item {
+                padding: 0.5rem 0;
             }
             .program-item .left-part {
-                width: 35%;
+                width: 25%;
                 padding-right: 0.5rem;
             }
             .program-item .right-part {
-                width: 35%;
+                width: 55%;
                 padding-left: 0.5rem;
             }
             .program-item .icon {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
             }
             .program-item .icon img {
-                width: 40px;
-                height: 40px;
-            }
-            .program-item .icon .firework-icon {
                 width: 50px;
                 height: 50px;
             }
+            .program-item .icon .firework-icon {
+                width: 60px;
+                height: 60px;
+            }
             .program-item .right-part .title {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .program-item .right-part .time {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
 
-        /* Для очень больших экранов */
         @media (min-width: 1400px) {
             .names .vladislav {
                 font-size: 14rem;
@@ -881,16 +879,16 @@
                 font-size: 4rem;
             }
             .program-item .icon {
-                width: 90px;
-                height: 90px;
+                width: 160px;
+                height: 160px;
             }
             .program-item .icon img {
-                width: 80px;
-                height: 80px;
+                width: 140px;
+                height: 140px;
             }
             .program-item .icon .firework-icon {
-                width: 90px;
-                height: 90px;
+                width: 160px;
+                height: 160px;
             }
         }
     </style>
@@ -922,7 +920,7 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ====== ВТОРОЙ ЭКРАН (с прокруткой) ====== -->
+        <!-- ====== ВТОРОЙ ЭКРАН ====== -->
         <div id="secondScreen" class="screen">
 
             <!-- Фото на весь экран -->
