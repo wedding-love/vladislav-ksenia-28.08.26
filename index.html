@@ -425,7 +425,7 @@
             width: 100%;
         }
 
-        /* ===== НОВАЯ СТРУКТУРА С FLEXBOX ===== */
+        /* ===== СТРУКТУРА ДЛЯ ВСЕХ УСТРОЙСТВ ===== */
         .program-row {
             display: flex;
             align-items: center;
@@ -689,37 +689,32 @@
                 font-size: clamp(2.5rem, 5vw, 3.2rem);
                 margin-bottom: 2rem;
             }
+            /* На мобильных сохраняем ту же структуру: линия по центру, текст справа */
             .program-row {
-                flex-direction: column;
-                min-height: auto;
-                gap: 1.5rem;
-                padding: 0.5rem 0;
+                flex-direction: row;
+                min-height: 400px;
+                gap: 0;
             }
             .program-left-empty {
-                display: none;
+                flex: 0 0 calc(50% - 20px);
             }
             .program-divider {
-                width: 80%;
-                height: 2px;
-                min-height: auto;
+                width: 2px;
+                min-height: 300px;
+                height: 100%;
             }
             .program-right-text {
-                flex: 0 0 auto;
-                width: 100%;
-                padding-left: 0;
-                align-items: center;
-                gap: 1.5rem;
-            }
-            .program-item {
-                align-items: center;
+                flex: 0 0 calc(50% - 20px);
+                gap: 30px;
+                padding-left: 30px;
             }
             .program-item .title {
                 font-size: clamp(1.4rem, 2.8vw, 1.8rem);
-                text-align: center;
+                text-align: left;
             }
             .program-item .time {
                 font-size: clamp(1.4rem, 2.8vw, 1.8rem);
-                text-align: center;
+                text-align: left;
             }
         }
 
@@ -782,17 +777,25 @@
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
             }
-            .program-divider {
-                width: 90%;
+            .program-row {
+                min-height: 300px;
+            }
+            .program-left-empty {
+                flex: 0 0 calc(50% - 15px);
             }
             .program-right-text {
-                gap: 1rem;
+                flex: 0 0 calc(50% - 15px);
+                gap: 20px;
+                padding-left: 20px;
             }
             .program-item .title {
                 font-size: 1.1rem;
             }
             .program-item .time {
                 font-size: 1.1rem;
+            }
+            .program-divider {
+                min-height: 200px;
             }
         }
 
