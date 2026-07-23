@@ -66,35 +66,37 @@
             pointer-events: auto;
         }
 
-        /* ——— ВТОРОЙ ЭКРАН (первая.png + контент + текст) ——— */
+        /* ——— ВТОРОЙ ЭКРАН (первая.png + прокрутка + текст) ——— */
         #secondScreen {
             background: #ffffff;
             z-index: 2;
             opacity: 0;
             pointer-events: none;
             flex-direction: column;
-            justify-content: flex-start;
+            overflow-y: auto;
+            overflow-x: hidden;
             padding: 0;
+            display: block;
         }
 
-        /* ——— Фото на экранах ——— */
-        .main-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-            user-select: none;
-            z-index: 1;
+        #secondScreen::-webkit-scrollbar {
+            width: 4px;
         }
 
-        /* ——— Верхняя часть с фото и контентом поверх ——— */
-        .top-section {
+        #secondScreen::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        #secondScreen::-webkit-scrollbar-thumb {
+            background: rgba(128, 0, 32, 0.3);
+            border-radius: 10px;
+        }
+
+        /* ——— ФОТО НА ВТОРОМ ЭКРАНЕ (весь экран) ——— */
+        .second-bg {
             position: relative;
             width: 100%;
-            height: 60vh;
+            height: 100vh;
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -103,7 +105,7 @@
             z-index: 1;
         }
 
-        .top-section .main-bg {
+        .second-bg .main-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -271,17 +273,17 @@
             color: #4a1a1a;
         }
 
-        /* ——— НИЖНИЙ БЛОК С ТЕКСТОМ (на белом фоне) ——— */
-        .bottom-text {
+        /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (на белом фоне) ——— */
+        .text-section {
             width: 100%;
-            height: 40vh;
+            min-height: 50vh;
             flex-shrink: 0;
             background: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             z-index: 2;
             opacity: 0;
@@ -289,31 +291,31 @@
             transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
         }
 
-        .bottom-text.visible {
+        .text-section.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .bottom-text .greeting {
+        .text-section .greeting {
             font-size: clamp(1.8rem, 3.5vw, 4rem);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: #4a1a1a;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             opacity: 0.85;
         }
 
-        .bottom-text .message {
+        .text-section .message {
             font-size: clamp(1.2rem, 2.2vw, 2.6rem);
             line-height: 1.5;
             letter-spacing: 0.04em;
             color: #4a1a1a;
             opacity: 0.7;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             max-width: 90%;
         }
 
-        .bottom-text .invitation {
+        .text-section .invitation {
             font-size: clamp(1.4rem, 2.5vw, 3rem);
             line-height: 1.4;
             letter-spacing: 0.06em;
@@ -321,6 +323,19 @@
             opacity: 0.6;
             font-style: italic;
             max-width: 90%;
+        }
+
+        /* ——— Фото на первом экране ——— */
+        .main-bg-first {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
         }
 
         /* ——— ПРОЗРАЧНАЯ КНОПКА (без обводок) ——— */
@@ -457,13 +472,6 @@
                 width: 140px;
                 height: 140px;
             }
-            .top-section {
-                height: 55vh;
-            }
-            .bottom-text {
-                height: 45vh;
-                padding: 1rem 1.2rem;
-            }
             .bottom-row {
                 width: 92%;
                 gap: 0.3rem;
@@ -500,13 +508,17 @@
                 padding-left: 2%;
                 margin: 0.1rem 0 0.5rem 0;
             }
-            .bottom-text .greeting {
+            .text-section {
+                min-height: 40vh;
+                padding: 1.5rem 1.2rem;
+            }
+            .text-section .greeting {
                 font-size: clamp(1.2rem, 2.8vw, 1.8rem);
             }
-            .bottom-text .message {
+            .text-section .message {
                 font-size: clamp(0.9rem, 1.8vw, 1.2rem);
             }
-            .bottom-text .invitation {
+            .text-section .invitation {
                 font-size: clamp(1rem, 2vw, 1.4rem);
             }
         }
@@ -515,13 +527,6 @@
             .circle-btn {
                 width: 100px;
                 height: 100px;
-            }
-            .top-section {
-                height: 50vh;
-            }
-            .bottom-text {
-                height: 50vh;
-                padding: 0.8rem 1rem;
             }
             .bottom-row .left .line,
             .bottom-row .right .line {
@@ -554,13 +559,17 @@
                 padding-left: 0;
                 margin: 0.1rem 0 0.3rem 0;
             }
-            .bottom-text .greeting {
+            .text-section {
+                min-height: 35vh;
+                padding: 1rem 0.8rem;
+            }
+            .text-section .greeting {
                 font-size: 1rem;
             }
-            .bottom-text .message {
+            .text-section .message {
                 font-size: 0.75rem;
             }
-            .bottom-text .invitation {
+            .text-section .invitation {
                 font-size: 0.85rem;
             }
         }
@@ -591,13 +600,13 @@
                 width: 60px;
                 height: 2px;
             }
-            .bottom-text .greeting {
+            .text-section .greeting {
                 font-size: 4rem;
             }
-            .bottom-text .message {
+            .text-section .message {
                 font-size: 2.6rem;
             }
-            .bottom-text .invitation {
+            .text-section .invitation {
                 font-size: 3rem;
             }
         }
@@ -608,7 +617,7 @@
 
         <!-- ====== ПЕРВЫЙ ЭКРАН (главная.png + кнопка) ====== -->
         <div id="firstScreen" class="screen">
-            <img class="main-bg" src="главная.png" alt="фон" />
+            <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
         </div>
 
@@ -630,11 +639,11 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ====== ВТОРОЙ ЭКРАН ====== -->
+        <!-- ====== ВТОРОЙ ЭКРАН (с прокруткой) ====== -->
         <div id="secondScreen" class="screen">
 
-            <!-- Верхняя часть: фото + имена + дата -->
-            <div class="top-section">
+            <!-- Фото на весь экран -->
+            <div class="second-bg">
                 <img class="main-bg" src="первая.png" alt="фон" />
 
                 <div class="content-overlay" id="contentOverlay">
@@ -672,8 +681,8 @@
                 </div>
             </div>
 
-            <!-- Нижний блок: текст на белом фоне -->
-            <div class="bottom-text" id="bottomText">
+            <!-- Текст на белом фоне (после фото) -->
+            <div class="text-section" id="textSection">
                 <div class="greeting">ДОРОГИЕ ГОСТИ</div>
                 <div class="message">28 августа состоится долгожданное событие — день нашей свадьбы.</div>
                 <div class="invitation">Приглашаем вас разделить с нами этот особенный день.</div>
@@ -689,7 +698,7 @@
             const secondScreen = document.getElementById('secondScreen');
             const dotsLayer = document.getElementById('dotsLayer');
             const contentOverlay = document.getElementById('contentOverlay');
-            const bottomText = document.getElementById('bottomText');
+            const textSection = document.getElementById('textSection');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
@@ -735,7 +744,7 @@
                     }, 200);
 
                     setTimeout(() => {
-                        bottomText.classList.add('visible');
+                        textSection.classList.add('visible');
                     }, 500);
 
                     isTransitioning = false;
@@ -746,6 +755,12 @@
                 e.stopPropagation();
                 switchToSecondScreen();
             });
+
+            // Разрешаем прокрутку на втором экране
+            secondScreen.addEventListener('touchstart', function(e) {
+                // Ничего не блокируем
+            }, { passive: true });
+
         })();
     </script>
 </body>
