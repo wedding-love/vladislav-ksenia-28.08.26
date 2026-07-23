@@ -87,12 +87,6 @@
             z-index: 1;
         }
 
-        /* ——— Фото на втором экране (подстраивается под экран) ——— */
-        #secondScreen .main-bg {
-            object-fit: contain;
-            background: #ffffff;
-        }
-
         /* ——— Контент на втором экране (поверх первая.png) ——— */
         .content-wrapper {
             position: relative;
@@ -277,7 +271,7 @@
             background: #ffffff;
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 1.2s ease;
         }
 
         #dotsLayer.active {
@@ -562,17 +556,19 @@
                 if (isTransitioning) return;
                 isTransitioning = true;
 
-                // 1. Плавное затухание первого экрана
+                // 1. Первый экран начинает затухать
                 firstScreen.style.opacity = '0';
                 firstScreen.style.pointerEvents = 'none';
 
-                // 2. Сразу показываем слой с белым фоном и точками
-                dotsLayer.classList.add('active');
-                activateDots();
-
-                // 3. Через 2 секунды открываем второй экран
+                // 2. Через 1.2 секунды (когда первый экран полностью исчез) появляется белый фон с точками
                 setTimeout(() => {
-                    // Убираем точки
+                    dotsLayer.classList.add('active');
+                    activateDots();
+                }, 1200);
+
+                // 3. Через 3.2 секунды (1.2с затухание + 2с точки) открываем второй экран
+                setTimeout(() => {
+                    // Убираем точки и белый фон
                     deactivateDots();
 
                     // Показываем второй экран
@@ -585,7 +581,7 @@
                     }, 200);
 
                     isTransitioning = false;
-                }, 2000);
+                }, 3200);
             }
 
             // Клик по кнопке на первом экране
