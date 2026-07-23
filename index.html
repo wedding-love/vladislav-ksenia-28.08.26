@@ -374,17 +374,17 @@
         .program-section {
             width: 100%;
             flex-shrink: 0;
-            background: #faf5f2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0;
-            z-index: 2;
             position: relative;
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 3rem;
+            overflow: hidden;
         }
 
         .program-section.visible {
@@ -412,8 +412,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 100vh;
-            padding: 4rem 3rem;
+            max-width: 900px;
         }
 
         .program-title {
@@ -426,42 +425,42 @@
             text-align: center;
         }
 
-        /* Сетка событий с линией по центру */
-        .program-grid {
-            display: grid;
-            grid-template-columns: 1fr 2px 1fr;
-            gap: 0 3rem;
-            align-items: center;
+        /* Строка: линия + события справа */
+        .program-row {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
             width: 100%;
-            max-width: 900px;
-            padding: 0 1rem;
+            gap: 2.5rem;
         }
 
-        /* Левая колонка */
-        .program-left-items {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 2.5rem;
-            text-align: right;
+        /* Вертикальная линия */
+        .program-divider {
+            width: 2px;
+            flex-shrink: 0;
+            background: #4a1a1a;
+            opacity: 0.5;
+            align-self: stretch;
+            min-height: 300px;
         }
 
-        /* Правая колонка */
-        .program-right-items {
+        /* Список событий справа */
+        .program-right {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 2.5rem;
-            text-align: left;
+            justify-content: center;
+            gap: 2rem;
+            flex: 1;
         }
 
         .program-item {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
         }
 
         .program-item .title {
-            font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+            font-size: clamp(1.8rem, 3.2vw, 3.6rem);
             color: #4a1a1a;
             font-style: italic;
             font-weight: 600;
@@ -470,22 +469,11 @@
         }
 
         .program-item .time {
-            font-size: clamp(1.3rem, 2.2vw, 2.6rem);
+            font-size: clamp(1.4rem, 2.5vw, 2.8rem);
             color: #4a1a1a;
             font-weight: 400;
             opacity: 0.7;
             margin-top: 0.1rem;
-        }
-
-        /* Вертикальная линия по центру (бордовая) */
-        .program-divider {
-            width: 2px;
-            height: 100%;
-            background: #4a1a1a;
-            opacity: 0.5;
-            justify-self: center;
-            align-self: stretch;
-            min-height: 350px;
         }
 
         .main-bg-first {
@@ -681,31 +669,28 @@
                 font-size: clamp(1.3rem, 2.5vw, 1.8rem);
                 margin-bottom: 1.5rem;
             }
-            .program-content {
-                padding: 2rem 1.5rem;
+            .program-section {
+                padding: 2.5rem 1.5rem;
+                min-height: 80vh;
             }
             .program-title {
                 font-size: clamp(2.2rem, 4.5vw, 3rem);
                 margin-bottom: 2rem;
             }
-            .program-grid {
-                grid-template-columns: 1fr 2px 1fr;
-                gap: 0 1.5rem;
-            }
-            .program-left-items {
+            .program-row {
                 gap: 1.5rem;
-            }
-            .program-right-items {
-                gap: 1.5rem;
-            }
-            .program-item .title {
-                font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            }
-            .program-item .time {
-                font-size: clamp(1rem, 2vw, 1.4rem);
             }
             .program-divider {
                 min-height: 200px;
+            }
+            .program-right {
+                gap: 1.5rem;
+            }
+            .program-item .title {
+                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+            }
+            .program-item .time {
+                font-size: clamp(1.1rem, 2.2vw, 1.4rem);
             }
         }
 
@@ -760,31 +745,28 @@
                 font-size: 1rem;
                 margin-bottom: 1rem;
             }
-            .program-content {
-                padding: 1.5rem 1rem;
+            .program-section {
+                padding: 2rem 1rem;
+                min-height: 70vh;
             }
             .program-title {
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-grid {
-                grid-template-columns: 1fr 2px 1fr;
-                gap: 0 1rem;
-            }
-            .program-left-items {
+            .program-row {
                 gap: 1rem;
-            }
-            .program-right-items {
-                gap: 1rem;
-            }
-            .program-item .title {
-                font-size: 1rem;
-            }
-            .program-item .time {
-                font-size: 0.85rem;
             }
             .program-divider {
                 min-height: 150px;
+            }
+            .program-right {
+                gap: 1rem;
+            }
+            .program-item .title {
+                font-size: 1.1rem;
+            }
+            .program-item .time {
+                font-size: 0.9rem;
             }
         }
 
@@ -826,10 +808,10 @@
                 font-size: 5.5rem;
             }
             .program-item .title {
-                font-size: 3.2rem;
+                font-size: 3.6rem;
             }
             .program-item .time {
-                font-size: 2.6rem;
+                font-size: 2.8rem;
             }
         }
     </style>
@@ -913,9 +895,12 @@
                 <div class="program-content">
                     <div class="program-title">Программа дня</div>
                     
-                    <div class="program-grid">
-                        <!-- Левая колонка -->
-                        <div class="program-left-items">
+                    <div class="program-row">
+                        <!-- Вертикальная линия -->
+                        <div class="program-divider"></div>
+
+                        <!-- Список событий справа -->
+                        <div class="program-right">
                             <div class="program-item">
                                 <div class="title">Сбор гостей и Welcome</div>
                                 <div class="time">16:00</div>
@@ -924,13 +909,6 @@
                                 <div class="title">Торжественная Церемония</div>
                                 <div class="time">17:00</div>
                             </div>
-                        </div>
-
-                        <!-- Линия -->
-                        <div class="program-divider"></div>
-
-                        <!-- Правая колонка -->
-                        <div class="program-right-items">
                             <div class="program-item">
                                 <div class="title">Банкет</div>
                                 <div class="time">18:00</div>
