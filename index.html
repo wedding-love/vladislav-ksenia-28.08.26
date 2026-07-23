@@ -400,6 +400,7 @@
             letter-spacing: 0.05em;
         }
 
+        /* ——— КОНТЕЙНЕР С ФОНОМ-КАРТИНКОЙ ——— */
         .program-content {
             display: flex;
             align-items: center;
@@ -408,25 +409,26 @@
             max-width: 1400px;
             gap: 0;
             padding: 0 2rem;
+            position: relative;
             min-height: 40vh;
+            background-image: url('image_2026-07-23_18-39-10.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 16px;
         }
 
-        /* Левая часть: фото занимает 1/3 вертикали */
-        .program-left {
-            flex: 0 0 33.33%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-right: 2rem;
-            max-height: 33.33vh;
-        }
-
-        .program-left img {
+        /* Затемнение фона для читаемости текста */
+        .program-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            max-height: 33.33vh;
-            object-fit: contain;
-            border-radius: 12px;
+            background: rgba(250, 245, 242, 0.7);
+            border-radius: 16px;
+            z-index: 1;
         }
 
         /* Вертикальная линия */
@@ -436,19 +438,21 @@
             background: #4a1a1a;
             opacity: 0.6;
             align-self: stretch;
-            min-height: 200px;
-            max-height: 33.33vh;
+            min-height: 300px;
+            position: relative;
+            z-index: 2;
         }
 
         /* Правая часть: список событий */
         .program-right {
-            flex: 0 0 60%;
+            flex: 0 0 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 1.8rem;
             padding-left: 2rem;
-            max-height: 33.33vh;
+            position: relative;
+            z-index: 2;
         }
 
         .program-item {
@@ -610,7 +614,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив для мобильных ——— */
+        /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -678,25 +682,14 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 1.5rem;
-                padding: 0;
+                padding: 2rem 1rem;
                 min-height: auto;
-            }
-            .program-left {
-                flex: 0 0 auto;
-                width: 100%;
-                padding-right: 0;
-                max-height: 200px;
-            }
-            .program-left img {
-                max-height: 200px;
-                width: 100%;
-                object-fit: contain;
+                background-size: cover;
             }
             .program-divider {
                 width: 80%;
                 height: 3px;
                 min-height: auto;
-                max-height: auto;
                 align-self: center;
             }
             .program-right {
@@ -704,7 +697,6 @@
                 width: 100%;
                 padding-left: 0;
                 gap: 1.5rem;
-                max-height: none;
             }
             .program-item .title {
                 font-size: clamp(1.6rem, 3.2vw, 2.2rem);
@@ -772,8 +764,8 @@
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-left img {
-                max-height: 150px;
+            .program-content {
+                padding: 1.5rem 0.5rem;
             }
             .program-divider {
                 width: 90%;
@@ -829,18 +821,6 @@
             }
             .program-item .time {
                 font-size: 2.8rem;
-            }
-            .program-left {
-                max-height: 40vh;
-            }
-            .program-left img {
-                max-height: 40vh;
-            }
-            .program-divider {
-                max-height: 40vh;
-            }
-            .program-right {
-                max-height: 40vh;
             }
         }
     </style>
@@ -923,10 +903,7 @@
                 <div class="program-title">Программа дня</div>
                 
                 <div class="program-content">
-                    <!-- Левая часть: фото 1/3 -->
-                    <div class="program-left">
-                        <img src="image_2026-07-23_18-39-10.png" alt="программа" />
-                    </div>
+                    <!-- Фон-картинка растянута на весь блок -->
 
                     <!-- Вертикальная линия -->
                     <div class="program-divider"></div>
