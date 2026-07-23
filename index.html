@@ -97,7 +97,7 @@
             justify-content: center;
             width: 100%;
             height: 100%;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
             color: #4a1a1a;
             pointer-events: none;
@@ -116,7 +116,7 @@
             font-size: clamp(5rem, 14vw, 14rem);
             line-height: 1.05;
             letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             max-width: 95vw;
         }
 
@@ -144,15 +144,25 @@
             opacity: 0.6;
         }
 
-        /* ——— Нижняя строка (МАКСИМАЛЬНО БОЛЬШОЙ ШРИФТ) ——— */
+        /* ——— Дата (смещена чуть левее и ниже) ——— */
+        .date-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0.2rem 0 0.8rem 0;
+            padding-left: 3%;
+        }
+
         .bottom-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 94%;
-            max-width: 1000px;
+            width: 88%;
+            max-width: 950px;
             gap: 0.8rem;
             flex-wrap: nowrap;
+            margin-left: -2%;
         }
 
         .bottom-row .left {
@@ -231,6 +241,39 @@
             letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
+        }
+
+        /* ——— Текстовый блок (Дорогие гости + сообщение + приглашение) ——— */
+        .text-block {
+            max-width: 85%;
+            margin-top: 0.5rem;
+        }
+
+        .text-block .greeting {
+            font-size: clamp(1.4rem, 2.8vw, 3rem);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #4a1a1a;
+            margin-bottom: 0.3rem;
+            opacity: 0.8;
+        }
+
+        .text-block .message {
+            font-size: clamp(0.9rem, 1.6vw, 1.8rem);
+            line-height: 1.4;
+            letter-spacing: 0.05em;
+            color: #4a1a1a;
+            opacity: 0.7;
+            margin-bottom: 0.2rem;
+        }
+
+        .text-block .invitation {
+            font-size: clamp(1.1rem, 2vw, 2.2rem);
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            color: #4a1a1a;
+            opacity: 0.6;
+            font-style: italic;
         }
 
         /* ——— ПРОЗРАЧНАЯ КНОПКА (без обводок) ——— */
@@ -368,8 +411,9 @@
                 height: 140px;
             }
             .bottom-row {
-                width: 96%;
+                width: 92%;
                 gap: 0.3rem;
+                margin-left: -2%;
             }
             .bottom-row .left .line,
             .bottom-row .right .line {
@@ -397,6 +441,22 @@
             }
             .names .and-ksenia .and {
                 font-size: clamp(1rem, 2.5vw, 1.4rem);
+            }
+            .text-block {
+                max-width: 90%;
+            }
+            .text-block .greeting {
+                font-size: clamp(1rem, 2.2vw, 1.6rem);
+            }
+            .text-block .message {
+                font-size: clamp(0.7rem, 1.4vw, 1rem);
+            }
+            .text-block .invitation {
+                font-size: clamp(0.8rem, 1.6vw, 1.2rem);
+            }
+            .date-section {
+                padding-left: 2%;
+                margin: 0.1rem 0 0.5rem 0;
             }
         }
 
@@ -432,6 +492,19 @@
             .names .and-ksenia .and {
                 font-size: 0.8rem;
             }
+            .text-block .greeting {
+                font-size: 0.8rem;
+            }
+            .text-block .message {
+                font-size: 0.6rem;
+            }
+            .text-block .invitation {
+                font-size: 0.7rem;
+            }
+            .date-section {
+                padding-left: 0;
+                margin: 0.1rem 0 0.3rem 0;
+            }
         }
 
         /* Для очень больших экранов */
@@ -459,6 +532,15 @@
             .bottom-row .right .line {
                 width: 60px;
                 height: 2px;
+            }
+            .text-block .greeting {
+                font-size: 3rem;
+            }
+            .text-block .message {
+                font-size: 1.8rem;
+            }
+            .text-block .invitation {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -490,11 +572,12 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ====== ВТОРОЙ ЭКРАН (первая.png + имена + дата) ====== -->
+        <!-- ====== ВТОРОЙ ЭКРАН (первая.png + имена + дата + текст) ====== -->
         <div id="secondScreen" class="screen">
             <img class="main-bg" src="первая.png" alt="фон" />
 
             <div class="content-wrapper" id="contentWrapper">
+                <!-- Имена -->
                 <div class="names">
                     <div class="vladislav">VLADISLAV</div>
                     <div class="and-ksenia">
@@ -503,24 +586,34 @@
                     </div>
                 </div>
 
-                <div class="bottom-row">
-                    <div class="left">
-                        <span class="line"></span>
-                        <span class="text">ПЯТНИЦА</span>
-                        <span class="line"></span>
-                    </div>
+                <!-- Дата (смещена чуть левее и ниже) -->
+                <div class="date-section">
+                    <div class="bottom-row">
+                        <div class="left">
+                            <span class="line"></span>
+                            <span class="text">ПЯТНИЦА</span>
+                            <span class="line"></span>
+                        </div>
 
-                    <div class="center">
-                        <span class="month">АВГУСТА</span>
-                        <span class="day-number">28</span>
-                        <span class="year">2026</span>
-                    </div>
+                        <div class="center">
+                            <span class="month">АВГУСТА</span>
+                            <span class="day-number">28</span>
+                            <span class="year">2026</span>
+                        </div>
 
-                    <div class="right">
-                        <span class="line"></span>
-                        <span class="text">16:00</span>
-                        <span class="line"></span>
+                        <div class="right">
+                            <span class="line"></span>
+                            <span class="text">16:00</span>
+                            <span class="line"></span>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Текстовый блок -->
+                <div class="text-block">
+                    <div class="greeting">ДОРОГИЕ ГОСТИ</div>
+                    <div class="message">28 августа состоится долгожданное событие — день нашей свадьбы.</div>
+                    <div class="invitation">Приглашаем вас разделить с нами этот особенный день.</div>
                 </div>
             </div>
         </div>
