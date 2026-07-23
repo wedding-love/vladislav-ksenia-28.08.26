@@ -429,41 +429,33 @@
             gap: 2rem;
         }
 
-        /* Иконка слева */
+        /* Иконка слева (одна общая для всех) */
         .program-item .icon {
             flex-shrink: 0;
-            width: 350px;
-            height: 350px;
+            width: 250px;
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .program-item .icon img {
-            width: 320px;
-            height: 320px;
+            width: 220px;
+            height: 220px;
             object-fit: contain;
-            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
-        }
-
-        .program-item .icon .firework-icon {
-            width: 350px;
-            height: 350px;
-            object-fit: contain;
-            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
 
         /* Вертикальная линия (видимая, бордовая) */
         .program-item .vertical-line {
             width: 3px;
             height: 100%;
-            min-height: 200px;
+            min-height: 180px;
             background: #4a1a1a;
             opacity: 0.6;
             flex-shrink: 0;
         }
 
-        /* Текст справа */
+        /* Текст справа (в два ряда) */
         .program-item .right-part {
             display: flex;
             flex-direction: column;
@@ -478,9 +470,12 @@
             font-style: italic;
             font-weight: 600;
             line-height: 1.2;
-            white-space: nowrap;
-            width: 100%;
             font-family: 'Patriciana', Georgia, serif;
+        }
+
+        /* Специальный отступ между "о" и "с" в "Сбор гостей" */
+        .program-item .right-part .title .guest-spacing {
+            letter-spacing: 0.15em;
         }
 
         .program-item .right-part .time {
@@ -707,10 +702,6 @@
                 width: 100px;
                 height: 100px;
             }
-            .program-item .icon .firework-icon {
-                width: 120px;
-                height: 120px;
-            }
             .program-item .vertical-line {
                 min-height: 100px;
                 width: 2px;
@@ -719,11 +710,10 @@
                 padding-left: 0.8rem;
             }
             .program-item .right-part .title {
-                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
-                white-space: nowrap;
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
             }
             .program-item .right-part .time {
-                font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+                font-size: clamp(1.4rem, 2.6vw, 1.8rem);
             }
         }
 
@@ -797,10 +787,6 @@
                 width: 65px;
                 height: 65px;
             }
-            .program-item .icon .firework-icon {
-                width: 80px;
-                height: 80px;
-            }
             .program-item .vertical-line {
                 min-height: 70px;
                 width: 2px;
@@ -809,11 +795,10 @@
                 padding-left: 0.5rem;
             }
             .program-item .right-part .title {
-                font-size: 1.1rem;
-                white-space: nowrap;
+                font-size: 1.2rem;
             }
             .program-item .right-part .time {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
 
@@ -855,16 +840,12 @@
                 font-size: 5.5rem;
             }
             .program-item .icon {
-                width: 400px;
-                height: 400px;
+                width: 300px;
+                height: 300px;
             }
             .program-item .icon img {
-                width: 360px;
-                height: 360px;
-            }
-            .program-item .icon .firework-icon {
-                width: 400px;
-                height: 400px;
+                width: 270px;
+                height: 270px;
             }
             .program-item .right-part .title {
                 font-size: 5.8rem;
@@ -873,7 +854,7 @@
                 font-size: 4.8rem;
             }
             .program-item .vertical-line {
-                min-height: 250px;
+                min-height: 220px;
             }
         }
     </style>
@@ -958,7 +939,7 @@
                 <div class="program-list">
                     <div class="program-item">
                         <div class="icon">
-                            <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
+                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
                         </div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
@@ -969,7 +950,7 @@
 
                     <div class="program-item">
                         <div class="icon">
-                            <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
+                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
                         </div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
@@ -980,7 +961,7 @@
 
                     <div class="program-item">
                         <div class="icon">
-                            <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
+                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
                         </div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
@@ -991,7 +972,7 @@
 
                     <div class="program-item">
                         <div class="icon">
-                            <img class="firework-icon" width="80" height="80" src="https://img.icons8.ru/dotty/80/firework-explosion.png" alt="firework-explosion" />
+                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
                         </div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
