@@ -429,8 +429,8 @@
             gap: 2rem;
         }
 
-        /* Иконка слева (одна общая для всех) */
-        .program-item .icon {
+        /* ОДНО ФОТО СЛЕВА (только у первого элемента) */
+        .program-item:first-child .icon {
             flex-shrink: 0;
             width: 250px;
             height: 250px;
@@ -439,23 +439,33 @@
             justify-content: center;
         }
 
-        .program-item .icon img {
+        .program-item:first-child .icon img {
             width: 220px;
             height: 220px;
             object-fit: contain;
         }
 
-        /* Вертикальная линия (видимая, бордовая) */
+        /* У остальных элементов иконка скрыта */
+        .program-item:not(:first-child) .icon {
+            display: none;
+        }
+
+        /* Сплошная непрерывная линия */
         .program-item .vertical-line {
             width: 3px;
             height: 100%;
-            min-height: 180px;
+            min-height: 120px;
             background: #4a1a1a;
             opacity: 0.6;
             flex-shrink: 0;
         }
 
-        /* Текст справа (в два ряда) */
+        /* Линия у первого элемента выше */
+        .program-item:first-child .vertical-line {
+            min-height: 180px;
+        }
+
+        /* Текст справа */
         .program-item .right-part {
             display: flex;
             flex-direction: column;
@@ -471,11 +481,6 @@
             font-weight: 600;
             line-height: 1.2;
             font-family: 'Patriciana', Georgia, serif;
-        }
-
-        /* Специальный отступ между "о" и "с" в "Сбор гостей" */
-        .program-item .right-part .title .guest-spacing {
-            letter-spacing: 0.15em;
         }
 
         .program-item .right-part .time {
@@ -694,17 +699,20 @@
                 padding: 1rem 0;
                 gap: 1rem;
             }
-            .program-item .icon {
+            .program-item:first-child .icon {
                 width: 120px;
                 height: 120px;
             }
-            .program-item .icon img {
+            .program-item:first-child .icon img {
                 width: 100px;
                 height: 100px;
             }
             .program-item .vertical-line {
-                min-height: 100px;
+                min-height: 80px;
                 width: 2px;
+            }
+            .program-item:first-child .vertical-line {
+                min-height: 120px;
             }
             .program-item .right-part {
                 padding-left: 0.8rem;
@@ -779,17 +787,20 @@
                 padding: 0.8rem 0;
                 gap: 0.8rem;
             }
-            .program-item .icon {
+            .program-item:first-child .icon {
                 width: 80px;
                 height: 80px;
             }
-            .program-item .icon img {
+            .program-item:first-child .icon img {
                 width: 65px;
                 height: 65px;
             }
             .program-item .vertical-line {
-                min-height: 70px;
+                min-height: 60px;
                 width: 2px;
+            }
+            .program-item:first-child .vertical-line {
+                min-height: 90px;
             }
             .program-item .right-part {
                 padding-left: 0.5rem;
@@ -839,11 +850,11 @@
             .program-title {
                 font-size: 5.5rem;
             }
-            .program-item .icon {
+            .program-item:first-child .icon {
                 width: 300px;
                 height: 300px;
             }
-            .program-item .icon img {
+            .program-item:first-child .icon img {
                 width: 270px;
                 height: 270px;
             }
@@ -854,6 +865,9 @@
                 font-size: 4.8rem;
             }
             .program-item .vertical-line {
+                min-height: 160px;
+            }
+            .program-item:first-child .vertical-line {
                 min-height: 220px;
             }
         }
@@ -949,9 +963,7 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="icon">
-                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
-                        </div>
+                        <div class="icon"></div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Торжественная Церемония</div>
@@ -960,9 +972,7 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="icon">
-                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
-                        </div>
+                        <div class="icon"></div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Банкет</div>
@@ -971,9 +981,7 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="icon">
-                            <img src="image_2026-07-23_18-39-10.png" alt="иконка" />
-                        </div>
+                        <div class="icon"></div>
                         <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Финал</div>
