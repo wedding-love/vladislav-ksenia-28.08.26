@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Главный экран</title>
+    <title>Приглашение</title>
     <style>
+        /* ——— Подключение шрифта ——— */
+        @font-face {
+            font-family: 'Patriciana';
+            src: url('ofont.ru_Patriciana.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /* ——— Сброс и базовые стили ——— */
         * {
             margin: 0;
@@ -12,13 +20,18 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             background: #ffffff;
-            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: system-ui, sans-serif;
+            font-family: 'Patriciana', serif;
         }
 
         /* ——— Контейнер для двух экранов ——— */
@@ -44,16 +57,24 @@
             will-change: opacity;
         }
 
-        /* ——— Главный экран (первый) ——— */
-        #mainScreen {
+        /* ——— ПЕРВЫЙ ЭКРАН (главная.png + кнопка) ——— */
+        #firstScreen {
             background: #ffffff;
-            z-index: 2;
+            z-index: 3;
             opacity: 1;
             pointer-events: auto;
         }
 
-        /* ——— Второй экран (новый) ——— */
+        /* ——— ВТОРОЙ ЭКРАН (первая.png + контент) ——— */
         #secondScreen {
+            background: #ffffff;
+            z-index: 2;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ——— ТРЕТИЙ ЭКРАН (новый, после клика) ——— */
+        #thirdScreen {
             background: #1a1a2e;
             z-index: 1;
             opacity: 0;
@@ -64,19 +85,19 @@
             padding: 2rem;
         }
 
-        #secondScreen h1 {
+        #thirdScreen h1 {
             font-size: clamp(2rem, 8vw, 4.5rem);
             letter-spacing: 0.05em;
             text-shadow: 0 0 20px rgba(128, 0, 32, 0.6);
         }
 
-        #secondScreen p {
+        #thirdScreen p {
             font-size: clamp(1rem, 3vw, 1.8rem);
             opacity: 0.8;
             margin-top: 0.5rem;
         }
 
-        /* ——— Картинка на главном экране (фон) ——— */
+        /* ——— Фото на экранах ——— */
         .main-bg {
             position: absolute;
             top: 0;
@@ -86,53 +107,178 @@
             object-fit: cover;
             pointer-events: none;
             user-select: none;
-            transition: opacity 1.2s ease;
-            will-change: opacity;
+            z-index: 1;
         }
 
-        /* ——— КОНТЕЙНЕР ДЛЯ КНОПКИ ——— */
-        .btn-wrapper {
+        /* ——— Контент на втором экране (поверх первая.png) ——— */
+        .content-wrapper {
             position: relative;
-            z-index: 10;
+            z-index: 5;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
             height: 100%;
+            padding: 1rem;
+            text-align: center;
+            color: #4a1a1a;
             pointer-events: none;
         }
 
-        /* ——— ПОЛНОСТЬЮ ПРОЗРАЧНАЯ КРУГЛАЯ КНОПКА ——— */
+        /* ——— Имена ——— */
+        .names {
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .names .vladislav {
+            font-size: clamp(2.8rem, 7vw, 6rem);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .names .and-ksenia {
+            font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+        }
+
+        .names .and-ksenia .and {
+            font-size: clamp(1rem, 2vw, 1.8rem);
+            text-transform: lowercase;
+            letter-spacing: 0.2em;
+            opacity: 0.6;
+        }
+
+        /* ——— Нижняя строка: ПЯТНИЦА | (АВГУСТА / 28 / 2026) | 16:00 ——— */
+        .bottom-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 900px;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+        }
+
+        .bottom-row .left {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .bottom-row .left .line {
+            width: 30px;
+            height: 1px;
+            background-color: #4a1a1a;
+            opacity: 0.4;
+            flex-shrink: 0;
+        }
+
+        .bottom-row .left .text {
+            font-size: clamp(1.2rem, 2.2vw, 2rem);
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            color: #4a1a1a;
+            text-transform: uppercase;
+        }
+
+        .bottom-row .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            line-height: 1;
+            padding: 0 0.5rem;
+        }
+
+        .bottom-row .center .month {
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            color: #4a1a1a;
+            margin-bottom: 0.05rem;
+        }
+
+        .bottom-row .center .day-number {
+            font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+            font-weight: bold;
+            color: #4a1a1a;
+            line-height: 1;
+        }
+
+        .bottom-row .center .year {
+            font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            color: #4a1a1a;
+            margin-top: 0.05rem;
+        }
+
+        .bottom-row .right {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .bottom-row .right .line {
+            width: 30px;
+            height: 1px;
+            background-color: #4a1a1a;
+            opacity: 0.4;
+            flex-shrink: 0;
+        }
+
+        .bottom-row .right .text {
+            font-size: clamp(1.2rem, 2.2vw, 2rem);
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            color: #4a1a1a;
+        }
+
+        /* ——— ПРОЗРАЧНАЯ КНОПКА НА ПЕРВОМ ЭКРАНЕ ——— */
         .circle-btn {
             position: absolute;
-            top: 56%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             background: transparent;
-            border: none;
+            border: 2px solid rgba(255, 255, 255, 0.15);
             outline: none;
             cursor: pointer;
             pointer-events: auto;
-            
-            min-width: 100px;
-            min-height: 100px;
+            z-index: 10;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
-        .circle-btn:hover,
-        .circle-btn:active,
+        .circle-btn:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .circle-btn:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
         .circle-btn:focus {
-            background: transparent;
-            border: none;
             outline: none;
-            box-shadow: none;
-            transform: translate(-50%, -50%) scale(1);
         }
 
-        /* ——— Мерцающие бордовые точки ——— */
+        /* ——— Мерцающие точки (на втором экране) ——— */
         .dot {
             position: absolute;
             width: 8px;
@@ -141,54 +287,100 @@
             border-radius: 50%;
             pointer-events: none;
             box-shadow: 0 0 6px #80002088;
-            opacity: 0; /* изначально скрыты */
-            transition: opacity 0.8s ease;
+            opacity: 0;
+            transition: opacity 0.5s ease;
             z-index: 1;
         }
 
-        /* Класс для запуска очень медленного мерцания */
         .dot.active {
             opacity: 1;
-            animation: twinkleSlow 4.5s infinite alternate ease-in-out;
+            animation: twinkleVerySlow 8s infinite alternate ease-in-out;
             will-change: opacity, transform;
         }
 
-        /* Очень медленное и спокойное мерцание */
-        @keyframes twinkleSlow {
-            0% { opacity: 0.15; transform: scale(0.9); }
-            50% { opacity: 0.5; transform: scale(1.15); }
-            100% { opacity: 0.15; transform: scale(0.9); }
+        @keyframes twinkleVerySlow {
+            0% { opacity: 0.08; transform: scale(0.85); }
+            25% { opacity: 0.25; transform: scale(1.05); }
+            50% { opacity: 0.45; transform: scale(1.2); }
+            75% { opacity: 0.25; transform: scale(1.05); }
+            100% { opacity: 0.08; transform: scale(0.85); }
         }
 
-        /* Разные задержки для естественного хаоса */
         .dot:nth-child(1) { top: 12%; left: 8%; width: 10px; height: 10px; animation-delay: 0.0s; }
-        .dot:nth-child(2) { top: 25%; left: 85%; width: 6px; height: 6px; animation-delay: 0.6s; }
-        .dot:nth-child(3) { top: 55%; left: 5%; width: 12px; height: 12px; animation-delay: 1.2s; }
-        .dot:nth-child(4) { top: 78%; left: 20%; width: 7px; height: 7px; animation-delay: 0.3s; }
-        .dot:nth-child(5) { top: 40%; left: 92%; width: 9px; height: 9px; animation-delay: 1.8s; }
-        .dot:nth-child(6) { top: 88%; left: 70%; width: 11px; height: 11px; animation-delay: 0.9s; }
-        .dot:nth-child(7) { top: 15%; left: 45%; width: 5px; height: 5px; animation-delay: 2.1s; }
-        .dot:nth-child(8) { top: 70%; left: 55%; width: 8px; height: 8px; animation-delay: 0.15s; }
-        .dot:nth-child(9) { top: 5%; left: 70%; width: 7px; height: 7px; animation-delay: 1.5s; }
-        .dot:nth-child(10) { top: 45%; left: 35%; width: 10px; height: 10px; animation-delay: 2.7s; }
-        .dot:nth-child(11) { top: 92%; left: 45%; width: 6px; height: 6px; animation-delay: 0.45s; }
-        .dot:nth-child(12) { top: 32%; left: 60%; width: 9px; height: 9px; animation-delay: 1.9s; }
-        .dot:nth-child(13) { top: 62%; left: 78%; width: 11px; height: 11px; animation-delay: 1.1s; }
-        .dot:nth-child(14) { top: 18%; left: 28%; width: 7px; height: 7px; animation-delay: 0.75s; }
-        .dot:nth-child(15) { top: 82%; left: 92%; width: 8px; height: 8px; animation-delay: 2.4s; }
+        .dot:nth-child(2) { top: 25%; left: 85%; width: 6px; height: 6px; animation-delay: 1.2s; }
+        .dot:nth-child(3) { top: 55%; left: 5%; width: 12px; height: 12px; animation-delay: 2.4s; }
+        .dot:nth-child(4) { top: 78%; left: 20%; width: 7px; height: 7px; animation-delay: 0.6s; }
+        .dot:nth-child(5) { top: 40%; left: 92%; width: 9px; height: 9px; animation-delay: 3.2s; }
+        .dot:nth-child(6) { top: 88%; left: 70%; width: 11px; height: 11px; animation-delay: 1.8s; }
+        .dot:nth-child(7) { top: 15%; left: 45%; width: 5px; height: 5px; animation-delay: 3.8s; }
+        .dot:nth-child(8) { top: 70%; left: 55%; width: 8px; height: 8px; animation-delay: 0.3s; }
+        .dot:nth-child(9) { top: 5%; left: 70%; width: 7px; height: 7px; animation-delay: 2.8s; }
+        .dot:nth-child(10) { top: 45%; left: 35%; width: 10px; height: 10px; animation-delay: 4.0s; }
+        .dot:nth-child(11) { top: 92%; left: 45%; width: 6px; height: 6px; animation-delay: 0.9s; }
+        .dot:nth-child(12) { top: 32%; left: 60%; width: 9px; height: 9px; animation-delay: 3.5s; }
+        .dot:nth-child(13) { top: 62%; left: 78%; width: 11px; height: 11px; animation-delay: 1.5s; }
+        .dot:nth-child(14) { top: 18%; left: 28%; width: 7px; height: 7px; animation-delay: 2.0s; }
+        .dot:nth-child(15) { top: 82%; left: 92%; width: 8px; height: 8px; animation-delay: 4.2s; }
 
         /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
-                width: 110px;
-                height: 110px;
-                min-width: 80px;
-                min-height: 80px;
-                top: 58%;
+                width: 120px;
+                height: 120px;
             }
-            .dot {
-                width: 6px;
-                height: 6px;
+            .bottom-row {
+                width: 95%;
+                gap: 0.4rem;
+            }
+            .bottom-row .left .line,
+            .bottom-row .right .line {
+                width: 15px;
+            }
+            .bottom-row .left .text,
+            .bottom-row .right .text {
+                font-size: clamp(0.8rem, 1.6vw, 1rem);
+            }
+            .bottom-row .center .day-number {
+                font-size: clamp(2.5rem, 5vw, 3.5rem);
+            }
+            .bottom-row .center .month {
+                font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+            }
+            .bottom-row .center .year {
+                font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+            }
+            .names .vladislav {
+                font-size: clamp(2rem, 5vw, 3rem);
+            }
+            .names .and-ksenia {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+            .names .and-ksenia .and {
+                font-size: clamp(0.7rem, 1.5vw, 1rem);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .circle-btn {
+                width: 90px;
+                height: 90px;
+            }
+            .bottom-row .left .line,
+            .bottom-row .right .line {
+                width: 8px;
+            }
+            .bottom-row .left .text,
+            .bottom-row .right .text {
+                font-size: 0.6rem;
+            }
+            .bottom-row .center .day-number {
+                font-size: 2rem;
+            }
+            .bottom-row .center .month {
+                font-size: 0.5rem;
+            }
+            .bottom-row .center .year {
+                font-size: 0.45rem;
             }
         }
     </style>
@@ -196,10 +388,15 @@
 <body>
 <div class="screen-container">
 
-    <!-- ====== ГЛАВНЫЙ ЭКРАН ====== -->
-    <div id="mainScreen" class="screen">
-        <!-- Картинка -->
-        <img class="main-bg" id="mainImage" src="главная.png" alt="фон" />
+    <!-- ====== ПЕРВЫЙ ЭКРАН (главная.png + кнопка) ====== -->
+    <div id="firstScreen" class="screen">
+        <img class="main-bg" src="главная.png" alt="фон" />
+        <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
+    </div>
+
+    <!-- ====== ВТОРОЙ ЭКРАН (первая.png + имена + дата) ====== -->
+    <div id="secondScreen" class="screen">
+        <img class="main-bg" src="первая.png" alt="фон" />
 
         <!-- Мерцающие точки -->
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -208,14 +405,39 @@
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div>
 
-        <!-- Обёртка с кнопкой -->
-        <div class="btn-wrapper">
-            <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
+        <div class="content-wrapper">
+            <div class="names">
+                <div class="vladislav">VLADISLAV</div>
+                <div class="and-ksenia">
+                    <span class="and">and</span>
+                    <span>KSENIA</span>
+                </div>
+            </div>
+
+            <div class="bottom-row">
+                <div class="left">
+                    <span class="line"></span>
+                    <span class="text">ПЯТНИЦА</span>
+                    <span class="line"></span>
+                </div>
+
+                <div class="center">
+                    <span class="month">АВГУСТА</span>
+                    <span class="day-number">28</span>
+                    <span class="year">2026</span>
+                </div>
+
+                <div class="right">
+                    <span class="line"></span>
+                    <span class="text">16:00</span>
+                    <span class="line"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- ====== ВТОРОЙ ЭКРАН ====== -->
-    <div id="secondScreen" class="screen">
+    <!-- ====== ТРЕТИЙ ЭКРАН (новый) ====== -->
+    <div id="thirdScreen" class="screen">
         <h1>Новый экран</h1>
         <p>Добро пожаловать!</p>
     </div>
@@ -223,9 +445,9 @@
 
 <script>
     (function() {
-        const mainScreen = document.getElementById('mainScreen');
+        const firstScreen = document.getElementById('firstScreen');
         const secondScreen = document.getElementById('secondScreen');
-        const mainImage = document.getElementById('mainImage');
+        const thirdScreen = document.getElementById('thirdScreen');
         const fadeBtn = document.getElementById('fadeBtn');
         const dots = document.querySelectorAll('.dot');
 
@@ -244,62 +466,39 @@
             if (isTransitioning) return;
             isTransitioning = true;
 
-            // 1. Сначала исчезает картинка (становится белый фон)
-            mainImage.style.opacity = '0';
+            // Затухание первого экрана
+            firstScreen.style.opacity = '0';
+            firstScreen.style.pointerEvents = 'none';
 
-            // 2. Ждём, пока картинка полностью исчезнет (1.2с), затем активируем точки
+            // Появление второго экрана с контентом
+            secondScreen.style.opacity = '1';
+            secondScreen.style.pointerEvents = 'auto';
+
+            // Активируем мерцание точек через небольшую задержку
             setTimeout(() => {
-                // Запускаем мерцание точек на белом фоне
                 activateDots();
-            }, 1300); // чуть больше времени перехода картинки
+            }, 500);
 
-            // 3. Ещё немного ждём, чтобы точки успели появиться, затем затухает весь экран
+            // Через некоторое время показываем третий экран
             setTimeout(() => {
-                // Главный экран затухает
-                mainScreen.style.opacity = '0';
-                mainScreen.style.pointerEvents = 'none';
+                secondScreen.style.opacity = '0';
+                secondScreen.style.pointerEvents = 'none';
 
-                // Второй экран появляется
-                secondScreen.style.opacity = '1';
-                secondScreen.style.pointerEvents = 'auto';
+                thirdScreen.style.opacity = '1';
+                thirdScreen.style.pointerEvents = 'auto';
 
-                // Скрываем главный экран после анимации
                 setTimeout(() => {
-                    mainScreen.style.display = 'none';
+                    secondScreen.style.display = 'none';
                     isTransitioning = false;
                 }, 1300);
-            }, 1800); // 1300 (исчезновение картинки) + 500 (пауза для появления точек)
+            }, 5000); // 5 секунд показываем второй экран
         }
 
-        // Клик по кнопке
+        // Клик по кнопке на первом экране
         fadeBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             switchToSecondScreen();
         });
-
-        // Для отладки (двойной клик по второму экрану для возврата)
-        /*
-        secondScreen.addEventListener('dblclick', function() {
-            mainScreen.style.display = 'flex';
-            mainScreen.style.opacity = '0';
-            mainScreen.style.pointerEvents = 'none';
-            mainImage.style.opacity = '0';
-            secondScreen.style.opacity = '0';
-            secondScreen.style.pointerEvents = 'none';
-            
-            // Сбрасываем точки
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-            dotsActivated = false;
-            
-            setTimeout(() => {
-                mainScreen.style.opacity = '1';
-                mainScreen.style.pointerEvents = 'auto';
-                mainImage.style.opacity = '1';
-            }, 50);
-        });
-        */
     })();
 </script>
 </body>
