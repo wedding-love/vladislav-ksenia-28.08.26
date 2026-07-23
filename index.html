@@ -1,5 +1,4 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -36,7 +35,6 @@
             font-family: 'Patriciana', Georgia, serif;
         }
 
-        /* ——— Контейнер для двух экранов ——— */
         .screen-container {
             position: relative;
             width: 100vw;
@@ -45,7 +43,6 @@
             background: #ffffff;
         }
 
-        /* ——— Общий класс для экранов ——— */
         .screen {
             position: absolute;
             top: 0;
@@ -59,7 +56,6 @@
             will-change: opacity;
         }
 
-        /* ——— ПЕРВЫЙ ЭКРАН ——— */
         #firstScreen {
             background: #ffffff;
             z-index: 3;
@@ -67,7 +63,6 @@
             pointer-events: auto;
         }
 
-        /* ——— ВТОРОЙ ЭКРАН ——— */
         #secondScreen {
             background: #ffffff;
             z-index: 2;
@@ -92,7 +87,6 @@
             border-radius: 10px;
         }
 
-        /* ——— ФОТО НА ВТОРОМ ЭКРАНЕ ——— */
         .second-bg {
             position: relative;
             width: 100%;
@@ -117,7 +111,6 @@
             z-index: 1;
         }
 
-        /* ——— Контент поверх фото ——— */
         .content-overlay {
             position: relative;
             z-index: 5;
@@ -151,7 +144,6 @@
             transition-delay: 0.5s;
         }
 
-        /* ——— Имена ——— */
         .names {
             font-size: clamp(6rem, 16vw, 16rem);
             line-height: 1.05;
@@ -187,7 +179,6 @@
             font-weight: 400;
         }
 
-        /* ——— Дата ——— */
         .date-section {
             display: flex;
             align-items: center;
@@ -284,7 +275,6 @@
             font-weight: 700;
         }
 
-        /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ) ——— */
         .text-section {
             width: 100%;
             height: 100vh;
@@ -420,24 +410,52 @@
             padding: 0 2rem;
         }
 
-        /* Левая часть: фото занимает ровно половину */
+        /* Левая часть: коллаж из 4 иконок */
         .program-left {
             flex: 0 0 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            justify-items: center;
+            padding-right: 2rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .program-left .icon-item {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-right: 2rem;
+            background: rgba(74, 26, 26, 0.05);
+            border-radius: 16px;
+            padding: 1rem;
+            transition: transform 0.3s ease;
         }
 
-        .program-left img {
-            width: 100%;
-            height: auto;
-            max-height: 600px;
+        .program-left .icon-item:hover {
+            transform: scale(1.05);
+        }
+
+        .program-left .icon-item img {
+            width: 100px;
+            height: 100px;
             object-fit: contain;
-            border-radius: 12px;
+            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
 
-        /* Вертикальная линия (сплошная) */
+        /* Специально для фейерверка (dotty-иконка) */
+        .program-left .icon-item .firework-icon {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
+        }
+
+        /* Вертикальная линия */
         .program-divider {
             width: 3px;
             flex-shrink: 0;
@@ -480,7 +498,6 @@
             margin-top: 0.1rem;
         }
 
-        /* ——— Фото на первом экране ——— */
         .main-bg-first {
             position: absolute;
             top: 0;
@@ -493,7 +510,6 @@
             z-index: 1;
         }
 
-        /* ——— ПРОЗРАЧНАЯ КНОПКА ——— */
         .circle-btn {
             position: absolute;
             top: 50%;
@@ -520,7 +536,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* ——— СЛОЙ С ТОЧКАМИ ——— */
         #dotsLayer {
             position: absolute;
             top: 0;
@@ -538,7 +553,6 @@
             opacity: 1;
         }
 
-        /* ——— Мерцающие точки ——— */
         .dot {
             position: absolute;
             width: 5px;
@@ -694,10 +708,16 @@
                 flex: 0 0 auto;
                 width: 100%;
                 padding-right: 0;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
-            .program-left img {
-                max-height: 300px;
-                width: 100%;
+            .program-left .icon-item img {
+                width: 60px;
+                height: 60px;
+            }
+            .program-left .icon-item .firework-icon {
+                width: 60px;
+                height: 60px;
             }
             .program-divider {
                 width: 80%;
@@ -777,8 +797,13 @@
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-left img {
-                max-height: 200px;
+            .program-left .icon-item img {
+                width: 45px;
+                height: 45px;
+            }
+            .program-left .icon-item .firework-icon {
+                width: 45px;
+                height: 45px;
             }
             .program-divider {
                 width: 90%;
@@ -835,8 +860,13 @@
             .program-item .time {
                 font-size: 2.8rem;
             }
-            .program-left img {
-                max-height: 700px;
+            .program-left .icon-item img {
+                width: 120px;
+                height: 120px;
+            }
+            .program-left .icon-item .firework-icon {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -914,14 +944,25 @@
                 </div>
             </div>
 
-            <!-- Блок ПРОГРАММА ДНЯ -->
+            <!-- Блок ПРОГРАММА ДНЯ с коллажем из иконок -->
             <div class="program-section" id="programSection">
                 <div class="program-title">Программа дня</div>
                 
                 <div class="program-content">
-                    <!-- Левая часть: фото -->
+                    <!-- Левая часть: коллаж 4 иконок -->
                     <div class="program-left">
-                        <img src="image_2026-07-23_18-39-10.png" alt="программа" />
+                        <div class="icon-item">
+                            <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
+                        </div>
+                        <div class="icon-item">
+                            <img class="firework-icon" src="https://img.icons8.com/dotty/80/firework-explosion.png" alt="финал" />
+                        </div>
                     </div>
 
                     <!-- Вертикальная линия -->
