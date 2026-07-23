@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Приглашение</title>
     <style>
         /* ——— Подключение шрифта ——— */
@@ -87,6 +87,12 @@
             z-index: 1;
         }
 
+        /* ——— Фото на втором экране (подстраивается под экран) ——— */
+        #secondScreen .main-bg {
+            object-fit: contain;
+            background: #ffffff;
+        }
+
         /* ——— Контент на втором экране (поверх первая.png) ——— */
         .content-wrapper {
             position: relative;
@@ -111,67 +117,68 @@
             transform: translateY(0);
         }
 
-        /* ——— Имена ——— */
+        /* ——— Имена (максимально большой шрифт) ——— */
         .names {
-            font-size: clamp(3rem, 8vw, 7rem);
-            line-height: 1.1;
-            letter-spacing: 0.03em;
-            margin-bottom: 2.5rem;
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            max-width: 95vw;
         }
 
         .names .vladislav {
-            font-size: clamp(2.8rem, 7vw, 6rem);
+            font-size: clamp(3.2rem, 9vw, 8rem);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
         }
 
         .names .and-ksenia {
-            font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+            font-size: clamp(4rem, 11vw, 10rem);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
             flex-wrap: nowrap;
         }
 
         .names .and-ksenia .and {
-            font-size: clamp(1rem, 2vw, 1.8rem);
+            font-size: clamp(1rem, 2.2vw, 2.2rem);
             text-transform: lowercase;
             letter-spacing: 0.2em;
             opacity: 0.6;
         }
 
-        /* ——— Нижняя строка: ПЯТНИЦА | (АВГУСТА / 28 / 2026) | 16:00 ——— */
+        /* ——— Нижняя строка (максимально большой шрифт) ——— */
         .bottom-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90%;
-            max-width: 900px;
-            gap: 0.8rem;
+            width: 92%;
+            max-width: 950px;
+            gap: 0.6rem;
             flex-wrap: nowrap;
         }
 
         .bottom-row .left {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             flex-shrink: 0;
         }
 
         .bottom-row .left .line {
-            width: 30px;
-            height: 1px;
+            width: 35px;
+            height: 1.5px;
             background-color: #4a1a1a;
             opacity: 0.4;
             flex-shrink: 0;
         }
 
         .bottom-row .left .text {
-            font-size: clamp(1.2rem, 2.2vw, 2rem);
-            letter-spacing: 0.1em;
+            font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+            letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
             text-transform: uppercase;
@@ -183,28 +190,28 @@
             align-items: center;
             flex-shrink: 0;
             line-height: 1;
-            padding: 0 0.5rem;
+            padding: 0 0.3rem;
         }
 
         .bottom-row .center .month {
-            font-size: clamp(1rem, 1.8vw, 1.6rem);
+            font-size: clamp(1.2rem, 2.2vw, 2rem);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             opacity: 0.7;
             color: #4a1a1a;
             margin-bottom: 0.05rem;
         }
 
         .bottom-row .center .day-number {
-            font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+            font-size: clamp(4rem, 8vw, 8rem);
             font-weight: bold;
             color: #4a1a1a;
             line-height: 1;
         }
 
         .bottom-row .center .year {
-            font-size: clamp(0.9rem, 1.6vw, 1.4rem);
-            letter-spacing: 0.1em;
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
+            letter-spacing: 0.08em;
             opacity: 0.5;
             color: #4a1a1a;
             margin-top: 0.05rem;
@@ -213,21 +220,21 @@
         .bottom-row .right {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             flex-shrink: 0;
         }
 
         .bottom-row .right .line {
-            width: 30px;
-            height: 1px;
+            width: 35px;
+            height: 1.5px;
             background-color: #4a1a1a;
             opacity: 0.4;
             flex-shrink: 0;
         }
 
         .bottom-row .right .text {
-            font-size: clamp(1.2rem, 2.2vw, 2rem);
-            letter-spacing: 0.1em;
+            font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+            letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
         }
@@ -238,8 +245,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             background: transparent;
             border: none;
@@ -270,7 +277,7 @@
             background: #ffffff;
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
         }
 
         #dotsLayer.active {
@@ -287,78 +294,78 @@
             pointer-events: none;
             box-shadow: 0 0 4px #80002066;
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.15s ease;
         }
 
         .dot.active {
             opacity: 1;
-            animation: twinkleFast 1.2s infinite alternate ease-in-out;
+            animation: twinkleFast 1s infinite alternate ease-in-out;
             will-change: opacity, transform;
         }
 
         @keyframes twinkleFast {
             0% {
-                opacity: 0.1;
-                transform: scale(0.7);
+                opacity: 0.05;
+                transform: scale(0.6);
             }
             50% {
-                opacity: 0.6;
-                transform: scale(1.3);
+                opacity: 0.5;
+                transform: scale(1.4);
             }
             100% {
-                opacity: 0.1;
-                transform: scale(0.7);
+                opacity: 0.05;
+                transform: scale(0.6);
             }
         }
 
-        /* Тонкие точечки, много и хаотично */
+        /* Тонкие точечки, хаотично */
         .dot:nth-child(1) { top: 5%; left: 3%; animation-delay: 0.00s; }
-        .dot:nth-child(2) { top: 8%; left: 15%; animation-delay: 0.10s; }
-        .dot:nth-child(3) { top: 3%; left: 28%; animation-delay: 0.20s; }
-        .dot:nth-child(4) { top: 12%; left: 42%; animation-delay: 0.05s; }
-        .dot:nth-child(5) { top: 6%; left: 55%; animation-delay: 0.25s; }
-        .dot:nth-child(6) { top: 15%; left: 68%; animation-delay: 0.08s; }
-        .dot:nth-child(7) { top: 4%; left: 80%; animation-delay: 0.18s; }
-        .dot:nth-child(8) { top: 10%; left: 92%; animation-delay: 0.12s; }
+        .dot:nth-child(2) { top: 8%; left: 15%; animation-delay: 0.08s; }
+        .dot:nth-child(3) { top: 3%; left: 28%; animation-delay: 0.16s; }
+        .dot:nth-child(4) { top: 12%; left: 42%; animation-delay: 0.04s; }
+        .dot:nth-child(5) { top: 6%; left: 55%; animation-delay: 0.20s; }
+        .dot:nth-child(6) { top: 15%; left: 68%; animation-delay: 0.06s; }
+        .dot:nth-child(7) { top: 4%; left: 80%; animation-delay: 0.14s; }
+        .dot:nth-child(8) { top: 10%; left: 92%; animation-delay: 0.10s; }
         
-        .dot:nth-child(9) { top: 22%; left: 7%; animation-delay: 0.15s; }
-        .dot:nth-child(10) { top: 28%; left: 20%; animation-delay: 0.30s; }
-        .dot:nth-child(11) { top: 18%; left: 35%; animation-delay: 0.07s; }
-        .dot:nth-child(12) { top: 30%; left: 48%; animation-delay: 0.22s; }
-        .dot:nth-child(13) { top: 20%; left: 60%; animation-delay: 0.03s; }
-        .dot:nth-child(14) { top: 25%; left: 75%; animation-delay: 0.28s; }
-        .dot:nth-child(15) { top: 32%; left: 88%; animation-delay: 0.14s; }
+        .dot:nth-child(9) { top: 22%; left: 7%; animation-delay: 0.12s; }
+        .dot:nth-child(10) { top: 28%; left: 20%; animation-delay: 0.24s; }
+        .dot:nth-child(11) { top: 18%; left: 35%; animation-delay: 0.06s; }
+        .dot:nth-child(12) { top: 30%; left: 48%; animation-delay: 0.18s; }
+        .dot:nth-child(13) { top: 20%; left: 60%; animation-delay: 0.02s; }
+        .dot:nth-child(14) { top: 25%; left: 75%; animation-delay: 0.22s; }
+        .dot:nth-child(15) { top: 32%; left: 88%; animation-delay: 0.11s; }
         
-        .dot:nth-child(16) { top: 40%; left: 2%; animation-delay: 0.11s; }
-        .dot:nth-child(17) { top: 45%; left: 12%; animation-delay: 0.24s; }
-        .dot:nth-child(18) { top: 38%; left: 25%; animation-delay: 0.06s; }
-        .dot:nth-child(19) { top: 48%; left: 38%; animation-delay: 0.19s; }
-        .dot:nth-child(20) { top: 42%; left: 52%; animation-delay: 0.02s; }
-        .dot:nth-child(21) { top: 50%; left: 65%; animation-delay: 0.17s; }
-        .dot:nth-child(22) { top: 44%; left: 78%; animation-delay: 0.09s; }
-        .dot:nth-child(23) { top: 52%; left: 90%; animation-delay: 0.26s; }
+        .dot:nth-child(16) { top: 40%; left: 2%; animation-delay: 0.09s; }
+        .dot:nth-child(17) { top: 45%; left: 12%; animation-delay: 0.19s; }
+        .dot:nth-child(18) { top: 38%; left: 25%; animation-delay: 0.05s; }
+        .dot:nth-child(19) { top: 48%; left: 38%; animation-delay: 0.15s; }
+        .dot:nth-child(20) { top: 42%; left: 52%; animation-delay: 0.01s; }
+        .dot:nth-child(21) { top: 50%; left: 65%; animation-delay: 0.13s; }
+        .dot:nth-child(22) { top: 44%; left: 78%; animation-delay: 0.07s; }
+        .dot:nth-child(23) { top: 52%; left: 90%; animation-delay: 0.21s; }
         
-        .dot:nth-child(24) { top: 60%; left: 5%; animation-delay: 0.13s; }
-        .dot:nth-child(25) { top: 65%; left: 18%; animation-delay: 0.21s; }
-        .dot:nth-child(26) { top: 58%; left: 32%; animation-delay: 0.04s; }
-        .dot:nth-child(27) { top: 68%; left: 45%; animation-delay: 0.16s; }
-        .dot:nth-child(28) { top: 62%; left: 58%; animation-delay: 0.27s; }
+        .dot:nth-child(24) { top: 60%; left: 5%; animation-delay: 0.10s; }
+        .dot:nth-child(25) { top: 65%; left: 18%; animation-delay: 0.17s; }
+        .dot:nth-child(26) { top: 58%; left: 32%; animation-delay: 0.03s; }
+        .dot:nth-child(27) { top: 68%; left: 45%; animation-delay: 0.13s; }
+        .dot:nth-child(28) { top: 62%; left: 58%; animation-delay: 0.22s; }
         .dot:nth-child(29) { top: 70%; left: 72%; animation-delay: 0.01s; }
-        .dot:nth-child(30) { top: 64%; left: 85%; animation-delay: 0.23s; }
-        .dot:nth-child(31) { top: 72%; left: 95%; animation-delay: 0.08s; }
+        .dot:nth-child(30) { top: 64%; left: 85%; animation-delay: 0.18s; }
+        .dot:nth-child(31) { top: 72%; left: 95%; animation-delay: 0.06s; }
         
-        .dot:nth-child(32) { top: 80%; left: 8%; animation-delay: 0.18s; }
-        .dot:nth-child(33) { top: 85%; left: 22%; animation-delay: 0.06s; }
-        .dot:nth-child(34) { top: 78%; left: 36%; animation-delay: 0.29s; }
-        .dot:nth-child(35) { top: 88%; left: 50%; animation-delay: 0.11s; }
-        .dot:nth-child(36) { top: 82%; left: 64%; animation-delay: 0.03s; }
-        .dot:nth-child(37) { top: 90%; left: 78%; animation-delay: 0.20s; }
-        .dot:nth-child(38) { top: 86%; left: 90%; animation-delay: 0.15s; }
+        .dot:nth-child(32) { top: 80%; left: 8%; animation-delay: 0.14s; }
+        .dot:nth-child(33) { top: 85%; left: 22%; animation-delay: 0.05s; }
+        .dot:nth-child(34) { top: 78%; left: 36%; animation-delay: 0.23s; }
+        .dot:nth-child(35) { top: 88%; left: 50%; animation-delay: 0.09s; }
+        .dot:nth-child(36) { top: 82%; left: 64%; animation-delay: 0.02s; }
+        .dot:nth-child(37) { top: 90%; left: 78%; animation-delay: 0.16s; }
+        .dot:nth-child(38) { top: 86%; left: 90%; animation-delay: 0.12s; }
         
-        .dot:nth-child(39) { top: 95%; left: 15%; animation-delay: 0.07s; }
-        .dot:nth-child(40) { top: 93%; left: 40%; animation-delay: 0.22s; }
-        .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.13s; }
-        .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.05s; }
+        .dot:nth-child(39) { top: 95%; left: 15%; animation-delay: 0.06s; }
+        .dot:nth-child(40) { top: 93%; left: 40%; animation-delay: 0.18s; }
+        .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
+        .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
         /* ——— Адаптив ——— */
         @media (max-width: 600px) {
@@ -367,34 +374,34 @@
                 height: 120px;
             }
             .bottom-row {
-                width: 95%;
-                gap: 0.4rem;
+                width: 96%;
+                gap: 0.3rem;
             }
             .bottom-row .left .line,
             .bottom-row .right .line {
-                width: 15px;
+                width: 12px;
             }
             .bottom-row .left .text,
             .bottom-row .right .text {
-                font-size: clamp(0.8rem, 1.6vw, 1rem);
+                font-size: clamp(0.9rem, 2vw, 1.2rem);
             }
             .bottom-row .center .day-number {
-                font-size: clamp(2.5rem, 5vw, 3.5rem);
+                font-size: clamp(3rem, 7vw, 4.5rem);
             }
             .bottom-row .center .month {
-                font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+                font-size: clamp(0.8rem, 1.8vw, 1rem);
             }
             .bottom-row .center .year {
-                font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+                font-size: clamp(0.7rem, 1.4vw, 0.9rem);
             }
             .names .vladislav {
-                font-size: clamp(2rem, 5vw, 3rem);
+                font-size: clamp(2.5rem, 7vw, 4rem);
             }
             .names .and-ksenia {
-                font-size: clamp(2.5rem, 6vw, 4rem);
+                font-size: clamp(3rem, 8vw, 5rem);
             }
             .names .and-ksenia .and {
-                font-size: clamp(0.7rem, 1.5vw, 1rem);
+                font-size: clamp(0.8rem, 1.8vw, 1.2rem);
             }
         }
 
@@ -409,16 +416,52 @@
             }
             .bottom-row .left .text,
             .bottom-row .right .text {
-                font-size: 0.6rem;
+                font-size: 0.7rem;
             }
             .bottom-row .center .day-number {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             .bottom-row .center .month {
-                font-size: 0.5rem;
+                font-size: 0.6rem;
             }
             .bottom-row .center .year {
-                font-size: 0.45rem;
+                font-size: 0.55rem;
+            }
+            .names .vladislav {
+                font-size: 2rem;
+            }
+            .names .and-ksenia {
+                font-size: 2.5rem;
+            }
+            .names .and-ksenia .and {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Для очень больших экранов */
+        @media (min-width: 1400px) {
+            .names .vladislav {
+                font-size: 8rem;
+            }
+            .names .and-ksenia {
+                font-size: 10rem;
+            }
+            .bottom-row .center .day-number {
+                font-size: 8rem;
+            }
+            .bottom-row .left .text,
+            .bottom-row .right .text {
+                font-size: 2.8rem;
+            }
+            .bottom-row .center .month {
+                font-size: 2.2rem;
+            }
+            .bottom-row .center .year {
+                font-size: 1.8rem;
+            }
+            .bottom-row .left .line,
+            .bottom-row .right .line {
+                width: 50px;
             }
         }
     </style>
@@ -519,11 +562,11 @@
                 if (isTransitioning) return;
                 isTransitioning = true;
 
-                // 1. Затухание первого экрана
+                // 1. Плавное затухание первого экрана
                 firstScreen.style.opacity = '0';
                 firstScreen.style.pointerEvents = 'none';
 
-                // 2. Сразу показываем слой с точками на белом фоне
+                // 2. Сразу показываем слой с белым фоном и точками
                 dotsLayer.classList.add('active');
                 activateDots();
 
