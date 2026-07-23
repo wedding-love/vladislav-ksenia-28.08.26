@@ -77,6 +77,7 @@
             overflow-x: hidden;
             padding: 0;
             display: block;
+            scroll-behavior: smooth;
         }
 
         #secondScreen::-webkit-scrollbar {
@@ -296,36 +297,61 @@
         /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
         .text-section {
             width: 100%;
-            min-height: 75vh;
+            height: 100vh;
             flex-shrink: 0;
             background: #4a1a1a;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 4rem 2rem 0 2rem;
+            padding: 5rem 2rem 0 2rem;
             text-align: center;
             z-index: 2;
             position: relative;
         }
 
-        /* ——— Анимация для каждого элемента текстового блока ——— */
+        /* ——— Анимация для каждого элемента текстового блока при прокрутке ——— */
+        .text-section .greeting,
+        .text-section .message,
+        .text-section .message-bold,
+        .text-section .calendar-img {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .text-section.visible .greeting {
+            opacity: 0.95;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+
+        .text-section.visible .message {
+            opacity: 0.85;
+            transform: translateY(0);
+            transition-delay: 0.3s;
+        }
+
+        .text-section.visible .message-bold {
+            opacity: 0.85;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+
+        .text-section.visible .calendar-img {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.7s;
+        }
+
         .text-section .greeting {
             font-size: clamp(3.5rem, 6.5vw, 8rem);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #ffffff;
             margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 700;
             font-style: italic;
-        }
-
-        .text-section.visible .greeting {
-            opacity: 0.95;
-            transform: translateY(0);
         }
 
         .text-section .message {
@@ -333,16 +359,8 @@
             line-height: 1.5;
             letter-spacing: 0.04em;
             color: #ffffff;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
             max-width: 90%;
             font-weight: 400;
-        }
-
-        .text-section.visible .message {
-            opacity: 0.85;
-            transform: translateY(0);
         }
 
         .text-section .message-bold {
@@ -350,17 +368,9 @@
             line-height: 1.5;
             letter-spacing: 0.04em;
             color: #ffffff;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
             max-width: 90%;
             font-weight: 400;
             margin-bottom: 2rem;
-        }
-
-        .text-section.visible .message-bold {
-            opacity: 0.85;
-            transform: translateY(0);
         }
 
         .text-section .calendar-img {
@@ -373,14 +383,6 @@
             overflow: hidden;
             border-radius: 0;
             padding: 0;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease 0.8s, transform 1s ease 0.8s;
-        }
-
-        .text-section.visible .calendar-img {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .text-section .calendar-img img {
@@ -577,8 +579,7 @@
                 margin-bottom: 0.3rem;
             }
             .text-section {
-                min-height: 65vh;
-                padding: 2.5rem 1.2rem 0 1.2rem;
+                padding: 3rem 1.2rem 0 1.2rem;
             }
             .text-section .greeting {
                 font-size: clamp(2.2rem, 4.5vw, 3.2rem);
@@ -631,7 +632,6 @@
                 margin-bottom: 0.2rem;
             }
             .text-section {
-                min-height: 60vh;
                 padding: 2rem 0.8rem 0 0.8rem;
             }
             .text-section .greeting {
@@ -754,7 +754,7 @@
                 </div>
             </div>
 
-            <!-- Текст на бордовом фоне (белый текст) с анимацией -->
+            <!-- Текст на бордовом фоне (белый текст) с анимацией при прокрутке -->
             <div class="text-section" id="textSection">
                 <div class="greeting">Дорогие друзья и родные!</div>
                 <div class="message">Случилось невероятное — мы решили связать наши судьбы и начать новую главу нашей жизни вместе.</div>
@@ -782,6 +782,7 @@
 
             let isTransitioning = false;
             let dotsActivated = false;
+            let textVisible = false;
 
             function activateDots() {
                 if (dotsActivated) return;
@@ -797,6 +798,20 @@
                     dot.style.opacity = '0';
                 });
                 dotsLayer.classList.remove('active');
+            }
+
+            // Проверка видимости текстового блока при прокрутке
+            function checkTextVisibility() {
+                if (!textSection) return;
+                const rect = textSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                // Блок считается видимым, если его верхняя часть достигла 70% экрана
+                if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                    if (!textVisible) {
+                        textVisible = true;
+                        textSection.classList.add('visible');
+                    }
+                }
             }
 
             function switchToSecondScreen() {
@@ -821,8 +836,9 @@
                         contentOverlay.classList.add('visible');
                     }, 200);
 
+                    // Проверяем видимость текстового блока после появления экрана
                     setTimeout(() => {
-                        textSection.classList.add('visible');
+                        checkTextVisibility();
                     }, 500);
 
                     isTransitioning = false;
@@ -834,9 +850,18 @@
                 switchToSecondScreen();
             });
 
-            // Разрешаем прокрутку на втором экране
-            secondScreen.addEventListener('touchstart', function(e) {
-                // Ничего не блокируем
+            // Отслеживаем прокрутку на втором экране
+            secondScreen.addEventListener('scroll', function() {
+                if (secondScreen.style.opacity === '1') {
+                    checkTextVisibility();
+                }
+            }, { passive: true });
+
+            // Также проверяем при изменении размера окна
+            window.addEventListener('resize', function() {
+                if (secondScreen.style.opacity === '1') {
+                    checkTextVisibility();
+                }
             }, { passive: true });
 
         })();
