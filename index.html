@@ -58,7 +58,7 @@
             will-change: opacity;
         }
 
-        /* ——— ПЕРВЫЙ ЭКРАН (главная.png + кнопка) ——— */
+        /* ——— ПЕРВЫЙ ЭКРАН ——— */
         #firstScreen {
             background: #ffffff;
             z-index: 3;
@@ -83,11 +83,9 @@
         #secondScreen::-webkit-scrollbar {
             width: 4px;
         }
-
         #secondScreen::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.05);
         }
-
         #secondScreen::-webkit-scrollbar-thumb {
             background: rgba(128, 0, 32, 0.3);
             border-radius: 10px;
@@ -146,7 +144,6 @@
             transform: translateY(0);
             transition-delay: 0.2s;
         }
-
         .content-overlay.visible .date-section {
             opacity: 1;
             transform: translateY(0);
@@ -217,7 +214,6 @@
             gap: 0.6rem;
             flex-shrink: 0;
         }
-
         .bottom-row .left .line {
             width: 50px;
             height: 2px;
@@ -225,7 +221,6 @@
             opacity: 0.4;
             flex-shrink: 0;
         }
-
         .bottom-row .left .text {
             font-size: clamp(2.4rem, 4.5vw, 4.8rem);
             letter-spacing: 0.08em;
@@ -243,7 +238,6 @@
             line-height: 1;
             padding: 0 0.5rem;
         }
-
         .bottom-row .center .month {
             font-size: clamp(2.2rem, 3.8vw, 3.8rem);
             text-transform: uppercase;
@@ -253,14 +247,12 @@
             margin-bottom: 0.05rem;
             font-weight: 600;
         }
-
         .bottom-row .center .day-number {
             font-size: clamp(7rem, 14vw, 15rem);
             font-weight: 900;
             color: #4a1a1a;
             line-height: 1;
         }
-
         .bottom-row .center .year {
             font-size: clamp(1.8rem, 3vw, 3rem);
             letter-spacing: 0.08em;
@@ -276,7 +268,6 @@
             gap: 0.6rem;
             flex-shrink: 0;
         }
-
         .bottom-row .right .line {
             width: 50px;
             height: 2px;
@@ -284,7 +275,6 @@
             opacity: 0.4;
             flex-shrink: 0;
         }
-
         .bottom-row .right .text {
             font-size: clamp(2.4rem, 4.5vw, 4.8rem);
             letter-spacing: 0.08em;
@@ -323,19 +313,16 @@
             transform: translateY(0);
             transition-delay: 0.1s;
         }
-
         .text-section.visible .message {
             opacity: 0.85;
             transform: translateY(0);
             transition-delay: 0.3s;
         }
-
         .text-section.visible .message-bold {
             opacity: 0.85;
             transform: translateY(0);
             transition-delay: 0.5s;
         }
-
         .text-section.visible .calendar-img {
             opacity: 1;
             transform: translateY(0);
@@ -427,7 +414,7 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 900px;
+            max-width: 1100px;
             position: relative;
             padding: 0 1rem;
         }
@@ -450,7 +437,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: relative;
         }
 
@@ -460,28 +447,28 @@
             align-items: center;
             justify-content: flex-end;
             width: 42%;
-            padding-right: 2.5rem;
+            padding-right: 3rem;
         }
 
         .program-item .icon {
             flex-shrink: 0;
-            width: 140px;
-            height: 140px;
+            width: 280px;
+            height: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .program-item .icon img {
-            width: 120px;
-            height: 120px;
+            width: 250px;
+            height: 250px;
             object-fit: contain;
             filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
 
         .program-item .icon .firework-icon {
-            width: 140px;
-            height: 140px;
+            width: 280px;
+            height: 280px;
             object-fit: contain;
             filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
@@ -492,19 +479,20 @@
             flex-direction: column;
             align-items: flex-start;
             width: 42%;
-            padding-left: 2.5rem;
+            padding-left: 3rem;
         }
 
         .program-item .right-part .title {
-            font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+            font-size: clamp(2.8rem, 5vw, 5.5rem);
             color: #4a1a1a;
             font-style: italic;
             font-weight: 600;
             line-height: 1.2;
+            white-space: nowrap;
         }
 
         .program-item .right-part .time {
-            font-size: clamp(2rem, 3.8vw, 4rem);
+            font-size: clamp(2.4rem, 4.2vw, 4.5rem);
             color: #4a1a1a;
             opacity: 0.6;
             font-weight: 400;
@@ -716,33 +704,34 @@
                 margin-bottom: 2rem;
             }
             .program-item {
-                padding: 0.8rem 0;
+                padding: 1rem 0;
             }
             .program-item .left-part {
-                width: 30%;
-                padding-right: 1rem;
+                width: 25%;
+                padding-right: 0.8rem;
             }
             .program-item .right-part {
-                width: 50%;
-                padding-left: 1rem;
+                width: 55%;
+                padding-left: 0.8rem;
             }
             .program-item .icon {
-                width: 80px;
-                height: 80px;
+                width: 120px;
+                height: 120px;
             }
             .program-item .icon img {
-                width: 65px;
-                height: 65px;
+                width: 100px;
+                height: 100px;
             }
             .program-item .icon .firework-icon {
-                width: 80px;
-                height: 80px;
+                width: 120px;
+                height: 120px;
             }
             .program-item .right-part .title {
-                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
+                white-space: normal;
             }
             .program-item .right-part .time {
-                font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+                font-size: clamp(1.4rem, 2.6vw, 1.8rem);
             }
         }
 
@@ -805,33 +794,34 @@
                 margin-bottom: 1.5rem;
             }
             .program-item {
-                padding: 0.5rem 0;
+                padding: 0.8rem 0;
             }
             .program-item .left-part {
-                width: 25%;
+                width: 20%;
                 padding-right: 0.5rem;
             }
             .program-item .right-part {
-                width: 55%;
+                width: 60%;
                 padding-left: 0.5rem;
             }
             .program-item .icon {
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
             }
             .program-item .icon img {
-                width: 50px;
-                height: 50px;
+                width: 65px;
+                height: 65px;
             }
             .program-item .icon .firework-icon {
-                width: 60px;
-                height: 60px;
+                width: 80px;
+                height: 80px;
             }
             .program-item .right-part .title {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+                white-space: normal;
             }
             .program-item .right-part .time {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
 
@@ -873,22 +863,22 @@
                 font-size: 5.5rem;
             }
             .program-item .right-part .title {
-                font-size: 4.8rem;
+                font-size: 5.5rem;
             }
             .program-item .right-part .time {
-                font-size: 4rem;
+                font-size: 4.5rem;
             }
             .program-item .icon {
-                width: 160px;
-                height: 160px;
+                width: 320px;
+                height: 320px;
             }
             .program-item .icon img {
-                width: 140px;
-                height: 140px;
+                width: 280px;
+                height: 280px;
             }
             .program-item .icon .firework-icon {
-                width: 160px;
-                height: 160px;
+                width: 320px;
+                height: 320px;
             }
         }
     </style>
@@ -971,7 +961,6 @@
                 <div class="program-title">Программа дня</div>
                 
                 <div class="program-list">
-                    <!-- 1. Сбор гостей -->
                     <div class="program-item">
                         <div class="left-part">
                             <div class="icon">
@@ -984,7 +973,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. Церемония -->
                     <div class="program-item">
                         <div class="left-part">
                             <div class="icon">
@@ -997,7 +985,6 @@
                         </div>
                     </div>
 
-                    <!-- 3. Банкет -->
                     <div class="program-item">
                         <div class="left-part">
                             <div class="icon">
@@ -1010,7 +997,6 @@
                         </div>
                     </div>
 
-                    <!-- 4. Финал -->
                     <div class="program-item">
                         <div class="left-part">
                             <div class="icon">
