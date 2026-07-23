@@ -148,8 +148,9 @@
             font-size: clamp(6rem, 16vw, 16rem);
             line-height: 1.05;
             letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             max-width: 95vw;
+            margin-top: -2rem;
         }
 
         .names .vladislav {
@@ -184,7 +185,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin-top: 2rem;
+            margin-top: 3rem;
             margin-bottom: 0.5rem;
             padding-left: 3%;
         }
@@ -510,7 +511,7 @@
             text-align: left;
         }
 
-        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (белый текст) ——— */
+        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (белый текст, поднят выше) ——— */
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -520,7 +521,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 8rem 2rem 2rem 2rem;
+            padding: 4rem 2rem 2rem 2rem;
             overflow: hidden;
         }
 
@@ -802,6 +803,10 @@
             .bottom-row .center .year {
                 font-size: clamp(1rem, 2vw, 1.3rem);
             }
+            .names {
+                margin-top: -1rem;
+                margin-bottom: 0.5rem;
+            }
             .names .vladislav {
                 font-size: clamp(3.5rem, 9vw, 5rem);
             }
@@ -813,7 +818,7 @@
             }
             .date-section {
                 padding-left: 2%;
-                margin-top: 1rem;
+                margin-top: 2rem;
                 margin-bottom: 0.3rem;
             }
             .text-section {
@@ -867,7 +872,7 @@
                 text-align: left;
             }
             .location-section {
-                padding: 6rem 1.5rem 2rem 1.5rem;
+                padding: 3rem 1.5rem 2rem 1.5rem;
                 min-height: 80vh;
             }
             .location-content {
@@ -911,6 +916,10 @@
             .bottom-row .center .year {
                 font-size: 0.8rem;
             }
+            .names {
+                margin-top: -0.5rem;
+                margin-bottom: 0.3rem;
+            }
             .names .vladislav {
                 font-size: 2.8rem;
             }
@@ -922,7 +931,7 @@
             }
             .date-section {
                 padding-left: 0;
-                margin-top: 0.8rem;
+                margin-top: 1.5rem;
                 margin-bottom: 0.2rem;
             }
             .text-section {
@@ -970,7 +979,7 @@
                 min-height: 380px;
             }
             .location-section {
-                padding: 4rem 1rem 1.5rem 1rem;
+                padding: 2.5rem 1rem 1.5rem 1rem;
                 min-height: 70vh;
             }
             .location-content {
@@ -1061,6 +1070,12 @@
             .location-btn {
                 font-size: 2rem;
                 padding: 1rem 3rem;
+            }
+            .location-section {
+                padding: 5rem 2rem 2rem 2rem;
+            }
+            .names {
+                margin-top: -3rem;
             }
         }
     </style>
@@ -1169,7 +1184,7 @@
                 </div>
             </div>
 
-            <!-- Блок МЕСТО ПРОВЕДЕНИЯ (белый текст) -->
+            <!-- Блок МЕСТО ПРОВЕДЕНИЯ (белый текст, поднят выше) -->
             <div class="location-section" id="locationSection">
                 <img class="location-bg" src="локация.png" alt="фон локации" />
                 <div class="location-content">
