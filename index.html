@@ -392,6 +392,7 @@
             transform: translateY(0);
         }
 
+        /* Фон — без затемнения */
         .program-bg {
             position: absolute;
             top: 0;
@@ -400,7 +401,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.6;
+            /* opacity убран */
         }
 
         .program-content {
@@ -426,44 +427,30 @@
             width: 100%;
         }
 
-        /* ——— НОВАЯ СТРУКТУРА: линия по центру, текст справа с отступом ——— */
+        /* ——— НОВАЯ СТРУКТУРА: линия по центру, текст слева ——— */
         .program-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
             width: 100%;
-            gap: 0;
+            gap: 0 2rem;
             padding: 0 1rem;
-            position: relative;
         }
 
-        /* Линия — строго по центру */
-        .program-divider {
-            width: 2px;
-            flex-shrink: 0;
-            background: #4a1a1a;
-            opacity: 0.5;
-            height: 550px;
-            min-height: 400px;
-            position: relative;
-            left: 0;
-        }
-
-        /* Контейнер для текста — начинается сразу после линии */
-        .program-right {
+        /* Левая часть: текст */
+        .program-left {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: flex-end;
             gap: 2.2rem;
-            flex: 1;
-            padding-left: 2.5rem;
-            max-width: 60%;
+            text-align: right;
+            padding-right: 0.5rem;
         }
 
         .program-item {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-end;
         }
 
         .program-item .title {
@@ -473,6 +460,7 @@
             font-weight: 600;
             line-height: 1.2;
             font-family: 'Patriciana', Georgia, serif;
+            text-align: right;
         }
 
         .program-item .time {
@@ -481,6 +469,22 @@
             font-weight: 400;
             opacity: 0.7;
             margin-top: 0.1rem;
+            text-align: right;
+        }
+
+        /* Линия по центру */
+        .program-divider {
+            width: 2px;
+            height: 550px;
+            min-height: 400px;
+            background: #4a1a1a;
+            opacity: 0.5;
+            justify-self: center;
+        }
+
+        /* Правая часть — пустая, для баланса */
+        .program-right {
+            /* пусто */
         }
 
         .main-bg-first {
@@ -685,34 +689,35 @@
                 margin-bottom: 2rem;
             }
             .program-row {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
                 gap: 1.5rem;
-                padding: 0 0.5rem;
+                justify-items: center;
             }
-            .program-divider {
-                height: 2px;
-                width: 80%;
-                min-height: auto;
-                position: relative;
-                left: 0;
-            }
-            .program-right {
-                padding-left: 0;
-                max-width: 100%;
-                width: 100%;
+            .program-left {
                 align-items: center;
+                text-align: center;
+                padding-right: 0;
                 gap: 1.5rem;
+                order: 1;
             }
             .program-item {
                 align-items: center;
-                text-align: center;
             }
             .program-item .title {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+                text-align: center;
             }
             .program-item .time {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+                text-align: center;
+            }
+            .program-divider {
+                width: 80%;
+                height: 2px;
+                min-height: auto;
+                order: 2;
+            }
+            .program-right {
+                display: none;
             }
         }
 
@@ -775,13 +780,7 @@
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
             }
-            .program-row {
-                gap: 1rem;
-            }
-            .program-divider {
-                width: 90%;
-            }
-            .program-right {
+            .program-left {
                 gap: 1rem;
             }
             .program-item .title {
@@ -789,6 +788,9 @@
             }
             .program-item .time {
                 font-size: 1.3rem;
+            }
+            .program-divider {
+                width: 90%;
             }
         }
 
@@ -842,8 +844,8 @@
                 height: 650px;
                 min-height: 500px;
             }
-            .program-right {
-                padding-left: 3rem;
+            .program-left {
+                gap: 2.5rem;
             }
         }
     </style>
@@ -928,11 +930,8 @@
                     <div class="program-title">Программа дня</div>
                     
                     <div class="program-row">
-                        <!-- Линия строго по центру -->
-                        <div class="program-divider"></div>
-
-                        <!-- Текст справа от линии -->
-                        <div class="program-right">
+                        <!-- Левая часть: текст -->
+                        <div class="program-left">
                             <div class="program-item">
                                 <div class="title">Сбор гостей и Welcome</div>
                                 <div class="time">16:00</div>
@@ -950,6 +949,12 @@
                                 <div class="time">23:00</div>
                             </div>
                         </div>
+
+                        <!-- Линия по центру -->
+                        <div class="program-divider"></div>
+
+                        <!-- Правая часть — пустая для баланса -->
+                        <div class="program-right"></div>
                     </div>
                 </div>
             </div>
