@@ -304,7 +304,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 5rem 2rem 0 2rem;
+            padding: 8rem 2rem 0 2rem;
             text-align: center;
             z-index: 2;
             position: relative;
@@ -579,7 +579,7 @@
                 margin-bottom: 0.3rem;
             }
             .text-section {
-                padding: 3rem 1.2rem 0 1.2rem;
+                padding: 5rem 1.2rem 0 1.2rem;
             }
             .text-section .greeting {
                 font-size: clamp(2.2rem, 4.5vw, 3.2rem);
@@ -632,7 +632,7 @@
                 margin-bottom: 0.2rem;
             }
             .text-section {
-                padding: 2rem 0.8rem 0 0.8rem;
+                padding: 3rem 0.8rem 0 0.8rem;
             }
             .text-section .greeting {
                 font-size: 1.6rem;
@@ -805,7 +805,6 @@
                 if (!textSection) return;
                 const rect = textSection.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                // Блок считается видимым, если его верхняя часть достигла 70% экрана
                 if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
                     if (!textVisible) {
                         textVisible = true;
@@ -836,7 +835,6 @@
                         contentOverlay.classList.add('visible');
                     }, 200);
 
-                    // Проверяем видимость текстового блока после появления экрана
                     setTimeout(() => {
                         checkTextVisibility();
                     }, 500);
@@ -850,14 +848,12 @@
                 switchToSecondScreen();
             });
 
-            // Отслеживаем прокрутку на втором экране
             secondScreen.addEventListener('scroll', function() {
                 if (secondScreen.style.opacity === '1') {
                     checkTextVisibility();
                 }
             }, { passive: true });
 
-            // Также проверяем при изменении размера окна
             window.addEventListener('resize', function() {
                 if (secondScreen.style.opacity === '1') {
                     checkTextVisibility();
