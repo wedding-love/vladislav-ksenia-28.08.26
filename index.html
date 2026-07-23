@@ -425,7 +425,7 @@
             width: 100%;
         }
 
-        /* ——— НОВАЯ СТРУКТУРА (по вашему коду) ——— */
+        /* ——— СТРУКТУРА: линия по центру, текст справа ——— */
         .program-row {
             position: relative;
             width: 100%;
@@ -617,7 +617,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив ——— */
+        /* ——— Адаптив для мобильных ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -682,43 +682,46 @@
                 font-size: clamp(2.5rem, 5vw, 3.2rem);
                 margin-bottom: 2rem;
             }
+            /* Мобильная версия: текст справа, линия по центру */
             .program-row {
                 min-height: auto;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
-                gap: 1.5rem;
-                padding: 0 0.5rem;
+                justify-content: center;
+                padding: 1rem 0;
+                gap: 1rem;
             }
             .program-divider {
                 position: relative;
                 left: 0;
                 top: 0;
                 transform: none;
-                width: 80%;
-                height: 2px;
-                min-height: auto;
+                width: 2px;
+                height: 300px;
+                min-height: 200px;
+                flex-shrink: 0;
             }
             .program-right-text {
                 position: relative;
                 right: 0;
                 top: 0;
-                width: 100%;
-                padding-left: 0;
-                align-items: center;
+                width: auto;
+                flex: 1;
+                padding-left: 1rem;
                 gap: 1.5rem;
+                align-items: flex-start;
             }
             .program-item {
-                align-items: center;
-                text-align: center;
+                align-items: flex-start;
             }
             .program-item .title {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-                text-align: center;
+                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                text-align: left;
             }
             .program-item .time {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-                text-align: center;
+                font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+                text-align: left;
             }
         }
 
@@ -782,16 +785,18 @@
                 margin-bottom: 1.5rem;
             }
             .program-divider {
-                width: 90%;
+                height: 200px;
+                min-height: 150px;
             }
             .program-right-text {
                 gap: 1rem;
+                padding-left: 0.8rem;
             }
             .program-item .title {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             .program-item .time {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
 
