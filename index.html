@@ -402,57 +402,31 @@
 
         .program-content {
             display: flex;
-            align-items: stretch;
+            align-items: center;
             justify-content: center;
             width: 100%;
             max-width: 1400px;
             gap: 0;
             padding: 0 2rem;
+            min-height: 40vh;
         }
 
-        /* Левая часть: коллаж из 4 иконок */
+        /* Левая часть: фото занимает 1/3 вертикали */
         .program-left {
-            flex: 0 0 50%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 1.5rem;
-            align-items: center;
-            justify-items: center;
-            padding-right: 2rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .program-left .icon-item {
-            width: 100%;
-            height: 100%;
+            flex: 0 0 33.33%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(74, 26, 26, 0.05);
-            border-radius: 16px;
-            padding: 1rem;
-            transition: transform 0.3s ease;
+            padding-right: 2rem;
+            max-height: 33.33vh;
         }
 
-        .program-left .icon-item:hover {
-            transform: scale(1.05);
-        }
-
-        .program-left .icon-item img {
-            width: 100px;
-            height: 100px;
+        .program-left img {
+            width: 100%;
+            height: 100%;
+            max-height: 33.33vh;
             object-fit: contain;
-            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
-        }
-
-        /* Специально для фейерверка (dotty-иконка) */
-        .program-left .icon-item .firework-icon {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
+            border-radius: 12px;
         }
 
         /* Вертикальная линия */
@@ -462,17 +436,19 @@
             background: #4a1a1a;
             opacity: 0.6;
             align-self: stretch;
-            min-height: 400px;
+            min-height: 200px;
+            max-height: 33.33vh;
         }
 
         /* Правая часть: список событий */
         .program-right {
-            flex: 0 0 50%;
+            flex: 0 0 60%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 1.8rem;
             padding-left: 2rem;
+            max-height: 33.33vh;
         }
 
         .program-item {
@@ -634,7 +610,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив ——— */
+        /* ——— Адаптив для мобильных ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -703,26 +679,24 @@
                 align-items: center;
                 gap: 1.5rem;
                 padding: 0;
+                min-height: auto;
             }
             .program-left {
                 flex: 0 0 auto;
                 width: 100%;
                 padding-right: 0;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+                max-height: 200px;
             }
-            .program-left .icon-item img {
-                width: 60px;
-                height: 60px;
-            }
-            .program-left .icon-item .firework-icon {
-                width: 60px;
-                height: 60px;
+            .program-left img {
+                max-height: 200px;
+                width: 100%;
+                object-fit: contain;
             }
             .program-divider {
                 width: 80%;
                 height: 3px;
                 min-height: auto;
+                max-height: auto;
                 align-self: center;
             }
             .program-right {
@@ -730,6 +704,7 @@
                 width: 100%;
                 padding-left: 0;
                 gap: 1.5rem;
+                max-height: none;
             }
             .program-item .title {
                 font-size: clamp(1.6rem, 3.2vw, 2.2rem);
@@ -797,13 +772,8 @@
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-left .icon-item img {
-                width: 45px;
-                height: 45px;
-            }
-            .program-left .icon-item .firework-icon {
-                width: 45px;
-                height: 45px;
+            .program-left img {
+                max-height: 150px;
             }
             .program-divider {
                 width: 90%;
@@ -860,13 +830,17 @@
             .program-item .time {
                 font-size: 2.8rem;
             }
-            .program-left .icon-item img {
-                width: 120px;
-                height: 120px;
+            .program-left {
+                max-height: 40vh;
             }
-            .program-left .icon-item .firework-icon {
-                width: 120px;
-                height: 120px;
+            .program-left img {
+                max-height: 40vh;
+            }
+            .program-divider {
+                max-height: 40vh;
+            }
+            .program-right {
+                max-height: 40vh;
             }
         }
     </style>
@@ -944,31 +918,20 @@
                 </div>
             </div>
 
-            <!-- Блок ПРОГРАММА ДНЯ с коллажем из иконок -->
+            <!-- Блок ПРОГРАММА ДНЯ -->
             <div class="program-section" id="programSection">
                 <div class="program-title">Программа дня</div>
                 
                 <div class="program-content">
-                    <!-- Левая часть: коллаж 4 иконок -->
+                    <!-- Левая часть: фото 1/3 -->
                     <div class="program-left">
-                        <div class="icon-item">
-                            <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
-                        </div>
-                        <div class="icon-item">
-                            <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
-                        </div>
-                        <div class="icon-item">
-                            <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
-                        </div>
-                        <div class="icon-item">
-                            <img class="firework-icon" src="https://img.icons8.com/dotty/80/firework-explosion.png" alt="финал" />
-                        </div>
+                        <img src="image_2026-07-23_18-39-10.png" alt="программа" />
                     </div>
 
                     <!-- Вертикальная линия -->
                     <div class="program-divider"></div>
 
-                    <!-- Правая часть: список событий -->
+                    <!-- Правая часть: события -->
                     <div class="program-right">
                         <div class="program-item">
                             <div class="title">Сбор гостей и Welcome</div>
