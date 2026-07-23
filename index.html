@@ -134,7 +134,6 @@
             pointer-events: none;
         }
 
-        /* ——— Анимация для элементов поверх фото ——— */
         .content-overlay .names,
         .content-overlay .date-section {
             opacity: 0;
@@ -154,7 +153,7 @@
             transition-delay: 0.5s;
         }
 
-        /* ——— Имена (МАКСИМАЛЬНО БОЛЬШОЙ ШРИФТ) ——— */
+        /* ——— Имена ——— */
         .names {
             font-size: clamp(6rem, 16vw, 16rem);
             line-height: 1.05;
@@ -190,7 +189,7 @@
             font-weight: 400;
         }
 
-        /* ——— Дата (смещена ниже) ——— */
+        /* ——— Дата ——— */
         .date-section {
             display: flex;
             align-items: center;
@@ -294,7 +293,7 @@
             font-weight: 700;
         }
 
-        /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
+        /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
         .text-section {
             width: 100%;
             height: 100vh;
@@ -310,7 +309,6 @@
             position: relative;
         }
 
-        /* ——— Анимация для каждого элемента текстового блока при прокрутке ——— */
         .text-section .greeting,
         .text-section .message,
         .text-section .message-bold,
@@ -394,6 +392,113 @@
             padding: 0;
         }
 
+        /* ——— БЛОК ПРОГРАММА ДНЯ (фон #faf5f2) ——— */
+        .program-section {
+            width: 100%;
+            min-height: 100vh;
+            flex-shrink: 0;
+            background: #faf5f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem 3rem 2rem;
+            z-index: 2;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .program-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .program-title {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: #4a1a1a;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .program-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
+            gap: 1.5rem;
+        }
+
+        .program-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 1.5rem;
+        }
+
+        .program-item .icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .program-item .icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .program-item .line-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            height: 100%;
+            min-height: 80px;
+        }
+
+        .program-item .vertical-line {
+            width: 2px;
+            flex: 1;
+            min-height: 50px;
+            background: #4a1a1a;
+            opacity: 0.3;
+        }
+
+        .program-item .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .program-item .content .title {
+            font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+            color: #4a1a1a;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .program-item .content .time {
+            font-size: clamp(1rem, 1.8vw, 1.8rem);
+            color: #4a1a1a;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+
+        /* Последний элемент — без линии */
+        .program-item:last-child .line-wrapper {
+            display: none;
+        }
+
         /* ——— Фото на первом экране ——— */
         .main-bg-first {
             position: absolute;
@@ -407,7 +512,7 @@
             z-index: 1;
         }
 
-        /* ——— ПРОЗРАЧНАЯ КНОПКА (без обводок) ——— */
+        /* ——— ПРОЗРАЧНАЯ КНОПКА ——— */
         .circle-btn {
             position: absolute;
             top: 50%;
@@ -434,7 +539,7 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* ——— СЛОЙ С ТОЧКАМИ НА БЕЛОМ ФОНЕ ——— */
+        /* ——— СЛОЙ С ТОЧКАМИ ——— */
         #dotsLayer {
             position: absolute;
             top: 0;
@@ -452,7 +557,7 @@
             opacity: 1;
         }
 
-        /* ——— Мерцающие точки (быстрое мерцание) ——— */
+        /* ——— Мерцающие точки ——— */
         .dot {
             position: absolute;
             width: 5px;
@@ -486,7 +591,6 @@
             }
         }
 
-        /* Тонкие точечки, хаотично */
         .dot:nth-child(1) { top: 5%; left: 3%; animation-delay: 0.00s; }
         .dot:nth-child(2) { top: 8%; left: 15%; animation-delay: 0.08s; }
         .dot:nth-child(3) { top: 3%; left: 28%; animation-delay: 0.16s; }
@@ -535,7 +639,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив для телефонов ——— */
+        /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -592,6 +696,33 @@
                 font-size: clamp(1.3rem, 2.5vw, 1.8rem);
                 margin-bottom: 1.5rem;
             }
+            .program-section {
+                padding: 3rem 1.2rem 2rem 1.2rem;
+            }
+            .program-title {
+                font-size: clamp(2rem, 4vw, 2.8rem);
+                margin-bottom: 2rem;
+            }
+            .program-item {
+                gap: 1rem;
+            }
+            .program-item .icon {
+                width: 50px;
+                height: 50px;
+            }
+            .program-item .icon img {
+                width: 40px;
+                height: 40px;
+            }
+            .program-item .content .title {
+                font-size: clamp(1rem, 1.8vw, 1.4rem);
+            }
+            .program-item .content .time {
+                font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+            }
+            .program-item .vertical-line {
+                min-height: 40px;
+            }
         }
 
         @media (max-width: 400px) {
@@ -645,9 +776,35 @@
                 font-size: 1rem;
                 margin-bottom: 1rem;
             }
+            .program-section {
+                padding: 2rem 0.8rem 1.5rem 0.8rem;
+            }
+            .program-title {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+            .program-item {
+                gap: 0.8rem;
+            }
+            .program-item .icon {
+                width: 40px;
+                height: 40px;
+            }
+            .program-item .icon img {
+                width: 32px;
+                height: 32px;
+            }
+            .program-item .content .title {
+                font-size: 0.9rem;
+            }
+            .program-item .content .time {
+                font-size: 0.75rem;
+            }
+            .program-item .vertical-line {
+                min-height: 30px;
+            }
         }
 
-        /* Для очень больших экранов */
         @media (min-width: 1400px) {
             .names .vladislav {
                 font-size: 14rem;
@@ -682,19 +839,28 @@
             .text-section .message-bold {
                 font-size: 4.5rem;
             }
+            .program-title {
+                font-size: 5rem;
+            }
+            .program-item .content .title {
+                font-size: 2.2rem;
+            }
+            .program-item .content .time {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="screen-container">
 
-        <!-- ====== ПЕРВЫЙ ЭКРАН (главная.png + кнопка) ====== -->
+        <!-- ====== ПЕРВЫЙ ЭКРАН ====== -->
         <div id="firstScreen" class="screen">
             <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
         </div>
 
-        <!-- ====== СЛОЙ С ТОЧКАМИ НА БЕЛОМ ФОНЕ ====== -->
+        <!-- ====== СЛОЙ С ТОЧКАМИ ====== -->
         <div id="dotsLayer">
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -718,9 +884,7 @@
             <!-- Фото на весь экран -->
             <div class="second-bg">
                 <img class="main-bg" src="первая.png" alt="фон" />
-
                 <div class="content-overlay" id="contentOverlay">
-                    <!-- Имена -->
                     <div class="names">
                         <div class="vladislav">VLADISLAV</div>
                         <div class="and-ksenia">
@@ -728,8 +892,6 @@
                             <span>KSENIA</span>
                         </div>
                     </div>
-
-                    <!-- Дата -->
                     <div class="date-section">
                         <div class="bottom-row">
                             <div class="left">
@@ -737,13 +899,11 @@
                                 <span class="text">ПЯТНИЦА</span>
                                 <span class="line"></span>
                             </div>
-
                             <div class="center">
                                 <span class="month">АВГУСТА</span>
                                 <span class="day-number">28</span>
                                 <span class="year">2026</span>
                             </div>
-
                             <div class="right">
                                 <span class="line"></span>
                                 <span class="text">16:00</span>
@@ -754,15 +914,76 @@
                 </div>
             </div>
 
-            <!-- Текст на бордовом фоне (белый текст) с анимацией при прокрутке -->
+            <!-- Бордовый блок с текстом -->
             <div class="text-section" id="textSection">
                 <div class="greeting">Дорогие друзья и родные!</div>
                 <div class="message">Случилось невероятное — мы решили связать наши судьбы и начать новую главу нашей жизни вместе.</div>
                 <div class="message-bold">Будем очень рады, если вы разделите с нами этот теплый и важный день.</div>
-                
-                <!-- Фото IMG_8833.PNG -->
                 <div class="calendar-img">
                     <img src="IMG_8833.PNG" alt="календарь" />
+                </div>
+            </div>
+
+            <!-- Блок ПРОГРАММА ДНЯ -->
+            <div class="program-section" id="programSection">
+                <div class="program-title">Программа дня</div>
+                
+                <div class="program-list">
+                    <!-- 1. Сбор гостей -->
+                    <div class="program-item">
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
+                        </div>
+                        <div class="line-wrapper">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="content">
+                            <div class="title">Сбор гостей и Welcome</div>
+                            <div class="time">16:00</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Церемония -->
+                    <div class="program-item">
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
+                        </div>
+                        <div class="line-wrapper">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="content">
+                            <div class="title">Торжественная Церемония</div>
+                            <div class="time">17:00</div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Банкет -->
+                    <div class="program-item">
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
+                        </div>
+                        <div class="line-wrapper">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="content">
+                            <div class="title">Банкет</div>
+                            <div class="time">18:00</div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Финал -->
+                    <div class="program-item">
+                        <div class="icon">
+                            <img width="80" height="80" src="https://img.icons8.ru/dotty/80/firework-explosion.png" alt="firework-explosion" />
+                        </div>
+                        <div class="line-wrapper">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="content">
+                            <div class="title">Финал</div>
+                            <div class="time">23:00</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -777,12 +998,14 @@
             const dotsLayer = document.getElementById('dotsLayer');
             const contentOverlay = document.getElementById('contentOverlay');
             const textSection = document.getElementById('textSection');
+            const programSection = document.getElementById('programSection');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
             let isTransitioning = false;
             let dotsActivated = false;
             let textVisible = false;
+            let programVisible = false;
 
             function activateDots() {
                 if (dotsActivated) return;
@@ -800,15 +1023,28 @@
                 dotsLayer.classList.remove('active');
             }
 
-            // Проверка видимости текстового блока при прокрутке
-            function checkTextVisibility() {
-                if (!textSection) return;
-                const rect = textSection.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
-                    if (!textVisible) {
-                        textVisible = true;
-                        textSection.classList.add('visible');
+            function checkVisibility() {
+                // Проверка текстового блока
+                if (textSection) {
+                    const rect = textSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!textVisible) {
+                            textVisible = true;
+                            textSection.classList.add('visible');
+                        }
+                    }
+                }
+
+                // Проверка блока программы
+                if (programSection) {
+                    const rect = programSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!programVisible) {
+                            programVisible = true;
+                            programSection.classList.add('visible');
+                        }
                     }
                 }
             }
@@ -836,7 +1072,7 @@
                     }, 200);
 
                     setTimeout(() => {
-                        checkTextVisibility();
+                        checkVisibility();
                     }, 500);
 
                     isTransitioning = false;
@@ -850,13 +1086,13 @@
 
             secondScreen.addEventListener('scroll', function() {
                 if (secondScreen.style.opacity === '1') {
-                    checkTextVisibility();
+                    checkVisibility();
                 }
             }, { passive: true });
 
             window.addEventListener('resize', function() {
                 if (secondScreen.style.opacity === '1') {
-                    checkTextVisibility();
+                    checkVisibility();
                 }
             }, { passive: true });
 
