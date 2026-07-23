@@ -378,17 +378,42 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 4rem 3rem 4rem 3rem;
+            padding: 0;
             z-index: 2;
             position: relative;
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
+            min-height: 100vh;
         }
 
         .program-section.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Фон на весь блок */
+        .program-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Контент поверх фона */
+        .program-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            padding: 4rem 3rem;
         }
 
         .program-title {
@@ -398,71 +423,45 @@
             font-weight: 600;
             margin-bottom: 3rem;
             letter-spacing: 0.05em;
+            text-align: center;
         }
 
-        /* ——— КОНТЕЙНЕР С ФОНОМ-КАРТИНКОЙ ——— */
-        .program-content {
-            display: flex;
+        /* Сетка событий с линией по центру */
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr 2px 1fr;
+            gap: 0 3rem;
             align-items: center;
-            justify-content: center;
             width: 100%;
-            max-width: 1400px;
-            gap: 0;
-            padding: 0 2rem;
-            position: relative;
-            min-height: 40vh;
-            background-image: url('image_2026-07-23_18-39-10.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 16px;
+            max-width: 900px;
+            padding: 0 1rem;
         }
 
-        /* Затемнение фона для читаемости текста */
-        .program-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(250, 245, 242, 0.7);
-            border-radius: 16px;
-            z-index: 1;
-        }
-
-        /* Вертикальная линия */
-        .program-divider {
-            width: 3px;
-            flex-shrink: 0;
-            background: #4a1a1a;
-            opacity: 0.6;
-            align-self: stretch;
-            min-height: 300px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Правая часть: список событий */
-        .program-right {
-            flex: 0 0 50%;
+        /* Левая колонка */
+        .program-left-items {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 1.8rem;
-            padding-left: 2rem;
-            position: relative;
-            z-index: 2;
+            align-items: flex-end;
+            gap: 2.5rem;
+            text-align: right;
+        }
+
+        /* Правая колонка */
+        .program-right-items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2.5rem;
+            text-align: left;
         }
 
         .program-item {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .program-item .title {
-            font-size: clamp(1.8rem, 3.2vw, 3.6rem);
+            font-size: clamp(1.6rem, 2.8vw, 3.2rem);
             color: #4a1a1a;
             font-style: italic;
             font-weight: 600;
@@ -471,11 +470,22 @@
         }
 
         .program-item .time {
-            font-size: clamp(1.4rem, 2.5vw, 2.8rem);
+            font-size: clamp(1.3rem, 2.2vw, 2.6rem);
             color: #4a1a1a;
             font-weight: 400;
             opacity: 0.7;
             margin-top: 0.1rem;
+        }
+
+        /* Вертикальная линия по центру (бордовая) */
+        .program-divider {
+            width: 2px;
+            height: 100%;
+            background: #4a1a1a;
+            opacity: 0.5;
+            justify-self: center;
+            align-self: stretch;
+            min-height: 350px;
         }
 
         .main-bg-first {
@@ -671,38 +681,31 @@
                 font-size: clamp(1.3rem, 2.5vw, 1.8rem);
                 margin-bottom: 1.5rem;
             }
-            .program-section {
-                padding: 2.5rem 1rem 2.5rem 1rem;
+            .program-content {
+                padding: 2rem 1.5rem;
             }
             .program-title {
                 font-size: clamp(2.2rem, 4.5vw, 3rem);
                 margin-bottom: 2rem;
             }
-            .program-content {
-                flex-direction: column;
-                align-items: center;
+            .program-grid {
+                grid-template-columns: 1fr 2px 1fr;
+                gap: 0 1.5rem;
+            }
+            .program-left-items {
                 gap: 1.5rem;
-                padding: 2rem 1rem;
-                min-height: auto;
-                background-size: cover;
             }
-            .program-divider {
-                width: 80%;
-                height: 3px;
-                min-height: auto;
-                align-self: center;
-            }
-            .program-right {
-                flex: 0 0 auto;
-                width: 100%;
-                padding-left: 0;
+            .program-right-items {
                 gap: 1.5rem;
             }
             .program-item .title {
-                font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+                font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             }
             .program-item .time {
-                font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .program-divider {
+                min-height: 200px;
             }
         }
 
@@ -757,25 +760,31 @@
                 font-size: 1rem;
                 margin-bottom: 1rem;
             }
-            .program-section {
-                padding: 2rem 0.5rem 2rem 0.5rem;
+            .program-content {
+                padding: 1.5rem 1rem;
             }
             .program-title {
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-            .program-content {
-                padding: 1.5rem 0.5rem;
+            .program-grid {
+                grid-template-columns: 1fr 2px 1fr;
+                gap: 0 1rem;
             }
-            .program-divider {
-                width: 90%;
-                height: 2px;
+            .program-left-items {
+                gap: 1rem;
+            }
+            .program-right-items {
+                gap: 1rem;
             }
             .program-item .title {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             .program-item .time {
-                font-size: 1rem;
+                font-size: 0.85rem;
+            }
+            .program-divider {
+                min-height: 150px;
             }
         }
 
@@ -817,10 +826,10 @@
                 font-size: 5.5rem;
             }
             .program-item .title {
-                font-size: 3.6rem;
+                font-size: 3.2rem;
             }
             .program-item .time {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
         }
     </style>
@@ -900,31 +909,36 @@
 
             <!-- Блок ПРОГРАММА ДНЯ -->
             <div class="program-section" id="programSection">
-                <div class="program-title">Программа дня</div>
-                
+                <img class="program-bg" src="тайминг.png" alt="фон программы" />
                 <div class="program-content">
-                    <!-- Фон-картинка растянута на весь блок -->
+                    <div class="program-title">Программа дня</div>
+                    
+                    <div class="program-grid">
+                        <!-- Левая колонка -->
+                        <div class="program-left-items">
+                            <div class="program-item">
+                                <div class="title">Сбор гостей и Welcome</div>
+                                <div class="time">16:00</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="title">Торжественная Церемония</div>
+                                <div class="time">17:00</div>
+                            </div>
+                        </div>
 
-                    <!-- Вертикальная линия -->
-                    <div class="program-divider"></div>
+                        <!-- Линия -->
+                        <div class="program-divider"></div>
 
-                    <!-- Правая часть: события -->
-                    <div class="program-right">
-                        <div class="program-item">
-                            <div class="title">Сбор гостей и Welcome</div>
-                            <div class="time">16:00</div>
-                        </div>
-                        <div class="program-item">
-                            <div class="title">Торжественная Церемония</div>
-                            <div class="time">17:00</div>
-                        </div>
-                        <div class="program-item">
-                            <div class="title">Банкет</div>
-                            <div class="time">18:00</div>
-                        </div>
-                        <div class="program-item">
-                            <div class="title">Финал</div>
-                            <div class="time">23:00</div>
+                        <!-- Правая колонка -->
+                        <div class="program-right-items">
+                            <div class="program-item">
+                                <div class="title">Банкет</div>
+                                <div class="time">18:00</div>
+                            </div>
+                            <div class="program-item">
+                                <div class="title">Финал</div>
+                                <div class="time">23:00</div>
+                            </div>
                         </div>
                     </div>
                 </div>
