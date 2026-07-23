@@ -284,19 +284,20 @@
         /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (БОРДОВЫЙ ФОН, БЕЛЫЙ ТЕКСТ) ——— */
         .text-section {
             width: 100%;
-            min-height: 50vh;
+            min-height: 60vh;
             flex-shrink: 0;
             background: #4a1a1a;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2.5rem 2rem;
+            justify-content: flex-start;
+            padding: 2rem 2rem 0 2rem;
             text-align: center;
             z-index: 2;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+            position: relative;
         }
 
         .text-section.visible {
@@ -307,33 +308,55 @@
         .text-section .greeting {
             font-size: clamp(1.8rem, 3.5vw, 4rem);
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.06em;
             color: #ffffff;
             margin-bottom: 0.8rem;
-            opacity: 0.9;
+            opacity: 0.95;
             font-weight: 700;
+            font-style: italic;
         }
 
         .text-section .message {
-            font-size: clamp(1.2rem, 2.2vw, 2.6rem);
+            font-size: clamp(1.1rem, 2vw, 2.4rem);
             line-height: 1.5;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
             color: #ffffff;
             opacity: 0.85;
-            margin-bottom: 1.2rem;
             max-width: 90%;
-            font-weight: 500;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
         }
 
-        .text-section .invitation {
-            font-size: clamp(1.6rem, 3vw, 3.8rem);
-            line-height: 1.4;
-            letter-spacing: 0.06em;
+        .text-section .message-bold {
+            font-size: clamp(1.1rem, 2vw, 2.4rem);
+            line-height: 1.5;
+            letter-spacing: 0.03em;
             color: #ffffff;
+            opacity: 0.85;
             max-width: 90%;
             font-weight: 600;
-            font-style: italic;
-            opacity: 0.95;
+            margin-bottom: 0.8rem;
+        }
+
+        .text-section .calendar-img {
+            width: 100%;
+            margin-top: auto;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 0;
+            padding: 0;
+        }
+
+        .text-section .calendar-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
         }
 
         /* ——— Фото на первом экране ——— */
@@ -521,18 +544,17 @@
                 margin-bottom: 0.3rem;
             }
             .text-section {
-                min-height: 40vh;
-                padding: 1.5rem 1.2rem;
+                min-height: 55vh;
+                padding: 1.5rem 1.2rem 0 1.2rem;
             }
             .text-section .greeting {
                 font-size: clamp(1.2rem, 2.8vw, 1.8rem);
             }
             .text-section .message {
-                font-size: clamp(0.9rem, 1.8vw, 1.2rem);
-                margin-bottom: 0.8rem;
+                font-size: clamp(0.85rem, 1.6vw, 1.1rem);
             }
-            .text-section .invitation {
-                font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            .text-section .message-bold {
+                font-size: clamp(0.85rem, 1.6vw, 1.1rem);
             }
         }
 
@@ -574,18 +596,17 @@
                 margin-bottom: 0.2rem;
             }
             .text-section {
-                min-height: 35vh;
-                padding: 1rem 0.8rem;
+                min-height: 50vh;
+                padding: 1rem 0.8rem 0 0.8rem;
             }
             .text-section .greeting {
                 font-size: 1rem;
             }
             .text-section .message {
-                font-size: 0.75rem;
-                margin-bottom: 0.6rem;
+                font-size: 0.7rem;
             }
-            .text-section .invitation {
-                font-size: 1rem;
+            .text-section .message-bold {
+                font-size: 0.7rem;
             }
         }
 
@@ -619,10 +640,10 @@
                 font-size: 4rem;
             }
             .text-section .message {
-                font-size: 2.6rem;
+                font-size: 2.4rem;
             }
-            .text-section .invitation {
-                font-size: 3.8rem;
+            .text-section .message-bold {
+                font-size: 2.4rem;
             }
         }
     </style>
@@ -698,9 +719,14 @@
 
             <!-- Текст на бордовом фоне (белый текст) -->
             <div class="text-section" id="textSection">
-                <div class="greeting">ДОРОГИЕ ГОСТИ</div>
-                <div class="message">28 августа состоится долгожданное событие — день нашей свадьбы.</div>
-                <div class="invitation">Приглашаем вас разделить с нами этот особенный день.</div>
+                <div class="greeting">Дорогие друзья и родные!</div>
+                <div class="message">Случилось невероятное — мы решили связать наши судьбы и начать новую главу нашей жизни вместе.</div>
+                <div class="message-bold">Будем очень рады, если вы разделите с нами этот теплый и важный день.</div>
+                
+                <!-- Фото календарь.png максимально прижато к краям и низу -->
+                <div class="calendar-img">
+                    <img src="календарь.png" alt="календарь" />
+                </div>
             </div>
 
         </div>
