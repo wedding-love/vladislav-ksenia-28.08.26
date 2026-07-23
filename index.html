@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Приглашение</title>
     <style>
-        /* ——— Подключение шрифта ——— */
+        /* ——— Подключение шрифтов ——— */
         @font-face {
             font-family: 'Patriciana';
             src: url('ofont.ru_Patriciana.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Czizh';
+            src: url('ofont.ru_Czizh.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -151,6 +158,7 @@
             margin-bottom: 0.8rem;
             max-width: 95vw;
             margin-top: -2rem;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .names .vladislav {
@@ -178,6 +186,7 @@
             letter-spacing: 0.2em;
             opacity: 0.6;
             font-weight: 400;
+            font-family: 'Patriciana', Georgia, serif;
         }
 
         .date-section {
@@ -188,6 +197,7 @@
             margin-top: 3rem;
             margin-bottom: 0.5rem;
             padding-left: 3%;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .bottom-row {
@@ -221,6 +231,7 @@
             color: #4a1a1a;
             text-transform: uppercase;
             font-weight: 700;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .bottom-row .center {
@@ -239,12 +250,14 @@
             color: #4a1a1a;
             margin-bottom: 0.05rem;
             font-weight: 600;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
         .bottom-row .center .day-number {
             font-size: clamp(7rem, 14vw, 15rem);
             font-weight: 900;
             color: #4a1a1a;
             line-height: 1;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
         .bottom-row .center .year {
             font-size: clamp(1.8rem, 3vw, 3rem);
@@ -253,6 +266,7 @@
             color: #4a1a1a;
             margin-top: 0.05rem;
             font-weight: 600;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .bottom-row .right {
@@ -274,6 +288,7 @@
             white-space: nowrap;
             color: #4a1a1a;
             font-weight: 700;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ) ——— */
@@ -331,6 +346,7 @@
             margin-bottom: 0.2rem;
             font-weight: 700;
             font-style: italic;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .text-section .message {
@@ -340,6 +356,7 @@
             color: #ffffff;
             max-width: 90%;
             font-weight: 400;
+            font-family: 'Patriciana', Georgia, serif;
         }
 
         .text-section .message-bold {
@@ -350,6 +367,7 @@
             max-width: 90%;
             font-weight: 400;
             margin-bottom: 0.3rem;
+            font-family: 'Patriciana', Georgia, serif;
         }
 
         .text-section .calendar-img {
@@ -421,6 +439,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .program-section.visible .program-title {
@@ -498,8 +517,8 @@
             font-style: italic;
             font-weight: 600;
             line-height: 1.2;
-            font-family: 'Patriciana', Georgia, serif;
             text-align: left;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .program-item .time {
@@ -509,6 +528,7 @@
             opacity: 0.7;
             margin-top: 0.1rem;
             text-align: left;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (белый текст, поднят выше) ——— */
@@ -564,6 +584,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-title {
@@ -580,6 +601,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-name {
@@ -597,6 +619,7 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             transform: translateY(30px);
             transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
+            font-family: 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-address {
@@ -609,7 +632,7 @@
             padding: 0.9rem 2.5rem;
             background: #ffffff;
             color: #4a1a1a;
-            font-family: 'Patriciana', Georgia, serif;
+            font-family: 'Czizh', 'Patriciana', Georgia, serif;
             font-size: clamp(1.2rem, 2vw, 2rem);
             font-weight: 400;
             text-decoration: none;
