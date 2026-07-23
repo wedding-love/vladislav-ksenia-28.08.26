@@ -412,45 +412,24 @@
         .program-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             width: 100%;
             max-width: 1400px;
             position: relative;
             padding: 0 2rem;
         }
 
-        /* Единая вертикальная линия по центру */
-        .program-list::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #4a1a1a;
-            opacity: 0.25;
-            transform: translateX(-50%);
-        }
-
         .program-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             width: 100%;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: relative;
+            gap: 2rem;
         }
 
-        /* Левая часть: иконка */
-        .program-item .left-part {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            width: 35%;
-            padding-right: 3rem;
-            flex-shrink: 0;
-        }
-
+        /* Иконка слева */
         .program-item .icon {
             flex-shrink: 0;
             width: 350px;
@@ -474,14 +453,23 @@
             filter: invert(12%) sepia(63%) saturate(2000%) hue-rotate(330deg) brightness(50%) contrast(90%);
         }
 
-        /* Правая часть: текст */
+        /* Вертикальная линия (видимая, бордовая) */
+        .program-item .vertical-line {
+            width: 3px;
+            height: 100%;
+            min-height: 200px;
+            background: #4a1a1a;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        /* Текст справа */
         .program-item .right-part {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: 50%;
-            padding-left: 3rem;
-            flex-shrink: 1;
+            flex: 1;
+            padding-left: 2rem;
         }
 
         .program-item .right-part .title {
@@ -707,15 +695,8 @@
                 margin-bottom: 2rem;
             }
             .program-item {
-                padding: 1.5rem 0;
-            }
-            .program-item .left-part {
-                width: 25%;
-                padding-right: 0.8rem;
-            }
-            .program-item .right-part {
-                width: 60%;
-                padding-left: 0.8rem;
+                padding: 1rem 0;
+                gap: 1rem;
             }
             .program-item .icon {
                 width: 150px;
@@ -728,6 +709,13 @@
             .program-item .icon .firework-icon {
                 width: 150px;
                 height: 150px;
+            }
+            .program-item .vertical-line {
+                min-height: 120px;
+                width: 2px;
+            }
+            .program-item .right-part {
+                padding-left: 1rem;
             }
             .program-item .right-part .title {
                 font-size: clamp(1.8rem, 3.2vw, 2.4rem);
@@ -797,15 +785,8 @@
                 margin-bottom: 1.5rem;
             }
             .program-item {
-                padding: 1rem 0;
-            }
-            .program-item .left-part {
-                width: 20%;
-                padding-right: 0.5rem;
-            }
-            .program-item .right-part {
-                width: 65%;
-                padding-left: 0.5rem;
+                padding: 0.8rem 0;
+                gap: 0.8rem;
             }
             .program-item .icon {
                 width: 100px;
@@ -818,6 +799,13 @@
             .program-item .icon .firework-icon {
                 width: 100px;
                 height: 100px;
+            }
+            .program-item .vertical-line {
+                min-height: 80px;
+                width: 2px;
+            }
+            .program-item .right-part {
+                padding-left: 0.8rem;
             }
             .program-item .right-part .title {
                 font-size: 1.4rem;
@@ -865,12 +853,6 @@
             .program-title {
                 font-size: 5.5rem;
             }
-            .program-item .right-part .title {
-                font-size: 5.8rem;
-            }
-            .program-item .right-part .time {
-                font-size: 4.8rem;
-            }
             .program-item .icon {
                 width: 400px;
                 height: 400px;
@@ -882,6 +864,15 @@
             .program-item .icon .firework-icon {
                 width: 400px;
                 height: 400px;
+            }
+            .program-item .right-part .title {
+                font-size: 5.8rem;
+            }
+            .program-item .right-part .time {
+                font-size: 4.8rem;
+            }
+            .program-item .vertical-line {
+                min-height: 250px;
             }
         }
     </style>
@@ -965,11 +956,10 @@
                 
                 <div class="program-list">
                     <div class="program-item">
-                        <div class="left-part">
-                            <div class="icon">
-                                <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
-                            </div>
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=104355&format=png&color=000000" alt="сбор гостей" />
                         </div>
+                        <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Сбор гостей и Welcome</div>
                             <div class="time">16:00</div>
@@ -977,11 +967,10 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="left-part">
-                            <div class="icon">
-                                <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
-                            </div>
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=H1TOdGCfoehx&format=png&color=000000" alt="церемония" />
                         </div>
+                        <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Торжественная Церемония</div>
                             <div class="time">17:00</div>
@@ -989,11 +978,10 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="left-part">
-                            <div class="icon">
-                                <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
-                            </div>
+                        <div class="icon">
+                            <img src="https://img.icons8.ru/?size=100&id=68521&format=png&color=000000" alt="банкет" />
                         </div>
+                        <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Банкет</div>
                             <div class="time">18:00</div>
@@ -1001,11 +989,10 @@
                     </div>
 
                     <div class="program-item">
-                        <div class="left-part">
-                            <div class="icon">
-                                <img class="firework-icon" width="80" height="80" src="https://img.icons8.ru/dotty/80/firework-explosion.png" alt="firework-explosion" />
-                            </div>
+                        <div class="icon">
+                            <img class="firework-icon" width="80" height="80" src="https://img.icons8.ru/dotty/80/firework-explosion.png" alt="firework-explosion" />
                         </div>
+                        <div class="vertical-line"></div>
                         <div class="right-part">
                             <div class="title">Финал</div>
                             <div class="time">23:00</div>
