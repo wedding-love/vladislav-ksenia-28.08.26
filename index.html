@@ -146,7 +146,7 @@
             font-size: clamp(5rem, 14vw, 14rem);
             line-height: 1.05;
             letter-spacing: 0.02em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
             max-width: 95vw;
         }
 
@@ -154,6 +154,7 @@
             font-size: clamp(4.5rem, 12vw, 12rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
+            font-weight: 700;
         }
 
         .names .and-ksenia {
@@ -165,6 +166,7 @@
             justify-content: center;
             gap: 0.8rem;
             flex-wrap: nowrap;
+            font-weight: 700;
         }
 
         .names .and-ksenia .and {
@@ -172,15 +174,17 @@
             text-transform: lowercase;
             letter-spacing: 0.2em;
             opacity: 0.6;
+            font-weight: 400;
         }
 
-        /* ——— Дата (смещена чуть левее и ниже) ——— */
+        /* ——— Дата (смещена ниже) ——— */
         .date-section {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin: 0.2rem 0 0.8rem 0;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
             padding-left: 3%;
         }
 
@@ -216,6 +220,7 @@
             white-space: nowrap;
             color: #4a1a1a;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
         .bottom-row .center {
@@ -234,11 +239,12 @@
             opacity: 0.7;
             color: #4a1a1a;
             margin-bottom: 0.05rem;
+            font-weight: 600;
         }
 
         .bottom-row .center .day-number {
             font-size: clamp(6rem, 12vw, 13rem);
-            font-weight: bold;
+            font-weight: 900;
             color: #4a1a1a;
             line-height: 1;
         }
@@ -249,6 +255,7 @@
             opacity: 0.5;
             color: #4a1a1a;
             margin-top: 0.05rem;
+            font-weight: 600;
         }
 
         .bottom-row .right {
@@ -271,6 +278,7 @@
             letter-spacing: 0.08em;
             white-space: nowrap;
             color: #4a1a1a;
+            font-weight: 700;
         }
 
         /* ——— БЛОК С ТЕКСТОМ ПОСЛЕ ФОТО (на белом фоне) ——— */
@@ -303,6 +311,7 @@
             color: #4a1a1a;
             margin-bottom: 0.8rem;
             opacity: 0.85;
+            font-weight: 700;
         }
 
         .text-section .message {
@@ -313,6 +322,7 @@
             opacity: 0.7;
             margin-bottom: 0.5rem;
             max-width: 90%;
+            font-weight: 500;
         }
 
         .text-section .invitation {
@@ -323,6 +333,7 @@
             opacity: 0.6;
             font-style: italic;
             max-width: 90%;
+            font-weight: 500;
         }
 
         /* ——— Фото на первом экране ——— */
@@ -506,7 +517,8 @@
             }
             .date-section {
                 padding-left: 2%;
-                margin: 0.1rem 0 0.5rem 0;
+                margin-top: 1rem;
+                margin-bottom: 0.3rem;
             }
             .text-section {
                 min-height: 40vh;
@@ -557,7 +569,8 @@
             }
             .date-section {
                 padding-left: 0;
-                margin: 0.1rem 0 0.3rem 0;
+                margin-top: 0.8rem;
+                margin-bottom: 0.2rem;
             }
             .text-section {
                 min-height: 35vh;
@@ -656,7 +669,7 @@
                         </div>
                     </div>
 
-                    <!-- Дата -->
+                    <!-- Дата (опущена ниже) -->
                     <div class="date-section">
                         <div class="bottom-row">
                             <div class="left">
