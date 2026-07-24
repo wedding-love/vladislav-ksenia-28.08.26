@@ -1,4 +1,6 @@
+Вот обновлённый HTML-код. В самом конце добавлен блок с фоновым изображением `IMG_20260722_194102 - Полина.png` и текстом «Мы вас очень ждём!» поверх него.
 
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -715,7 +717,7 @@
             left: 32%;
             max-width: 50%;
             opacity: 0;
-            transform: translateY(-5px) translateX(-3px) rotate(-3deg); /* разворот влево */
+            transform: translateY(-5px) translateX(-3px) rotate(-3deg);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
@@ -725,7 +727,7 @@
         }
 
         .wishes-text-up {
-            font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+            font-size: clamp(1.4rem, 2.4vw, 2.4rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: left;
@@ -742,7 +744,7 @@
             right: 10%;
             max-width: 50%;
             opacity: 0;
-            transform: translateY(-10px) translateX(5px) rotate(2deg); /* повёрнут ближе к правой стороне */
+            transform: translateY(-10px) translateX(5px) rotate(2deg);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
         }
 
@@ -752,7 +754,7 @@
         }
 
         .wishes-text-down {
-            font-size: clamp(1.4rem, 2.4vw, 2.4rem);
+            font-size: clamp(1.2rem, 2.0vw, 2.0rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
@@ -856,7 +858,7 @@
         .timer-item:nth-child(4) .number { transition-delay: 0.5s; }
         .timer-item:nth-child(4) .label { transition-delay: 0.6s; }
 
-        /* ——— БЛОК ДРЕСС-КОД (перед анкетой) ——— */
+        /* ——— БЛОК ДРЕСС-КОД ——— */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -913,7 +915,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            margin-top: 3rem; /* опущен ниже */
+            margin-top: 3rem;
         }
 
         .dresscode-section.visible .dresscode-text {
@@ -921,7 +923,6 @@
             transform: translateY(0);
         }
 
-        /* ——— Цветовая палитра в дресс-коде ——— */
         .dresscode-palette {
             display: flex;
             justify-content: center;
@@ -966,7 +967,6 @@
             opacity: 0.8;
         }
 
-        /* ——— Изображение дресс-кода ——— */
         .dresscode-image {
             position: relative;
             z-index: 2;
@@ -1301,6 +1301,57 @@
             opacity: 0.7;
         }
 
+        /* ——— БЛОК ФИНАЛЬНЫЙ С ФОТО ——— */
+        .final-section {
+            width: 100%;
+            flex-shrink: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .final-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .final-text {
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: #ffffff;
+            font-family: 'MiamaNueva', serif;
+            font-style: italic;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+        }
+
+        .final-section.visible .final-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ——— ОБЩИЕ ЭЛЕМЕНТЫ ——— */
         .main-bg-first {
             position: absolute;
             top: 0;
@@ -1571,7 +1622,7 @@
                 transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
-                font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+                font-size: clamp(1.1rem, 2.0vw, 1.4rem);
             }
             .wishes-block-down {
                 bottom: 25%;
@@ -1583,7 +1634,7 @@
                 transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
-                font-size: clamp(1.1rem, 2vw, 1.4rem);
+                font-size: clamp(1.0rem, 1.8vw, 1.2rem);
             }
             .dresscode-section {
                 min-height: 80vh;
@@ -1686,6 +1737,9 @@
             }
             .contacts-info .contact-item {
                 font-size: clamp(1rem, 1.6vw, 1.3rem);
+            }
+            .final-text {
+                font-size: clamp(2.2rem, 5vw, 3.2rem);
             }
         }
 
@@ -1811,7 +1865,7 @@
                 transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             .wishes-block-down {
                 bottom: 22%;
@@ -1823,7 +1877,7 @@
                 transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
-                font-size: 0.95rem;
+                font-size: 0.85rem;
             }
             .dresscode-section {
                 min-height: 70vh;
@@ -1926,6 +1980,9 @@
             .contacts-info .contact-item {
                 font-size: 0.9rem;
             }
+            .final-text {
+                font-size: 1.8rem;
+            }
         }
 
         @media (min-width: 1400px) {
@@ -2020,7 +2077,7 @@
                 transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
             .wishes-block-down {
                 bottom: 32%;
@@ -2032,7 +2089,7 @@
                 transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -2121,6 +2178,9 @@
             }
             .contacts-info .contact-item {
                 font-size: 2rem;
+            }
+            .final-text {
+                font-size: 6rem;
             }
         }
     </style>
@@ -2248,15 +2308,17 @@
 
                     <div class="wishes-block-up">
                         <div class="wishes-text-up">
-                            <span class="line">Ваше присутствие —</span>
-                            <span class="line">самый дорогой подарок для нас.</span>
-                            <span class="line">Мы решили, что вино</span>
-                            <span class="line">станет главным символом дня,</span>
-                            <span class="line">а цветы уступят место</span>
-                            <span class="line">искренним чувствам.</span>
-                            <span class="line">Конверт с тёплыми словами</span>
-                            <span class="line">сохраним как память</span>
-                            <span class="line">о вашей заботе и любви.</span>
+                            <span class="line">Для нас нет подарка ценнее,</span>
+                            <span class="line">чем ваше присутствие.</span>
+                            <span class="line">Вместо цветов — вино,</span>
+                            <span class="line">оно расскажет о наших чувствах</span>
+                            <span class="line">лучше любых слов.</span>
+                            <span class="line">Нам важны не букеты,</span>
+                            <span class="line">а ваши улыбки,</span>
+                            <span class="line">ваше тепло,</span>
+                            <span class="line">ваша забота.</span>
+                            <span class="line">Это мы хотим запомнить</span>
+                            <span class="line">в этот день.</span>
                         </div>
                     </div>
 
@@ -2302,7 +2364,6 @@
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
                     
-                    <!-- Цветовая палитра -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
                             <div class="color-circle" style="background: #4a1a1a;"></div>
@@ -2322,7 +2383,6 @@
                         </div>
                     </div>
 
-                    <!-- Фото дресс-кода -->
                     <img class="dresscode-image" src="дресс-код.PNG" alt="пример дресс-кода" />
                 </div>
             </div>
@@ -2390,6 +2450,14 @@
                 </div>
             </div>
 
+            <!-- ====== ФИНАЛЬНЫЙ БЛОК С ФОТО ====== -->
+            <div class="final-section" id="finalSection">
+                <img class="final-bg" src="IMG_20260722_194102 - Полина.png" alt="фон" />
+                <div class="final-content">
+                    <div class="final-text">Мы вас очень ждём!</div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -2408,6 +2476,7 @@
             const timerSection = document.getElementById('timerSection');
             const guestSection = document.getElementById('guestSection');
             const contactsSection = document.getElementById('contactsSection');
+            const finalSection = document.getElementById('finalSection');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
@@ -2421,6 +2490,7 @@
             let timerVisible = false;
             let guestVisible = false;
             let contactsVisible = false;
+            let finalVisible = false;
 
             // ——— Функция склонения ———
             function declension(number, forms) {
@@ -2581,6 +2651,17 @@
                         }
                     }
                 }
+
+                if (finalSection) {
+                    const rect = finalSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!finalVisible) {
+                            finalVisible = true;
+                            finalSection.classList.add('visible');
+                        }
+                    }
+                }
             }
 
             function switchToSecondScreen() {
@@ -2634,4 +2715,4 @@
     </script>
 </body>
 </html>
-
+```
