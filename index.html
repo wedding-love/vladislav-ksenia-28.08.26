@@ -724,22 +724,23 @@
             flex: 1;
             justify-content: center;
             gap: 2rem;
-            padding: 0.5rem 0;
+            padding: 0;
         }
 
-        /* Первый абзац — слева вверх к правому краю */
+        /* Первый абзац — поднят выше, строки по 3-4 слова */
         .wishes-text-up {
-            font-size: clamp(0.9rem, 1.6vw, 1.6rem);
+            font-size: clamp(1.3rem, 2.4vw, 2.4rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: left;
-            line-height: 1.6;
+            line-height: 1.8;
             max-width: 75%;
             align-self: flex-start;
             opacity: 0;
             transform: translateY(20px) translateX(-10px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
             padding-right: 1rem;
+            margin-top: -1rem;
         }
 
         .wishes-section.visible .wishes-text-up {
@@ -747,28 +748,23 @@
             transform: translateY(0) translateX(0);
         }
 
-        .wishes-text-up span {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            margin: 0.1rem 0;
-            backdrop-filter: blur(2px);
+        .wishes-text-up .line {
+            display: block;
         }
 
-        /* Второй абзац — от центра чуть вниз */
+        /* Второй абзац — от центра */
         .wishes-text-down {
-            font-size: clamp(0.85rem, 1.5vw, 1.5rem);
+            font-size: clamp(1.2rem, 2.2vw, 2.2rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
-            line-height: 1.5;
+            line-height: 1.7;
             max-width: 70%;
             align-self: center;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
-            margin-top: 0.5rem;
+            margin-top: 0;
             font-style: italic;
         }
 
@@ -777,13 +773,8 @@
             transform: translateY(0);
         }
 
-        .wishes-text-down span {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            margin: 0.1rem 0;
-            backdrop-filter: blur(2px);
+        .wishes-text-down .line {
+            display: block;
         }
 
         .main-bg-first {
@@ -1048,19 +1039,15 @@
             }
             .wishes-text-wrapper {
                 gap: 1.5rem;
-                padding: 0.3rem 0;
             }
             .wishes-text-up {
-                font-size: clamp(0.75rem, 1.5vw, 1rem);
+                font-size: clamp(1rem, 2vw, 1.4rem);
                 max-width: 85%;
+                margin-top: -0.5rem;
             }
             .wishes-text-down {
-                font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+                font-size: clamp(0.95rem, 1.8vw, 1.3rem);
                 max-width: 80%;
-            }
-            .wishes-text-up span,
-            .wishes-text-down span {
-                padding: 0.1rem 0.35rem;
             }
             .timer-section {
                 min-height: 45vh;
@@ -1200,19 +1187,15 @@
             }
             .wishes-text-wrapper {
                 gap: 1rem;
-                padding: 0.2rem 0;
             }
             .wishes-text-up {
-                font-size: 0.65rem;
+                font-size: 0.85rem;
                 max-width: 90%;
+                margin-top: -0.3rem;
             }
             .wishes-text-down {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
                 max-width: 85%;
-            }
-            .wishes-text-up span,
-            .wishes-text-down span {
-                padding: 0.08rem 0.25rem;
             }
             .timer-section {
                 min-height: 40vh;
@@ -1321,11 +1304,12 @@
                 margin-top: 1.5rem;
             }
             .wishes-text-up {
-                font-size: 1.6rem;
+                font-size: 2.4rem;
                 max-width: 70%;
+                margin-top: -1.5rem;
             }
             .wishes-text-down {
-                font-size: 1.5rem;
+                font-size: 2.2rem;
                 max-width: 65%;
             }
             .wishes-text-wrapper {
@@ -1474,46 +1458,46 @@
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text-wrapper">
                         <div class="wishes-text-up">
-                            <span>Ваше присутствие —</span>
-                            <span>самый дорогой подарок для нас.</span>
-                            <span>Мы решили, что вино</span>
-                            <span>станет главным символом дня,</span>
-                            <span>а цветы уступят место</span>
-                            <span>искренним чувствам.</span>
-                            <span>Конверт с тёплыми словами</span>
-                            <span>сохраним как память</span>
-                            <span>о вашей заботе и любви.</span>
+                            <span class="line">Ваше присутствие —</span>
+                            <span class="line">самый дорогой подарок для нас.</span>
+                            <span class="line">Мы решили, что вино</span>
+                            <span class="line">станет главным символом дня,</span>
+                            <span class="line">а цветы уступят место</span>
+                            <span class="line">искренним чувствам.</span>
+                            <span class="line">Конверт с тёплыми словами</span>
+                            <span class="line">сохраним как память</span>
+                            <span class="line">о вашей заботе и любви.</span>
                         </div>
                         <div class="wishes-text-down">
-                            <span>На территории площадки</span>
-                            <span>категорически запрещено</span>
-                            <span>прыгать в бассейн.</span>
-                            <span>Берегите себя</span>
-                            <span>и друг друга.</span>
+                            <span class="line">На территории площадки</span>
+                            <span class="line">категорически запрещено</span>
+                            <span class="line">прыгать в бассейн.</span>
+                            <span class="line">Берегите себя</span>
+                            <span class="line">и друг друга.</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Блок ТАЙМЕР -->
+            <!-- Блок ТАЙМЕР (стили как были) -->
             <div class="timer-section" id="timerSection">
                 <div class="timer-title">До нашей свадьбы осталось:</div>
                 <div class="timer-container">
                     <div class="timer-item">
                         <div class="number" id="days">00</div>
-                        <div class="label" id="daysLabel">дней</div>
+                        <div class="label" id="daysLabel">ДНЕЙ</div>
                     </div>
                     <div class="timer-item">
                         <div class="number" id="hours">00</div>
-                        <div class="label" id="hoursLabel">часов</div>
+                        <div class="label" id="hoursLabel">ЧАСОВ</div>
                     </div>
                     <div class="timer-item">
                         <div class="number" id="minutes">00</div>
-                        <div class="label" id="minutesLabel">минут</div>
+                        <div class="label" id="minutesLabel">МИНУТ</div>
                     </div>
                     <div class="timer-item">
                         <div class="number" id="seconds">00</div>
-                        <div class="label" id="secondsLabel">секунд</div>
+                        <div class="label" id="secondsLabel">СЕКУНД</div>
                     </div>
                 </div>
             </div>
@@ -1573,10 +1557,10 @@
                     document.getElementById('hours').textContent = '00';
                     document.getElementById('minutes').textContent = '00';
                     document.getElementById('seconds').textContent = '00';
-                    document.getElementById('daysLabel').textContent = 'дней';
-                    document.getElementById('hoursLabel').textContent = 'часов';
-                    document.getElementById('minutesLabel').textContent = 'минут';
-                    document.getElementById('secondsLabel').textContent = 'секунд';
+                    document.getElementById('daysLabel').textContent = 'ДНЕЙ';
+                    document.getElementById('hoursLabel').textContent = 'ЧАСОВ';
+                    document.getElementById('minutesLabel').textContent = 'МИНУТ';
+                    document.getElementById('secondsLabel').textContent = 'СЕКУНД';
                     return;
                 }
 
@@ -1590,10 +1574,10 @@
                 document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-                document.getElementById('daysLabel').textContent = declension(days, ['день', 'дня', 'дней']);
-                document.getElementById('hoursLabel').textContent = declension(hours, ['час', 'часа', 'часов']);
-                document.getElementById('minutesLabel').textContent = declension(minutes, ['минута', 'минуты', 'минут']);
-                document.getElementById('secondsLabel').textContent = declension(seconds, ['секунда', 'секунды', 'секунд']);
+                document.getElementById('daysLabel').textContent = declension(days, ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ']).toUpperCase();
+                document.getElementById('hoursLabel').textContent = declension(hours, ['ЧАС', 'ЧАСА', 'ЧАСОВ']).toUpperCase();
+                document.getElementById('minutesLabel').textContent = declension(minutes, ['МИНУТА', 'МИНУТЫ', 'МИНУТ']).toUpperCase();
+                document.getElementById('secondsLabel').textContent = declension(seconds, ['СЕКУНДА', 'СЕКУНДЫ', 'СЕКУНД']).toUpperCase();
             }
 
             updateTimer();
