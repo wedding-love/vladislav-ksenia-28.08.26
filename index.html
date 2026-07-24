@@ -658,7 +658,7 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК ПОЖЕЛАНИЯ (разные стили) ——— */
+        /* ——— БЛОК ПОЖЕЛАНИЯ ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -716,20 +716,20 @@
             transform: translateY(0);
         }
 
-        /* Первый блок — выше и левее, с наклоном */
+        /* Первый блок — чуть правее и чуть ниже */
         .wishes-block-up {
             position: absolute;
-            top: 18%;
-            left: 5%;
+            top: 22%;
+            left: 8%;
             max-width: 55%;
             opacity: 0;
-            transform: translateY(-20px) translateX(-15px) rotate(-2deg);
+            transform: translateY(-10px) translateX(-5px) rotate(-1.5deg);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
         .wishes-section.visible .wishes-block-up {
             opacity: 0.9;
-            transform: translateY(0) translateX(0) rotate(-2deg);
+            transform: translateY(0) translateX(0) rotate(-1.5deg);
         }
 
         .wishes-text-up {
@@ -744,20 +744,20 @@
             display: block;
         }
 
-        /* Второй блок — выше и правее, с наклоном */
+        /* Второй блок — ближе к центру и чуть выше */
         .wishes-block-down {
             position: absolute;
-            bottom: 22%;
-            right: 5%;
-            max-width: 55%;
+            bottom: 28%;
+            right: 15%;
+            max-width: 50%;
             opacity: 0;
-            transform: translateY(-20px) translateX(15px) rotate(2deg);
+            transform: translateY(-10px) translateX(5px) rotate(1.5deg);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
         }
 
         .wishes-section.visible .wishes-block-down {
             opacity: 0.7;
-            transform: translateY(0) translateX(0) rotate(2deg);
+            transform: translateY(0) translateX(0) rotate(1.5deg);
         }
 
         .wishes-text-down {
@@ -1051,6 +1051,32 @@
             font-weight: 600;
         }
 
+        /* ——— КНОПКА ОТПРАВИТЬ ——— */
+        .submit-btn {
+            padding: 1rem 2.5rem;
+            background: #ffffff;
+            color: #4a1a1a;
+            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-size: clamp(1.2rem, 2vw, 2rem);
+            font-weight: 400;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+            align-self: center;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.96);
+        }
+
         .main-bg-first {
             position: absolute;
             top: 0;
@@ -1312,25 +1338,25 @@
                 margin-bottom: 0.2rem;
             }
             .wishes-block-up {
-                top: 15%;
-                left: 3%;
+                top: 18%;
+                left: 4%;
                 max-width: 70%;
-                transform: translateY(-10px) translateX(-8px) rotate(-1.5deg);
+                transform: translateY(-5px) translateX(-3px) rotate(-1deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-1.5deg);
+                transform: translateY(0) translateX(0) rotate(-1deg);
             }
             .wishes-text-up {
                 font-size: clamp(0.95rem, 1.8vw, 1.3rem);
             }
             .wishes-block-down {
-                bottom: 18%;
-                right: 3%;
-                max-width: 70%;
-                transform: translateY(-10px) translateX(8px) rotate(1.5deg);
+                bottom: 22%;
+                right: 8%;
+                max-width: 65%;
+                transform: translateY(-5px) translateX(3px) rotate(1deg);
             }
             .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(1.5deg);
+                transform: translateY(0) translateX(0) rotate(1deg);
             }
             .wishes-text-down {
                 font-size: clamp(0.85rem, 1.6vw, 1.1rem);
@@ -1385,6 +1411,10 @@
             }
             .guest-form .deadline {
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+            }
+            .submit-btn {
+                padding: 0.8rem 2rem;
+                font-size: clamp(1rem, 1.8vw, 1.3rem);
             }
         }
 
@@ -1501,25 +1531,25 @@
                 margin-bottom: 0.15rem;
             }
             .wishes-block-up {
-                top: 12%;
-                left: 2%;
+                top: 14%;
+                left: 3%;
                 max-width: 80%;
-                transform: translateY(-5px) translateX(-4px) rotate(-1deg);
+                transform: translateY(-3px) translateX(-2px) rotate(-0.5deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-1deg);
+                transform: translateY(0) translateX(0) rotate(-0.5deg);
             }
             .wishes-text-up {
                 font-size: 0.8rem;
             }
             .wishes-block-down {
-                bottom: 15%;
-                right: 2%;
-                max-width: 80%;
-                transform: translateY(-5px) translateX(4px) rotate(1deg);
+                bottom: 18%;
+                right: 5%;
+                max-width: 75%;
+                transform: translateY(-3px) translateX(2px) rotate(0.5deg);
             }
             .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(1deg);
+                transform: translateY(0) translateX(0) rotate(0.5deg);
             }
             .wishes-text-down {
                 font-size: 0.75rem;
@@ -1573,6 +1603,10 @@
             }
             .guest-form .deadline {
                 font-size: 0.8rem;
+            }
+            .submit-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -1659,25 +1693,25 @@
                 margin-top: 1.5rem;
             }
             .wishes-block-up {
-                top: 20%;
-                left: 4%;
+                top: 24%;
+                left: 6%;
                 max-width: 50%;
-                transform: translateY(-25px) translateX(-20px) rotate(-2.5deg);
+                transform: translateY(-15px) translateX(-8px) rotate(-2deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-2.5deg);
+                transform: translateY(0) translateX(0) rotate(-2deg);
             }
             .wishes-text-up {
                 font-size: 2.2rem;
             }
             .wishes-block-down {
-                bottom: 25%;
-                right: 4%;
-                max-width: 50%;
-                transform: translateY(-25px) translateX(20px) rotate(2.5deg);
+                bottom: 30%;
+                right: 12%;
+                max-width: 45%;
+                transform: translateY(-15px) translateX(8px) rotate(2deg);
             }
             .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(2.5deg);
+                transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
                 font-size: 1.8rem;
@@ -1722,6 +1756,10 @@
             }
             .guest-form .deadline {
                 font-size: 1.6rem;
+            }
+            .submit-btn {
+                font-size: 2rem;
+                padding: 1rem 3rem;
             }
         }
     </style>
@@ -1841,13 +1879,12 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ (разные стили) -->
+            <!-- Блок ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
 
-                    <!-- Первый блок — выше и левее, с наклоном -->
                     <div class="wishes-block-up">
                         <div class="wishes-text-up">
                             <span class="line">Ваше присутствие —</span>
@@ -1862,7 +1899,6 @@
                         </div>
                     </div>
 
-                    <!-- Второй блок — выше и правее, с наклоном -->
                     <div class="wishes-block-down">
                         <div class="wishes-text-down">
                             <span class="line">На территории площадки</span>
@@ -1898,20 +1934,20 @@
                 </div>
             </div>
 
-            <!-- Блок АНКЕТА ГОСТЯ (после таймера) -->
+            <!-- Блок АНКЕТА ГОСТЯ -->
             <div class="guest-section" id="guestSection">
                 <div class="guest-title">Анкета гостя</div>
-                <div class="guest-form">
+                <form class="guest-form" action="https://formspree.io/f/mwvgnowr" method="POST">
                     <div class="form-group">
                         <label>Ваше имя и фамилия</label>
-                        <input type="text" placeholder="Например: Анна Иванова" />
+                        <input type="text" name="name" placeholder="Например: Анна Иванова" required />
                     </div>
 
                     <div class="form-group">
                         <label>Будете ли присутствовать?</label>
                         <div class="radio-group">
                             <label>
-                                <input type="radio" name="attendance" value="yes" />
+                                <input type="radio" name="attendance" value="yes" required />
                                 Да, конечно!
                             </label>
                             <label>
@@ -1925,19 +1961,19 @@
                         <label>Ваши предпочтения в напитках</label>
                         <div class="checkbox-group">
                             <label>
-                                <input type="checkbox" name="drink" value="white" />
+                                <input type="checkbox" name="drinks[]" value="white" />
                                 Вино белое
                             </label>
                             <label>
-                                <input type="checkbox" name="drink" value="red" />
+                                <input type="checkbox" name="drinks[]" value="red" />
                                 Вино красное
                             </label>
                             <label>
-                                <input type="checkbox" name="drink" value="strong" />
+                                <input type="checkbox" name="drinks[]" value="strong" />
                                 Крепкие напитки
                             </label>
                             <label>
-                                <input type="checkbox" name="drink" value="soft" />
+                                <input type="checkbox" name="drinks[]" value="soft" />
                                 Безалкогольные
                             </label>
                         </div>
@@ -1946,7 +1982,9 @@
                     <div class="deadline">
                         Подтвердите присутствие до <strong>12.08.2026</strong>
                     </div>
-                </div>
+
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
             </div>
 
         </div>
