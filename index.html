@@ -658,7 +658,7 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК ПОЖЕЛАНИЯ (пожелания.png) ——— */
+        /* ——— БЛОК ПОЖЕЛАНИЯ (тексты по центру с наклоном) ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -693,7 +693,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             padding: 2rem;
         }
 
@@ -703,8 +703,8 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 0.3rem;
-            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            margin-top: -1rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -721,64 +721,147 @@
             flex-direction: column;
             width: 100%;
             max-width: 800px;
-            flex: 1;
-            justify-content: flex-start;
-            gap: 1.5rem;
-            padding: 0;
-            padding-top: 0.5rem;
+            align-items: center;
+            gap: 2rem;
         }
 
-        /* Первый абзац — поднят выше и смещён правее */
+        /* Первый текст — чуть правее, наклон влево */
         .wishes-text-up {
             font-size: clamp(1.3rem, 2.4vw, 2.4rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
-            text-align: left;
+            text-align: center;
             line-height: 1.8;
             max-width: 75%;
-            align-self: flex-end;
             opacity: 0;
-            transform: translateY(20px) translateX(10px);
+            transform: translateY(20px) translateX(15px) rotate(-2deg);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-right: 0.5rem;
-            margin-top: -1.5rem;
-            margin-right: 5%;
         }
 
         .wishes-section.visible .wishes-text-up {
             opacity: 0.9;
-            transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0) rotate(-2deg);
         }
 
         .wishes-text-up .line {
             display: block;
         }
 
-        /* Второй абзац — поднят выше и смещён правее */
+        /* Второй текст — ниже, чуть правее, наклон вправо */
         .wishes-text-down {
             font-size: clamp(1.2rem, 2.2vw, 2.2rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
-            text-align: right;
+            text-align: center;
             line-height: 1.7;
             max-width: 70%;
-            align-self: flex-end;
             opacity: 0;
-            transform: translateY(20px) translateX(10px);
+            transform: translateY(20px) translateX(10px) rotate(1.5deg);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
-            margin-top: -0.5rem;
+            margin-top: 0.5rem;
             font-style: italic;
-            margin-right: 3%;
         }
 
         .wishes-section.visible .wishes-text-down {
             opacity: 0.7;
-            transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0) rotate(1.5deg);
         }
 
         .wishes-text-down .line {
             display: block;
         }
+
+        /* ——— БЛОК ТАЙМЕР ——— */
+        .timer-section {
+            width: 100%;
+            flex-shrink: 0;
+            background: #4a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            min-height: 50vh;
+        }
+
+        .timer-title {
+            font-size: clamp(2rem, 4vw, 4rem);
+            color: #ffffff;
+            font-family: 'MiamaNueva', serif;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+        }
+
+        .timer-section.visible .timer-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timer-container {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .timer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            min-width: 70px;
+            background: transparent;
+            border: none;
+            backdrop-filter: none;
+        }
+
+        .timer-item .number {
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: #ffffff;
+            font-family: 'MiamaNueva', serif;
+            font-weight: 600;
+            line-height: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+        }
+
+        .timer-section.visible .timer-item .number {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timer-item .label {
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            color: #ffffff;
+            font-family: 'Patriciana', Georgia, serif;
+            margin-top: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+        }
+
+        .timer-section.visible .timer-item .label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timer-item:nth-child(1) .number { transition-delay: 0.2s; }
+        .timer-item:nth-child(1) .label { transition-delay: 0.3s; }
+        .timer-item:nth-child(2) .number { transition-delay: 0.3s; }
+        .timer-item:nth-child(2) .label { transition-delay: 0.4s; }
+        .timer-item:nth-child(3) .number { transition-delay: 0.4s; }
+        .timer-item:nth-child(3) .label { transition-delay: 0.5s; }
+        .timer-item:nth-child(4) .number { transition-delay: 0.5s; }
+        .timer-item:nth-child(4) .label { transition-delay: 0.6s; }
 
         .main-bg-first {
             position: absolute;
@@ -1037,24 +1120,27 @@
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
-                margin-top: 0.5rem;
-                margin-bottom: 0.2rem;
+                margin-top: -0.5rem;
             }
             .wishes-text-wrapper {
-                gap: 1.2rem;
-                padding-top: 0.3rem;
+                gap: 1.5rem;
             }
             .wishes-text-up {
                 font-size: clamp(1rem, 2vw, 1.4rem);
-                max-width: 85%;
-                margin-top: -1rem;
-                margin-right: 2%;
+                max-width: 90%;
+                transform: translateY(20px) translateX(10px) rotate(-1.5deg);
+            }
+            .wishes-section.visible .wishes-text-up {
+                transform: translateY(0) translateX(0) rotate(-1.5deg);
             }
             .wishes-text-down {
                 font-size: clamp(0.95rem, 1.8vw, 1.3rem);
-                max-width: 80%;
-                margin-top: -0.3rem;
-                margin-right: 2%;
+                max-width: 85%;
+                transform: translateY(20px) translateX(8px) rotate(1deg);
+                margin-top: 0.3rem;
+            }
+            .wishes-section.visible .wishes-text-down {
+                transform: translateY(0) translateX(0) rotate(1deg);
             }
             .timer-section {
                 min-height: 45vh;
@@ -1189,24 +1275,27 @@
             }
             .wishes-title {
                 font-size: 1.8rem;
-                margin-top: 0.3rem;
-                margin-bottom: 0.15rem;
+                margin-top: -0.3rem;
             }
             .wishes-text-wrapper {
-                gap: 0.8rem;
-                padding-top: 0.2rem;
+                gap: 1rem;
             }
             .wishes-text-up {
                 font-size: 0.85rem;
-                max-width: 90%;
-                margin-top: -0.5rem;
-                margin-right: 1%;
+                max-width: 95%;
+                transform: translateY(20px) translateX(5px) rotate(-1deg);
+            }
+            .wishes-section.visible .wishes-text-up {
+                transform: translateY(0) translateX(0) rotate(-1deg);
             }
             .wishes-text-down {
                 font-size: 0.8rem;
-                max-width: 85%;
-                margin-top: -0.2rem;
-                margin-right: 1%;
+                max-width: 90%;
+                transform: translateY(20px) translateX(5px) rotate(0.5deg);
+                margin-top: 0.2rem;
+            }
+            .wishes-section.visible .wishes-text-down {
+                transform: translateY(0) translateX(0) rotate(0.5deg);
             }
             .timer-section {
                 min-height: 40vh;
@@ -1312,23 +1401,27 @@
             }
             .wishes-title {
                 font-size: 4.5rem;
-                margin-top: 1.5rem;
+                margin-top: -1.5rem;
             }
             .wishes-text-up {
                 font-size: 2.4rem;
                 max-width: 70%;
-                margin-top: -2rem;
-                margin-right: 5%;
+                transform: translateY(20px) translateX(20px) rotate(-2.5deg);
+            }
+            .wishes-section.visible .wishes-text-up {
+                transform: translateY(0) translateX(0) rotate(-2.5deg);
             }
             .wishes-text-down {
                 font-size: 2.2rem;
                 max-width: 65%;
-                margin-top: -0.5rem;
-                margin-right: 3%;
+                transform: translateY(20px) translateX(15px) rotate(2deg);
+                margin-top: 0.5rem;
+            }
+            .wishes-section.visible .wishes-text-down {
+                transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-wrapper {
-                gap: 2rem;
-                padding-top: 0.5rem;
+                gap: 2.5rem;
             }
             .timer-section {
                 min-height: 60vh;
@@ -1466,7 +1559,7 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ (пожелания.png) -->
+            <!-- Блок ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
                 <div class="wishes-content">
