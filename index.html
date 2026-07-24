@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -680,14 +679,16 @@
         }
 
         .wishes-content {
-            position: absolute;
-            inset: 0;
+            position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 2rem;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 3rem 2rem;
+            text-align: center;
         }
 
         .wishes-title {
@@ -696,8 +697,7 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 0.3rem;
-            margin-top: 1rem;
+            margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -709,59 +709,29 @@
             transform: translateY(0);
         }
 
-        .wishes-block-up {
-            position: absolute;
-            top: 28%;
-            left: 32%;
-            max-width: 50%;
-            opacity: 0;
-            transform: translateY(-5px) translateX(-3px) rotate(-3deg);
-            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-        }
-
-        .wishes-section.visible .wishes-block-up {
-            opacity: 0.9;
-            transform: translateY(0) translateX(0) rotate(-3deg);
-        }
-
-        .wishes-text-up {
-            font-size: clamp(1.4rem, 2.4vw, 2.4rem);
-            color: #4a1a1a;
-            font-family: 'Patriciana', Georgia, serif;
-            text-align: left;
-            line-height: 1.8;
-        }
-
-        .wishes-text-up .line {
-            display: block;
-        }
-
-        .wishes-block-down {
-            position: absolute;
-            bottom: 28%;
-            right: 10%;
-            max-width: 50%;
-            opacity: 0;
-            transform: translateY(-10px) translateX(5px) rotate(2deg);
-            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
-        }
-
-        .wishes-section.visible .wishes-block-down {
-            opacity: 0.7;
-            transform: translateY(0) translateX(0) rotate(2deg);
-        }
-
-        .wishes-text-down {
-            font-size: clamp(1.2rem, 2.0vw, 2.0rem);
+        .wishes-text {
+            max-width: 70%;
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
-            line-height: 1.7;
-            font-style: italic;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
-        .wishes-text-down .line {
-            display: block;
+        .wishes-section.visible .wishes-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wishes-text .paragraph {
+            font-size: clamp(1.2rem, 2.0vw, 2.0rem);
+            margin-bottom: 1.2rem;
+        }
+
+        .wishes-text .paragraph:last-child {
+            margin-bottom: 0;
         }
 
         /* ——— БЛОК ТАЙМЕР ——— */
@@ -1299,37 +1269,40 @@
             opacity: 0.7;
         }
 
-        /* ——— БЛОК ФИНАЛЬНЫЙ С ФОТО ——— */
+        /* ——— ФИНАЛЬНЫЙ БЛОК С ФОТО ——— */
         .final-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding: 0;
+            background: #ffffff;
         }
 
         .final-bg {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            z-index: 0;
+        }
+
+        .final-content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center;
-            z-index: 0;
-        }
-
-        .final-content {
-            position: relative;
             z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            justify-content: flex-start;
+            padding: 3rem 2rem 2rem 2rem;
             text-align: center;
         }
 
@@ -1603,36 +1576,18 @@
                 min-height: 100vh;
             }
             .wishes-content {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
-                margin-top: 0.5rem;
-                margin-bottom: 0.2rem;
+                margin-bottom: 1.5rem;
             }
-            .wishes-block-up {
-                top: 24%;
-                left: 22%;
-                max-width: 70%;
-                transform: translateY(-3px) translateX(-2px) rotate(-3deg);
+            .wishes-text {
+                max-width: 85%;
             }
-            .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-3deg);
-            }
-            .wishes-text-up {
-                font-size: clamp(1.1rem, 2.0vw, 1.4rem);
-            }
-            .wishes-block-down {
-                bottom: 25%;
-                right: 6%;
-                max-width: 65%;
-                transform: translateY(-5px) translateX(3px) rotate(2deg);
-            }
-            .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(2deg);
-            }
-            .wishes-text-down {
-                font-size: clamp(1.0rem, 1.8vw, 1.2rem);
+            .wishes-text .paragraph {
+                font-size: clamp(1.0rem, 2.0vw, 1.3rem);
+                margin-bottom: 1rem;
             }
             .dresscode-section {
                 min-height: 80vh;
@@ -1738,6 +1693,9 @@
             }
             .final-text {
                 font-size: clamp(2.2rem, 5vw, 3.2rem);
+            }
+            .final-content {
+                padding: 2rem 1.5rem 1.5rem 1.5rem;
             }
         }
 
@@ -1846,36 +1804,18 @@
                 min-height: 100vh;
             }
             .wishes-content {
-                padding: 1rem;
+                padding: 1.5rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
-                margin-top: 0.3rem;
-                margin-bottom: 0.15rem;
+                margin-bottom: 1rem;
             }
-            .wishes-block-up {
-                top: 20%;
-                left: 18%;
-                max-width: 80%;
-                transform: translateY(-2px) translateX(-1px) rotate(-3deg);
+            .wishes-text {
+                max-width: 92%;
             }
-            .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-3deg);
-            }
-            .wishes-text-up {
-                font-size: 0.95rem;
-            }
-            .wishes-block-down {
-                bottom: 22%;
-                right: 5%;
-                max-width: 75%;
-                transform: translateY(-3px) translateX(2px) rotate(2deg);
-            }
-            .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(2deg);
-            }
-            .wishes-text-down {
-                font-size: 0.85rem;
+            .wishes-text .paragraph {
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
             }
             .dresscode-section {
                 min-height: 70vh;
@@ -1981,6 +1921,9 @@
             .final-text {
                 font-size: 1.8rem;
             }
+            .final-content {
+                padding: 1.5rem 1rem 1rem 1rem;
+            }
         }
 
         @media (min-width: 1400px) {
@@ -2065,29 +2008,12 @@
                 font-size: 4.5rem;
                 margin-top: 1.5rem;
             }
-            .wishes-block-up {
-                top: 30%;
-                left: 34%;
-                max-width: 45%;
-                transform: translateY(-8px) translateX(-5px) rotate(-3deg);
+            .wishes-text {
+                max-width: 55%;
             }
-            .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(-3deg);
-            }
-            .wishes-text-up {
-                font-size: 2.6rem;
-            }
-            .wishes-block-down {
-                bottom: 32%;
-                right: 12%;
-                max-width: 45%;
-                transform: translateY(-15px) translateX(8px) rotate(2deg);
-            }
-            .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(2deg);
-            }
-            .wishes-text-down {
+            .wishes-text .paragraph {
                 font-size: 2.2rem;
+                margin-bottom: 1.5rem;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -2179,6 +2105,9 @@
             }
             .final-text {
                 font-size: 6rem;
+            }
+            .final-content {
+                padding: 4rem 2rem 3rem 2rem;
             }
         }
     </style>
@@ -2300,33 +2229,17 @@
 
             <!-- Блок ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
+                <img class="wishes-bg" src="image_2026-07-24_22-20-01.png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
-
-                    <div class="wishes-block-up">
-                        <div class="wishes-text-up">
-                            <span class="line">Для нас нет подарка ценнее,</span>
-                            <span class="line">чем ваше присутствие.</span>
-                            <span class="line">Вместо цветов — вино,</span>
-                            <span class="line">оно расскажет о наших чувствах</span>
-                            <span class="line">лучше любых слов.</span>
-                            <span class="line">Нам важны не букеты,</span>
-                            <span class="line">а ваши улыбки,</span>
-                            <span class="line">ваше тепло,</span>
-                            <span class="line">ваша забота.</span>
-                            <span class="line">Это мы хотим запомнить</span>
-                            <span class="line">в этот день.</span>
+                    <div class="wishes-text">
+                        <div class="paragraph">
+                            Для нас нет подарка ценнее, чем ваше присутствие. 
+                            Вместо цветов — вино, которое расскажет о наших чувствах лучше любых слов.
                         </div>
-                    </div>
-
-                    <div class="wishes-block-down">
-                        <div class="wishes-text-down">
-                            <span class="line">На территории площадки</span>
-                            <span class="line">категорически запрещено</span>
-                            <span class="line">прыгать в бассейн.</span>
-                            <span class="line">Берегите себя</span>
-                            <span class="line">и друг друга.</span>
+                        <div class="paragraph">
+                            Нам важны не букеты, а ваши улыбки, ваше тепло и ваша забота. 
+                            Именно это мы хотим запомнить в этот день.
                         </div>
                     </div>
                 </div>
@@ -2713,4 +2626,3 @@
     </script>
 </body>
 </html>
-
