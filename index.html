@@ -719,9 +719,9 @@
         /* Первый блок — смещён правее и чуть ниже */
         .wishes-block-up {
             position: absolute;
-            top: 26%;
-            left: 12%;
-            max-width: 55%;
+            top: 28%;
+            left: 18%;
+            max-width: 50%;
             opacity: 0;
             transform: translateY(-5px) translateX(-3px) rotate(-1.5deg);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
@@ -747,8 +747,8 @@
         /* Второй блок — поднят выше и левее */
         .wishes-block-down {
             position: absolute;
-            bottom: 24%;
-            right: 8%;
+            bottom: 20%;
+            right: 5%;
             max-width: 50%;
             opacity: 0;
             transform: translateY(-10px) translateX(5px) rotate(1.5deg);
@@ -771,6 +771,81 @@
 
         .wishes-text-down .line {
             display: block;
+        }
+
+        /* ——— БЛОК ДРЕСС-КОД ——— */
+        .dresscode-section {
+            width: 100%;
+            flex-shrink: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .dresscode-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dresscode-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
+        .dresscode-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .dresscode-title {
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            color: #ffffff;
+            font-family: 'MiamaNueva', serif;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+        }
+
+        .dresscode-section.visible .dresscode-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dresscode-text {
+            font-size: clamp(1.2rem, 2vw, 2rem);
+            color: #ffffff;
+            font-family: 'Patriciana', Georgia, serif;
+            max-width: 80%;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+        }
+
+        .dresscode-section.visible .dresscode-text {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ——— БЛОК ТАЙМЕР ——— */
@@ -1095,7 +1170,7 @@
             font-weight: 700;
         }
 
-        /* ——— КНОПКА ОТПРАВИТЬ (обычный основной шрифт) ——— */
+        /* ——— КНОПКА ОТПРАВИТЬ ——— */
         .submit-btn {
             padding: 1rem 2.5rem;
             background: #ffffff;
@@ -1390,8 +1465,8 @@
                 margin-bottom: 0.2rem;
             }
             .wishes-block-up {
-                top: 22%;
-                left: 6%;
+                top: 24%;
+                left: 8%;
                 max-width: 70%;
                 transform: translateY(-3px) translateX(-2px) rotate(-1deg);
             }
@@ -1402,8 +1477,8 @@
                 font-size: clamp(0.95rem, 1.8vw, 1.3rem);
             }
             .wishes-block-down {
-                bottom: 20%;
-                right: 6%;
+                bottom: 18%;
+                right: 4%;
                 max-width: 65%;
                 transform: translateY(-5px) translateX(3px) rotate(1deg);
             }
@@ -1412,6 +1487,20 @@
             }
             .wishes-text-down {
                 font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+            }
+            .dresscode-section {
+                min-height: 80vh;
+            }
+            .dresscode-content {
+                padding: 3rem 1.5rem;
+            }
+            .dresscode-title {
+                font-size: clamp(2rem, 4vw, 2.8rem);
+                margin-bottom: 1rem;
+            }
+            .dresscode-text {
+                font-size: clamp(1rem, 1.8vw, 1.4rem);
+                max-width: 90%;
             }
             .timer-section {
                 min-height: 45vh;
@@ -1584,8 +1673,8 @@
                 margin-bottom: 0.15rem;
             }
             .wishes-block-up {
-                top: 18%;
-                left: 4%;
+                top: 20%;
+                left: 5%;
                 max-width: 80%;
                 transform: translateY(-2px) translateX(-1px) rotate(-0.5deg);
             }
@@ -1596,8 +1685,8 @@
                 font-size: 0.8rem;
             }
             .wishes-block-down {
-                bottom: 16%;
-                right: 4%;
+                bottom: 15%;
+                right: 3%;
                 max-width: 75%;
                 transform: translateY(-3px) translateX(2px) rotate(0.5deg);
             }
@@ -1606,6 +1695,20 @@
             }
             .wishes-text-down {
                 font-size: 0.75rem;
+            }
+            .dresscode-section {
+                min-height: 70vh;
+            }
+            .dresscode-content {
+                padding: 2rem 1rem;
+            }
+            .dresscode-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+            .dresscode-text {
+                font-size: 0.9rem;
+                max-width: 95%;
             }
             .timer-section {
                 min-height: 40vh;
@@ -1747,9 +1850,9 @@
                 margin-top: 1.5rem;
             }
             .wishes-block-up {
-                top: 28%;
-                left: 14%;
-                max-width: 50%;
+                top: 30%;
+                left: 20%;
+                max-width: 45%;
                 transform: translateY(-8px) translateX(-5px) rotate(-2deg);
             }
             .wishes-section.visible .wishes-block-up {
@@ -1759,8 +1862,8 @@
                 font-size: 2.2rem;
             }
             .wishes-block-down {
-                bottom: 26%;
-                right: 10%;
+                bottom: 22%;
+                right: 6%;
                 max-width: 45%;
                 transform: translateY(-15px) translateX(8px) rotate(2deg);
             }
@@ -1769,6 +1872,16 @@
             }
             .wishes-text-down {
                 font-size: 1.8rem;
+            }
+            .dresscode-section {
+                min-height: 100vh;
+            }
+            .dresscode-title {
+                font-size: 4.5rem;
+            }
+            .dresscode-text {
+                font-size: 2rem;
+                max-width: 70%;
             }
             .timer-section {
                 min-height: 60vh;
@@ -1966,6 +2079,15 @@
                 </div>
             </div>
 
+            <!-- Блок ДРЕСС-КОД -->
+            <div class="dresscode-section" id="dresscodeSection">
+                <img class="dresscode-bg" src="image_2026-07-24_18-41-06.png" alt="фон дресс-код" />
+                <div class="dresscode-content">
+                    <div class="dresscode-title">Дресс-код</div>
+                    <div class="dresscode-text">Просим поддержать наш стиль и прийти в оттенках торжества. Будем рады видеть вас в elegant образе.</div>
+                </div>
+            </div>
+
             <!-- Блок ТАЙМЕР -->
             <div class="timer-section" id="timerSection">
                 <div class="timer-title">До нашей свадьбы осталось:</div>
@@ -2057,6 +2179,7 @@
             const programSection = document.getElementById('programSection');
             const locationSection = document.getElementById('locationSection');
             const wishesSection = document.getElementById('wishesSection');
+            const dresscodeSection = document.getElementById('dresscodeSection');
             const timerSection = document.getElementById('timerSection');
             const guestSection = document.getElementById('guestSection');
             const fadeBtn = document.getElementById('fadeBtn');
@@ -2068,6 +2191,7 @@
             let programVisible = false;
             let locationVisible = false;
             let wishesVisible = false;
+            let dresscodeVisible = false;
             let timerVisible = false;
             let guestVisible = false;
 
@@ -2183,6 +2307,17 @@
                         if (!wishesVisible) {
                             wishesVisible = true;
                             wishesSection.classList.add('visible');
+                        }
+                    }
+                }
+
+                if (dresscodeSection) {
+                    const rect = dresscodeSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!dresscodeVisible) {
+                            dresscodeVisible = true;
+                            dresscodeSection.classList.add('visible');
                         }
                     }
                 }
