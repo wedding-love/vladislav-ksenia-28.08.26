@@ -658,7 +658,7 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК ПОЖЕЛАНИЯ (новое.png) ——— */
+        /* ——— БЛОК ПОЖЕЛАНИЯ (фон.png, обрезан до квадрата) ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -677,10 +677,10 @@
 
         .wishes-bg {
             position: absolute;
-            top: 0;
+            top: -20%;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 140%;
             object-fit: cover;
             object-position: center;
             z-index: 0;
@@ -698,12 +698,12 @@
         }
 
         .wishes-title {
-            font-size: clamp(2.2rem, 4vw, 4rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -715,16 +715,16 @@
         }
 
         .wishes-text-up {
-            font-size: clamp(0.9rem, 1.7vw, 1.7rem);
+            font-size: clamp(1.1rem, 2vw, 2rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.8;
             max-width: 85%;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .wishes-section.visible .wishes-text-up {
@@ -733,11 +733,11 @@
         }
 
         .wishes-text-down {
-            font-size: clamp(0.8rem, 1.5vw, 1.4rem);
+            font-size: clamp(1rem, 1.8vw, 1.7rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
-            line-height: 1.5;
+            line-height: 1.6;
             max-width: 80%;
             opacity: 0;
             transform: translateY(20px);
@@ -978,7 +978,7 @@
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив для мобильных ——— */
+        /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -1095,6 +1095,8 @@
                 min-height: 100vh;
             }
             .wishes-bg {
+                top: -15%;
+                height: 130%;
                 object-fit: cover;
                 object-position: center;
             }
@@ -1102,19 +1104,19 @@
                 padding: 1.5rem;
             }
             .wishes-title {
-                font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+                font-size: clamp(2rem, 4vw, 2.8rem);
                 margin-bottom: 0.8rem;
             }
             .wishes-text-up {
-                font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+                font-size: clamp(0.95rem, 1.8vw, 1.3rem);
                 max-width: 92%;
                 margin-bottom: 0.8rem;
-                line-height: 1.5;
+                line-height: 1.6;
             }
             .wishes-text-down {
-                font-size: clamp(0.7rem, 1.3vw, 1rem);
+                font-size: clamp(0.85rem, 1.6vw, 1.1rem);
                 max-width: 90%;
-                line-height: 1.4;
+                line-height: 1.5;
             }
             .timer-section {
                 min-height: 45vh;
@@ -1245,26 +1247,26 @@
                 min-height: 100vh;
             }
             .wishes-bg {
-                object-fit: cover;
-                object-position: center;
+                top: -10%;
+                height: 120%;
             }
             .wishes-content {
                 padding: 1rem;
             }
             .wishes-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-bottom: 0.6rem;
             }
             .wishes-text-up {
-                font-size: 0.7rem;
+                font-size: 0.85rem;
                 max-width: 95%;
                 margin-bottom: 0.6rem;
-                line-height: 1.4;
+                line-height: 1.5;
             }
             .wishes-text-down {
-                font-size: 0.65rem;
+                font-size: 0.75rem;
                 max-width: 95%;
-                line-height: 1.3;
+                line-height: 1.4;
             }
             .timer-section {
                 min-height: 40vh;
@@ -1369,15 +1371,19 @@
                 gap: 2rem;
             }
             .wishes-title {
-                font-size: 4rem;
+                font-size: 4.5rem;
             }
             .wishes-text-up {
-                font-size: 1.7rem;
+                font-size: 2rem;
                 max-width: 75%;
             }
             .wishes-text-down {
-                font-size: 1.4rem;
+                font-size: 1.7rem;
                 max-width: 70%;
+            }
+            .wishes-bg {
+                top: -25%;
+                height: 150%;
             }
             .timer-section {
                 min-height: 60vh;
@@ -1515,9 +1521,9 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ (новое.png) -->
+            <!-- Блок ПОЖЕЛАНИЯ (фон.png, обрезан до квадрата) -->
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="новое.png" alt="фон пожеланий" />
+                <img class="wishes-bg" src="фон.png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text-up">Ваше присутствие — самый дорогой подарок для нас. Мы решили, что вино станет главным символом этого дня, а цветы уступят место искренним чувствам. Если захотите оставить конверт с тёплыми словами, мы сохраним его как память о вашей заботе и любви.</div>
