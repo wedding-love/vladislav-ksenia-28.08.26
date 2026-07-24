@@ -711,7 +711,7 @@
         .wishes-block-up {
             position: absolute;
             top: 28%;
-            left: 22%; /* сместили вправо (было 18%) */
+            left: 26%; /* чуть правее */
             max-width: 50%;
             opacity: 0;
             transform: translateY(-5px) translateX(-3px) rotate(-1.5deg);
@@ -737,8 +737,8 @@
 
         .wishes-block-down {
             position: absolute;
-            bottom: 28%; /* сместили вверх (было 20%) */
-            right: 8%; /* сместили левее (было 5%) */
+            bottom: 28%;
+            right: 15%; /* левее, чем было */
             max-width: 50%;
             opacity: 0;
             transform: translateY(-10px) translateX(5px) rotate(1.5deg);
@@ -754,7 +754,7 @@
             font-size: clamp(1rem, 1.8vw, 1.8rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
-            text-align: right;
+            text-align: center; /* выровняли по центру */
             line-height: 1.7;
             font-style: italic;
         }
@@ -912,6 +912,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+            margin-top: 1.5rem; /* опустили текст ниже */
         }
 
         .dresscode-section.visible .dresscode-text {
@@ -962,6 +963,23 @@
             font-family: 'Patriciana', Georgia, serif;
             letter-spacing: 0.04em;
             opacity: 0.8;
+        }
+
+        /* ——— Изображение дресс-кода ——— */
+        .dresscode-image {
+            margin-top: 2.5rem;
+            max-width: 80%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+        }
+
+        .dresscode-section.visible .dresscode-image {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ——— БЛОК АНКЕТА ГОСТЯ ——— */
@@ -1472,7 +1490,7 @@
             }
             .wishes-block-up {
                 top: 24%;
-                left: 12%; /* сместили вправо для мобилок */
+                left: 18%; /* чуть правее для мобилок */
                 max-width: 70%;
                 transform: translateY(-3px) translateX(-2px) rotate(-1deg);
             }
@@ -1483,8 +1501,8 @@
                 font-size: clamp(0.95rem, 1.8vw, 1.3rem);
             }
             .wishes-block-down {
-                bottom: 25%; /* сместили вверх */
-                right: 6%; /* сместили левее */
+                bottom: 25%;
+                right: 10%; /* левее для мобилок */
                 max-width: 65%;
                 transform: translateY(-5px) translateX(3px) rotate(1deg);
             }
@@ -1508,6 +1526,7 @@
                 font-size: clamp(1rem, 1.8vw, 1.4rem);
                 max-width: 90%;
                 transform: translateY(20px);
+                margin-top: 1rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -1515,14 +1534,18 @@
             .dresscode-palette {
                 gap: 1.2rem;
                 margin-top: 1.8rem;
-                flex-wrap: nowrap; /* сохраняем строку */
+                flex-wrap: nowrap;
             }
             .palette-item .color-circle {
-                width: 70px; /* уменьшаем для мобилок, но все равно в 2 раза больше исходных 50? Но для мобилок пусть будет 70, чтобы влазить */
+                width: 70px;
                 height: 70px;
             }
             .palette-item .color-label {
                 font-size: clamp(0.6rem, 1vw, 0.9rem);
+            }
+            .dresscode-image {
+                max-width: 90%;
+                margin-top: 1.8rem;
             }
             .timer-section {
                 min-height: 45vh;
@@ -1696,7 +1719,7 @@
             }
             .wishes-block-up {
                 top: 20%;
-                left: 8%;
+                left: 12%;
                 max-width: 80%;
                 transform: translateY(-2px) translateX(-1px) rotate(-0.5deg);
             }
@@ -1708,7 +1731,7 @@
             }
             .wishes-block-down {
                 bottom: 22%;
-                right: 5%;
+                right: 8%;
                 max-width: 75%;
                 transform: translateY(-3px) translateX(2px) rotate(0.5deg);
             }
@@ -1732,6 +1755,7 @@
                 font-size: 0.9rem;
                 max-width: 95%;
                 transform: translateY(15px);
+                margin-top: 0.8rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -1747,6 +1771,10 @@
             }
             .palette-item .color-label {
                 font-size: 0.6rem;
+            }
+            .dresscode-image {
+                max-width: 95%;
+                margin-top: 1.2rem;
             }
             .timer-section {
                 min-height: 40vh;
@@ -1889,7 +1917,7 @@
             }
             .wishes-block-up {
                 top: 30%;
-                left: 24%; /* сместили вправо */
+                left: 28%; /* правее */
                 max-width: 45%;
                 transform: translateY(-8px) translateX(-5px) rotate(-2deg);
             }
@@ -1900,8 +1928,8 @@
                 font-size: 2.2rem;
             }
             .wishes-block-down {
-                bottom: 32%; /* сместили вверх */
-                right: 8%; /* сместили левее */
+                bottom: 32%;
+                right: 18%; /* левее */
                 max-width: 45%;
                 transform: translateY(-15px) translateX(8px) rotate(2deg);
             }
@@ -1921,6 +1949,7 @@
                 font-size: 2rem;
                 max-width: 70%;
                 transform: translateY(30px);
+                margin-top: 2rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -1931,11 +1960,15 @@
                 flex-wrap: nowrap;
             }
             .palette-item .color-circle {
-                width: 120px; /* в два раза больше от 60? но у нас 100px на десктопе, оставим 120 */
+                width: 120px;
                 height: 120px;
             }
             .palette-item .color-label {
                 font-size: 1.4rem;
+            }
+            .dresscode-image {
+                max-width: 60%;
+                margin-top: 3rem;
             }
             .timer-section {
                 min-height: 60vh;
@@ -2133,7 +2166,7 @@
                 </div>
             </div>
 
-            <!-- Блок ТАЙМЕР (теперь перед дресс-кодом) -->
+            <!-- Блок ТАЙМЕР -->
             <div class="timer-section" id="timerSection">
                 <div class="timer-title">До нашей свадьбы осталось:</div>
                 <div class="timer-container">
@@ -2156,14 +2189,14 @@
                 </div>
             </div>
 
-            <!-- Блок ДРЕСС-КОД (теперь перед анкетой) -->
+            <!-- Блок ДРЕСС-КОД (перед анкетой) -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="image_2026-07-24_18-41-06.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">Просим поддержать наш стиль и прийти в оттенках торжества. Будем рады видеть вас в elegant образе.</div>
                     
-                    <!-- Цветовая палитра (кружочки без обводки, увеличены в 2 раза) -->
+                    <!-- Цветовая палитра -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
                             <div class="color-circle" style="background: #4a1a1a;"></div>
@@ -2182,6 +2215,9 @@
                             <span class="color-label">Чёрный</span>
                         </div>
                     </div>
+
+                    <!-- Фото дресс-кода -->
+                    <img class="dresscode-image" src="дресс-код.png" alt="пример дресс-кода" />
                 </div>
             </div>
 
