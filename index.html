@@ -1,3 +1,11 @@
+Вот обновлённый HTML-код с изменениями в блоке «Пожелания»:
+
+- Фоновое изображение сжато примерно в 2 раза по высоте.
+- Вставлен выбранный текст (два абзаца).
+- Текст опущен вниз и выровнен по центру, не занимает всю ширину экрана (максимум 70%).
+- В конце блока (поверх фото) добавлена фраза «Мы вас очень ждём!».
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -663,7 +671,7 @@
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 70vh;
             overflow: hidden;
         }
 
@@ -684,10 +692,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             width: 100%;
             height: 100%;
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 4rem 2rem;
             text-align: center;
         }
 
@@ -697,7 +705,7 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -732,6 +740,23 @@
 
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
+        }
+
+        .wishes-final-text {
+            font-size: clamp(2.0rem, 4vw, 4.0rem);
+            color: #4a1a1a;
+            font-family: 'MiamaNueva', serif;
+            font-style: italic;
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+        }
+
+        .wishes-section.visible .wishes-final-text {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ——— БЛОК ТАЙМЕР ——— */
@@ -1573,14 +1598,14 @@
                 font-size: clamp(1rem, 1.8vw, 1.3rem);
             }
             .wishes-section {
-                min-height: 100vh;
+                min-height: 50vh;
             }
             .wishes-content {
-                padding: 2rem 1.5rem;
+                padding: 2rem 1.5rem 3rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
             }
             .wishes-text {
                 max-width: 85%;
@@ -1588,6 +1613,10 @@
             .wishes-text .paragraph {
                 font-size: clamp(1.0rem, 2.0vw, 1.3rem);
                 margin-bottom: 1rem;
+            }
+            .wishes-final-text {
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
+                margin-top: 1.5rem;
             }
             .dresscode-section {
                 min-height: 80vh;
@@ -1801,14 +1830,14 @@
                 font-size: 0.9rem;
             }
             .wishes-section {
-                min-height: 100vh;
+                min-height: 45vh;
             }
             .wishes-content {
-                padding: 1.5rem 1rem;
+                padding: 1.5rem 1rem 2rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.8rem;
             }
             .wishes-text {
                 max-width: 92%;
@@ -1816,6 +1845,10 @@
             .wishes-text .paragraph {
                 font-size: 0.9rem;
                 margin-bottom: 0.8rem;
+            }
+            .wishes-final-text {
+                font-size: 1.4rem;
+                margin-top: 1rem;
             }
             .dresscode-section {
                 min-height: 70vh;
@@ -2004,9 +2037,11 @@
             .location-content {
                 gap: 2rem;
             }
+            .wishes-section {
+                min-height: 55vh;
+            }
             .wishes-title {
                 font-size: 4.5rem;
-                margin-top: 1.5rem;
             }
             .wishes-text {
                 max-width: 55%;
@@ -2014,6 +2049,10 @@
             .wishes-text .paragraph {
                 font-size: 2.2rem;
                 margin-bottom: 1.5rem;
+            }
+            .wishes-final-text {
+                font-size: 3.5rem;
+                margin-top: 2.5rem;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -2234,14 +2273,13 @@
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
                         <div class="paragraph">
-                            Для нас нет подарка ценнее, чем ваше присутствие. 
-                            Вместо цветов — вино, которое расскажет о наших чувствах лучше любых слов.
+                            Ваше присутствие для нас — самый дорогой подарок. Мы так долго ждали этого дня, чтобы разделить его с вами. Будем рады, если вместо цветов вы подарите нам бутылку вина — оно согреет нас, как согревает ваша забота.
                         </div>
                         <div class="paragraph">
-                            Нам важны не букеты, а ваши улыбки, ваше тепло и ваша забота. 
-                            Именно это мы хотим запомнить в этот день.
+                            Хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать. Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.
                         </div>
                     </div>
+                    <div class="wishes-final-text">Мы вас очень ждём!</div>
                 </div>
             </div>
 
@@ -2626,3 +2664,4 @@
     </script>
 </body>
 </html>
+```
