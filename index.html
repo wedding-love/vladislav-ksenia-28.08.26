@@ -658,17 +658,17 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК ПОЖЕЛАНИЯ ——— */
+        /* ——— БЛОК ПОЖЕЛАНИЯ (расширен) ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 130vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             overflow: hidden;
             opacity: 0;
             transform: translateY(40px);
@@ -699,7 +699,7 @@
             justify-content: center;
             width: 100%;
             max-width: 800px;
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         .wishes-title {
@@ -713,7 +713,6 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            margin-bottom: 0.5rem;
         }
 
         .wishes-section.visible .wishes-title {
@@ -750,10 +749,8 @@
             opacity: 0;
             transform: translateY(-40px);
             transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             font-style: italic;
-            border-top: 2px solid rgba(74, 26, 26, 0.15);
-            padding-top: 2rem;
         }
 
         .wishes-section.visible .wishes-text-down {
@@ -1011,11 +1008,11 @@
                 font-size: clamp(1rem, 1.8vw, 1.3rem);
             }
             .wishes-section {
-                padding: 3rem 1.5rem;
-                min-height: 80vh;
+                padding: 4rem 1.5rem;
+                min-height: 100vh;
             }
             .wishes-content {
-                gap: 1.5rem;
+                gap: 2rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
@@ -1027,7 +1024,6 @@
             .wishes-text-down {
                 font-size: clamp(0.9rem, 1.6vw, 1.2rem);
                 max-width: 90%;
-                padding-top: 1.2rem;
             }
         }
 
@@ -1133,11 +1129,11 @@
                 font-size: 0.9rem;
             }
             .wishes-section {
-                padding: 2.5rem 1rem;
-                min-height: 70vh;
+                padding: 3rem 1rem;
+                min-height: 90vh;
             }
             .wishes-content {
-                gap: 1.2rem;
+                gap: 1.5rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
@@ -1149,7 +1145,6 @@
             .wishes-text-down {
                 font-size: 0.8rem;
                 max-width: 95%;
-                padding-top: 1rem;
             }
         }
 
@@ -1239,6 +1234,13 @@
             }
             .wishes-text-down {
                 font-size: 1.8rem;
+            }
+            .wishes-section {
+                min-height: 140vh;
+                padding: 6rem 3rem;
+            }
+            .wishes-content {
+                gap: 3.5rem;
             }
         }
     </style>
@@ -1358,13 +1360,13 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ -->
+            <!-- Блок ПОЖЕЛАНИЯ (расширен) -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
-                    <div class="wishes-text-up">Вино вместо цветов<br />Ваше присутствие — самый ценный подарок.<br />Будем благодарны за конверт с тёплыми пожеланиями.</div>
-                    <div class="wishes-text-down">Что ни в коем случае, ни под каким предлогом<br />на площадке нельзя прыгать в бассейн,<br />иначе мероприятие для нас закончат.</div>
+                    <div class="wishes-text-up">Ваше присутствие — самый дорогой подарок для нас. Мы решили, что вино станет главным символом этого дня, а цветы уступят место искренним чувствам. Если захотите оставить конверт с тёплыми словами, мы сохраним его как память о вашей заботе и любви.</div>
+                    <div class="wishes-text-down">Важно! На территории площадки категорически запрещено прыгать в бассейн. Пожалуйста, будьте внимательны — это вопрос нашей общей безопасности. Берегите себя и друг друга.</div>
                 </div>
             </div>
 
