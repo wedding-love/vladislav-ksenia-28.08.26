@@ -827,6 +827,51 @@
             transform: translateY(0);
         }
 
+        /* ——— Цветовая палитра в дресс-коде ——— */
+        .dresscode-palette {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-top: 2.2rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+        }
+
+        .dresscode-section.visible .dresscode-palette {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .palette-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .palette-item .color-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .palette-item .color-circle:hover {
+            transform: scale(1.08);
+        }
+
+        .palette-item .color-label {
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            color: #4a1a1a;
+            font-family: 'Patriciana', Georgia, serif;
+            letter-spacing: 0.04em;
+            opacity: 0.8;
+        }
+
         /* ——— БЛОК ТАЙМЕР ——— */
         .timer-section {
             width: 100%;
@@ -1467,6 +1512,17 @@
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
             }
+            .dresscode-palette {
+                gap: 1.2rem;
+                margin-top: 1.8rem;
+            }
+            .palette-item .color-circle {
+                width: 38px;
+                height: 38px;
+            }
+            .palette-item .color-label {
+                font-size: clamp(0.6rem, 1vw, 0.9rem);
+            }
             .timer-section {
                 min-height: 45vh;
                 padding: 3rem 1.5rem;
@@ -1679,6 +1735,17 @@
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
             }
+            .dresscode-palette {
+                gap: 0.8rem;
+                margin-top: 1.2rem;
+            }
+            .palette-item .color-circle {
+                width: 30px;
+                height: 30px;
+            }
+            .palette-item .color-label {
+                font-size: 0.6rem;
+            }
             .timer-section {
                 min-height: 40vh;
                 padding: 2rem 1rem;
@@ -1855,6 +1922,17 @@
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
+            }
+            .dresscode-palette {
+                gap: 2.5rem;
+                margin-top: 2.8rem;
+            }
+            .palette-item .color-circle {
+                width: 60px;
+                height: 60px;
+            }
+            .palette-item .color-label {
+                font-size: 1.2rem;
             }
             .timer-section {
                 min-height: 60vh;
@@ -2058,6 +2136,26 @@
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">Просим поддержать наш стиль и прийти в оттенках торжества. Будем рады видеть вас в elegant образе.</div>
+                    
+                    <!-- Цветовая палитра -->
+                    <div class="dresscode-palette">
+                        <div class="palette-item">
+                            <div class="color-circle" style="background: #4a1a1a;"></div>
+                            <span class="color-label">Бордо</span>
+                        </div>
+                        <div class="palette-item">
+                            <div class="color-circle" style="background: #f5efe8;"></div>
+                            <span class="color-label">Айвори</span>
+                        </div>
+                        <div class="palette-item">
+                            <div class="color-circle" style="background: #d4af37;"></div>
+                            <span class="color-label">Золотистый</span>
+                        </div>
+                        <div class="palette-item">
+                            <div class="color-circle" style="background: #1a1a1a;"></div>
+                            <span class="color-label">Чёрный</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
