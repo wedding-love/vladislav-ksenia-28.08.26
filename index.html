@@ -665,14 +665,6 @@
             position: relative;
             min-height: 100vh;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .wishes-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .wishes-bg {
@@ -716,7 +708,6 @@
             transform: translateY(0);
         }
 
-        /* Первый блок — смещён правее и чуть ниже */
         .wishes-block-up {
             position: absolute;
             top: 28%;
@@ -744,7 +735,6 @@
             display: block;
         }
 
-        /* Второй блок — поднят выше и левее */
         .wishes-block-down {
             position: absolute;
             bottom: 20%;
@@ -773,21 +763,13 @@
             display: block;
         }
 
-        /* ——— БЛОК ДРЕСС-КОД ——— */
+        /* ——— БЛОК ДРЕСС-КОД (между пожеланиями и таймером) ——— */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
             min-height: 100vh;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .dresscode-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .dresscode-bg {
@@ -811,16 +793,14 @@
             height: 100%;
             padding: 4rem 2rem;
             text-align: center;
-            color: #ffffff;
         }
 
         .dresscode-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
-            color: #ffffff;
+            color: #4a1a1a;
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             margin-bottom: 1.5rem;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
@@ -833,13 +813,12 @@
 
         .dresscode-text {
             font-size: clamp(1.2rem, 2vw, 2rem);
-            color: #ffffff;
+            color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             max-width: 80%;
             line-height: 1.6;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
         }
 
@@ -859,14 +838,6 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 50vh;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .timer-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .timer-title {
@@ -959,14 +930,6 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 100vh;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .guest-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .guest-title {
@@ -1073,7 +1036,6 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
-        /* ——— БЕЛЫЕ РАДИОКНОПКИ И ЧЕКБОКСЫ ——— */
         .guest-form .radio-group {
             display: flex;
             flex-direction: column;
@@ -1170,7 +1132,6 @@
             font-weight: 700;
         }
 
-        /* ——— КНОПКА ОТПРАВИТЬ ——— */
         .submit-btn {
             padding: 1rem 2.5rem;
             background: #ffffff;
@@ -1501,6 +1462,10 @@
             .dresscode-text {
                 font-size: clamp(1rem, 1.8vw, 1.4rem);
                 max-width: 90%;
+                transform: translateY(20px);
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .timer-section {
                 min-height: 45vh;
@@ -1709,6 +1674,10 @@
             .dresscode-text {
                 font-size: 0.9rem;
                 max-width: 95%;
+                transform: translateY(15px);
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .timer-section {
                 min-height: 40vh;
@@ -1882,6 +1851,10 @@
             .dresscode-text {
                 font-size: 2rem;
                 max-width: 70%;
+                transform: translateY(30px);
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .timer-section {
                 min-height: 60vh;
