@@ -14,8 +14,8 @@
         }
 
         @font-face {
-            font-family: 'MiamaNueva';
-            src: url('ofont.ru_Miama Nueva.ttf') format('truetype');
+            font-family: 'Marutya';
+            src: url('ofont.ru_Marutya.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -151,7 +151,6 @@
             transition-delay: 0.5s;
         }
 
-        /* ——— Имена (без изменений) ——— */
         .names {
             font-size: clamp(6rem, 16vw, 16rem);
             line-height: 1.05;
@@ -189,7 +188,6 @@
             font-family: 'Patriciana', Georgia, serif;
         }
 
-        /* ——— Дата (без изменений) ——— */
         .date-section {
             display: flex;
             align-items: center;
@@ -346,7 +344,7 @@
             margin-bottom: 0.2rem;
             font-weight: 700;
             font-style: italic;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
         .text-section .message {
@@ -439,7 +437,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
         .program-section.visible .program-title {
@@ -518,7 +516,7 @@
             font-weight: 600;
             line-height: 1.2;
             text-align: left;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
         .program-item .time {
@@ -528,20 +526,20 @@
             opacity: 0.7;
             margin-top: 0.1rem;
             text-align: left;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
-        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (белый текст, поднят выше) ——— */
+        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (увеличен в длину) ——— */
         .location-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 120vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 4rem 2rem 2rem 2rem;
+            padding: 4rem 2rem 4rem 2rem;
             overflow: hidden;
         }
 
@@ -584,7 +582,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-title {
@@ -601,7 +599,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-name {
@@ -632,7 +630,7 @@
             padding: 0.9rem 2.5rem;
             background: #ffffff;
             color: #4a1a1a;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Marutya', 'Patriciana', Georgia, serif;
             font-size: clamp(1.2rem, 2vw, 2rem);
             font-weight: 400;
             text-decoration: none;
@@ -891,8 +889,8 @@
                 text-align: left;
             }
             .location-section {
-                padding: 3rem 1.5rem 2rem 1.5rem;
-                min-height: 80vh;
+                padding: 3rem 1.5rem 3rem 1.5rem;
+                min-height: 90vh;
             }
             .location-content {
                 gap: 0.5rem;
@@ -994,8 +992,8 @@
                 min-height: 380px;
             }
             .location-section {
-                padding: 2.5rem 1rem 1.5rem 1rem;
-                min-height: 70vh;
+                padding: 2.5rem 1rem 2.5rem 1rem;
+                min-height: 80vh;
             }
             .location-content {
                 gap: 0.3rem;
@@ -1087,7 +1085,8 @@
                 padding: 1rem 3rem;
             }
             .location-section {
-                padding: 5rem 2rem 2rem 2rem;
+                padding: 5rem 2rem 5rem 2rem;
+                min-height: 130vh;
             }
         }
     </style>
@@ -1196,7 +1195,7 @@
                 </div>
             </div>
 
-            <!-- Блок МЕСТО ПРОВЕДЕНИЯ (белый текст, поднят выше) -->
+            <!-- Блок МЕСТО ПРОВЕДЕНИЯ (увеличен в длину) -->
             <div class="location-section" id="locationSection">
                 <img class="location-bg" src="локация.png" alt="фон локации" />
                 <div class="location-content">
