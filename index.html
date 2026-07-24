@@ -1,3 +1,11 @@
+Вот итоговый HTML-код с внесёнными изменениями:
+
+- В контактах указаны: Полина Организатор +7 978 535-49-46 и ссылка на Telegram.
+- Текст в блоке «Дресс-код» опущен ниже.
+- Текст дресс-кода переписан в более красивом, тёплом стиле.
+- В блоке «Пожелания» верхний текст развёрнут левее (поворот влево), нижний — повёрнут ближе к правой стороне.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -714,17 +722,17 @@
             left: 32%;
             max-width: 50%;
             opacity: 0;
-            transform: translateY(-5px) translateX(-3px) rotate(3deg); /* наклон вправо */
+            transform: translateY(-5px) translateX(-3px) rotate(-3deg); /* разворот влево */
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
         .wishes-section.visible .wishes-block-up {
             opacity: 0.9;
-            transform: translateY(0) translateX(0) rotate(3deg);
+            transform: translateY(0) translateX(0) rotate(-3deg);
         }
 
         .wishes-text-up {
-            font-size: clamp(1.6rem, 2.8vw, 2.8rem); /* увеличен шрифт */
+            font-size: clamp(1.6rem, 2.8vw, 2.8rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: left;
@@ -738,20 +746,20 @@
         .wishes-block-down {
             position: absolute;
             bottom: 28%;
-            right: 10%; /* чуть левее */
+            right: 10%;
             max-width: 50%;
             opacity: 0;
-            transform: translateY(-10px) translateX(5px) rotate(1.5deg);
+            transform: translateY(-10px) translateX(5px) rotate(2deg); /* повёрнут ближе к правой стороне */
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
         }
 
         .wishes-section.visible .wishes-block-down {
             opacity: 0.7;
-            transform: translateY(0) translateX(0) rotate(1.5deg);
+            transform: translateY(0) translateX(0) rotate(2deg);
         }
 
         .wishes-text-down {
-            font-size: clamp(1.4rem, 2.4vw, 2.4rem); /* увеличен шрифт */
+            font-size: clamp(1.4rem, 2.4vw, 2.4rem);
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
@@ -912,7 +920,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            margin-top: 1.5rem;
+            margin-top: 3rem; /* опущен ниже */
         }
 
         .dresscode-section.visible .dresscode-text {
@@ -965,7 +973,7 @@
             opacity: 0.8;
         }
 
-        /* ——— Изображение дресс-кода (просто картинка) ——— */
+        /* ——— Изображение дресс-кода ——— */
         .dresscode-image {
             position: relative;
             z-index: 2;
@@ -1229,7 +1237,7 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК КОНТАКТЫ (после анкеты) ——— */
+        /* ——— БЛОК КОНТАКТЫ ——— */
         .contacts-section {
             width: 100%;
             flex-shrink: 0;
@@ -1564,10 +1572,10 @@
                 top: 24%;
                 left: 22%;
                 max-width: 70%;
-                transform: translateY(-3px) translateX(-2px) rotate(3deg);
+                transform: translateY(-3px) translateX(-2px) rotate(-3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(3deg);
+                transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
                 font-size: clamp(1.2rem, 2.2vw, 1.6rem);
@@ -1576,10 +1584,10 @@
                 bottom: 25%;
                 right: 6%;
                 max-width: 65%;
-                transform: translateY(-5px) translateX(3px) rotate(1deg);
+                transform: translateY(-5px) translateX(3px) rotate(2deg);
             }
             .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(1deg);
+                transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
                 font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -1598,7 +1606,7 @@
                 font-size: clamp(1rem, 1.8vw, 1.4rem);
                 max-width: 90%;
                 transform: translateY(20px);
-                margin-top: 1rem;
+                margin-top: 2rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -1804,10 +1812,10 @@
                 top: 20%;
                 left: 18%;
                 max-width: 80%;
-                transform: translateY(-2px) translateX(-1px) rotate(3deg);
+                transform: translateY(-2px) translateX(-1px) rotate(-3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(3deg);
+                transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
                 font-size: 1rem;
@@ -1816,10 +1824,10 @@
                 bottom: 22%;
                 right: 5%;
                 max-width: 75%;
-                transform: translateY(-3px) translateX(2px) rotate(0.5deg);
+                transform: translateY(-3px) translateX(2px) rotate(2deg);
             }
             .wishes-section.visible .wishes-block-down {
-                transform: translateY(0) translateX(0) rotate(0.5deg);
+                transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
                 font-size: 0.95rem;
@@ -1838,7 +1846,7 @@
                 font-size: 0.9rem;
                 max-width: 95%;
                 transform: translateY(15px);
-                margin-top: 0.8rem;
+                margin-top: 1.5rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -2013,10 +2021,10 @@
                 top: 30%;
                 left: 34%;
                 max-width: 45%;
-                transform: translateY(-8px) translateX(-5px) rotate(3deg);
+                transform: translateY(-8px) translateX(-5px) rotate(-3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(3deg);
+                transform: translateY(0) translateX(0) rotate(-3deg);
             }
             .wishes-text-up {
                 font-size: 2.8rem;
@@ -2043,7 +2051,7 @@
                 font-size: 2rem;
                 max-width: 70%;
                 transform: translateY(30px);
-                margin-top: 2rem;
+                margin-top: 3.5rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -2299,7 +2307,7 @@
                 <img class="dresscode-bg" src="image_2026-07-24_18-41-06.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
-                    <div class="dresscode-text">Просим поддержать наш стиль и прийти в оттенках торжества. Будем рады видеть вас в elegant образе.</div>
+                    <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
                     
                     <!-- Цветовая палитра -->
                     <div class="dresscode-palette">
@@ -2321,7 +2329,7 @@
                         </div>
                     </div>
 
-                    <!-- Фото дресс-кода (просто картинка) -->
+                    <!-- Фото дресс-кода -->
                     <img class="dresscode-image" src="дресс-код.PNG" alt="пример дресс-кода" />
                 </div>
             </div>
@@ -2384,8 +2392,8 @@
             <div class="contacts-section" id="contactsSection">
                 <div class="contacts-title">Контакты</div>
                 <div class="contacts-info">
-                    <div class="contact-item"><strong>Организатор:</strong> Анна +7 999 123-45-67</div>
-                    <div class="contact-item"><strong>По вопросам:</strong> <a href="mailto:info@wedding.ru">info@wedding.ru</a></div>
+                    <div class="contact-item"><strong>Полина Организатор</strong> +7 978 535-49-46</div>
+                    <div class="contact-item"><a href="https://t.me/Aist_Wedding" target="_blank">https://t.me/Aist_Wedding</a></div>
                 </div>
             </div>
 
@@ -2633,3 +2641,4 @@
     </script>
 </body>
 </html>
+```
