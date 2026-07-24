@@ -529,7 +529,7 @@
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
 
-        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ (с увеличенными отступами) ——— */
+        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ ——— */
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -656,6 +656,109 @@
 
         .location-btn:active {
             transform: scale(0.96);
+        }
+
+        /* ——— БЛОК ПОЖЕЛАНИЯ ——— */
+        .wishes-section {
+            width: 100%;
+            flex-shrink: 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .wishes-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wishes-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .wishes-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            gap: 2.5rem;
+        }
+
+        .wishes-title {
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            color: #4a1a1a;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-align: center;
+            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+            margin-bottom: 0.5rem;
+        }
+
+        .wishes-section.visible .wishes-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wishes-text-up {
+            font-size: clamp(1.2rem, 2.2vw, 2.4rem);
+            color: #4a1a1a;
+            font-weight: 400;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 85%;
+            font-family: 'Patriciana', Georgia, serif;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1.2s ease 0.4s, transform 1.2s ease 0.4s;
+        }
+
+        .wishes-section.visible .wishes-text-up {
+            opacity: 0.9;
+            transform: translateY(0);
+        }
+
+        .wishes-text-down {
+            font-size: clamp(1rem, 1.8vw, 1.8rem);
+            color: #4a1a1a;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 80%;
+            font-family: 'Patriciana', Georgia, serif;
+            opacity: 0;
+            transform: translateY(-40px);
+            transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
+            margin-top: 1rem;
+            font-style: italic;
+            border-top: 2px solid rgba(74, 26, 26, 0.15);
+            padding-top: 2rem;
+        }
+
+        .wishes-section.visible .wishes-text-down {
+            opacity: 0.7;
+            transform: translateY(0);
         }
 
         .main-bg-first {
@@ -907,6 +1010,25 @@
                 padding: 0.7rem 2rem;
                 font-size: clamp(1rem, 1.8vw, 1.3rem);
             }
+            .wishes-section {
+                padding: 3rem 1.5rem;
+                min-height: 80vh;
+            }
+            .wishes-content {
+                gap: 1.5rem;
+            }
+            .wishes-title {
+                font-size: clamp(2rem, 4vw, 2.8rem);
+            }
+            .wishes-text-up {
+                font-size: clamp(1rem, 1.8vw, 1.4rem);
+                max-width: 90%;
+            }
+            .wishes-text-down {
+                font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+                max-width: 90%;
+                padding-top: 1.2rem;
+            }
         }
 
         @media (max-width: 400px) {
@@ -1010,6 +1132,25 @@
                 padding: 0.6rem 1.5rem;
                 font-size: 0.9rem;
             }
+            .wishes-section {
+                padding: 2.5rem 1rem;
+                min-height: 70vh;
+            }
+            .wishes-content {
+                gap: 1.2rem;
+            }
+            .wishes-title {
+                font-size: 1.8rem;
+            }
+            .wishes-text-up {
+                font-size: 0.9rem;
+                max-width: 95%;
+            }
+            .wishes-text-down {
+                font-size: 0.8rem;
+                max-width: 95%;
+                padding-top: 1rem;
+            }
         }
 
         @media (min-width: 1400px) {
@@ -1089,6 +1230,15 @@
             }
             .location-content {
                 gap: 2rem;
+            }
+            .wishes-title {
+                font-size: 4.5rem;
+            }
+            .wishes-text-up {
+                font-size: 2.4rem;
+            }
+            .wishes-text-down {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -1197,7 +1347,7 @@
                 </div>
             </div>
 
-            <!-- Блок МЕСТО ПРОВЕДЕНИЯ (с увеличенными отступами) -->
+            <!-- Блок МЕСТО ПРОВЕДЕНИЯ -->
             <div class="location-section" id="locationSection">
                 <img class="location-bg" src="локация.png" alt="фон локации" />
                 <div class="location-content">
@@ -1205,6 +1355,16 @@
                     <div class="location-name">Винодельня Акчурина</div>
                     <div class="location-address">Севастополь, Балаклавский муниципальный округ, село Хмельницкое</div>
                     <a href="https://yandex.com/maps/org/vinodelnya_akchurina/2225582887/" target="_blank" class="location-btn">Открыть на карте</a>
+                </div>
+            </div>
+
+            <!-- Блок ПОЖЕЛАНИЯ -->
+            <div class="wishes-section" id="wishesSection">
+                <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
+                <div class="wishes-content">
+                    <div class="wishes-title">Пожелания</div>
+                    <div class="wishes-text-up">Вино вместо цветов<br />Ваше присутствие — самый ценный подарок.<br />Будем благодарны за конверт с тёплыми пожеланиями.</div>
+                    <div class="wishes-text-down">Что ни в коем случае, ни под каким предлогом<br />на площадке нельзя прыгать в бассейн,<br />иначе мероприятие для нас закончат.</div>
                 </div>
             </div>
 
@@ -1221,6 +1381,7 @@
             const textSection = document.getElementById('textSection');
             const programSection = document.getElementById('programSection');
             const locationSection = document.getElementById('locationSection');
+            const wishesSection = document.getElementById('wishesSection');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
@@ -1229,6 +1390,7 @@
             let textVisible = false;
             let programVisible = false;
             let locationVisible = false;
+            let wishesVisible = false;
 
             function activateDots() {
                 if (dotsActivated) return;
@@ -1276,6 +1438,17 @@
                         if (!locationVisible) {
                             locationVisible = true;
                             locationSection.classList.add('visible');
+                        }
+                    }
+                }
+
+                if (wishesSection) {
+                    const rect = wishesSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!wishesVisible) {
+                            wishesVisible = true;
+                            wishesSection.classList.add('visible');
                         }
                     }
                 }
