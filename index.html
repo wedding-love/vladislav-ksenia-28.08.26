@@ -658,7 +658,7 @@
             transform: scale(0.96);
         }
 
-        /* ——— БЛОК ПОЖЕЛАНИЯ (текст на фото) ——— */
+        /* ——— БЛОК ПОЖЕЛАНИЯ ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -667,7 +667,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 0;
             overflow: hidden;
             opacity: 0;
@@ -696,11 +696,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             width: 100%;
             height: 100%;
             max-width: 800px;
-            padding: 4rem 2rem;
+            padding: 2rem 2rem 1.5rem 2rem;
         }
 
         .wishes-title {
@@ -714,7 +714,8 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
         }
 
         .wishes-section.visible .wishes-title {
@@ -722,20 +723,23 @@
             transform: translateY(0);
         }
 
-        /* Первый текст — стремится вверх */
+        /* Первый текст — от левого края к правому (стремится вверх) */
         .wishes-text-up {
-            font-size: clamp(1.2rem, 2.2vw, 2.4rem);
+            font-size: clamp(1.1rem, 2vw, 2.2rem);
             color: #4a1a1a;
             font-weight: 400;
-            line-height: 1.8;
-            text-align: center;
-            max-width: 85%;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 90%;
             font-family: 'Patriciana', Georgia, serif;
             opacity: 0;
-            transform: translateY(60px);
+            transform: translateY(50px);
             transition: opacity 1.2s ease 0.4s, transform 1.2s ease 0.4s;
             margin-bottom: auto;
-            padding-top: 2rem;
+            padding-top: 0.5rem;
+            width: 100%;
+            padding-right: 10%;
+            word-break: break-word;
         }
 
         .wishes-section.visible .wishes-text-up {
@@ -743,26 +747,36 @@
             transform: translateY(0);
         }
 
-        /* Второй текст — стремится вниз */
+        .wishes-text-up span {
+            display: inline-block;
+        }
+
+        /* Второй текст — от левого края к правому (стремится вниз) */
         .wishes-text-down {
-            font-size: clamp(1rem, 1.8vw, 1.8rem);
+            font-size: clamp(0.95rem, 1.7vw, 1.8rem);
             color: #4a1a1a;
             font-weight: 400;
             line-height: 1.6;
-            text-align: center;
-            max-width: 80%;
+            text-align: left;
+            max-width: 85%;
             font-family: 'Patriciana', Georgia, serif;
             opacity: 0;
-            transform: translateY(-40px);
+            transform: translateY(-30px);
             transition: opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s;
             margin-top: auto;
-            padding-bottom: 2rem;
-            font-style: italic;
+            padding-bottom: 0.5rem;
+            width: 100%;
+            padding-right: 15%;
+            word-break: break-word;
         }
 
         .wishes-section.visible .wishes-text-down {
             opacity: 0.7;
             transform: translateY(0);
+        }
+
+        .wishes-text-down span {
+            display: inline-block;
         }
 
         .main-bg-first {
@@ -1015,20 +1029,23 @@
                 font-size: clamp(1rem, 1.8vw, 1.3rem);
             }
             .wishes-content {
-                padding: 3rem 1.5rem;
+                padding: 1.5rem 1.5rem 1rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
+                margin-bottom: 0.3rem;
             }
             .wishes-text-up {
-                font-size: clamp(1rem, 1.8vw, 1.4rem);
-                max-width: 90%;
-                padding-top: 1rem;
+                font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+                max-width: 95%;
+                padding-right: 5%;
+                padding-top: 0.3rem;
             }
             .wishes-text-down {
-                font-size: clamp(0.9rem, 1.6vw, 1.2rem);
-                max-width: 90%;
-                padding-bottom: 1rem;
+                font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+                max-width: 95%;
+                padding-right: 5%;
+                padding-bottom: 0.3rem;
             }
         }
 
@@ -1134,20 +1151,25 @@
                 font-size: 0.9rem;
             }
             .wishes-content {
-                padding: 2rem 1rem;
+                padding: 1rem 1rem 0.8rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
+                margin-bottom: 0.2rem;
             }
             .wishes-text-up {
-                font-size: 0.9rem;
-                max-width: 95%;
-                padding-top: 0.8rem;
+                font-size: 0.85rem;
+                max-width: 98%;
+                padding-right: 2%;
+                padding-top: 0.2rem;
+                line-height: 1.5;
             }
             .wishes-text-down {
-                font-size: 0.8rem;
-                max-width: 95%;
-                padding-bottom: 0.8rem;
+                font-size: 0.75rem;
+                max-width: 98%;
+                padding-right: 2%;
+                padding-bottom: 0.2rem;
+                line-height: 1.5;
             }
         }
 
@@ -1233,13 +1255,15 @@
                 font-size: 4.5rem;
             }
             .wishes-text-up {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
+                padding-right: 10%;
             }
             .wishes-text-down {
                 font-size: 1.8rem;
+                padding-right: 15%;
             }
             .wishes-content {
-                padding: 5rem 3rem;
+                padding: 2.5rem 3rem 2rem 3rem;
             }
         }
     </style>
@@ -1359,7 +1383,7 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ (текст на фото) -->
+            <!-- Блок ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="пожелания.png" alt="фон пожеланий" />
                 <div class="wishes-content">
