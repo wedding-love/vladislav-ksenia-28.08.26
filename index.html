@@ -711,20 +711,20 @@
         .wishes-block-up {
             position: absolute;
             top: 28%;
-            left: 30%; /* сдвинули правее */
+            left: 32%;
             max-width: 50%;
             opacity: 0;
-            transform: translateY(-5px) translateX(-3px) rotate(2deg); /* разворот в правую сторону */
+            transform: translateY(-5px) translateX(-3px) rotate(3deg); /* наклон вправо */
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
         .wishes-section.visible .wishes-block-up {
             opacity: 0.9;
-            transform: translateY(0) translateX(0) rotate(2deg);
+            transform: translateY(0) translateX(0) rotate(3deg);
         }
 
         .wishes-text-up {
-            font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+            font-size: clamp(1.6rem, 2.8vw, 2.8rem); /* увеличен шрифт */
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: left;
@@ -738,7 +738,7 @@
         .wishes-block-down {
             position: absolute;
             bottom: 28%;
-            right: 12%; /* сдвинули левее (было 15%) */
+            right: 10%; /* чуть левее */
             max-width: 50%;
             opacity: 0;
             transform: translateY(-10px) translateX(5px) rotate(1.5deg);
@@ -751,7 +751,7 @@
         }
 
         .wishes-text-down {
-            font-size: clamp(1rem, 1.8vw, 1.8rem);
+            font-size: clamp(1.4rem, 2.4vw, 2.4rem); /* увеличен шрифт */
             color: #4a1a1a;
             font-family: 'Patriciana', Georgia, serif;
             text-align: center;
@@ -965,15 +965,14 @@
             opacity: 0.8;
         }
 
-        /* ——— Изображение дресс-кода (без фона и обложки, поверх фона) ——— */
+        /* ——— Изображение дресс-кода (просто картинка) ——— */
         .dresscode-image {
             position: relative;
-            z-index: 2; /* поверх фона */
+            z-index: 2;
             margin-top: 2.5rem;
             max-width: 80%;
             height: auto;
             display: block;
-            /* убрали border-radius, box-shadow, фон */
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
@@ -1228,6 +1227,77 @@
 
         .submit-btn:active {
             transform: scale(0.96);
+        }
+
+        /* ——— БЛОК КОНТАКТЫ (после анкеты) ——— */
+        .contacts-section {
+            width: 100%;
+            flex-shrink: 0;
+            background: #4a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            min-height: 40vh;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contacts-title {
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            color: #ffffff;
+            font-family: 'MiamaNueva', serif;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+        }
+
+        .contacts-section.visible .contacts-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+        }
+
+        .contacts-section.visible .contacts-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contacts-info .contact-item {
+            font-size: clamp(1.2rem, 2vw, 2rem);
+            color: #ffffff;
+            font-family: 'Patriciana', Georgia, serif;
+            letter-spacing: 0.03em;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        .contacts-info .contact-item strong {
+            font-weight: 600;
+            opacity: 1;
+        }
+
+        .contacts-info .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contacts-info .contact-item a:hover {
+            opacity: 0.7;
         }
 
         .main-bg-first {
@@ -1492,19 +1562,19 @@
             }
             .wishes-block-up {
                 top: 24%;
-                left: 20%;
+                left: 22%;
                 max-width: 70%;
-                transform: translateY(-3px) translateX(-2px) rotate(2deg);
+                transform: translateY(-3px) translateX(-2px) rotate(3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(2deg);
+                transform: translateY(0) translateX(0) rotate(3deg);
             }
             .wishes-text-up {
-                font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+                font-size: clamp(1.2rem, 2.2vw, 1.6rem);
             }
             .wishes-block-down {
                 bottom: 25%;
-                right: 8%;
+                right: 6%;
                 max-width: 65%;
                 transform: translateY(-5px) translateX(3px) rotate(1deg);
             }
@@ -1512,7 +1582,7 @@
                 transform: translateY(0) translateX(0) rotate(1deg);
             }
             .wishes-text-down {
-                font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+                font-size: clamp(1.1rem, 2vw, 1.4rem);
             }
             .dresscode-section {
                 min-height: 80vh;
@@ -1604,6 +1674,17 @@
             .submit-btn {
                 padding: 0.8rem 2rem;
                 font-size: clamp(1rem, 1.8vw, 1.3rem);
+            }
+            .contacts-section {
+                padding: 3rem 1.5rem;
+                min-height: 30vh;
+            }
+            .contacts-title {
+                font-size: clamp(2rem, 4vw, 2.8rem);
+                margin-bottom: 1.5rem;
+            }
+            .contacts-info .contact-item {
+                font-size: clamp(1rem, 1.6vw, 1.3rem);
             }
         }
 
@@ -1721,19 +1802,19 @@
             }
             .wishes-block-up {
                 top: 20%;
-                left: 15%;
+                left: 18%;
                 max-width: 80%;
-                transform: translateY(-2px) translateX(-1px) rotate(2deg);
+                transform: translateY(-2px) translateX(-1px) rotate(3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(2deg);
+                transform: translateY(0) translateX(0) rotate(3deg);
             }
             .wishes-text-up {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
             .wishes-block-down {
                 bottom: 22%;
-                right: 6%;
+                right: 5%;
                 max-width: 75%;
                 transform: translateY(-3px) translateX(2px) rotate(0.5deg);
             }
@@ -1741,7 +1822,7 @@
                 transform: translateY(0) translateX(0) rotate(0.5deg);
             }
             .wishes-text-down {
-                font-size: 0.75rem;
+                font-size: 0.95rem;
             }
             .dresscode-section {
                 min-height: 70vh;
@@ -1833,6 +1914,17 @@
                 padding: 0.6rem 1.5rem;
                 font-size: 0.9rem;
             }
+            .contacts-section {
+                padding: 2.5rem 1rem;
+                min-height: 25vh;
+            }
+            .contacts-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
+            .contacts-info .contact-item {
+                font-size: 0.9rem;
+            }
         }
 
         @media (min-width: 1400px) {
@@ -1919,19 +2011,19 @@
             }
             .wishes-block-up {
                 top: 30%;
-                left: 32%;
+                left: 34%;
                 max-width: 45%;
-                transform: translateY(-8px) translateX(-5px) rotate(2deg);
+                transform: translateY(-8px) translateX(-5px) rotate(3deg);
             }
             .wishes-section.visible .wishes-block-up {
-                transform: translateY(0) translateX(0) rotate(2deg);
+                transform: translateY(0) translateX(0) rotate(3deg);
             }
             .wishes-text-up {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
             .wishes-block-down {
                 bottom: 32%;
-                right: 14%;
+                right: 12%;
                 max-width: 45%;
                 transform: translateY(-15px) translateX(8px) rotate(2deg);
             }
@@ -1939,7 +2031,7 @@
                 transform: translateY(0) translateX(0) rotate(2deg);
             }
             .wishes-text-down {
-                font-size: 1.8rem;
+                font-size: 2.4rem;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -2017,6 +2109,17 @@
             .submit-btn {
                 font-size: 2rem;
                 padding: 1rem 3rem;
+            }
+            .contacts-section {
+                min-height: 35vh;
+                padding: 5rem 3rem;
+            }
+            .contacts-title {
+                font-size: 4.5rem;
+                margin-bottom: 2.5rem;
+            }
+            .contacts-info .contact-item {
+                font-size: 2rem;
             }
         }
     </style>
@@ -2191,7 +2294,7 @@
                 </div>
             </div>
 
-            <!-- Блок ДРЕСС-КОД (перед анкетой) -->
+            <!-- Блок ДРЕСС-КОД -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="image_2026-07-24_18-41-06.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
@@ -2218,8 +2321,8 @@
                         </div>
                     </div>
 
-                    <!-- Фото дресс-кода (без фона и обложки, поверх фона) -->
-                    <img class="dresscode-image" src="дресс-код.png" alt="пример дресс-кода" />
+                    <!-- Фото дресс-кода (просто картинка) -->
+                    <img class="dresscode-image" src="дресс-код.PNG" alt="пример дресс-кода" />
                 </div>
             </div>
 
@@ -2277,6 +2380,15 @@
                 </form>
             </div>
 
+            <!-- Блок КОНТАКТЫ -->
+            <div class="contacts-section" id="contactsSection">
+                <div class="contacts-title">Контакты</div>
+                <div class="contacts-info">
+                    <div class="contact-item"><strong>Организатор:</strong> Анна +7 999 123-45-67</div>
+                    <div class="contact-item"><strong>По вопросам:</strong> <a href="mailto:info@wedding.ru">info@wedding.ru</a></div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -2294,6 +2406,7 @@
             const dresscodeSection = document.getElementById('dresscodeSection');
             const timerSection = document.getElementById('timerSection');
             const guestSection = document.getElementById('guestSection');
+            const contactsSection = document.getElementById('contactsSection');
             const fadeBtn = document.getElementById('fadeBtn');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
@@ -2306,6 +2419,7 @@
             let dresscodeVisible = false;
             let timerVisible = false;
             let guestVisible = false;
+            let contactsVisible = false;
 
             // ——— Функция склонения ———
             function declension(number, forms) {
@@ -2452,6 +2566,17 @@
                         if (!guestVisible) {
                             guestVisible = true;
                             guestSection.classList.add('visible');
+                        }
+                    }
+                }
+
+                if (contactsSection) {
+                    const rect = contactsSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                        if (!contactsVisible) {
+                            contactsVisible = true;
+                            contactsSection.classList.add('visible');
                         }
                     }
                 }
