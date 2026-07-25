@@ -1,3 +1,12 @@
+Вот обновлённый HTML-код с изменениями:
+
+1. **Имена пары и дата** опущены ещё ниже.
+2. **В программе дня** для событий (Сбор гостей, Торжественная Церемония, Банкет, Финал) установлен шрифт Inter, а для времени — Inter.
+3. **В блоке «Место проведения»** название «Винодельня Акчурина» теперь тоже на Inter.
+4. **В пожеланиях** текст выровнен по ширине (`text-align: justify`).
+5. **В дресс-коде** убраны подписи под кружками (остались только цветные круги).
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -133,7 +142,7 @@
             color: #4a1a1a;
             pointer-events: none;
             padding-bottom: 3vh;
-            padding-top: 45vh;
+            padding-top: 52vh;
         }
 
         .content-overlay .names {
@@ -430,11 +439,10 @@
         .program-item .title {
             font-size: clamp(2rem, 3.4vw, 3.8rem);
             color: #4a1a1a;
-            font-style: italic;
-            font-weight: 600;
+            font-weight: 300;
             line-height: 1.2;
             text-align: left;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
 
         .program-item .time {
@@ -444,7 +452,7 @@
             opacity: 0.7;
             margin-top: 0.1rem;
             text-align: left;
-            font-family: 'Inter', 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
 
         /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ ——— */
@@ -511,13 +519,13 @@
         .location-name {
             font-size: clamp(1.8rem, 3.2vw, 3.2rem);
             color: #ffffff;
-            font-weight: 700;
+            font-weight: 300;
             letter-spacing: 0.03em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
 
         .location-section.visible .location-name {
@@ -632,7 +640,7 @@
             max-width: 55%;
             color: #4a1a1a;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
-            text-align: center;
+            text-align: justify;
             line-height: 1.9;
             opacity: 0;
             transform: translateY(20px);
@@ -855,15 +863,6 @@
 
         .palette-item .color-circle:hover {
             transform: scale(1.05);
-        }
-
-        .palette-item .color-label {
-            font-size: clamp(0.9rem, 1.4vw, 1.4rem);
-            color: #4a1a1a;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
-            letter-spacing: 0.04em;
-            opacity: 0.8;
-            font-weight: 300;
         }
 
         .dresscode-image {
@@ -1356,7 +1355,7 @@
             }
             .content-overlay {
                 padding-bottom: 2vh;
-                padding-top: 30vh;
+                padding-top: 35vh;
             }
             .content-overlay .names {
                 margin-bottom: 2rem;
@@ -1491,9 +1490,6 @@
                 width: 70px;
                 height: 70px;
             }
-            .palette-item .color-label {
-                font-size: clamp(0.6rem, 1vw, 0.9rem);
-            }
             .dresscode-image {
                 max-width: 90%;
                 margin-top: 1.8rem;
@@ -1576,7 +1572,7 @@
             }
             .content-overlay {
                 padding-bottom: 1.5vh;
-                padding-top: 22vh;
+                padding-top: 28vh;
             }
             .content-overlay .names {
                 margin-bottom: 1.5rem;
@@ -1705,9 +1701,6 @@
                 width: 50px;
                 height: 50px;
             }
-            .palette-item .color-label {
-                font-size: 0.6rem;
-            }
             .dresscode-image {
                 max-width: 95%;
                 margin-top: 1.2rem;
@@ -1785,7 +1778,7 @@
         @media (min-width: 1400px) {
             .content-overlay {
                 padding-bottom: 4vh;
-                padding-top: 45vh;
+                padding-top: 52vh;
             }
             .content-overlay .names {
                 margin-bottom: 3rem;
@@ -1897,9 +1890,6 @@
             .palette-item .color-circle {
                 width: 120px;
                 height: 120px;
-            }
-            .palette-item .color-label {
-                font-size: 1.4rem;
             }
             .dresscode-image {
                 max-width: 60%;
@@ -2077,10 +2067,10 @@
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
                         <div class="paragraph">
-                            Ваше присутствие для нас —<br>самый дорогой подарок.<br>Мы так долго ждали этого дня,<br>чтобы разделить его с вами.<br>Будем рады, если вместо цветов<br>вы подарите нам бутылочку вина —<br>оно согреет нас,<br>как согревает ваша забота.
+                            Ваше присутствие для нас — самый дорогой подарок. Мы так долго ждали этого дня, чтобы разделить его с вами. Будем рады, если вместо цветов вы подарите нам бутылочку вина — оно согреет нас, как согревает ваша забота.
                         </div>
                         <div class="paragraph">
-                            Хотим попросить вас об одном:<br>на территории есть бассейн,<br>и мы будем очень признательны,<br>если вы не будете в него прыгать.<br>Пусть этот день будет наполнен<br>только приятными эмоциями и теплом —<br>берегите себя,<br>мы вас очень любим.
+                            Хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать. Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.
                         </div>
                     </div>
                 </div>
@@ -2119,19 +2109,15 @@
                     <div class="dresscode-palette">
                         <div class="palette-item">
                             <div class="color-circle" style="background: #4a1a1a;"></div>
-                            <span class="color-label">Бордо</span>
                         </div>
                         <div class="palette-item">
                             <div class="color-circle" style="background: #f5efe8;"></div>
-                            <span class="color-label">Айвори</span>
                         </div>
                         <div class="palette-item">
                             <div class="color-circle" style="background: #d4af37;"></div>
-                            <span class="color-label">Золотистый</span>
                         </div>
                         <div class="palette-item">
                             <div class="color-circle" style="background: #1a1a1a;"></div>
-                            <span class="color-label">Чёрный</span>
                         </div>
                     </div>
 
@@ -2453,3 +2439,4 @@
     </script>
 </body>
 </html>
+```
