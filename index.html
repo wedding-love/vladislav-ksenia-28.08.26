@@ -124,14 +124,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             width: 100%;
             height: 100%;
             padding: 1rem;
             text-align: center;
             color: #4a1a1a;
             pointer-events: none;
-            padding-bottom: 6vh;
+            padding-bottom: 18vh;
         }
 
         .content-overlay .names {
@@ -602,7 +602,7 @@
             justify-content: flex-end;
             width: 100%;
             height: 100%;
-            padding: 3rem 2rem 4rem 2rem;
+            padding: 6rem 2rem 4rem 2rem;
             text-align: center;
         }
 
@@ -612,7 +612,7 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -633,7 +633,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-bottom: 4rem;
+            padding-bottom: 2rem;
         }
 
         .wishes-section.visible .wishes-text {
@@ -1334,7 +1334,7 @@
                 height: 140px;
             }
             .content-overlay {
-                padding-bottom: 4vh;
+                padding-bottom: 12vh;
             }
             .names .vladislav {
                 font-size: clamp(2.8rem, 7vw, 4rem);
@@ -1422,15 +1422,15 @@
                 min-height: 100vh;
             }
             .wishes-content {
-                padding: 2rem 1.5rem 3rem 1.5rem;
+                padding: 4rem 1.5rem 3rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2.2rem, 4.5vw, 3rem);
-                margin-bottom: 1.2rem;
+                margin-bottom: 1.5rem;
             }
             .wishes-text {
                 max-width: 75%;
-                padding-bottom: 3rem;
+                padding-bottom: 1.5rem;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 2vw, 1.4rem);
@@ -1550,7 +1550,7 @@
                 height: 100px;
             }
             .content-overlay {
-                padding-bottom: 3vh;
+                padding-bottom: 10vh;
             }
             .names .vladislav {
                 font-size: 2.2rem;
@@ -1632,15 +1632,15 @@
                 min-height: 100vh;
             }
             .wishes-content {
-                padding: 1.5rem 1rem 2rem 1rem;
+                padding: 3rem 1rem 2rem 1rem;
             }
             .wishes-title {
                 font-size: 2rem;
-                margin-bottom: 0.8rem;
+                margin-bottom: 1.2rem;
             }
             .wishes-text {
                 max-width: 85%;
-                padding-bottom: 2.5rem;
+                padding-bottom: 1rem;
             }
             .wishes-text .paragraph {
                 font-size: 0.95rem;
@@ -1755,7 +1755,7 @@
 
         @media (min-width: 1400px) {
             .content-overlay {
-                padding-bottom: 8vh;
+                padding-bottom: 20vh;
             }
             .names .vladislav {
                 font-size: 9rem;
@@ -1825,12 +1825,15 @@
             .wishes-section {
                 min-height: 100vh;
             }
+            .wishes-content {
+                padding: 8rem 2rem 4rem 2rem;
+            }
             .wishes-title {
                 font-size: 5rem;
             }
             .wishes-text {
                 max-width: 45%;
-                padding-bottom: 5rem;
+                padding-bottom: 1.5rem;
             }
             .wishes-text .paragraph {
                 font-size: 2.2rem;
