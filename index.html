@@ -131,30 +131,30 @@
             text-align: center;
             color: #4a1a1a;
             pointer-events: none;
-            padding-bottom: 8vh;
-            padding-top: 8vh;
-        }
-
-        .content-overlay .wedding-date {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-            margin-bottom: 2rem;
+            padding-bottom: 6vh;
+            padding-top: 14vh;
         }
 
         .content-overlay .names {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
+            margin-bottom: 2.5rem;
         }
 
-        .content-overlay.visible .wedding-date {
+        .content-overlay .wedding-date {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .content-overlay.visible .names {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.2s;
         }
 
-        .content-overlay.visible .names {
+        .content-overlay.visible .wedding-date {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.5s;
@@ -1335,11 +1335,11 @@
                 height: 140px;
             }
             .content-overlay {
-                padding-bottom: 5vh;
-                padding-top: 5vh;
+                padding-bottom: 4vh;
+                padding-top: 10vh;
             }
-            .content-overlay .wedding-date {
-                margin-bottom: 1.5rem;
+            .content-overlay .names {
+                margin-bottom: 2rem;
             }
             .names .vladislav {
                 font-size: clamp(2.8rem, 7vw, 4rem);
@@ -1556,10 +1556,10 @@
             }
             .content-overlay {
                 padding-bottom: 3vh;
-                padding-top: 3vh;
+                padding-top: 8vh;
             }
-            .content-overlay .wedding-date {
-                margin-bottom: 1.2rem;
+            .content-overlay .names {
+                margin-bottom: 1.5rem;
             }
             .names .vladislav {
                 font-size: 2.2rem;
@@ -1764,10 +1764,10 @@
 
         @media (min-width: 1400px) {
             .content-overlay {
-                padding-bottom: 10vh;
-                padding-top: 10vh;
+                padding-bottom: 8vh;
+                padding-top: 16vh;
             }
-            .content-overlay .wedding-date {
+            .content-overlay .names {
                 margin-bottom: 3rem;
             }
             .names .vladislav {
@@ -1984,9 +1984,6 @@
             <div class="second-bg">
                 <img class="main-bg" src="image_2026-07-25_00-06-44.png" alt="фон" />
                 <div class="content-overlay" id="contentOverlay">
-                    <!-- СНАЧАЛА ДАТА -->
-                    <div class="wedding-date">28.08.2026</div>
-                    <!-- ПОТОМ ИМЕНА -->
                     <div class="names">
                         <div class="vladislav">VLADISLAV</div>
                         <div class="and-ksenia">
@@ -1994,6 +1991,7 @@
                             <span>KSENIA</span>
                         </div>
                     </div>
+                    <div class="wedding-date">28.08.2026</div>
                 </div>
             </div>
 
