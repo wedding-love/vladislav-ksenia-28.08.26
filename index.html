@@ -893,7 +893,7 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
@@ -1136,8 +1136,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
-            min-height: 50vh;
+            padding: 3rem 2rem;
+            min-height: 45vh;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -1147,7 +1147,7 @@
             font-family: 'MiamaNueva', serif;
             font-style: italic;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
@@ -1160,19 +1160,29 @@
             transform: translateY(0);
         }
 
-        .contacts-info {
+        .contacts-wrapper {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 1.5rem;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 700px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
 
-        .contacts-section.visible .contacts-info {
+        .contacts-section.visible .contacts-wrapper {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
         }
 
         .contacts-info .contact-item {
@@ -1181,7 +1191,7 @@
             font-family: 'Inter', 'Patriciana', Georgia, serif;
             letter-spacing: 0.03em;
             opacity: 0.9;
-            text-align: center;
+            text-align: left;
             font-weight: 300;
             padding: 0.2rem 0;
         }
@@ -1200,6 +1210,16 @@
 
         .contacts-info .contact-item a:hover {
             opacity: 0.7;
+        }
+
+        .contacts-photo {
+            flex-shrink: 0;
+            width: 100px;
+            max-width: 25%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: block;
         }
 
         /* ——— ОБЩИЕ ЭЛЕМЕНТЫ ——— */
@@ -1514,7 +1534,7 @@
             }
             .guest-title {
                 font-size: clamp(2.4rem, 4.5vw, 3.2rem);
-                margin-bottom: 1.2rem;
+                margin-bottom: 0.6rem;
             }
             .guest-deadline-top {
                 font-size: clamp(1.1rem, 1.6vw, 1.3rem);
@@ -1545,15 +1565,28 @@
                 font-size: clamp(1.2rem, 1.9vw, 1.5rem);
             }
             .contacts-section {
-                padding: 3rem 1.5rem;
-                min-height: 45vh;
+                padding: 2.5rem 1.5rem;
+                min-height: 40vh;
             }
             .contacts-title {
                 font-size: clamp(2rem, 4vw, 2.8rem);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
+            }
+            .contacts-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+                max-width: 100%;
             }
             .contacts-info .contact-item {
-                font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+                font-size: clamp(1rem, 1.6vw, 1.3rem);
+                text-align: center;
+            }
+            .contacts-info {
+                align-items: center;
+            }
+            .contacts-photo {
+                width: 80px;
+                max-width: 30%;
             }
         }
 
@@ -1725,7 +1758,7 @@
             }
             .guest-title {
                 font-size: 2rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
             }
             .guest-deadline-top {
                 font-size: 1rem;
@@ -1755,15 +1788,27 @@
                 font-size: 1.1rem;
             }
             .contacts-section {
-                padding: 2.5rem 1rem;
-                min-height: 40vh;
+                padding: 2rem 1rem;
+                min-height: 35vh;
             }
             .contacts-title {
                 font-size: 1.8rem;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            .contacts-wrapper {
+                flex-direction: column;
+                gap: 0.8rem;
             }
             .contacts-info .contact-item {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+            .contacts-info {
+                align-items: center;
+            }
+            .contacts-photo {
+                width: 60px;
+                max-width: 35%;
             }
         }
 
@@ -1911,7 +1956,7 @@
             }
             .guest-title {
                 font-size: 5rem;
-                margin-bottom: 1.8rem;
+                margin-bottom: 0.8rem;
             }
             .guest-deadline-top {
                 font-size: 2rem;
@@ -1940,14 +1985,22 @@
             }
             .contacts-section {
                 min-height: 40vh;
-                padding: 5rem 3rem;
+                padding: 4rem 3rem;
             }
             .contacts-title {
                 font-size: 4.5rem;
-                margin-bottom: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            .contacts-wrapper {
+                gap: 3rem;
+                max-width: 800px;
             }
             .contacts-info .contact-item {
                 font-size: 2.2rem;
+            }
+            .contacts-photo {
+                width: 120px;
+                max-width: 20%;
             }
         }
     </style>
@@ -2174,10 +2227,13 @@
             <!-- Блок КОНТАКТЫ -->
             <div class="contacts-section" id="contactsSection">
                 <div class="contacts-title">Контакты</div>
-                <div class="contacts-info">
-                    <div class="contact-item"><strong>Организатор:</strong> Полина</div>
-                    <div class="contact-item">+7 978 535-49-46</div>
-                    <div class="contact-item"><a href="https://t.me/Aist_Wedding" target="_blank">https://t.me/Aist_Wedding</a></div>
+                <div class="contacts-wrapper">
+                    <img class="contacts-photo" src="IMG_8893.PNG" alt="фото организатора" />
+                    <div class="contacts-info">
+                        <div class="contact-item"><strong>Организатор:</strong> Полина</div>
+                        <div class="contact-item">+7 978 535-49-46</div>
+                        <div class="contact-item"><a href="https://t.me/Aist_Wedding" target="_blank">https://t.me/Aist_Wedding</a></div>
+                    </div>
                 </div>
             </div>
 
