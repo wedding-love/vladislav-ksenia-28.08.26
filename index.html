@@ -6,35 +6,28 @@
     <title>Приглашение</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet" />
     <style>
-        /* ——— Подключение шрифтов ——— */
         @font-face {
             font-family: 'Patriciana';
             src: url('ofont.ru_Patriciana.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
-
         @font-face {
             font-family: 'MiamaNueva';
             src: url('ofont.ru_Miama Nueva.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
-
-        /* ——— Сброс и базовые стили ——— */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html,
-        body {
+        html, body {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-
         body {
             background: #ffffff;
             display: flex;
@@ -42,7 +35,6 @@
             justify-content: center;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
         .screen-container {
             position: relative;
             width: 100vw;
@@ -50,7 +42,6 @@
             overflow: hidden;
             background: #ffffff;
         }
-
         .screen {
             position: absolute;
             top: 0;
@@ -63,14 +54,12 @@
             transition: opacity 1.2s ease;
             will-change: opacity;
         }
-
         #firstScreen {
             background: #ffffff;
             z-index: 3;
             opacity: 1;
             pointer-events: auto;
         }
-
         #secondScreen {
             background: #ffffff;
             z-index: 2;
@@ -83,7 +72,6 @@
             display: block;
             scroll-behavior: smooth;
         }
-
         #secondScreen::-webkit-scrollbar {
             width: 4px;
         }
@@ -94,7 +82,6 @@
             background: rgba(128, 0, 32, 0.3);
             border-radius: 10px;
         }
-
         .second-bg {
             position: relative;
             width: 100%;
@@ -106,7 +93,6 @@
             overflow: hidden;
             z-index: 1;
         }
-
         .second-bg .main-bg {
             position: absolute;
             top: 0;
@@ -118,7 +104,6 @@
             user-select: none;
             z-index: 1;
         }
-
         .content-overlay {
             position: relative;
             z-index: 5;
@@ -135,32 +120,27 @@
             padding-bottom: 3vh;
             padding-top: 52vh;
         }
-
         .content-overlay .names {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
             margin-bottom: 2.5rem;
         }
-
         .content-overlay .wedding-date {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
         }
-
         .content-overlay.visible .names {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.2s;
         }
-
         .content-overlay.visible .wedding-date {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.5s;
         }
-
         .names {
             font-size: clamp(4rem, 10vw, 10rem);
             line-height: 1.05;
@@ -169,14 +149,12 @@
             font-family: 'Patriciana', Georgia, serif;
             font-weight: 700;
         }
-
         .names .vladislav {
             font-size: clamp(3.5rem, 9vw, 9rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             font-weight: 700;
         }
-
         .names .and-ksenia {
             font-size: clamp(4rem, 10vw, 10rem);
             text-transform: uppercase;
@@ -188,7 +166,6 @@
             flex-wrap: nowrap;
             font-weight: 700;
         }
-
         .names .and-ksenia .and {
             font-size: clamp(1.2rem, 2.5vw, 2.6rem);
             text-transform: lowercase;
@@ -197,7 +174,6 @@
             font-weight: 400;
             font-family: 'Patriciana', Georgia, serif;
         }
-
         .wedding-date {
             font-size: clamp(1.5rem, 3vw, 3rem);
             font-family: 'Patriciana', Georgia, serif;
@@ -206,8 +182,6 @@
             opacity: 0.7;
             font-weight: 600;
         }
-
-        /* ——— БЛОК С ТЕКСТОМ (БОРДОВЫЙ) ——— */
         .text-section {
             width: 100%;
             min-height: 110vh;
@@ -223,7 +197,6 @@
             position: relative;
             gap: 1.2rem;
         }
-
         .text-section .greeting,
         .text-section .message,
         .text-section .message-bold,
@@ -232,7 +205,6 @@
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
         }
-
         .text-section.visible .greeting {
             opacity: 0.95;
             transform: translateY(0);
@@ -253,7 +225,6 @@
             transform: translateY(0);
             transition-delay: 0.7s;
         }
-
         .text-section .greeting {
             font-size: clamp(3.5rem, 6.5vw, 8rem);
             text-transform: uppercase;
@@ -264,7 +235,6 @@
             font-style: italic;
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
-
         .text-section .message {
             font-size: clamp(2rem, 3.8vw, 4.5rem);
             line-height: 1.5;
@@ -274,7 +244,6 @@
             font-weight: 300;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
         .text-section .message-bold {
             font-size: clamp(2rem, 3.8vw, 4.5rem);
             line-height: 1.5;
@@ -285,7 +254,6 @@
             margin-bottom: 0.3rem;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
         .text-section .calendar-img {
             width: 100%;
             flex-shrink: 0;
@@ -297,7 +265,6 @@
             padding: 0;
             margin-top: auto;
         }
-
         .text-section .calendar-img img {
             width: 100%;
             height: auto;
@@ -306,8 +273,6 @@
             margin: 0;
             padding: 0;
         }
-
-        /* ——— БЛОК ПРОГРАММА ДНЯ ——— */
         .program-section {
             width: 100%;
             flex-shrink: 0;
@@ -320,7 +285,6 @@
             padding: 3rem 4rem 4rem 4rem;
             overflow: hidden;
         }
-
         .program-bg {
             position: absolute;
             top: 0;
@@ -330,7 +294,6 @@
             object-fit: cover;
             z-index: 0;
         }
-
         .program-content {
             position: relative;
             z-index: 1;
@@ -342,7 +305,6 @@
             max-width: 1000px;
             padding-top: 2rem;
         }
-
         .program-title {
             font-size: clamp(3.5rem, 6vw, 6rem);
             color: #4a1a1a;
@@ -357,12 +319,10 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
-
         .program-section.visible .program-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .program-row {
             display: flex;
             align-items: center;
@@ -372,12 +332,10 @@
             position: relative;
             gap: 0;
         }
-
         .program-left-empty {
             flex: 0 0 calc(50% - 40px);
             height: 100%;
         }
-
         .program-divider {
             flex-shrink: 0;
             width: 3px;
@@ -386,7 +344,6 @@
             background: #6d2030;
             z-index: 2;
         }
-
         .program-right-text {
             flex: 0 0 calc(50% - 40px);
             display: flex;
@@ -396,7 +353,6 @@
             padding-left: 60px;
             z-index: 3;
         }
-
         .program-item {
             display: flex;
             flex-direction: column;
@@ -405,7 +361,6 @@
             transform: translateY(30px);
             transition: opacity 1s ease, transform 1s ease;
         }
-
         .program-section.visible .program-item:nth-child(1) {
             opacity: 1;
             transform: translateY(0);
@@ -426,7 +381,6 @@
             transform: translateY(0);
             transition-delay: 0.9s;
         }
-
         .program-item .title {
             font-size: clamp(2rem, 3.4vw, 3.8rem);
             color: #4a1a1a;
@@ -435,7 +389,6 @@
             text-align: left;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
         .program-item .time {
             font-size: clamp(2rem, 3.4vw, 3.8rem);
             color: #4a1a1a;
@@ -445,8 +398,6 @@
             text-align: left;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
-        /* ——— БЛОК МЕСТО ПРОВЕДЕНИЯ ——— */
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -459,7 +410,6 @@
             padding: 4rem 2rem 4rem 2rem;
             overflow: hidden;
         }
-
         .location-bg {
             position: absolute;
             top: 0;
@@ -470,7 +420,6 @@
             object-position: center 70%;
             z-index: 0;
         }
-
         .location-content {
             position: relative;
             z-index: 1;
@@ -487,7 +436,6 @@
             border-radius: 0;
             gap: 1.5rem;
         }
-
         .location-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
@@ -501,12 +449,10 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
-
         .location-section.visible .location-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .location-name {
             font-size: clamp(1.8rem, 3.2vw, 3.2rem);
             color: #ffffff;
@@ -518,12 +464,10 @@
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
-
         .location-section.visible .location-name {
             opacity: 1;
             transform: translateY(0);
         }
-
         .location-address {
             font-size: clamp(1.2rem, 2vw, 2rem);
             color: #ffffff;
@@ -536,12 +480,10 @@
             transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
             font-family: 'Inter', 'Patriciana', Georgia, serif;
         }
-
         .location-section.visible .location-address {
             opacity: 0.85;
             transform: translateY(0);
         }
-
         .location-btn {
             display: inline-block;
             padding: 0.5rem 1.5rem;
@@ -560,22 +502,17 @@
             transform: translateY(30px);
             transition: opacity 1s ease 0.8s, transform 1s ease 0.8s, background 0.3s ease, color 0.3s ease;
         }
-
         .location-section.visible .location-btn {
             opacity: 1;
             transform: translateY(0);
         }
-
         .location-btn:hover {
             background: transparent;
             color: #ffffff;
         }
-
         .location-btn:active {
             transform: scale(0.96);
         }
-
-        /* ——— БЛОК ПОЖЕЛАНИЯ ——— */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -583,7 +520,6 @@
             min-height: 100vh;
             overflow: hidden;
         }
-
         .wishes-bg {
             position: absolute;
             top: 0;
@@ -594,7 +530,6 @@
             object-position: center;
             z-index: 0;
         }
-
         .wishes-content {
             position: relative;
             z-index: 2;
@@ -607,7 +542,6 @@
             padding: 10rem 2rem 4rem 2rem;
             text-align: center;
         }
-
         .wishes-title {
             font-size: clamp(2.8rem, 5vw, 5rem);
             color: #4a1a1a;
@@ -621,12 +555,10 @@
             width: 100%;
             font-weight: 600;
         }
-
         .wishes-section.visible .wishes-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .wishes-text {
             max-width: 55%;
             color: #4a1a1a;
@@ -639,12 +571,10 @@
             padding-bottom: 2rem;
             font-weight: 300;
         }
-
         .wishes-section.visible .wishes-text {
             opacity: 1;
             transform: translateY(0);
         }
-
         .wishes-text .paragraph {
             font-size: clamp(1.1rem, 1.8vw, 1.8rem);
             margin-bottom: 1rem;
@@ -654,12 +584,9 @@
             font-weight: 300;
             line-height: 1.7;
         }
-
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
-
-        /* ——— БЛОК ТАЙМЕР ——— */
         .timer-section {
             width: 100%;
             flex-shrink: 0;
@@ -671,7 +598,6 @@
             padding: 4rem 2rem;
             min-height: 50vh;
         }
-
         .timer-title {
             font-size: clamp(2rem, 4vw, 4rem);
             color: #ffffff;
@@ -686,19 +612,16 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 600;
         }
-
         .timer-section.visible .timer-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .timer-container {
             display: flex;
             gap: 2.5rem;
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .timer-item {
             display: flex;
             flex-direction: column;
@@ -709,7 +632,6 @@
             border: none;
             backdrop-filter: none;
         }
-
         .timer-item .number {
             font-size: clamp(3rem, 6vw, 6rem);
             color: #ffffff;
@@ -720,12 +642,10 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
-
         .timer-section.visible .timer-item .number {
             opacity: 1;
             transform: translateY(0);
         }
-
         .timer-item .label {
             font-size: clamp(0.8rem, 1.2vw, 1.2rem);
             color: #ffffff;
@@ -738,12 +658,10 @@
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
             font-weight: 300;
         }
-
         .timer-section.visible .timer-item .label {
             opacity: 1;
             transform: translateY(0);
         }
-
         .timer-item:nth-child(1) .number { transition-delay: 0.2s; }
         .timer-item:nth-child(1) .label { transition-delay: 0.3s; }
         .timer-item:nth-child(2) .number { transition-delay: 0.3s; }
@@ -753,7 +671,7 @@
         .timer-item:nth-child(4) .number { transition-delay: 0.5s; }
         .timer-item:nth-child(4) .label { transition-delay: 0.6s; }
 
-        /* ——— БЛОК ДРЕСС-КОД (поднят вверх, фон не растянут по бокам) ——— */
+        /* ——— ДРЕСС-КОД: убраны белый и золотой, добавлен шампань, только 3 круга ——— */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -761,7 +679,6 @@
             min-height: 80vh;
             overflow: hidden;
         }
-
         .dresscode-bg {
             position: absolute;
             top: 0;
@@ -772,7 +689,6 @@
             object-position: center;
             z-index: 0;
         }
-
         .dresscode-content {
             position: relative;
             z-index: 1;
@@ -784,7 +700,6 @@
             padding: 2rem 2rem;
             text-align: center;
         }
-
         .dresscode-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
@@ -797,12 +712,10 @@
             margin-top: 2rem;
             font-weight: 600;
         }
-
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .dresscode-text {
             font-size: clamp(1.2rem, 2vw, 2rem);
             color: #4a1a1a;
@@ -815,12 +728,10 @@
             margin-top: 0.5rem;
             font-weight: 300;
         }
-
         .dresscode-section.visible .dresscode-text {
             opacity: 1;
             transform: translateY(0);
         }
-
         .dresscode-palette {
             display: flex;
             justify-content: center;
@@ -831,19 +742,16 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
         }
-
         .dresscode-section.visible .dresscode-palette {
             opacity: 1;
             transform: translateY(0);
         }
-
         .palette-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
         }
-
         .palette-item .color-circle {
             width: 100px;
             height: 100px;
@@ -852,11 +760,9 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
         }
-
         .palette-item .color-circle:hover {
             transform: scale(1.05);
         }
-
         .dresscode-image {
             position: relative;
             z-index: 2;
@@ -868,13 +774,10 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
         }
-
         .dresscode-section.visible .dresscode-image {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ——— БЛОК АНКЕТА ГОСТЯ ——— */
         .guest-section {
             width: 100%;
             flex-shrink: 0;
@@ -886,7 +789,6 @@
             padding: 4rem 2rem;
             min-height: 100vh;
         }
-
         .guest-title {
             font-size: clamp(3rem, 5vw, 5rem);
             color: #ffffff;
@@ -900,12 +802,10 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 600;
         }
-
         .guest-section.visible .guest-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .guest-deadline-top {
             font-size: clamp(1.4rem, 2vw, 2rem);
             color: rgba(255, 255, 255, 0.8);
@@ -917,17 +817,14 @@
             transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
             font-weight: 300;
         }
-
         .guest-section.visible .guest-deadline-top {
             opacity: 1;
             transform: translateY(0);
         }
-
         .guest-deadline-top strong {
             color: #ffffff;
             font-weight: 400;
         }
-
         .guest-form {
             width: 100%;
             max-width: 600px;
@@ -935,7 +832,6 @@
             flex-direction: column;
             gap: 2.2rem;
         }
-
         .guest-form .form-group {
             display: flex;
             flex-direction: column;
@@ -944,7 +840,6 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
         .guest-section.visible .form-group:nth-child(1) {
             opacity: 1;
             transform: translateY(0);
@@ -960,7 +855,6 @@
             transform: translateY(0);
             transition-delay: 0.8s;
         }
-
         .guest-form label {
             font-size: clamp(1.4rem, 2vw, 2rem);
             color: #ffffff;
@@ -969,7 +863,6 @@
             opacity: 0.9;
             letter-spacing: 0.03em;
         }
-
         .guest-form input[type="text"] {
             padding: 1.2rem 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -983,26 +876,22 @@
             backdrop-filter: blur(4px);
             font-weight: 300;
         }
-
         .guest-form input[type="text"]::placeholder {
             color: rgba(255, 255, 255, 0.3);
             font-family: 'Inter', 'Patriciana', Georgia, serif;
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             font-weight: 300;
         }
-
         .guest-form input[type="text"]:focus {
             border-color: rgba(255, 255, 255, 0.5);
             background: rgba(255, 255, 255, 0.15);
         }
-
         .guest-form .radio-group {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             padding: 0.3rem 0;
         }
-
         .guest-form .radio-group label {
             display: flex;
             align-items: center;
@@ -1014,7 +903,6 @@
             cursor: pointer;
             font-weight: 300;
         }
-
         .guest-form .radio-group input[type="radio"] {
             -webkit-appearance: none;
             appearance: none;
@@ -1028,11 +916,9 @@
             background: transparent;
             transition: all 0.2s ease;
         }
-
         .guest-form .radio-group input[type="radio"]:checked {
             border-color: #ffffff;
         }
-
         .guest-form .radio-group input[type="radio"]:checked::after {
             content: '';
             position: absolute;
@@ -1044,14 +930,12 @@
             border-radius: 50%;
             background: #ffffff;
         }
-
         .guest-form .checkbox-group {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             padding: 0.3rem 0;
         }
-
         .guest-form .checkbox-group label {
             display: flex;
             align-items: center;
@@ -1063,7 +947,6 @@
             cursor: pointer;
             font-weight: 300;
         }
-
         .guest-form .checkbox-group input[type="checkbox"] {
             -webkit-appearance: none;
             appearance: none;
@@ -1077,12 +960,10 @@
             background: transparent;
             transition: all 0.2s ease;
         }
-
         .guest-form .checkbox-group input[type="checkbox"]:checked {
             border-color: #ffffff;
             background: #ffffff;
         }
-
         .guest-form .checkbox-group input[type="checkbox"]:checked::after {
             content: '✓';
             position: absolute;
@@ -1093,7 +974,6 @@
             font-size: 17px;
             font-weight: 700;
         }
-
         .submit-btn {
             padding: 1.3rem 3.5rem;
             background: #ffffff;
@@ -1112,22 +992,17 @@
             transform: translateY(15px);
             transition: opacity 0.8s ease 1s, transform 0.8s ease 1s, background 0.3s ease, color 0.3s ease;
         }
-
         .guest-section.visible .submit-btn {
             opacity: 1;
             transform: translateY(0);
         }
-
         .submit-btn:hover {
             background: transparent;
             color: #ffffff;
         }
-
         .submit-btn:active {
             transform: scale(0.96);
         }
-
-        /* ——— БЛОК КОНТАКТЫ ——— */
         .contacts-section {
             width: 100%;
             flex-shrink: 0;
@@ -1140,7 +1015,6 @@
             min-height: 40vh;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .contacts-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
@@ -1154,12 +1028,10 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 600;
         }
-
         .contacts-section.visible .contacts-title {
             opacity: 1;
             transform: translateY(0);
         }
-
         .contacts-info {
             display: flex;
             flex-direction: column;
@@ -1169,12 +1041,10 @@
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
         }
-
         .contacts-section.visible .contacts-info {
             opacity: 1;
             transform: translateY(0);
         }
-
         .contacts-info .contact-item {
             font-size: clamp(1.3rem, 2.2vw, 2.2rem);
             color: #ffffff;
@@ -1185,24 +1055,19 @@
             font-weight: 300;
             padding: 0.2rem 0;
         }
-
         .contacts-info .contact-item strong {
             font-weight: 400;
             opacity: 1;
         }
-
         .contacts-info .contact-item a {
             color: #ffffff;
             text-decoration: none;
             transition: opacity 0.3s ease;
             font-weight: 300;
         }
-
         .contacts-info .contact-item a:hover {
             opacity: 0.7;
         }
-
-        /* ——— ОБЩИЕ ЭЛЕМЕНТЫ ——— */
         .main-bg-first {
             position: absolute;
             top: 0;
@@ -1214,7 +1079,6 @@
             user-select: none;
             z-index: 1;
         }
-
         .circle-btn {
             position: absolute;
             top: 50%;
@@ -1230,7 +1094,6 @@
             pointer-events: auto;
             z-index: 10;
         }
-
         .circle-btn:hover,
         .circle-btn:active,
         .circle-btn:focus {
@@ -1240,7 +1103,6 @@
             box-shadow: none;
             transform: translate(-50%, -50%) scale(1);
         }
-
         #dotsLayer {
             position: absolute;
             top: 0;
@@ -1253,11 +1115,9 @@
             opacity: 0;
             transition: opacity 1.2s ease;
         }
-
         #dotsLayer.active {
             opacity: 1;
         }
-
         .dot {
             position: absolute;
             width: 5px;
@@ -1269,13 +1129,11 @@
             opacity: 0;
             transition: opacity 0.15s ease;
         }
-
         .dot.active {
             opacity: 1;
             animation: twinkleFast 1s infinite alternate ease-in-out;
             will-change: opacity, transform;
         }
-
         @keyframes twinkleFast {
             0% {
                 opacity: 0.05;
@@ -1290,7 +1148,6 @@
                 transform: scale(0.6);
             }
         }
-
         .dot:nth-child(1) { top: 5%; left: 3%; animation-delay: 0.00s; }
         .dot:nth-child(2) { top: 8%; left: 15%; animation-delay: 0.08s; }
         .dot:nth-child(3) { top: 3%; left: 28%; animation-delay: 0.16s; }
@@ -1299,7 +1156,6 @@
         .dot:nth-child(6) { top: 15%; left: 68%; animation-delay: 0.06s; }
         .dot:nth-child(7) { top: 4%; left: 80%; animation-delay: 0.14s; }
         .dot:nth-child(8) { top: 10%; left: 92%; animation-delay: 0.10s; }
-        
         .dot:nth-child(9) { top: 22%; left: 7%; animation-delay: 0.12s; }
         .dot:nth-child(10) { top: 28%; left: 20%; animation-delay: 0.24s; }
         .dot:nth-child(11) { top: 18%; left: 35%; animation-delay: 0.06s; }
@@ -1307,7 +1163,6 @@
         .dot:nth-child(13) { top: 20%; left: 60%; animation-delay: 0.02s; }
         .dot:nth-child(14) { top: 25%; left: 75%; animation-delay: 0.22s; }
         .dot:nth-child(15) { top: 32%; left: 88%; animation-delay: 0.11s; }
-        
         .dot:nth-child(16) { top: 40%; left: 2%; animation-delay: 0.09s; }
         .dot:nth-child(17) { top: 45%; left: 12%; animation-delay: 0.19s; }
         .dot:nth-child(18) { top: 38%; left: 25%; animation-delay: 0.05s; }
@@ -1316,7 +1171,6 @@
         .dot:nth-child(21) { top: 50%; left: 65%; animation-delay: 0.13s; }
         .dot:nth-child(22) { top: 44%; left: 78%; animation-delay: 0.07s; }
         .dot:nth-child(23) { top: 52%; left: 90%; animation-delay: 0.21s; }
-        
         .dot:nth-child(24) { top: 60%; left: 5%; animation-delay: 0.10s; }
         .dot:nth-child(25) { top: 65%; left: 18%; animation-delay: 0.17s; }
         .dot:nth-child(26) { top: 58%; left: 32%; animation-delay: 0.03s; }
@@ -1325,7 +1179,6 @@
         .dot:nth-child(29) { top: 70%; left: 72%; animation-delay: 0.01s; }
         .dot:nth-child(30) { top: 64%; left: 85%; animation-delay: 0.18s; }
         .dot:nth-child(31) { top: 72%; left: 95%; animation-delay: 0.06s; }
-        
         .dot:nth-child(32) { top: 80%; left: 8%; animation-delay: 0.14s; }
         .dot:nth-child(33) { top: 85%; left: 22%; animation-delay: 0.05s; }
         .dot:nth-child(34) { top: 78%; left: 36%; animation-delay: 0.23s; }
@@ -1333,13 +1186,11 @@
         .dot:nth-child(36) { top: 82%; left: 64%; animation-delay: 0.02s; }
         .dot:nth-child(37) { top: 90%; left: 78%; animation-delay: 0.16s; }
         .dot:nth-child(38) { top: 86%; left: 90%; animation-delay: 0.12s; }
-        
         .dot:nth-child(39) { top: 95%; left: 15%; animation-delay: 0.06s; }
         .dot:nth-child(40) { top: 93%; left: 40%; animation-delay: 0.18s; }
         .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
         .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
 
-        /* ——— Адаптив ——— */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -1561,7 +1412,6 @@
                 text-align: center;
             }
         }
-
         @media (max-width: 400px) {
             .circle-btn {
                 width: 100px;
@@ -1776,7 +1626,6 @@
                 text-align: center;
             }
         }
-
         @media (min-width: 1400px) {
             .content-overlay {
                 padding-bottom: 4vh;
@@ -1969,16 +1818,14 @@
 <body>
     <div class="screen-container">
 
-        <!-- ====== ПЕРВЫЙ ЭКРАН ====== -->
+        <!-- ПЕРВЫЙ ЭКРАН -->
         <div id="firstScreen" class="screen">
             <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
-            
-            <!-- Аудиоплеер (скрытый) -->
             <audio id="bgMusic" src="Elodie_-_Niente_Canzoni_DAmore_68249488.mp3" preload="auto"></audio>
         </div>
 
-        <!-- ====== СЛОЙ С ТОЧКАМИ ====== -->
+        <!-- СЛОЙ С ТОЧКАМИ -->
         <div id="dotsLayer">
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -1996,10 +1843,9 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ====== ВТОРОЙ ЭКРАН ====== -->
+        <!-- ВТОРОЙ ЭКРАН -->
         <div id="secondScreen" class="screen">
 
-            <!-- Фото на весь экран -->
             <div class="second-bg">
                 <img class="main-bg" src="image_2026-07-25_00-06-44.png" alt="фон" />
                 <div class="content-overlay" id="contentOverlay">
@@ -2014,7 +1860,6 @@
                 </div>
             </div>
 
-            <!-- Бордовый блок с текстом -->
             <div class="text-section" id="textSection">
                 <div class="greeting">Дорогие друзья и родные!</div>
                 <div class="message">Случилось невероятное — мы решили связать наши судьбы и начать новую главу нашей жизни вместе.</div>
@@ -2024,12 +1869,10 @@
                 </div>
             </div>
 
-            <!-- Блок ПРОГРАММА ДНЯ -->
             <div class="program-section" id="programSection">
                 <img class="program-bg" src="тайминг.png" alt="фон программы" />
                 <div class="program-content">
                     <div class="program-title">Программа дня</div>
-
                     <div class="program-row">
                         <div class="program-left-empty"></div>
                         <div class="program-divider"></div>
@@ -2055,7 +1898,6 @@
                 </div>
             </div>
 
-            <!-- Блок МЕСТО ПРОВЕДЕНИЯ -->
             <div class="location-section" id="locationSection">
                 <img class="location-bg" src="локация.png" alt="фон локации" />
                 <div class="location-content">
@@ -2066,7 +1908,6 @@
                 </div>
             </div>
 
-            <!-- Блок ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="image_2026-07-24_22-20-01.png" alt="фон пожеланий" />
                 <div class="wishes-content">
@@ -2082,7 +1923,6 @@
                 </div>
             </div>
 
-            <!-- Блок ТАЙМЕР -->
             <div class="timer-section" id="timerSection">
                 <div class="timer-title">До нашей свадьбы осталось:</div>
                 <div class="timer-container">
@@ -2105,22 +1945,20 @@
                 </div>
             </div>
 
-            <!-- Блок ДРЕСС-КОД -->
+            <!-- БЛОК ДРЕСС-КОД: убраны белый и золотой, оставлены бордовый, айвори (заменён на шампань), чёрный — всего 3 круга -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="первая.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
-                    <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, айвори, золотой и чёрный. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
+                    <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, шампань, чёрный. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
                     
+                    <!-- ТОЛЬКО 3 КРУГА: бордовый, шампань, чёрный -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
                             <div class="color-circle" style="background: #4a1a1a;"></div>
                         </div>
                         <div class="palette-item">
-                            <div class="color-circle" style="background: #f5efe8;"></div>
-                        </div>
-                        <div class="palette-item">
-                            <div class="color-circle" style="background: #d4af37;"></div>
+                            <div class="color-circle" style="background: #e8d5b7;"></div>
                         </div>
                         <div class="palette-item">
                             <div class="color-circle" style="background: #1a1a1a;"></div>
@@ -2131,20 +1969,16 @@
                 </div>
             </div>
 
-            <!-- Блок АНКЕТА ГОСТЯ -->
             <div class="guest-section" id="guestSection">
                 <div class="guest-title">Анкета гостя</div>
-
                 <div class="guest-deadline-top">
                     Подтвердите присутствие до <strong>12.08.2026</strong>
                 </div>
-
                 <form class="guest-form" action="https://formspree.io/f/mwvgnowr" method="POST">
                     <div class="form-group">
                         <label>Ваше имя и фамилия</label>
                         <input type="text" name="name" placeholder="Например: Анна Иванова" required />
                     </div>
-
                     <div class="form-group">
                         <label>Будете ли присутствовать?</label>
                         <div class="radio-group">
@@ -2158,7 +1992,6 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label>Ваши предпочтения в напитках</label>
                         <div class="checkbox-group">
@@ -2180,12 +2013,10 @@
                             </label>
                         </div>
                     </div>
-
                     <button type="submit" class="submit-btn">Отправить</button>
                 </form>
             </div>
 
-            <!-- Блок КОНТАКТЫ -->
             <div class="contacts-section" id="contactsSection">
                 <div class="contacts-title">Контакты</div>
                 <div class="contacts-info">
@@ -2196,7 +2027,6 @@
             </div>
 
         </div>
-
     </div>
 
     <script>
@@ -2228,7 +2058,6 @@
             let guestVisible = false;
             let contactsVisible = false;
 
-            // ——— Функция склонения ———
             function declension(number, forms) {
                 const n = Math.abs(number);
                 const remainder = n % 100;
@@ -2245,13 +2074,11 @@
                 return forms[2];
             }
 
-            // ——— ТАЙМЕР ———
             const weddingDate = new Date('2026-08-28T16:00:00').getTime();
 
             function updateTimer() {
                 const now = new Date().getTime();
                 const distance = weddingDate - now;
-
                 if (distance < 0) {
                     document.getElementById('days').textContent = '00';
                     document.getElementById('hours').textContent = '00';
@@ -2263,23 +2090,19 @@
                     document.getElementById('secondsLabel').textContent = 'СЕКУНД';
                     return;
                 }
-
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
                 document.getElementById('days').textContent = String(days).padStart(2, '0');
                 document.getElementById('hours').textContent = String(hours).padStart(2, '0');
                 document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
                 document.getElementById('daysLabel').textContent = declension(days, ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ']).toUpperCase();
                 document.getElementById('hoursLabel').textContent = declension(hours, ['ЧАС', 'ЧАСА', 'ЧАСОВ']).toUpperCase();
                 document.getElementById('minutesLabel').textContent = declension(minutes, ['МИНУТА', 'МИНУТЫ', 'МИНУТ']).toUpperCase();
                 document.getElementById('secondsLabel').textContent = declension(seconds, ['СЕКУНДА', 'СЕКУНДЫ', 'СЕКУНД']).toUpperCase();
             }
-
             updateTimer();
             setInterval(updateTimer, 1000);
 
@@ -2310,7 +2133,6 @@
                         }
                     }
                 }
-
                 if (programSection) {
                     const rect = programSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2321,7 +2143,6 @@
                         }
                     }
                 }
-
                 if (locationSection) {
                     const rect = locationSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2332,7 +2153,6 @@
                         }
                     }
                 }
-
                 if (wishesSection) {
                     const rect = wishesSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2343,7 +2163,6 @@
                         }
                     }
                 }
-
                 if (timerSection) {
                     const rect = timerSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2354,7 +2173,6 @@
                         }
                     }
                 }
-
                 if (dresscodeSection) {
                     const rect = dresscodeSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2365,7 +2183,6 @@
                         }
                     }
                 }
-
                 if (guestSection) {
                     const rect = guestSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2376,7 +2193,6 @@
                         }
                     }
                 }
-
                 if (contactsSection) {
                     const rect = contactsSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
@@ -2392,34 +2208,25 @@
             function switchToSecondScreen() {
                 if (isTransitioning) return;
                 isTransitioning = true;
-
-                // Запускаем музыку при клике
                 bgMusic.play().catch(function(error) {
                     console.log('Автовоспроизведение заблокировано браузером:', error);
                 });
-
                 firstScreen.style.opacity = '0';
                 firstScreen.style.pointerEvents = 'none';
-
                 setTimeout(() => {
                     dotsLayer.classList.add('active');
                     activateDots();
                 }, 1200);
-
                 setTimeout(() => {
                     deactivateDots();
-
                     secondScreen.style.opacity = '1';
                     secondScreen.style.pointerEvents = 'auto';
-
                     setTimeout(() => {
                         contentOverlay.classList.add('visible');
                     }, 200);
-
                     setTimeout(() => {
                         checkVisibility();
                     }, 500);
-
                     isTransitioning = false;
                 }, 3200);
             }
