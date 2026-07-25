@@ -132,7 +132,7 @@
             color: #4a1a1a;
             pointer-events: none;
             padding-bottom: 3vh;
-            padding-top: 22vh;
+            padding-top: 30vh;
         }
 
         .content-overlay .names {
@@ -1336,7 +1336,7 @@
             }
             .content-overlay {
                 padding-bottom: 2vh;
-                padding-top: 16vh;
+                padding-top: 20vh;
             }
             .content-overlay .names {
                 margin-bottom: 2rem;
@@ -1556,7 +1556,7 @@
             }
             .content-overlay {
                 padding-bottom: 1.5vh;
-                padding-top: 12vh;
+                padding-top: 15vh;
             }
             .content-overlay .names {
                 margin-bottom: 1.5rem;
@@ -1765,7 +1765,7 @@
         @media (min-width: 1400px) {
             .content-overlay {
                 padding-bottom: 4vh;
-                padding-top: 20vh;
+                padding-top: 28vh;
             }
             .content-overlay .names {
                 margin-bottom: 3rem;
@@ -1957,6 +1957,9 @@
         <div id="firstScreen" class="screen">
             <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
+            
+            <!-- Аудиоплеер (скрытый) -->
+            <audio id="bgMusic" src="Elodie_-_Niente_Canzoni_DAmore_68249488.mp3" preload="auto"></audio>
         </div>
 
         <!-- ====== СЛОЙ С ТОЧКАМИ ====== -->
@@ -2198,6 +2201,7 @@
             const guestSection = document.getElementById('guestSection');
             const contactsSection = document.getElementById('contactsSection');
             const fadeBtn = document.getElementById('fadeBtn');
+            const bgMusic = document.getElementById('bgMusic');
             const dots = document.querySelectorAll('#dotsLayer .dot');
 
             let isTransitioning = false;
@@ -2375,6 +2379,11 @@
             function switchToSecondScreen() {
                 if (isTransitioning) return;
                 isTransitioning = true;
+
+                // Запускаем музыку при клике
+                bgMusic.play().catch(function(error) {
+                    console.log('Автовоспроизведение заблокировано браузером:', error);
+                });
 
                 firstScreen.style.opacity = '0';
                 firstScreen.style.pointerEvents = 'none';
