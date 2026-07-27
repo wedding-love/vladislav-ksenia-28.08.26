@@ -4,20 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Приглашение</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <style>
-        @font-face {
-            font-family: 'Patriciana';
-            src: url('ofont.ru_Patriciana.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'MiamaNueva';
-            src: url('ofont.ru_Miama Nueva.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +22,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
         }
         .screen-container {
             position: relative;
@@ -147,7 +135,7 @@
             line-height: 1.05;
             letter-spacing: 0.04em;
             max-width: 95vw;
-            font-family: 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
         .names .vladislav {
@@ -173,11 +161,11 @@
             letter-spacing: 0.2em;
             opacity: 0.6;
             font-weight: 400;
-            font-family: 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
         }
         .wedding-date {
             font-size: clamp(1.5rem, 3vw, 3rem);
-            font-family: 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
             color: #4a1a1a;
             letter-spacing: 0.08em;
             opacity: 0.7;
@@ -232,8 +220,8 @@
             letter-spacing: 0.08em;
             color: #ffffff;
             margin-bottom: 0.2rem;
-            font-weight: 600;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
             white-space: nowrap;
         }
         .text-section .message {
@@ -243,7 +231,7 @@
             color: #ffffff;
             max-width: 85%;
             font-weight: 300;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
         }
         .text-section .message-bold {
             font-size: clamp(1.6rem, 2.8vw, 2.8rem);
@@ -253,7 +241,7 @@
             max-width: 85%;
             font-weight: 400;
             margin-bottom: 0.3rem;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
         }
         .text-section .calendar-img {
             width: 100%;
@@ -278,12 +266,12 @@
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 120vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 3rem 4rem 4rem 4rem;
+            padding: 5rem 4rem 6rem 4rem;
             overflow: hidden;
         }
         .program-bg {
@@ -304,20 +292,21 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 1000px;
-            padding-top: 2rem;
+            padding-top: 3rem;
         }
         .program-title {
-            font-size: clamp(2.8rem, 5vw, 5rem);
-            color: #4a1a1a;
-            font-weight: 600;
-            margin-bottom: 4rem;
+            font-size: clamp(3rem, 5vw, 5rem);
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 5rem;
             letter-spacing: 0.05em;
             text-align: center;
             width: 100%;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
         .program-section.visible .program-title {
             opacity: 1;
@@ -328,7 +317,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3rem;
+            gap: 4rem;
             width: 100%;
             max-width: 600px;
             padding: 0 1rem;
@@ -364,27 +353,31 @@
             transition-delay: 0.9s;
         }
         .program-item .title {
-            font-size: clamp(1.8rem, 3vw, 3.2rem);
-            color: #4a1a1a;
+            font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+            color: #ffffff;
             font-weight: 300;
             line-height: 1.3;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.03em;
         }
         .program-item .time {
-            font-size: clamp(1.8rem, 3vw, 3.2rem);
-            color: #4a1a1a;
+            font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+            color: #ffffff;
             font-weight: 300;
-            opacity: 0.7;
-            margin-top: 0.1rem;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+            font-family: 'Inter', sans-serif;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.03em;
         }
         .program-item .divider-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: #6d2030;
-            margin-top: 1.5rem;
-            opacity: 0.4;
+            background: rgba(255, 255, 255, 0.4);
+            margin-top: 2rem;
+            opacity: 0.6;
         }
         .program-item:last-child .divider-dot {
             display: none;
@@ -430,14 +423,14 @@
         .location-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.05em;
             margin: 0;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
         }
         .location-section.visible .location-title {
             opacity: 1;
@@ -446,13 +439,13 @@
         .location-name {
             font-size: clamp(1.8rem, 3.2vw, 3.2rem);
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.03em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
+            font-family: 'Playfair Display', serif;
         }
         .location-section.visible .location-name {
             opacity: 1;
@@ -468,7 +461,7 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             transform: translateY(30px);
             transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
         }
         .location-section.visible .location-address {
             opacity: 0.85;
@@ -479,7 +472,7 @@
             padding: 0.5rem 1.5rem;
             background: #ffffff;
             color: #4a1a1a;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(1rem, 1.4vw, 1.4rem);
             font-weight: 300;
             text-decoration: none;
@@ -535,14 +528,14 @@
         .wishes-title {
             font-size: clamp(2.8rem, 5vw, 5rem);
             color: #4a1a1a;
-            font-family: 'MiamaNueva', serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
             margin-bottom: 2.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
             width: 100%;
-            font-weight: 600;
+            font-weight: 700;
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -551,7 +544,7 @@
         .wishes-text {
             max-width: 60%;
             color: #4a1a1a;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             text-align: center;
             line-height: 2;
             opacity: 0;
@@ -590,7 +583,7 @@
         .timer-title {
             font-size: clamp(2rem, 4vw, 4rem);
             color: #ffffff;
-            font-family: 'MiamaNueva', serif;
+            font-family: 'Playfair Display', serif;
             margin-bottom: 2.5rem;
             text-align: center;
             letter-spacing: 0.05em;
@@ -598,7 +591,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 600;
+            font-weight: 700;
         }
         .timer-section.visible .timer-title {
             opacity: 1;
@@ -623,8 +616,8 @@
         .timer-item .number {
             font-size: clamp(3rem, 6vw, 6rem);
             color: #ffffff;
-            font-family: 'MiamaNueva', serif;
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             line-height: 1;
             opacity: 0;
             transform: translateY(20px);
@@ -637,7 +630,7 @@
         .timer-item .label {
             font-size: clamp(0.8rem, 1.2vw, 1.2rem);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             margin-top: 0.2rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -707,13 +700,13 @@
         .dresscode-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
-            font-family: 'MiamaNueva', serif;
+            font-family: 'Playfair Display', serif;
             margin-bottom: 1rem;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             margin-top: 2rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
@@ -722,7 +715,7 @@
         .dresscode-text {
             font-size: clamp(1.2rem, 2vw, 2rem);
             color: #4a1a1a;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             max-width: 80%;
             line-height: 1.6;
             opacity: 0;
@@ -736,7 +729,7 @@
             transform: translateY(0);
         }
 
-        /* КВАДРАТИКИ вместо мазков */
+        /* КВАДРАТИКИ */
         .dresscode-palette {
             display: flex;
             justify-content: center;
@@ -796,14 +789,14 @@
         .guest-title {
             font-size: clamp(2.8rem, 5vw, 5rem);
             color: #ffffff;
-            font-family: 'MiamaNueva', serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
             margin-bottom: 0.8rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 600;
+            font-weight: 700;
         }
         .guest-section.visible .guest-title {
             opacity: 1;
@@ -812,7 +805,7 @@
         .guest-deadline-top {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: rgba(255, 255, 255, 0.8);
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             text-align: center;
             margin-bottom: 2rem;
             opacity: 0;
@@ -861,7 +854,7 @@
         .guest-form label {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 300;
             opacity: 0.9;
             letter-spacing: 0.03em;
@@ -872,7 +865,7 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.08);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             outline: none;
             transition: border-color 0.3s ease, background 0.3s ease;
@@ -881,7 +874,7 @@
         }
         .guest-form input[type="text"]::placeholder {
             color: rgba(255, 255, 255, 0.3);
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(1rem, 1.6vw, 1.6rem);
             font-weight: 300;
         }
@@ -901,7 +894,7 @@
             gap: 0.8rem;
             font-size: clamp(1.1rem, 1.6vw, 1.6rem);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             opacity: 0.9;
             cursor: pointer;
             font-weight: 300;
@@ -945,7 +938,7 @@
             gap: 0.8rem;
             font-size: clamp(1.1rem, 1.6vw, 1.6rem);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             opacity: 0.9;
             cursor: pointer;
             font-weight: 300;
@@ -981,7 +974,7 @@
             padding: 1.2rem 3rem;
             background: #ffffff;
             color: #4a1a1a;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(1.3rem, 2vw, 2rem);
             font-weight: 300;
             border: 2px solid #ffffff;
@@ -1021,14 +1014,14 @@
         .contacts-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-family: 'MiamaNueva', serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
             margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 600;
+            font-weight: 700;
         }
         .contacts-section.visible .contacts-title {
             opacity: 1;
@@ -1050,7 +1043,7 @@
         .contacts-info .contact-item {
             font-size: clamp(1.2rem, 2vw, 2rem);
             color: #ffffff;
-            font-family: 'Inter', 'Patriciana', Georgia, serif;
+            font-family: 'Inter', sans-serif;
             letter-spacing: 0.03em;
             opacity: 0.9;
             text-align: center;
@@ -1392,9 +1385,9 @@
                 gap: 0.8rem;
             }
             .text-section .greeting {
-                font-size: clamp(2rem, 4vw, 2.8rem);
+                font-size: clamp(1.8rem, 4vw, 2.8rem);
                 margin-bottom: 0.15rem;
-                white-space: normal;
+                white-space: nowrap;
             }
             .text-section .message {
                 font-size: clamp(1.3rem, 2.2vw, 1.6rem);
@@ -1404,27 +1397,27 @@
                 margin-bottom: 0.2rem;
             }
             .program-section {
-                padding: 2rem 1.5rem 3rem 1.5rem;
-                min-height: 80vh;
+                padding: 3rem 1.5rem 4rem 1.5rem;
+                min-height: 100vh;
             }
             .program-title {
                 font-size: clamp(2.2rem, 4.5vw, 3rem);
-                margin-bottom: 2.5rem;
+                margin-bottom: 3rem;
             }
             .program-list {
-                gap: 2rem;
+                gap: 2.5rem;
                 max-width: 100%;
             }
             .program-item .title {
-                font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+                font-size: clamp(1.6rem, 3vw, 2rem);
             }
             .program-item .time {
-                font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+                font-size: clamp(1.6rem, 3vw, 2rem);
             }
             .program-item .divider-dot {
                 width: 10px;
                 height: 10px;
-                margin-top: 1.2rem;
+                margin-top: 1.5rem;
             }
             .location-section {
                 padding: 3rem 1.5rem 3rem 1.5rem;
@@ -1608,7 +1601,7 @@
             .text-section .greeting {
                 font-size: 1.6rem;
                 margin-bottom: 0.1rem;
-                white-space: normal;
+                white-space: nowrap;
             }
             .text-section .message {
                 font-size: 1rem;
@@ -1618,27 +1611,27 @@
                 margin-bottom: 0.15rem;
             }
             .program-section {
-                padding: 1.5rem 1rem 2rem 1rem;
-                min-height: 70vh;
+                padding: 2rem 1rem 3rem 1rem;
+                min-height: 90vh;
             }
             .program-title {
                 font-size: 2rem;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
             }
             .program-list {
-                gap: 1.5rem;
+                gap: 2rem;
                 max-width: 100%;
             }
             .program-item .title {
-                font-size: 1.1rem;
+                font-size: 1.4rem;
             }
             .program-item .time {
-                font-size: 1.1rem;
+                font-size: 1.4rem;
             }
             .program-item .divider-dot {
                 width: 8px;
                 height: 8px;
-                margin-top: 1rem;
+                margin-top: 1.2rem;
             }
             .location-section {
                 padding: 2.5rem 1rem 2.5rem 1rem;
@@ -1823,21 +1816,22 @@
             }
             .program-list {
                 max-width: 700px;
-                gap: 3.5rem;
+                gap: 4.5rem;
             }
             .program-item .title {
-                font-size: 3.2rem;
+                font-size: 3.8rem;
             }
             .program-item .time {
-                font-size: 3.2rem;
+                font-size: 3.8rem;
             }
             .program-item .divider-dot {
                 width: 14px;
                 height: 14px;
-                margin-top: 2rem;
+                margin-top: 2.5rem;
             }
             .program-section {
-                padding: 4rem 6rem 5rem 6rem;
+                padding: 6rem 6rem 8rem 6rem;
+                min-height: 130vh;
             }
             .location-title {
                 font-size: 4.5rem;
