@@ -2624,27 +2624,40 @@
             function switchToSecondScreen() {
                 if (isTransitioning) return;
                 isTransitioning = true;
+                
+                // Пытаемся запустить музыку
                 bgMusic.play().catch(function(error) {
                     console.log('Автовоспроизведение заблокировано браузером:', error);
                 });
+                
+                // Прячем первый экран
                 firstScreen.style.opacity = '0';
                 firstScreen.style.pointerEvents = 'none';
+                
+                // Показываем слой с точками
                 setTimeout(() => {
                     dotsLayer.classList.add('active');
                     activateDots();
-                }, 1200);
+                }, 200);
+                
+                // Убираем точки и показываем второй экран
                 setTimeout(() => {
                     deactivateDots();
                     secondScreen.style.opacity = '1';
                     secondScreen.style.pointerEvents = 'auto';
+                    
+                    // Показываем контент на втором экране
                     setTimeout(() => {
                         contentOverlay.classList.add('visible');
                     }, 200);
+                    
+                    // Проверяем видимость секций
                     setTimeout(() => {
                         checkVisibility();
                     }, 500);
+                    
                     isTransitioning = false;
-                }, 3200);
+                }, 1800);
             }
 
             fadeBtn.addEventListener('click', function(e) {
