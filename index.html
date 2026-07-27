@@ -295,7 +295,7 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 1000px;
-            padding-top: 1rem;
+            padding-top: 3rem;
         }
         .program-title {
             font-size: 14px;
@@ -310,8 +310,6 @@
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-family: 'Playfair Display', serif;
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-            position: relative;
-            top: 0;
         }
         .program-section.visible .program-title {
             opacity: 1;
@@ -322,7 +320,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4rem;
+            gap: 2.5rem;
             width: 100%;
             max-width: 600px;
             padding: 0 1rem;
@@ -376,15 +374,13 @@
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 0.03em;
         }
-        .program-item .divider-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+        .program-item .divider-line {
+            width: 60px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
             margin-top: 2rem;
-            opacity: 0.6;
         }
-        .program-item:last-child .divider-dot {
+        .program-item:last-child .divider-line {
             display: none;
         }
         .location-section {
@@ -423,7 +419,7 @@
             background: transparent;
             backdrop-filter: none;
             border-radius: 0;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         .location-title {
             font-size: 14px;
@@ -442,15 +438,15 @@
             transform: translateY(0);
         }
         .location-name {
-            font-size: 14px;
+            font-size: 10px;
             color: #ffffff;
-            font-weight: 700;
+            font-weight: 300;
             letter-spacing: 0.03em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', sans-serif;
         }
         .location-section.visible .location-name {
             opacity: 1;
@@ -547,7 +543,7 @@
             transform: translateY(0);
         }
         .wishes-text {
-            max-width: 60%;
+            max-width: 70%;
             color: #4a1a1a;
             font-family: 'Inter', sans-serif;
             text-align: center;
@@ -557,6 +553,7 @@
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
             padding-bottom: 2rem;
             font-weight: 300;
+            margin: 0 auto;
         }
         .wishes-section.visible .wishes-text {
             opacity: 1;
@@ -564,10 +561,7 @@
         }
         .wishes-text .paragraph {
             font-size: 10px;
-            margin-bottom: 1.5rem;
-            max-width: 70%;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1.2rem;
             font-weight: 300;
             line-height: 1.8;
         }
@@ -1385,20 +1379,20 @@
                 padding: 3rem 1.5rem 4rem 1.5rem;
                 min-height: 100vh;
             }
-            .program-title {
-                padding-top: 0;
-                margin-bottom: 3rem;
-            }
             .program-list {
-                gap: 2.5rem;
+                gap: 2rem;
                 max-width: 100%;
+            }
+            .program-item .divider-line {
+                width: 40px;
+                margin-top: 1.5rem;
             }
             .location-section {
                 padding: 3rem 1.5rem 3rem 1.5rem;
                 min-height: 90vh;
             }
             .location-content {
-                gap: 1.2rem;
+                gap: 1rem;
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1407,11 +1401,8 @@
                 padding: 8rem 1.5rem 3rem 1.5rem;
             }
             .wishes-text {
-                max-width: 75%;
+                max-width: 85%;
                 padding-bottom: 1.5rem;
-            }
-            .wishes-text .paragraph {
-                max-width: 80%;
             }
             .dresscode-section {
                 min-height: 80vh;
@@ -1486,20 +1477,20 @@
                 padding: 2rem 1rem 3rem 1rem;
                 min-height: 90vh;
             }
-            .program-title {
-                padding-top: 0;
-                margin-bottom: 2.5rem;
-            }
             .program-list {
-                gap: 2rem;
+                gap: 1.5rem;
                 max-width: 100%;
+            }
+            .program-item .divider-line {
+                width: 30px;
+                margin-top: 1.2rem;
             }
             .location-section {
                 padding: 2.5rem 1rem 2.5rem 1rem;
                 min-height: 80vh;
             }
             .location-content {
-                gap: 1rem;
+                gap: 0.8rem;
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1508,11 +1499,8 @@
                 padding: 6rem 1rem 2rem 1rem;
             }
             .wishes-text {
-                max-width: 85%;
-                padding-bottom: 1rem;
-            }
-            .wishes-text .paragraph {
                 max-width: 90%;
+                padding-bottom: 1rem;
             }
             .dresscode-section {
                 min-height: 70vh;
@@ -1578,16 +1566,20 @@
                 padding: 6rem 6rem 8rem 6rem;
                 min-height: 130vh;
             }
-            .program-title {
-                padding-top: 0;
-                margin-bottom: 5rem;
+            .program-list {
+                gap: 3rem;
+                max-width: 700px;
+            }
+            .program-item .divider-line {
+                width: 80px;
+                margin-top: 2.5rem;
             }
             .location-section {
                 padding: 5rem 2rem 5rem 2rem;
                 min-height: 130vh;
             }
             .location-content {
-                gap: 2rem;
+                gap: 1.5rem;
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1596,11 +1588,8 @@
                 padding: 14rem 2rem 4rem 2rem;
             }
             .wishes-text {
-                max-width: 45%;
-                padding-bottom: 1.5rem;
-            }
-            .wishes-text .paragraph {
                 max-width: 55%;
+                padding-bottom: 1.5rem;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -1712,22 +1701,22 @@
                         <div class="program-item">
                             <div class="title">Сбор гостей и Welcome</div>
                             <div class="time">16:00</div>
-                            <div class="divider-dot"></div>
+                            <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
                             <div class="title">Торжественная Церемония</div>
                             <div class="time">17:00</div>
-                            <div class="divider-dot"></div>
+                            <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
                             <div class="title">Банкет</div>
                             <div class="time">18:00</div>
-                            <div class="divider-dot"></div>
+                            <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
                             <div class="title">Финал</div>
                             <div class="time">23:00</div>
-                            <div class="divider-dot"></div>
+                            <div class="divider-line"></div>
                         </div>
                     </div>
                 </div>
