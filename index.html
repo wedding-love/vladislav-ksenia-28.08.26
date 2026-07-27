@@ -562,16 +562,6 @@
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
-        .wishes-image {
-            width: 100%;
-            height: 30vh;
-            object-fit: cover;
-            object-position: center;
-            flex-shrink: 0;
-            z-index: 1;
-            display: block;
-            margin-top: 0;
-        }
         .timer-section {
             width: 100%;
             flex-shrink: 0;
@@ -671,7 +661,7 @@
             transition-delay: 0.6s;
         }
 
-        /* ===== ДРЕСС-КОД С ПЯТНАМИ ОТ КРАСКИ ===== */
+        /* ===== ДРЕСС-КОД С ПРЯМОУГОЛЬНИКАМИ ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -738,11 +728,11 @@
             transform: translateY(0);
         }
 
-        /* ПЯТНА ОТ КРАСКИ */
+        /* ПРЯМОУГОЛЬНИКИ — палитра цветов */
         .dresscode-palette {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 2.5rem;
             flex-wrap: nowrap;
             opacity: 0;
@@ -762,152 +752,16 @@
         }
 
         .palette-item .color-swatch {
-            width: 120px;
-            height: 90px;
-            position: relative;
-            flex-shrink: 0;
-            transition: transform 0.4s ease, filter 0.4s ease;
-            cursor: default;
-        }
-
-        .palette-item .color-swatch .blob {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 0.4s ease;
-        }
-
-        .palette-item:nth-child(1) .blob {
-            clip-path: polygon(50% 0%, 80% 10%, 95% 30%, 100% 60%, 90% 85%, 70% 95%, 40% 98%, 15% 90%, 5% 70%, 0% 45%, 10% 20%, 30% 5%);
-            background: #4a1a1a;
-        }
-        .palette-item:nth-child(1) .blob::after {
-            content: '';
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            clip-path: polygon(50% 0%, 85% 15%, 95% 40%, 90% 70%, 75% 90%, 50% 98%, 25% 90%, 10% 70%, 5% 40%, 15% 15%);
-            background: rgba(74, 26, 26, 0.15);
-            filter: blur(8px);
-            z-index: -1;
-        }
-
-        .palette-item:nth-child(2) .blob {
-            clip-path: polygon(30% 0%, 70% 5%, 90% 25%, 95% 55%, 85% 80%, 60% 95%, 35% 98%, 10% 85%, 0% 60%, 5% 30%, 15% 10%);
-            background: #e8d5b7;
-        }
-        .palette-item:nth-child(2) .blob::after {
-            content: '';
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            clip-path: polygon(35% 0%, 75% 10%, 90% 35%, 88% 65%, 70% 88%, 45% 96%, 20% 88%, 5% 65%, 0% 35%, 15% 10%);
-            background: rgba(232, 213, 183, 0.2);
-            filter: blur(8px);
-            z-index: -1;
-        }
-
-        .palette-item:nth-child(3) .blob {
-            clip-path: polygon(20% 0%, 65% 5%, 85% 20%, 98% 45%, 95% 75%, 75% 92%, 45% 98%, 15% 90%, 0% 70%, 2% 40%, 8% 15%);
-            background: #1a1a1a;
-        }
-        .palette-item:nth-child(3) .blob::after {
-            content: '';
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            clip-path: polygon(25% 0%, 60% 8%, 80% 25%, 92% 50%, 90% 78%, 70% 90%, 40% 96%, 12% 85%, 2% 60%, 5% 30%, 12% 10%);
-            background: rgba(26, 26, 26, 0.15);
-            filter: blur(8px);
-            z-index: -1;
-        }
-
-        .palette-item .splatter {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .palette-item:nth-child(1) .splatter {
-            background: #4a1a1a;
-            opacity: 0.4;
-        }
-        .palette-item:nth-child(2) .splatter {
-            background: #e8d5b7;
-            opacity: 0.5;
-        }
-        .palette-item:nth-child(3) .splatter {
-            background: #1a1a1a;
-            opacity: 0.4;
-        }
-
-        .palette-item .splatter:nth-child(2) {
-            width: 12px;
-            height: 8px;
-            top: -8px;
-            left: 10px;
-            border-radius: 60% 40% 50% 50%;
-            transform: rotate(-15deg);
-        }
-        .palette-item .splatter:nth-child(3) {
-            width: 8px;
-            height: 6px;
-            top: 5px;
-            right: -12px;
-            border-radius: 40% 60% 50% 50%;
-            transform: rotate(20deg);
-        }
-        .palette-item .splatter:nth-child(4) {
-            width: 15px;
-            height: 10px;
-            bottom: -10px;
-            left: -8px;
-            border-radius: 50% 50% 40% 60%;
-            transform: rotate(-30deg);
-        }
-        .palette-item .splatter:nth-child(5) {
-            width: 6px;
-            height: 4px;
-            bottom: 15px;
-            right: -8px;
-            border-radius: 60% 40% 50% 50%;
-            transform: rotate(40deg);
-        }
-        .palette-item .splatter:nth-child(6) {
-            width: 10px;
-            height: 7px;
-            top: -4px;
-            left: 40px;
-            border-radius: 40% 60% 60% 40%;
-            transform: rotate(-10deg);
-        }
-        .palette-item .splatter:nth-child(7) {
-            width: 7px;
-            height: 5px;
-            bottom: 5px;
-            right: 20px;
-            border-radius: 50% 50% 30% 70%;
-            transform: rotate(25deg);
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .palette-item .color-swatch:hover {
-            transform: scale(1.05) rotate(-2deg);
-            filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.15));
-        }
-
-        .palette-item:nth-child(2) .color-swatch:hover {
-            transform: scale(1.05) rotate(3deg);
-        }
-        .palette-item:nth-child(3) .color-swatch:hover {
-            transform: scale(1.05) rotate(-1deg);
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .dresscode-image {
@@ -1640,12 +1494,12 @@
                 transform: translateY(0);
             }
             .dresscode-palette {
-                gap: 2rem;
+                gap: 1.2rem;
                 margin-top: 2rem;
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 80px;
+                width: 60px;
                 height: 60px;
             }
             .dresscode-image {
@@ -1856,13 +1710,13 @@
                 transform: translateY(0);
             }
             .dresscode-palette {
-                gap: 1.5rem;
+                gap: 0.8rem;
                 margin-top: 1.5rem;
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 60px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
             }
             .dresscode-image {
                 max-width: 80%;
@@ -2059,13 +1913,13 @@
                 transform: translateY(0);
             }
             .dresscode-palette {
-                gap: 4rem;
+                gap: 2.5rem;
                 margin-top: 3rem;
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 160px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
             .dresscode-image {
                 max-width: 50%;
@@ -2227,7 +2081,7 @@
             </div>
 
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="image_2026-07-27_23-21-50.png" alt="фон пожеланий" />
+                <img class="wishes-bg" src="image_2026-07-27_23-31-34.png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
@@ -2261,7 +2115,7 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД С ПЯТНАМИ ОТ КРАСКИ -->
+            <!-- БЛОК ДРЕСС-КОД С ПРЯМОУГОЛЬНИКАМИ -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="первая.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
@@ -2273,37 +2127,13 @@
 
                     <div class="dresscode-palette">
                         <div class="palette-item">
-                            <div class="color-swatch">
-                                <div class="blob"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                            </div>
+                            <div class="color-swatch" style="background: #4a1a1a;"></div>
                         </div>
                         <div class="palette-item">
-                            <div class="color-swatch">
-                                <div class="blob"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                            </div>
+                            <div class="color-swatch" style="background: #e8d5b7;"></div>
                         </div>
                         <div class="palette-item">
-                            <div class="color-swatch">
-                                <div class="blob"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                                <div class="splatter"></div>
-                            </div>
+                            <div class="color-swatch" style="background: #1a1a1a;"></div>
                         </div>
                     </div>
 
