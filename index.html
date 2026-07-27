@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Приглашение</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
     <style>
         @font-face {
             font-family: 'Patriciana';
@@ -23,7 +23,8 @@
             padding: 0;
             box-sizing: border-box;
         }
-        html, body {
+        html,
+        body {
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -232,7 +233,6 @@
             color: #ffffff;
             margin-bottom: 0.2rem;
             font-weight: 700;
-            font-style: italic;
             font-family: 'MiamaNueva', 'Patriciana', Georgia, serif;
         }
         .text-section .message {
@@ -308,7 +308,6 @@
         .program-title {
             font-size: clamp(3.5rem, 6vw, 6rem);
             color: #4a1a1a;
-            font-style: italic;
             font-weight: 600;
             margin-bottom: 4rem;
             letter-spacing: 0.05em;
@@ -439,7 +438,6 @@
         .location-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-style: italic;
             font-weight: 600;
             letter-spacing: 0.05em;
             margin: 0;
@@ -546,7 +544,6 @@
             font-size: clamp(2.8rem, 5vw, 5rem);
             color: #4a1a1a;
             font-family: 'MiamaNueva', serif;
-            font-style: italic;
             text-align: center;
             margin-bottom: 2.5rem;
             opacity: 0;
@@ -602,7 +599,6 @@
             font-size: clamp(2rem, 4vw, 4rem);
             color: #ffffff;
             font-family: 'MiamaNueva', serif;
-            font-style: italic;
             margin-bottom: 2.5rem;
             text-align: center;
             letter-spacing: 0.05em;
@@ -662,16 +658,31 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .timer-item:nth-child(1) .number { transition-delay: 0.2s; }
-        .timer-item:nth-child(1) .label { transition-delay: 0.3s; }
-        .timer-item:nth-child(2) .number { transition-delay: 0.3s; }
-        .timer-item:nth-child(2) .label { transition-delay: 0.4s; }
-        .timer-item:nth-child(3) .number { transition-delay: 0.4s; }
-        .timer-item:nth-child(3) .label { transition-delay: 0.5s; }
-        .timer-item:nth-child(4) .number { transition-delay: 0.5s; }
-        .timer-item:nth-child(4) .label { transition-delay: 0.6s; }
+        .timer-item:nth-child(1) .number {
+            transition-delay: 0.2s;
+        }
+        .timer-item:nth-child(1) .label {
+            transition-delay: 0.3s;
+        }
+        .timer-item:nth-child(2) .number {
+            transition-delay: 0.3s;
+        }
+        .timer-item:nth-child(2) .label {
+            transition-delay: 0.4s;
+        }
+        .timer-item:nth-child(3) .number {
+            transition-delay: 0.4s;
+        }
+        .timer-item:nth-child(3) .label {
+            transition-delay: 0.5s;
+        }
+        .timer-item:nth-child(4) .number {
+            transition-delay: 0.5s;
+        }
+        .timer-item:nth-child(4) .label {
+            transition-delay: 0.6s;
+        }
 
-        /* ——— ДРЕСС-КОД: убраны белый и золотой, добавлен шампань, только 3 круга ——— */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -704,7 +715,6 @@
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'MiamaNueva', serif;
-            font-style: italic;
             margin-bottom: 1rem;
             opacity: 0;
             transform: translateY(30px);
@@ -793,7 +803,6 @@
             font-size: clamp(3rem, 5vw, 5rem);
             color: #ffffff;
             font-family: 'MiamaNueva', serif;
-            font-style: italic;
             text-align: center;
             margin-bottom: 0.8rem;
             letter-spacing: 0.05em;
@@ -1019,7 +1028,6 @@
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'MiamaNueva', serif;
-            font-style: italic;
             text-align: center;
             margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
@@ -1148,48 +1156,216 @@
                 transform: scale(0.6);
             }
         }
-        .dot:nth-child(1) { top: 5%; left: 3%; animation-delay: 0.00s; }
-        .dot:nth-child(2) { top: 8%; left: 15%; animation-delay: 0.08s; }
-        .dot:nth-child(3) { top: 3%; left: 28%; animation-delay: 0.16s; }
-        .dot:nth-child(4) { top: 12%; left: 42%; animation-delay: 0.04s; }
-        .dot:nth-child(5) { top: 6%; left: 55%; animation-delay: 0.20s; }
-        .dot:nth-child(6) { top: 15%; left: 68%; animation-delay: 0.06s; }
-        .dot:nth-child(7) { top: 4%; left: 80%; animation-delay: 0.14s; }
-        .dot:nth-child(8) { top: 10%; left: 92%; animation-delay: 0.10s; }
-        .dot:nth-child(9) { top: 22%; left: 7%; animation-delay: 0.12s; }
-        .dot:nth-child(10) { top: 28%; left: 20%; animation-delay: 0.24s; }
-        .dot:nth-child(11) { top: 18%; left: 35%; animation-delay: 0.06s; }
-        .dot:nth-child(12) { top: 30%; left: 48%; animation-delay: 0.18s; }
-        .dot:nth-child(13) { top: 20%; left: 60%; animation-delay: 0.02s; }
-        .dot:nth-child(14) { top: 25%; left: 75%; animation-delay: 0.22s; }
-        .dot:nth-child(15) { top: 32%; left: 88%; animation-delay: 0.11s; }
-        .dot:nth-child(16) { top: 40%; left: 2%; animation-delay: 0.09s; }
-        .dot:nth-child(17) { top: 45%; left: 12%; animation-delay: 0.19s; }
-        .dot:nth-child(18) { top: 38%; left: 25%; animation-delay: 0.05s; }
-        .dot:nth-child(19) { top: 48%; left: 38%; animation-delay: 0.15s; }
-        .dot:nth-child(20) { top: 42%; left: 52%; animation-delay: 0.01s; }
-        .dot:nth-child(21) { top: 50%; left: 65%; animation-delay: 0.13s; }
-        .dot:nth-child(22) { top: 44%; left: 78%; animation-delay: 0.07s; }
-        .dot:nth-child(23) { top: 52%; left: 90%; animation-delay: 0.21s; }
-        .dot:nth-child(24) { top: 60%; left: 5%; animation-delay: 0.10s; }
-        .dot:nth-child(25) { top: 65%; left: 18%; animation-delay: 0.17s; }
-        .dot:nth-child(26) { top: 58%; left: 32%; animation-delay: 0.03s; }
-        .dot:nth-child(27) { top: 68%; left: 45%; animation-delay: 0.13s; }
-        .dot:nth-child(28) { top: 62%; left: 58%; animation-delay: 0.22s; }
-        .dot:nth-child(29) { top: 70%; left: 72%; animation-delay: 0.01s; }
-        .dot:nth-child(30) { top: 64%; left: 85%; animation-delay: 0.18s; }
-        .dot:nth-child(31) { top: 72%; left: 95%; animation-delay: 0.06s; }
-        .dot:nth-child(32) { top: 80%; left: 8%; animation-delay: 0.14s; }
-        .dot:nth-child(33) { top: 85%; left: 22%; animation-delay: 0.05s; }
-        .dot:nth-child(34) { top: 78%; left: 36%; animation-delay: 0.23s; }
-        .dot:nth-child(35) { top: 88%; left: 50%; animation-delay: 0.09s; }
-        .dot:nth-child(36) { top: 82%; left: 64%; animation-delay: 0.02s; }
-        .dot:nth-child(37) { top: 90%; left: 78%; animation-delay: 0.16s; }
-        .dot:nth-child(38) { top: 86%; left: 90%; animation-delay: 0.12s; }
-        .dot:nth-child(39) { top: 95%; left: 15%; animation-delay: 0.06s; }
-        .dot:nth-child(40) { top: 93%; left: 40%; animation-delay: 0.18s; }
-        .dot:nth-child(41) { top: 97%; left: 60%; animation-delay: 0.10s; }
-        .dot:nth-child(42) { top: 94%; left: 82%; animation-delay: 0.04s; }
+        .dot:nth-child(1) {
+            top: 5%;
+            left: 3%;
+            animation-delay: 0.00s;
+        }
+        .dot:nth-child(2) {
+            top: 8%;
+            left: 15%;
+            animation-delay: 0.08s;
+        }
+        .dot:nth-child(3) {
+            top: 3%;
+            left: 28%;
+            animation-delay: 0.16s;
+        }
+        .dot:nth-child(4) {
+            top: 12%;
+            left: 42%;
+            animation-delay: 0.04s;
+        }
+        .dot:nth-child(5) {
+            top: 6%;
+            left: 55%;
+            animation-delay: 0.20s;
+        }
+        .dot:nth-child(6) {
+            top: 15%;
+            left: 68%;
+            animation-delay: 0.06s;
+        }
+        .dot:nth-child(7) {
+            top: 4%;
+            left: 80%;
+            animation-delay: 0.14s;
+        }
+        .dot:nth-child(8) {
+            top: 10%;
+            left: 92%;
+            animation-delay: 0.10s;
+        }
+        .dot:nth-child(9) {
+            top: 22%;
+            left: 7%;
+            animation-delay: 0.12s;
+        }
+        .dot:nth-child(10) {
+            top: 28%;
+            left: 20%;
+            animation-delay: 0.24s;
+        }
+        .dot:nth-child(11) {
+            top: 18%;
+            left: 35%;
+            animation-delay: 0.06s;
+        }
+        .dot:nth-child(12) {
+            top: 30%;
+            left: 48%;
+            animation-delay: 0.18s;
+        }
+        .dot:nth-child(13) {
+            top: 20%;
+            left: 60%;
+            animation-delay: 0.02s;
+        }
+        .dot:nth-child(14) {
+            top: 25%;
+            left: 75%;
+            animation-delay: 0.22s;
+        }
+        .dot:nth-child(15) {
+            top: 32%;
+            left: 88%;
+            animation-delay: 0.11s;
+        }
+        .dot:nth-child(16) {
+            top: 40%;
+            left: 2%;
+            animation-delay: 0.09s;
+        }
+        .dot:nth-child(17) {
+            top: 45%;
+            left: 12%;
+            animation-delay: 0.19s;
+        }
+        .dot:nth-child(18) {
+            top: 38%;
+            left: 25%;
+            animation-delay: 0.05s;
+        }
+        .dot:nth-child(19) {
+            top: 48%;
+            left: 38%;
+            animation-delay: 0.15s;
+        }
+        .dot:nth-child(20) {
+            top: 42%;
+            left: 52%;
+            animation-delay: 0.01s;
+        }
+        .dot:nth-child(21) {
+            top: 50%;
+            left: 65%;
+            animation-delay: 0.13s;
+        }
+        .dot:nth-child(22) {
+            top: 44%;
+            left: 78%;
+            animation-delay: 0.07s;
+        }
+        .dot:nth-child(23) {
+            top: 52%;
+            left: 90%;
+            animation-delay: 0.21s;
+        }
+        .dot:nth-child(24) {
+            top: 60%;
+            left: 5%;
+            animation-delay: 0.10s;
+        }
+        .dot:nth-child(25) {
+            top: 65%;
+            left: 18%;
+            animation-delay: 0.17s;
+        }
+        .dot:nth-child(26) {
+            top: 58%;
+            left: 32%;
+            animation-delay: 0.03s;
+        }
+        .dot:nth-child(27) {
+            top: 68%;
+            left: 45%;
+            animation-delay: 0.13s;
+        }
+        .dot:nth-child(28) {
+            top: 62%;
+            left: 58%;
+            animation-delay: 0.22s;
+        }
+        .dot:nth-child(29) {
+            top: 70%;
+            left: 72%;
+            animation-delay: 0.01s;
+        }
+        .dot:nth-child(30) {
+            top: 64%;
+            left: 85%;
+            animation-delay: 0.18s;
+        }
+        .dot:nth-child(31) {
+            top: 72%;
+            left: 95%;
+            animation-delay: 0.06s;
+        }
+        .dot:nth-child(32) {
+            top: 80%;
+            left: 8%;
+            animation-delay: 0.14s;
+        }
+        .dot:nth-child(33) {
+            top: 85%;
+            left: 22%;
+            animation-delay: 0.05s;
+        }
+        .dot:nth-child(34) {
+            top: 78%;
+            left: 36%;
+            animation-delay: 0.23s;
+        }
+        .dot:nth-child(35) {
+            top: 88%;
+            left: 50%;
+            animation-delay: 0.09s;
+        }
+        .dot:nth-child(36) {
+            top: 82%;
+            left: 64%;
+            animation-delay: 0.02s;
+        }
+        .dot:nth-child(37) {
+            top: 90%;
+            left: 78%;
+            animation-delay: 0.16s;
+        }
+        .dot:nth-child(38) {
+            top: 86%;
+            left: 90%;
+            animation-delay: 0.12s;
+        }
+        .dot:nth-child(39) {
+            top: 95%;
+            left: 15%;
+            animation-delay: 0.06s;
+        }
+        .dot:nth-child(40) {
+            top: 93%;
+            left: 40%;
+            animation-delay: 0.18s;
+        }
+        .dot:nth-child(41) {
+            top: 97%;
+            left: 60%;
+            animation-delay: 0.10s;
+        }
+        .dot:nth-child(42) {
+            top: 94%;
+            left: 82%;
+            animation-delay: 0.04s;
+        }
 
         @media (max-width: 600px) {
             .circle-btn {
@@ -1951,7 +2127,7 @@
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, шампань, чёрный. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
-                    
+
                     <!-- ТОЛЬКО 3 КРУГА: бордовый, шампань, чёрный -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
@@ -2100,8 +2276,10 @@
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
                 document.getElementById('daysLabel').textContent = declension(days, ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ']).toUpperCase();
                 document.getElementById('hoursLabel').textContent = declension(hours, ['ЧАС', 'ЧАСА', 'ЧАСОВ']).toUpperCase();
-                document.getElementById('minutesLabel').textContent = declension(minutes, ['МИНУТА', 'МИНУТЫ', 'МИНУТ']).toUpperCase();
-                document.getElementById('secondsLabel').textContent = declension(seconds, ['СЕКУНДА', 'СЕКУНДЫ', 'СЕКУНД']).toUpperCase();
+                document.getElementById('minutesLabel').textContent = declension(minutes, ['МИНУТА', 'МИНУТЫ', 'МИНУТ'])
+                .toUpperCase();
+                document.getElementById('secondsLabel').textContent = declension(seconds, ['СЕКУНДА', 'СЕКУНДЫ', 'СЕКУНД'])
+                    .toUpperCase();
             }
             updateTimer();
             setInterval(updateTimer, 1000);
