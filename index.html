@@ -1,3 +1,11 @@
+Вот обновлённый код для блока «Пожелания»:
+
+- **Фото** поднято выше (теперь занимает верхнюю часть блока).
+- **Текст «Так мы соберём...»** добавлен в абзац вместо «вместо привычных цветов».
+- **Упоминание про цветы** убрано.
+- Фото размещено в **конце блока** пожеланий, как декоративный элемент.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -493,17 +501,16 @@
             min-height: 100vh;
             overflow: hidden;
             background: #f4ece3;
+            display: flex;
+            flex-direction: column;
         }
-        .wishes-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .wishes-top-image {
             width: 100%;
-            height: 33.33%;
+            height: 40vh;
             object-fit: cover;
             object-position: top center;
-            z-index: 0;
-            pointer-events: none;
+            flex-shrink: 0;
+            z-index: 1;
         }
         .wishes-content {
             position: relative;
@@ -511,18 +518,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
             width: 100%;
-            height: 100%;
-            padding: 10rem 2rem 4rem 2rem;
+            flex: 1;
+            padding: 3rem 2rem 4rem 2rem;
             text-align: center;
+            background: #f4ece3;
         }
         .wishes-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -542,7 +550,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
             font-weight: 300;
             margin: 0 auto;
         }
@@ -558,6 +566,15 @@
         }
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
+        }
+        .wishes-bottom-image {
+            width: 100%;
+            max-height: 30vh;
+            object-fit: cover;
+            object-position: center;
+            flex-shrink: 0;
+            margin-top: auto;
+            z-index: 1;
         }
         .timer-section {
             width: 100%;
@@ -1440,11 +1457,11 @@
                 padding: 0.4rem 1.2rem;
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
-            .wishes-section {
-                min-height: 100vh;
+            .wishes-top-image {
+                height: 30vh;
             }
             .wishes-content {
-                padding: 8rem 1.5rem 3rem 1.5rem;
+                padding: 2rem 1.5rem 3rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 3rem);
@@ -1452,11 +1469,14 @@
             }
             .wishes-text {
                 max-width: 85%;
-                padding-bottom: 1.5rem;
+                padding-bottom: 1rem;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 2vw, 1.4rem);
                 margin-bottom: 0.8rem;
+            }
+            .wishes-bottom-image {
+                max-height: 20vh;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -1656,11 +1676,11 @@
                 padding: 0.3rem 1rem;
                 font-size: 0.8rem;
             }
-            .wishes-section {
-                min-height: 100vh;
+            .wishes-top-image {
+                height: 25vh;
             }
             .wishes-content {
-                padding: 6rem 1rem 2rem 1rem;
+                padding: 1.5rem 1rem 2rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
@@ -1668,11 +1688,14 @@
             }
             .wishes-text {
                 max-width: 90%;
-                padding-bottom: 1rem;
+                padding-bottom: 0.5rem;
             }
             .wishes-text .paragraph {
                 font-size: 0.9rem;
                 margin-bottom: 0.6rem;
+            }
+            .wishes-bottom-image {
+                max-height: 15vh;
             }
             .dresscode-section {
                 min-height: 90vh;
@@ -1861,22 +1884,25 @@
             .location-content {
                 gap: 2rem;
             }
-            .wishes-section {
-                min-height: 100vh;
+            .wishes-top-image {
+                height: 45vh;
             }
             .wishes-content {
-                padding: 14rem 2rem 4rem 2rem;
+                padding: 4rem 3rem 5rem 3rem;
             }
             .wishes-title {
                 font-size: 4.5rem;
             }
             .wishes-text {
                 max-width: 55%;
-                padding-bottom: 1.5rem;
+                padding-bottom: 2rem;
             }
             .wishes-text .paragraph {
                 font-size: 1.8rem;
                 margin-bottom: 1.2rem;
+            }
+            .wishes-bottom-image {
+                max-height: 35vh;
             }
             .dresscode-section {
                 min-height: 120vh;
@@ -2070,17 +2096,18 @@
             </div>
 
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="фон пожеланий" />
+                <img class="wishes-top-image" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="пожелания" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
                         <div class="paragraph">Дорогие гости!</div>
-                        <div class="paragraph">Вместо привычных цветов мы предлагаем вам стать частью нашей коллекции вин. Каждая бутылка, подаренная вами, будет хранить особый смысл — мы просим прикрепить бирку с указанием важного момента в нашей жизни, когда её следует открыть: отпуск, годовщина, рождение ребёнка или любое другое знаковое событие.</div>
+                        <div class="paragraph">Мы предлагаем вам стать частью нашей коллекции вин. Каждая бутылка, подаренная вами, будет хранить особый смысл — мы просим прикрепить бирку с указанием важного момента в нашей жизни, когда её следует открыть: отпуск, годовщина, рождение ребёнка или любое другое знаковое событие.</div>
                         <div class="paragraph">Так мы соберём целую коллекцию воспоминаний, которые будем бережно хранить и открывать в самые тёплые моменты.</div>
                         <div class="paragraph">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
                         <div class="paragraph">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
                     </div>
                 </div>
+                <img class="wishes-bottom-image" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="декор" />
             </div>
 
             <div class="timer-section" id="timerSection">
@@ -2416,3 +2443,4 @@
     </script>
 </body>
 </html>
+```
