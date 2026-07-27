@@ -683,6 +683,7 @@
             transition-delay: 0.6s;
         }
 
+        /* ===== ДРЕСС-КОД С АКВАРЕЛЬНЫМИ МАЗКАМИ ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -742,6 +743,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* АКВАРЕЛЬНЫЕ МАЗКИ */
         .dresscode-palette {
             display: flex;
             justify-content: center;
@@ -756,23 +759,70 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         .palette-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
         }
-        .palette-item .color-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
+
+        /* Акварельный мазок — основная форма */
+        .palette-item .color-swatch {
+            width: 120px;
+            height: 70px;
+            border-radius: 30% 70% 50% 50% / 30% 40% 60% 70%;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
-        .palette-item .color-circle:hover {
-            transform: scale(1.05);
+
+        /* Эффект размытого акварельного пятна позади */
+        .palette-item .color-swatch::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: inherit;
+            border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%;
+            opacity: 0.3;
+            filter: blur(8px);
+            z-index: -1;
         }
+
+        /* Каждый мазок уникальный */
+        .palette-item:nth-child(1) .color-swatch {
+            transform: rotate(-5deg);
+            border-radius: 30% 70% 50% 50% / 30% 40% 60% 70%;
+        }
+        .palette-item:nth-child(1) .color-swatch::after {
+            border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%;
+        }
+
+        .palette-item:nth-child(2) .color-swatch {
+            transform: rotate(3deg);
+            border-radius: 60% 30% 70% 40% / 40% 60% 30% 70%;
+        }
+        .palette-item:nth-child(2) .color-swatch::after {
+            border-radius: 30% 70% 50% 50% / 60% 40% 60% 40%;
+        }
+
+        .palette-item:nth-child(3) .color-swatch {
+            transform: rotate(-2deg);
+            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+        }
+        .palette-item:nth-child(3) .color-swatch::after {
+            border-radius: 60% 40% 60% 40% / 30% 60% 40% 70%;
+        }
+
+        .palette-item .color-swatch:hover {
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+        }
+
         .dresscode-image {
             position: relative;
             z-index: 2;
@@ -788,6 +838,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ===== ОСТАЛЬНЫЕ СЕКЦИИ ===== */
         .guest-section {
             width: 100%;
             flex-shrink: 0;
@@ -1367,6 +1419,7 @@
             animation-delay: 0.04s;
         }
 
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -1480,6 +1533,8 @@
                 margin-bottom: 0.8rem;
                 max-width: 80%;
             }
+
+            /* Дресс-код адаптив */
             .dresscode-section {
                 min-height: 60vh;
             }
@@ -1509,14 +1564,15 @@
                 margin-top: 1.2rem;
                 flex-wrap: nowrap;
             }
-            .palette-item .color-circle {
-                width: 70px;
-                height: 70px;
+            .palette-item .color-swatch {
+                width: 80px;
+                height: 50px;
             }
             .dresscode-image {
                 max-width: 70%;
                 margin-top: 1.2rem;
             }
+
             .timer-section {
                 min-height: 45vh;
                 padding: 3rem 1.5rem;
@@ -1724,9 +1780,9 @@
                 margin-top: 1rem;
                 flex-wrap: nowrap;
             }
-            .palette-item .color-circle {
-                width: 50px;
-                height: 50px;
+            .palette-item .color-swatch {
+                width: 60px;
+                height: 40px;
             }
             .dresscode-image {
                 max-width: 80%;
@@ -1918,9 +1974,9 @@
                 margin-top: 2rem;
                 flex-wrap: nowrap;
             }
-            .palette-item .color-circle {
-                width: 120px;
-                height: 120px;
+            .palette-item .color-swatch {
+                width: 150px;
+                height: 90px;
             }
             .dresscode-image {
                 max-width: 50%;
@@ -2121,23 +2177,23 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД: убраны белый и золотой, оставлены бордовый, айвори (заменён на шампань), чёрный — всего 3 круга -->
+            <!-- БЛОК ДРЕСС-КОД С АКВАРЕЛЬНЫМИ МАЗКАМИ -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="первая.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, шампань, чёрный. Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
 
-                    <!-- ТОЛЬКО 3 КРУГА: бордовый, шампань, чёрный -->
+                    <!-- АКВАРЕЛЬНЫЕ МАЗКИ — 3 цвета -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
-                            <div class="color-circle" style="background: #4a1a1a;"></div>
+                            <div class="color-swatch" style="background: #4a1a1a;"></div>
                         </div>
                         <div class="palette-item">
-                            <div class="color-circle" style="background: #e8d5b7;"></div>
+                            <div class="color-swatch" style="background: #e8d5b7;"></div>
                         </div>
                         <div class="palette-item">
-                            <div class="color-circle" style="background: #1a1a1a;"></div>
+                            <div class="color-swatch" style="background: #1a1a1a;"></div>
                         </div>
                     </div>
 
@@ -2277,7 +2333,7 @@
                 document.getElementById('daysLabel').textContent = declension(days, ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ']).toUpperCase();
                 document.getElementById('hoursLabel').textContent = declension(hours, ['ЧАС', 'ЧАСА', 'ЧАСОВ']).toUpperCase();
                 document.getElementById('minutesLabel').textContent = declension(minutes, ['МИНУТА', 'МИНУТЫ', 'МИНУТ'])
-                .toUpperCase();
+                    .toUpperCase();
                 document.getElementById('secondsLabel').textContent = declension(seconds, ['СЕКУНДА', 'СЕКУНДЫ', 'СЕКУНД'])
                     .toUpperCase();
             }
