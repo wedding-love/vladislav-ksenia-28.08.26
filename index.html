@@ -131,7 +131,7 @@
             transition-delay: 0.5s;
         }
         .names {
-            font-size: 14px;
+            font-size: clamp(4rem, 10vw, 10rem);
             line-height: 1.05;
             letter-spacing: 0.04em;
             max-width: 95vw;
@@ -139,13 +139,13 @@
             font-weight: 700;
         }
         .names .vladislav {
-            font-size: 14px;
+            font-size: clamp(3.5rem, 9vw, 9rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             font-weight: 700;
         }
         .names .and-ksenia {
-            font-size: 14px;
+            font-size: clamp(4rem, 10vw, 10rem);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             display: flex;
@@ -156,7 +156,7 @@
             font-weight: 700;
         }
         .names .and-ksenia .and {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 2.5vw, 2.6rem);
             text-transform: lowercase;
             letter-spacing: 0.2em;
             opacity: 0.6;
@@ -164,7 +164,7 @@
             font-family: 'Playfair Display', serif;
         }
         .wedding-date {
-            font-size: 14px;
+            font-size: clamp(1.5rem, 3vw, 3rem);
             font-family: 'Playfair Display', serif;
             color: #4a1a1a;
             letter-spacing: 0.08em;
@@ -215,7 +215,7 @@
             transition-delay: 0.7s;
         }
         .text-section .greeting {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #ffffff;
@@ -223,12 +223,9 @@
             font-weight: 700;
             font-family: 'Playfair Display', serif;
             white-space: nowrap;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
         }
         .text-section .message {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             line-height: 1.6;
             letter-spacing: 0.04em;
             color: #ffffff;
@@ -237,7 +234,7 @@
             font-family: 'Inter', sans-serif;
         }
         .text-section .message-bold {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             line-height: 1.6;
             letter-spacing: 0.04em;
             color: #ffffff;
@@ -298,7 +295,7 @@
             padding-top: 3rem;
         }
         .program-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-weight: 700;
             margin-bottom: 5rem;
@@ -320,7 +317,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 4rem;
             width: 100%;
             max-width: 600px;
             padding: 0 1rem;
@@ -356,7 +353,7 @@
             transition-delay: 0.9s;
         }
         .program-item .title {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-weight: 300;
             line-height: 1.3;
@@ -365,7 +362,7 @@
             letter-spacing: 0.03em;
         }
         .program-item .time {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-weight: 300;
             opacity: 0.8;
@@ -419,10 +416,10 @@
             background: transparent;
             backdrop-filter: none;
             border-radius: 0;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
         .location-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-weight: 700;
             letter-spacing: 0.05em;
@@ -438,7 +435,7 @@
             transform: translateY(0);
         }
         .location-name {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-weight: 300;
             letter-spacing: 0.03em;
@@ -453,7 +450,7 @@
             transform: translateY(0);
         }
         .location-address {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             opacity: 0;
             font-weight: 300;
@@ -474,7 +471,7 @@
             background: #ffffff;
             color: #4a1a1a;
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: clamp(1rem, 1.4vw, 1.4rem);
             font-weight: 300;
             text-decoration: none;
             border-radius: 30px;
@@ -527,7 +524,7 @@
             text-align: center;
         }
         .wishes-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'Playfair Display', serif;
             text-align: center;
@@ -560,8 +557,8 @@
             transform: translateY(0);
         }
         .wishes-text .paragraph {
-            font-size: 10px;
-            margin-bottom: 1.2rem;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            margin-bottom: 1.5rem;
             font-weight: 300;
             line-height: 1.8;
         }
@@ -580,7 +577,7 @@
             min-height: 50vh;
         }
         .timer-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Playfair Display', serif;
             margin-bottom: 2.5rem;
@@ -613,7 +610,7 @@
             backdrop-filter: none;
         }
         .timer-item .number {
-            font-size: 14px;
+            font-size: clamp(3rem, 6vw, 6rem);
             color: #ffffff;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -627,7 +624,7 @@
             transform: translateY(0);
         }
         .timer-item .label {
-            font-size: 10px;
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             margin-top: 0.2rem;
@@ -697,7 +694,7 @@
             text-align: center;
         }
         .dresscode-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'Playfair Display', serif;
             margin-bottom: 1rem;
@@ -712,7 +709,7 @@
             transform: translateY(0);
         }
         .dresscode-text {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #4a1a1a;
             font-family: 'Inter', sans-serif;
             max-width: 80%;
@@ -791,7 +788,7 @@
             min-height: 100vh;
         }
         .guest-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Playfair Display', serif;
             text-align: center;
@@ -807,7 +804,7 @@
             transform: translateY(0);
         }
         .guest-deadline-top {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: rgba(255, 255, 255, 0.8);
             font-family: 'Inter', sans-serif;
             text-align: center;
@@ -856,7 +853,7 @@
             transition-delay: 0.8s;
         }
         .guest-form label {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             font-weight: 300;
@@ -870,7 +867,7 @@
             background: rgba(255, 255, 255, 0.08);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             outline: none;
             transition: border-color 0.3s ease, background 0.3s ease;
             backdrop-filter: blur(4px);
@@ -879,7 +876,7 @@
         .guest-form input[type="text"]::placeholder {
             color: rgba(255, 255, 255, 0.3);
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: clamp(1rem, 1.6vw, 1.6rem);
             font-weight: 300;
         }
         .guest-form input[type="text"]:focus {
@@ -896,7 +893,7 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 10px;
+            font-size: clamp(1.1rem, 1.6vw, 1.6rem);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             opacity: 0.9;
@@ -940,7 +937,7 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 10px;
+            font-size: clamp(1.1rem, 1.6vw, 1.6rem);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             opacity: 0.9;
@@ -979,7 +976,7 @@
             background: #ffffff;
             color: #4a1a1a;
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: clamp(1.3rem, 2vw, 2rem);
             font-weight: 300;
             border: 2px solid #ffffff;
             border-radius: 30px;
@@ -1016,7 +1013,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .contacts-title {
-            font-size: 14px;
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Playfair Display', serif;
             text-align: center;
@@ -1045,7 +1042,7 @@
             transform: translateY(0);
         }
         .contacts-info .contact-item {
-            font-size: 10px;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.03em;
@@ -1371,17 +1368,52 @@
             .content-overlay .names {
                 margin-bottom: 2rem;
             }
+            .names .vladislav {
+                font-size: clamp(2.8rem, 7vw, 4rem);
+            }
+            .names .and-ksenia {
+                font-size: clamp(3.2rem, 8vw, 4.5rem);
+            }
+            .names .and-ksenia .and {
+                font-size: clamp(0.9rem, 2vw, 1.2rem);
+            }
+            .wedding-date {
+                font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            }
+            .text-section {
+                padding: 3rem 1.2rem 0 1.2rem;
+                min-height: 100vh;
+                gap: 0.8rem;
+            }
             .text-section .greeting {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 0.15rem;
                 white-space: nowrap;
-                font-size: 14px;
+            }
+            .text-section .message {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .text-section .message-bold {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                margin-bottom: 0.2rem;
             }
             .program-section {
                 padding: 3rem 1.5rem 4rem 1.5rem;
                 min-height: 100vh;
             }
+            .program-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 3rem;
+            }
             .program-list {
-                gap: 2rem;
+                gap: 2.5rem;
                 max-width: 100%;
+            }
+            .program-item .title {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .program-item .time {
+                font-size: clamp(1rem, 2vw, 1.4rem);
             }
             .program-item .divider-line {
                 width: 40px;
@@ -1392,7 +1424,20 @@
                 min-height: 90vh;
             }
             .location-content {
-                gap: 1rem;
+                gap: 1.2rem;
+            }
+            .location-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+            .location-name {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .location-address {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .location-btn {
+                padding: 0.4rem 1.2rem;
+                font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1400,15 +1445,41 @@
             .wishes-content {
                 padding: 8rem 1.5rem 3rem 1.5rem;
             }
+            .wishes-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 1.5rem;
+            }
             .wishes-text {
                 max-width: 85%;
                 padding-bottom: 1.5rem;
             }
+            .wishes-text .paragraph {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                margin-bottom: 0.8rem;
+            }
             .dresscode-section {
                 min-height: 80vh;
             }
+            .dresscode-bg {
+                left: 0;
+                width: 100%;
+            }
             .dresscode-content {
                 padding: 2rem 1.5rem;
+            }
+            .dresscode-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+            }
+            .dresscode-text {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                max-width: 90%;
+                transform: translateY(20px);
+                margin-top: 0.5rem;
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .dresscode-palette {
                 gap: 1.2rem;
@@ -1428,6 +1499,7 @@
                 padding: 3rem 1.5rem;
             }
             .timer-title {
+                font-size: clamp(2rem, 4vw, 3rem);
                 white-space: normal;
                 margin-bottom: 2rem;
             }
@@ -1438,23 +1510,59 @@
                 padding: 0.3rem 0.8rem;
                 min-width: 50px;
             }
+            .timer-item .number {
+                font-size: clamp(2.2rem, 5vw, 3.5rem);
+            }
+            .timer-item .label {
+                font-size: clamp(0.6rem, 1vw, 0.9rem);
+            }
             .guest-section {
                 padding: 3rem 1.5rem;
                 min-height: 90vh;
+            }
+            .guest-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 0.6rem;
+            }
+            .guest-deadline-top {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                margin-bottom: 1.5rem;
             }
             .guest-form {
                 gap: 1.8rem;
                 max-width: 100%;
             }
+            .guest-form label {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
             .guest-form input[type="text"] {
                 padding: 0.9rem 1.2rem;
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+            .guest-form input[type="text"]::placeholder {
+                font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+            }
+            .guest-form .radio-group label {
+                font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+            }
+            .guest-form .checkbox-group label {
+                font-size: clamp(0.95rem, 1.4vw, 1.2rem);
             }
             .submit-btn {
                 padding: 1rem 2.5rem;
+                font-size: clamp(1.1rem, 1.8vw, 1.4rem);
             }
             .contacts-section {
                 padding: 2.5rem 1.5rem 3.5rem 1.5rem;
                 min-height: 35vh;
+            }
+            .contacts-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 1.2rem;
+            }
+            .contacts-info .contact-item {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                text-align: center;
             }
         }
         @media (max-width: 400px) {
@@ -1469,17 +1577,52 @@
             .content-overlay .names {
                 margin-bottom: 1.5rem;
             }
+            .names .vladislav {
+                font-size: 2.2rem;
+            }
+            .names .and-ksenia {
+                font-size: 2.5rem;
+            }
+            .names .and-ksenia .and {
+                font-size: 0.7rem;
+            }
+            .wedding-date {
+                font-size: 1rem;
+            }
+            .text-section {
+                padding: 2.5rem 0.8rem 0 0.8rem;
+                min-height: 90vh;
+                gap: 0.6rem;
+            }
             .text-section .greeting {
+                font-size: 1.8rem;
+                margin-bottom: 0.1rem;
                 white-space: nowrap;
-                font-size: 14px;
+            }
+            .text-section .message {
+                font-size: 0.9rem;
+            }
+            .text-section .message-bold {
+                font-size: 0.9rem;
+                margin-bottom: 0.15rem;
             }
             .program-section {
                 padding: 2rem 1rem 3rem 1rem;
                 min-height: 90vh;
             }
+            .program-title {
+                font-size: 1.8rem;
+                margin-bottom: 2.5rem;
+            }
             .program-list {
-                gap: 1.5rem;
+                gap: 2rem;
                 max-width: 100%;
+            }
+            .program-item .title {
+                font-size: 0.9rem;
+            }
+            .program-item .time {
+                font-size: 0.9rem;
             }
             .program-item .divider-line {
                 width: 30px;
@@ -1490,7 +1633,20 @@
                 min-height: 80vh;
             }
             .location-content {
-                gap: 0.8rem;
+                gap: 1rem;
+            }
+            .location-title {
+                font-size: 1.8rem;
+            }
+            .location-name {
+                font-size: 0.9rem;
+            }
+            .location-address {
+                font-size: 0.9rem;
+            }
+            .location-btn {
+                padding: 0.3rem 1rem;
+                font-size: 0.8rem;
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1498,15 +1654,41 @@
             .wishes-content {
                 padding: 6rem 1rem 2rem 1rem;
             }
+            .wishes-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
             .wishes-text {
                 max-width: 90%;
                 padding-bottom: 1rem;
             }
+            .wishes-text .paragraph {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
+            }
             .dresscode-section {
                 min-height: 70vh;
             }
+            .dresscode-bg {
+                left: 0;
+                width: 100%;
+            }
             .dresscode-content {
                 padding: 1.5rem 1rem;
+            }
+            .dresscode-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+                margin-top: 0.5rem;
+            }
+            .dresscode-text {
+                font-size: 0.9rem;
+                max-width: 95%;
+                transform: translateY(15px);
+                margin-top: 0.5rem;
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .dresscode-palette {
                 gap: 0.8rem;
@@ -1526,6 +1708,7 @@
                 padding: 2rem 1rem;
             }
             .timer-title {
+                font-size: 1.8rem;
                 white-space: normal;
                 margin-bottom: 1.5rem;
             }
@@ -1536,22 +1719,58 @@
                 padding: 0.2rem 0.5rem;
                 min-width: 40px;
             }
+            .timer-item .number {
+                font-size: 1.8rem;
+            }
+            .timer-item .label {
+                font-size: 0.5rem;
+            }
             .guest-section {
                 padding: 2.5rem 1rem;
                 min-height: 85vh;
             }
+            .guest-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+            .guest-deadline-top {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
             .guest-form {
                 gap: 1.5rem;
             }
+            .guest-form label {
+                font-size: 0.9rem;
+            }
             .guest-form input[type="text"] {
                 padding: 0.7rem 0.9rem;
+                font-size: 0.9rem;
+            }
+            .guest-form input[type="text"]::placeholder {
+                font-size: 0.9rem;
+            }
+            .guest-form .radio-group label {
+                font-size: 0.85rem;
+            }
+            .guest-form .checkbox-group label {
+                font-size: 0.85rem;
             }
             .submit-btn {
                 padding: 0.8rem 1.8rem;
+                font-size: 1.1rem;
             }
             .contacts-section {
                 padding: 2rem 1rem 3rem 1rem;
                 min-height: 30vh;
+            }
+            .contacts-title {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            .contacts-info .contact-item {
+                font-size: 0.9rem;
+                text-align: center;
             }
         }
         @media (min-width: 1400px) {
@@ -1562,24 +1781,70 @@
             .content-overlay .names {
                 margin-bottom: 3rem;
             }
-            .program-section {
-                padding: 6rem 6rem 8rem 6rem;
-                min-height: 130vh;
+            .names .vladislav {
+                font-size: 9rem;
+            }
+            .names .and-ksenia {
+                font-size: 10rem;
+            }
+            .names .and-ksenia .and {
+                font-size: 2.6rem;
+            }
+            .wedding-date {
+                font-size: 3rem;
+            }
+            .text-section .greeting {
+                font-size: 4.5rem;
+            }
+            .text-section .message {
+                font-size: 1.8rem;
+            }
+            .text-section .message-bold {
+                font-size: 1.8rem;
+            }
+            .text-section {
+                min-height: 110vh;
+            }
+            .program-title {
+                font-size: 4.5rem;
             }
             .program-list {
-                gap: 3rem;
                 max-width: 700px;
+                gap: 4.5rem;
+            }
+            .program-item .title {
+                font-size: 1.8rem;
+            }
+            .program-item .time {
+                font-size: 1.8rem;
             }
             .program-item .divider-line {
                 width: 80px;
                 margin-top: 2.5rem;
+            }
+            .program-section {
+                padding: 6rem 6rem 8rem 6rem;
+                min-height: 130vh;
+            }
+            .location-title {
+                font-size: 4.5rem;
+            }
+            .location-name {
+                font-size: 1.8rem;
+            }
+            .location-address {
+                font-size: 1.8rem;
+            }
+            .location-btn {
+                padding: 0.6rem 1.8rem;
+                font-size: 1.4rem;
             }
             .location-section {
                 padding: 5rem 2rem 5rem 2rem;
                 min-height: 130vh;
             }
             .location-content {
-                gap: 1.5rem;
+                gap: 2rem;
             }
             .wishes-section {
                 min-height: 100vh;
@@ -1587,12 +1852,36 @@
             .wishes-content {
                 padding: 14rem 2rem 4rem 2rem;
             }
+            .wishes-title {
+                font-size: 4.5rem;
+            }
             .wishes-text {
                 max-width: 55%;
                 padding-bottom: 1.5rem;
             }
+            .wishes-text .paragraph {
+                font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
             .dresscode-section {
                 min-height: 100vh;
+            }
+            .dresscode-bg {
+                left: 0;
+                width: 100%;
+            }
+            .dresscode-title {
+                font-size: 4.5rem;
+                margin-top: 1.5rem;
+            }
+            .dresscode-text {
+                font-size: 1.8rem;
+                max-width: 70%;
+                transform: translateY(30px);
+                margin-top: 0.5rem;
+            }
+            .dresscode-section.visible .dresscode-text {
+                transform: translateY(0);
             }
             .dresscode-palette {
                 gap: 3rem;
@@ -1612,29 +1901,62 @@
                 padding: 5rem 3rem;
             }
             .timer-title {
+                font-size: 4.5rem;
                 white-space: nowrap;
             }
             .timer-item {
                 padding: 0.5rem 1.5rem;
                 min-width: 100px;
             }
+            .timer-item .number {
+                font-size: 6rem;
+            }
+            .timer-item .label {
+                font-size: 1.2rem;
+            }
             .guest-section {
                 min-height: 110vh;
                 padding: 5rem 3rem;
+            }
+            .guest-title {
+                font-size: 4.5rem;
+                margin-bottom: 0.8rem;
+            }
+            .guest-deadline-top {
+                font-size: 1.8rem;
+                margin-bottom: 2.5rem;
             }
             .guest-form {
                 gap: 2.8rem;
                 max-width: 700px;
             }
+            .guest-form label {
+                font-size: 1.8rem;
+            }
             .guest-form input[type="text"] {
                 padding: 1.4rem 1.8rem;
+                font-size: 1.8rem;
+            }
+            .guest-form .radio-group label {
+                font-size: 1.6rem;
+            }
+            .guest-form .checkbox-group label {
+                font-size: 1.6rem;
             }
             .submit-btn {
+                font-size: 2rem;
                 padding: 1.4rem 4rem;
             }
             .contacts-section {
                 min-height: 35vh;
                 padding: 4rem 3rem 5rem 3rem;
+            }
+            .contacts-title {
+                font-size: 4.5rem;
+                margin-bottom: 2rem;
+            }
+            .contacts-info .contact-item {
+                font-size: 1.8rem;
             }
         }
     </style>
