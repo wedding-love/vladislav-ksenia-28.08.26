@@ -113,7 +113,7 @@
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
         }
         .content-overlay .wedding-date {
             opacity: 0;
@@ -132,8 +132,8 @@
         }
         .names {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
-            line-height: 1.05;
-            letter-spacing: 0.04em;
+            line-height: 1.2;
+            letter-spacing: 0.08em;
             max-width: 95vw;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
@@ -141,35 +141,26 @@
         .names .vladislav {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.08em;
             font-weight: 700;
+            display: block;
+            margin-bottom: 0.2rem;
         }
-        .names .and-ksenia {
+        .names .ksenia {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             text-transform: uppercase;
-            letter-spacing: 0.04em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: nowrap;
+            letter-spacing: 0.08em;
             font-weight: 700;
-        }
-        .names .and-ksenia .and {
-            font-size: clamp(1.2rem, 2.5vw, 2.6rem);
-            text-transform: lowercase;
-            letter-spacing: 0.2em;
-            opacity: 0.6;
-            font-weight: 400;
-            font-family: 'Cormorant Garamond', serif;
+            display: block;
         }
         .wedding-date {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            font-size: clamp(1.5rem, 2.8vw, 2.8rem);
             font-family: 'Cormorant Garamond', serif;
             color: #4a1a1a;
             letter-spacing: 0.08em;
             opacity: 0.7;
             font-weight: 600;
+            margin-top: 0.5rem;
         }
         .text-section {
             width: 100%;
@@ -276,10 +267,10 @@
         }
         .program-bg {
             position: absolute;
-            top: -10%;
+            top: -15%;
             left: 0;
             width: 100%;
-            height: 120%;
+            height: 130%;
             object-fit: cover;
             z-index: 0;
         }
@@ -293,7 +284,7 @@
             width: 100%;
             max-width: 1000px;
             padding-top: 5rem;
-            margin-top: 30px;
+            margin-top: 50px;
         }
         .program-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
@@ -501,16 +492,18 @@
             position: relative;
             min-height: 100vh;
             overflow: hidden;
+            background: #f4ece3;
         }
         .wishes-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 33.33%;
             object-fit: cover;
-            object-position: center;
+            object-position: top center;
             z-index: 0;
+            pointer-events: none;
         }
         .wishes-content {
             position: relative;
@@ -1367,19 +1360,18 @@
                 padding-top: 35vh;
             }
             .content-overlay .names {
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
             .names .vladislav {
                 font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 0.1rem;
             }
-            .names .and-ksenia {
+            .names .ksenia {
                 font-size: clamp(2rem, 4vw, 3rem);
-            }
-            .names .and-ksenia .and {
-                font-size: clamp(0.9rem, 2vw, 1.2rem);
             }
             .wedding-date {
-                font-size: clamp(2rem, 4vw, 3rem);
+                font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+                margin-top: 0.3rem;
             }
             .text-section {
                 padding: 3rem 1.2rem 0 1.2rem;
@@ -1403,12 +1395,12 @@
                 min-height: 100vh;
             }
             .program-bg {
-                top: -10%;
-                height: 120%;
+                top: -15%;
+                height: 130%;
             }
             .program-content {
                 padding-top: 4rem;
-                margin-top: 30px;
+                margin-top: 50px;
             }
             .program-title {
                 font-size: clamp(2rem, 4vw, 3rem);
@@ -1584,19 +1576,18 @@
                 padding-top: 28vh;
             }
             .content-overlay .names {
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.8rem;
             }
             .names .vladislav {
                 font-size: 1.8rem;
+                margin-bottom: 0.1rem;
             }
-            .names .and-ksenia {
+            .names .ksenia {
                 font-size: 1.8rem;
-            }
-            .names .and-ksenia .and {
-                font-size: 0.7rem;
             }
             .wedding-date {
-                font-size: 1.8rem;
+                font-size: 1.2rem;
+                margin-top: 0.2rem;
             }
             .text-section {
                 padding: 2.5rem 0.8rem 0 0.8rem;
@@ -1620,12 +1611,12 @@
                 min-height: 90vh;
             }
             .program-bg {
-                top: -10%;
-                height: 120%;
+                top: -15%;
+                height: 130%;
             }
             .program-content {
                 padding-top: 3rem;
-                margin-top: 30px;
+                margin-top: 50px;
             }
             .program-title {
                 font-size: 1.8rem;
@@ -1796,19 +1787,18 @@
                 padding-top: 52vh;
             }
             .content-overlay .names {
-                margin-bottom: 3rem;
+                margin-bottom: 1.5rem;
             }
             .names .vladislav {
                 font-size: 4.5rem;
+                margin-bottom: 0.2rem;
             }
-            .names .and-ksenia {
+            .names .ksenia {
                 font-size: 4.5rem;
-            }
-            .names .and-ksenia .and {
-                font-size: 2.6rem;
             }
             .wedding-date {
-                font-size: 4.5rem;
+                font-size: 2.8rem;
+                margin-top: 0.5rem;
             }
             .text-section .greeting {
                 font-size: 3.2rem;
@@ -1827,12 +1817,12 @@
                 min-height: 130vh;
             }
             .program-bg {
-                top: -10%;
-                height: 120%;
+                top: -15%;
+                height: 130%;
             }
             .program-content {
                 padding-top: 6rem;
-                margin-top: 30px;
+                margin-top: 50px;
             }
             .program-title {
                 font-size: 4.5rem;
@@ -2025,10 +2015,7 @@
                 <div class="content-overlay" id="contentOverlay">
                     <div class="names">
                         <div class="vladislav">ВЛАДИСЛАВ</div>
-                        <div class="and-ksenia">
-                            <span class="and">и</span>
-                            <span>КСЕНИЯ</span>
-                        </div>
+                        <div class="ksenia">КСЕНИЯ</div>
                     </div>
                     <div class="wedding-date">28.08.2026</div>
                 </div>
@@ -2083,7 +2070,7 @@
             </div>
 
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="image_2026-07-27_20-28-21.png" alt="фон пожеланий" />
+                <img class="wishes-bg" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
