@@ -492,19 +492,18 @@
             position: relative;
             min-height: 110vh;
             overflow: hidden;
-            background: #f4ece3;
+            background: #f2e8df;
             display: flex;
             flex-direction: column;
         }
-        .wishes-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .wishes-top-image {
             width: 100%;
-            height: 100%;
+            height: 45vh;
             object-fit: cover;
             object-position: center;
-            z-index: 0;
+            flex-shrink: 0;
+            z-index: 1;
+            display: block;
         }
         .wishes-content {
             position: relative;
@@ -515,7 +514,7 @@
             justify-content: flex-start;
             width: 100%;
             flex: 1;
-            padding: 6rem 2rem 2rem 2rem;
+            padding: 3rem 2rem 2rem 2rem;
             text-align: center;
             background: transparent;
         }
@@ -524,13 +523,12 @@
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
             width: 100%;
             font-weight: 700;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -545,7 +543,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-bottom: 1.5rem;
+            padding-bottom: 1rem;
             font-weight: 300;
             margin: 0 auto;
         }
@@ -555,7 +553,7 @@
         }
         .wishes-text .paragraph {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 300;
             line-height: 1.8;
         }
@@ -728,7 +726,6 @@
             transform: translateY(0);
         }
 
-        /* ПРЯМОУГОЛЬНИКИ — палитра цветов */
         .dresscode-palette {
             display: flex;
             justify-content: center;
@@ -742,13 +739,6 @@
         .dresscode-section.visible .dresscode-palette {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .palette-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
         }
 
         .palette-item .color-swatch {
@@ -1451,19 +1441,19 @@
                 padding: 0.4rem 1.2rem;
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
-            .wishes-section {
-                min-height: 90vh;
+            .wishes-top-image {
+                height: 30vh;
             }
             .wishes-content {
-                padding: 4rem 1.5rem 1.5rem 1.5rem;
+                padding: 2rem 1.5rem 1.5rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 3rem);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
             .wishes-text {
                 max-width: 90%;
-                padding-bottom: 1rem;
+                padding-bottom: 0.8rem;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 2vw, 1.4rem);
@@ -1667,15 +1657,15 @@
                 padding: 0.3rem 1rem;
                 font-size: 0.8rem;
             }
-            .wishes-section {
-                min-height: 80vh;
+            .wishes-top-image {
+                height: 25vh;
             }
             .wishes-content {
-                padding: 3rem 1rem 1rem 1rem;
+                padding: 1.5rem 1rem 1rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
-                margin-bottom: 1.2rem;
+                margin-bottom: 0.8rem;
             }
             .wishes-text {
                 max-width: 92%;
@@ -1872,11 +1862,11 @@
             .location-content {
                 gap: 2rem;
             }
-            .wishes-section {
-                min-height: 110vh;
+            .wishes-top-image {
+                height: 50vh;
             }
             .wishes-content {
-                padding: 7rem 3rem 3rem 3rem;
+                padding: 4rem 3rem 3rem 3rem;
             }
             .wishes-title {
                 font-size: 4.5rem;
@@ -2081,7 +2071,7 @@
             </div>
 
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-bg" src="image_2026-07-27_23-31-34.png" alt="фон пожеланий" />
+                <img class="wishes-top-image" src="0bda8176-444c-4a7a-b888-4658d78aea96_removalai_preview.png" alt="пожелания декор" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
@@ -2115,9 +2105,9 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД С ПРЯМОУГОЛЬНИКАМИ -->
+            <!-- БЛОК ДРЕСС-КОД -->
             <div class="dresscode-section" id="dresscodeSection">
-                <img class="dresscode-bg" src="первая.png" alt="фон дресс-код" />
+                <img class="dresscode-bg" src="image_2026-07-27_20-28-21.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">
