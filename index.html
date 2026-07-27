@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -491,19 +490,11 @@
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 110vh;
             overflow: hidden;
             background: #f4ece3;
             display: flex;
             flex-direction: column;
-        }
-        .wishes-top-image {
-            width: 100%;
-            height: 40vh;
-            object-fit: cover;
-            object-position: top center;
-            flex-shrink: 0;
-            z-index: 1;
         }
         .wishes-content {
             position: relative;
@@ -514,7 +505,7 @@
             justify-content: flex-start;
             width: 100%;
             flex: 1;
-            padding: 3rem 2rem 4rem 2rem;
+            padding: 3rem 2rem 1.5rem 2rem;
             text-align: center;
             background: #f4ece3;
         }
@@ -543,7 +534,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
             font-weight: 300;
             margin: 0 auto;
         }
@@ -560,14 +551,14 @@
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
-        .wishes-bottom-image {
+        .wishes-image {
             width: 100%;
-            max-height: 30vh;
+            height: 30vh;
             object-fit: cover;
             object-position: center;
             flex-shrink: 0;
-            margin-top: auto;
             z-index: 1;
+            display: block;
         }
         .timer-section {
             width: 100%;
@@ -668,7 +659,7 @@
             transition-delay: 0.6s;
         }
 
-        /* ===== ДРЕСС-КОД ===== */
+        /* ===== ДРЕСС-КОД С МАЗКАМИ ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -735,10 +726,11 @@
             transform: translateY(0);
         }
 
+        /* АКВАРЕЛЬНЫЕ МАЗКИ */
         .dresscode-palette {
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 3rem;
             margin-top: 2.5rem;
             flex-wrap: nowrap;
             opacity: 0;
@@ -750,17 +742,68 @@
             transform: translateY(0);
         }
 
+        .palette-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Акварельный мазок — основная форма */
         .palette-item .color-swatch {
-            width: 120px;
-            height: 120px;
-            border-radius: 4px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+            width: 130px;
+            height: 75px;
+            border-radius: 30% 70% 50% 50% / 30% 40% 60% 70%;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        /* Эффект размытого акварельного пятна позади */
+        .palette-item .color-swatch::after {
+            content: '';
+            position: absolute;
+            top: -15%;
+            left: -15%;
+            width: 130%;
+            height: 130%;
+            background: inherit;
+            border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%;
+            opacity: 0.25;
+            filter: blur(12px);
+            z-index: -1;
+        }
+
+        /* Каждый мазок уникальный */
+        .palette-item:nth-child(1) .color-swatch {
+            transform: rotate(-6deg);
+            border-radius: 30% 70% 50% 50% / 30% 40% 60% 70%;
+        }
+        .palette-item:nth-child(1) .color-swatch::after {
+            border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%;
+        }
+
+        .palette-item:nth-child(2) .color-swatch {
+            transform: rotate(4deg);
+            border-radius: 60% 30% 70% 40% / 40% 60% 30% 70%;
+        }
+        .palette-item:nth-child(2) .color-swatch::after {
+            border-radius: 30% 70% 50% 50% / 60% 40% 60% 40%;
+        }
+
+        .palette-item:nth-child(3) .color-swatch {
+            transform: rotate(-3deg);
+            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+        }
+        .palette-item:nth-child(3) .color-swatch::after {
+            border-radius: 60% 40% 60% 40% / 30% 60% 40% 70%;
         }
 
         .palette-item .color-swatch:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
         .dresscode-image {
@@ -1450,11 +1493,11 @@
                 padding: 0.4rem 1.2rem;
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
-            .wishes-top-image {
-                height: 30vh;
+            .wishes-section {
+                min-height: 90vh;
             }
             .wishes-content {
-                padding: 2rem 1.5rem 3rem 1.5rem;
+                padding: 2rem 1.5rem 1rem 1.5rem;
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 3rem);
@@ -1468,8 +1511,8 @@
                 font-size: clamp(1rem, 2vw, 1.4rem);
                 margin-bottom: 0.8rem;
             }
-            .wishes-bottom-image {
-                max-height: 20vh;
+            .wishes-image {
+                height: 20vh;
             }
             .dresscode-section {
                 min-height: 100vh;
@@ -1501,8 +1544,8 @@
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 80px;
-                height: 80px;
+                width: 90px;
+                height: 55px;
             }
             .dresscode-image {
                 max-width: 70%;
@@ -1669,11 +1712,11 @@
                 padding: 0.3rem 1rem;
                 font-size: 0.8rem;
             }
-            .wishes-top-image {
-                height: 25vh;
+            .wishes-section {
+                min-height: 80vh;
             }
             .wishes-content {
-                padding: 1.5rem 1rem 2rem 1rem;
+                padding: 1.5rem 1rem 0.5rem 1rem;
             }
             .wishes-title {
                 font-size: 1.8rem;
@@ -1687,8 +1730,8 @@
                 font-size: 0.9rem;
                 margin-bottom: 0.6rem;
             }
-            .wishes-bottom-image {
-                max-height: 15vh;
+            .wishes-image {
+                height: 15vh;
             }
             .dresscode-section {
                 min-height: 90vh;
@@ -1720,8 +1763,8 @@
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 45px;
             }
             .dresscode-image {
                 max-width: 80%;
@@ -1877,11 +1920,11 @@
             .location-content {
                 gap: 2rem;
             }
-            .wishes-top-image {
-                height: 45vh;
+            .wishes-section {
+                min-height: 110vh;
             }
             .wishes-content {
-                padding: 4rem 3rem 5rem 3rem;
+                padding: 4rem 3rem 2rem 3rem;
             }
             .wishes-title {
                 font-size: 4.5rem;
@@ -1894,8 +1937,8 @@
                 font-size: 1.8rem;
                 margin-bottom: 1.2rem;
             }
-            .wishes-bottom-image {
-                max-height: 35vh;
+            .wishes-image {
+                height: 35vh;
             }
             .dresscode-section {
                 min-height: 120vh;
@@ -1921,13 +1964,13 @@
                 transform: translateY(0);
             }
             .dresscode-palette {
-                gap: 5rem;
+                gap: 4rem;
                 margin-top: 3rem;
                 flex-wrap: nowrap;
             }
             .palette-item .color-swatch {
-                width: 140px;
-                height: 140px;
+                width: 160px;
+                height: 90px;
             }
             .dresscode-image {
                 max-width: 50%;
@@ -2089,7 +2132,6 @@
             </div>
 
             <div class="wishes-section" id="wishesSection">
-                <img class="wishes-top-image" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="пожелания" />
                 <div class="wishes-content">
                     <div class="wishes-title">Пожелания</div>
                     <div class="wishes-text">
@@ -2100,7 +2142,7 @@
                         <div class="paragraph">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
                     </div>
                 </div>
-                <img class="wishes-bottom-image" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="декор" />
+                <img class="wishes-image" src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="декор" />
             </div>
 
             <div class="timer-section" id="timerSection">
@@ -2125,7 +2167,7 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД -->
+            <!-- БЛОК ДРЕСС-КОД С АКВАРЕЛЬНЫМИ МАЗКАМИ -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="первая.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
@@ -2135,6 +2177,7 @@
                         <div class="dc-paragraph">Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
                     </div>
 
+                    <!-- АКВАРЕЛЬНЫЕ МАЗКИ — 3 цвета -->
                     <div class="dresscode-palette">
                         <div class="palette-item">
                             <div class="color-swatch" style="background: #4a1a1a;"></div>
