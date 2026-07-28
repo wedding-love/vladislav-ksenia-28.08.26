@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -163,7 +164,7 @@
             margin-top: 0.5rem;
         }
 
-        /* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БЛОКОВ ===== */
+        /* ===== ЕДИНЫЕ СТИЛИ ДЛЯ ВСЕХ БЛОКОВ ===== */
         .section-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             font-family: 'Cormorant Garamond', serif;
@@ -193,6 +194,7 @@
             color: #4a1a1a;
         }
 
+        /* ===== ПЕРВЫЙ БЛОК С ТЕКСТОМ ===== */
         .text-section {
             width: 100%;
             min-height: 100vh;
@@ -237,32 +239,18 @@
             transition-delay: 0.7s;
         }
         .text-section .greeting {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            /* уже имеет section-title, но дополнительно можно задать цвет */
             color: #ffffff;
             margin-bottom: 0.2rem;
-            font-weight: 700;
-            font-family: 'Cormorant Garamond', serif;
         }
-        .text-section .message {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            line-height: 1.8;
-            letter-spacing: 0.04em;
+        .text-section .message,
+        .text-section .message-bold {
             color: #ffffff;
             max-width: 85%;
-            font-weight: 300;
-            font-family: 'Nunito', sans-serif;
         }
         .text-section .message-bold {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            line-height: 1.8;
-            letter-spacing: 0.04em;
-            color: #ffffff;
-            max-width: 85%;
             font-weight: 400;
             margin-bottom: 0.3rem;
-            font-family: 'Nunito', sans-serif;
         }
         .text-section .calendar-img {
             width: 100%;
@@ -319,18 +307,12 @@
             padding: 2rem 0;
         }
         .program-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-weight: 700;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
             margin-bottom: 1.8rem;
-            letter-spacing: 0.08em;
-            text-align: center;
-            width: 100%;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'Cormorant Garamond', serif;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
         .program-section.visible .program-title {
             opacity: 1;
@@ -376,24 +358,19 @@
             transform: translateY(0);
             transition-delay: 0.9s;
         }
-        .program-item .title {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+        .program-item .title,
+        .program-item .time {
             color: #ffffff;
-            font-weight: 300;
-            line-height: 1.8;
-            font-family: 'Nunito', sans-serif;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 0.03em;
         }
+        .program-item .title {
+            font-weight: 300;
+        }
         .program-item .time {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            color: #ffffff;
             font-weight: 300;
             opacity: 0.8;
             margin-top: 0.2rem;
-            font-family: 'Nunito', sans-serif;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.03em;
         }
         .program-item .divider-line {
             width: 60px;
@@ -405,6 +382,7 @@
             display: none;
         }
 
+        /* ===== ЛОКАЦИЯ ===== */
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -444,47 +422,35 @@
             gap: 1.2rem;
         }
         .location-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            margin: 0;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            margin: 0;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-family: 'Cormorant Garamond', serif;
         }
         .location-section.visible .location-title {
             opacity: 1;
             transform: translateY(0);
         }
-        .location-name {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+        .location-name,
+        .location-address {
             color: #ffffff;
-            font-weight: 300;
-            letter-spacing: 0.03em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            font-family: 'Nunito', sans-serif;
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .location-name {
+            transition-delay: 0.4s;
+        }
+        .location-address {
+            transition-delay: 0.6s;
+            max-width: 90%;
         }
         .location-section.visible .location-name {
             opacity: 1;
             transform: translateY(0);
-        }
-        .location-address {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            color: #ffffff;
-            opacity: 0;
-            font-weight: 300;
-            line-height: 1.8;
-            max-width: 90%;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            transform: translateY(30px);
-            transition: opacity 1s ease 0.6s, transform 1s ease 0.6s;
-            font-family: 'Nunito', sans-serif;
         }
         .location-section.visible .location-address {
             opacity: 0.85;
@@ -520,7 +486,7 @@
             transform: scale(0.96);
         }
 
-        /* ===== БЛОК ПОЖЕЛАНИЙ ===== */
+        /* ===== ПОЖЕЛАНИЯ ===== */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -581,18 +547,12 @@
             text-align: center;
         }
         .wishes-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
-            font-family: 'Cormorant Garamond', serif;
-            text-align: center;
             margin-bottom: 1.8rem;
             margin-top: 0.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
-            width: 100%;
-            font-weight: 700;
-            letter-spacing: 0.08em;
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -601,14 +561,10 @@
         .wishes-text {
             max-width: 100%;
             color: #4a1a1a;
-            font-family: 'Nunito', sans-serif;
-            text-align: center;
-            line-height: 1.8;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
             padding-bottom: 0.2rem;
-            font-weight: 300;
             margin: 0 auto;
             width: 100%;
         }
@@ -617,17 +573,14 @@
             transform: translateY(0);
         }
         .wishes-text .paragraph {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            /* использует section-text */
             margin-bottom: 0.8rem;
-            font-weight: 300;
-            line-height: 1.8;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
         }
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
 
+        /* ===== ТАЙМЕР ===== */
         .timer-section {
             width: 100%;
             flex-shrink: 0;
@@ -640,17 +593,12 @@
             min-height: 50vh;
         }
         .timer-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-family: 'Cormorant Garamond', serif;
             margin-bottom: 1.8rem;
-            text-align: center;
-            letter-spacing: 0.08em;
-            white-space: nowrap;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 700;
+            white-space: nowrap;
         }
         .timer-section.visible .timer-title {
             opacity: 1;
@@ -767,34 +715,26 @@
             gap: 1.2rem;
         }
         .dresscode-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            letter-spacing: 0.08em;
             margin: 0;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            text-shadow: none;
-            background: transparent;
         }
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
             transform: translateY(0);
         }
         .dresscode-text {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #4a1a1a;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 300;
-            line-height: 1.8;
             max-width: 85%;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            text-shadow: none;
-            background: transparent;
+        }
+        .dresscode-section.visible .dresscode-text {
+            opacity: 1;
+            transform: translateY(0);
         }
         .dresscode-text .dc-paragraph {
             margin-bottom: 0.8rem;
@@ -802,15 +742,11 @@
         .dresscode-text .dc-paragraph:last-child {
             margin-bottom: 0;
         }
-        .dresscode-section.visible .dresscode-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
         .dresscode-palette {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1.5rem;
             margin-top: 1.5rem;
             flex-wrap: wrap;
             opacity: 0;
@@ -823,9 +759,9 @@
             transform: translateY(0);
         }
         .palette-item .color-swatch {
-            width: 90px;
-            height: 50px;
-            border-radius: 3px;
+            width: 110px;
+            height: 60px;
+            border-radius: 4px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
@@ -855,6 +791,7 @@
             transform: translateY(0);
         }
 
+        /* ===== АНКЕТА ===== */
         .guest-section {
             width: 100%;
             flex-shrink: 0;
@@ -867,32 +804,22 @@
             min-height: 100vh;
         }
         .guest-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-family: 'Cormorant Garamond', serif;
-            text-align: center;
             margin-bottom: 1.8rem;
-            letter-spacing: 0.08em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 700;
         }
         .guest-section.visible .guest-title {
             opacity: 1;
             transform: translateY(0);
         }
         .guest-deadline-top {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: rgba(255, 255, 255, 0.8);
-            font-family: 'Nunito', sans-serif;
-            text-align: center;
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(15px);
             transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
-            font-weight: 300;
-            line-height: 1.8;
         }
         .guest-section.visible .guest-deadline-top {
             opacity: 1;
@@ -1081,6 +1008,8 @@
         .submit-btn:active {
             transform: scale(0.96);
         }
+
+        /* ===== КОНТАКТЫ ===== */
         .contacts-section {
             width: 100%;
             flex-shrink: 0;
@@ -1094,16 +1023,11 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .contacts-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
-            font-family: 'Cormorant Garamond', serif;
-            text-align: center;
             margin-bottom: 1.8rem;
-            letter-spacing: 0.08em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            font-weight: 700;
         }
         .contacts-section.visible .contacts-title {
             opacity: 1;
@@ -1123,14 +1047,9 @@
             transform: translateY(0);
         }
         .contacts-info .contact-item {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
-            font-family: 'Nunito', sans-serif;
-            letter-spacing: 0.03em;
             opacity: 0.9;
             text-align: center;
-            font-weight: 300;
-            line-height: 1.8;
             padding: 0.2rem 0;
         }
         .contacts-info .contact-item strong {
@@ -1146,6 +1065,7 @@
         .contacts-info .contact-item a:hover {
             opacity: 0.7;
         }
+
         .main-bg-first {
             position: absolute;
             top: 0;
@@ -1477,14 +1397,13 @@
                 gap: 0.8rem;
             }
             .text-section .greeting {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.15rem;
             }
-            .text-section .message {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
+            .text-section .message,
+            .text-section .message-bold {
+                max-width: 90%;
             }
             .text-section .message-bold {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.2rem;
             }
 
@@ -1493,15 +1412,12 @@
                 min-height: 100vh;
             }
             .program-title {
-                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
             }
             .program-list {
                 gap: 2rem;
             }
-            .program-item .title {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
-            }
+            .program-item .title,
             .program-item .time {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
             }
@@ -1520,9 +1436,7 @@
             .location-title {
                 font-size: clamp(2rem, 4vw, 3rem);
             }
-            .location-name {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
-            }
+            .location-name,
             .location-address {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
             }
@@ -1570,7 +1484,7 @@
                 font-size: clamp(2rem, 4vw, 3rem);
             }
             .dresscode-text {
-                font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+                font-size: clamp(1rem, 1.6vw, 1.4rem);
                 max-width: 90%;
                 line-height: 1.6;
             }
@@ -1578,12 +1492,12 @@
                 margin-bottom: 0.6rem;
             }
             .dresscode-palette {
-                gap: 0.8rem;
+                gap: 1rem;
                 margin-top: 1.2rem;
             }
             .palette-item .color-swatch {
-                width: 65px;
-                height: 38px;
+                width: 80px;
+                height: 45px;
             }
             .dresscode-image {
                 max-width: 60%;
@@ -1702,14 +1616,14 @@
                 gap: 0.6rem;
             }
             .text-section .greeting {
-                font-size: 0.9rem;
+                font-size: 1.8rem;
                 margin-bottom: 0.1rem;
             }
-            .text-section .message {
+            .text-section .message,
+            .text-section .message-bold {
                 font-size: 0.9rem;
             }
             .text-section .message-bold {
-                font-size: 0.9rem;
                 margin-bottom: 0.15rem;
             }
 
@@ -1724,9 +1638,7 @@
             .program-list {
                 gap: 1.5rem;
             }
-            .program-item .title {
-                font-size: 0.9rem;
-            }
+            .program-item .title,
             .program-item .time {
                 font-size: 0.9rem;
             }
@@ -1745,9 +1657,7 @@
             .location-title {
                 font-size: 1.8rem;
             }
-            .location-name {
-                font-size: 0.9rem;
-            }
+            .location-name,
             .location-address {
                 font-size: 0.9rem;
             }
@@ -1795,7 +1705,7 @@
                 font-size: 1.8rem;
             }
             .dresscode-text {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 max-width: 95%;
                 line-height: 1.5;
             }
@@ -1803,12 +1713,12 @@
                 margin-bottom: 0.5rem;
             }
             .dresscode-palette {
-                gap: 0.6rem;
+                gap: 0.8rem;
                 margin-top: 1rem;
             }
             .palette-item .color-swatch {
-                width: 50px;
-                height: 30px;
+                width: 60px;
+                height: 35px;
             }
             .dresscode-image {
                 max-width: 70%;
@@ -1921,11 +1831,9 @@
                 padding: 5rem 3rem 0 3rem;
             }
             .text-section .greeting {
-                font-size: 1.8rem;
+                font-size: 4.5rem;
             }
-            .text-section .message {
-                font-size: 1.8rem;
-            }
+            .text-section .message,
             .text-section .message-bold {
                 font-size: 1.8rem;
             }
@@ -1942,9 +1850,7 @@
                 max-width: 700px;
                 gap: 3rem;
             }
-            .program-item .title {
-                font-size: 1.8rem;
-            }
+            .program-item .title,
             .program-item .time {
                 font-size: 1.8rem;
             }
@@ -1963,9 +1869,7 @@
             .location-title {
                 font-size: 4.5rem;
             }
-            .location-name {
-                font-size: 1.8rem;
-            }
+            .location-name,
             .location-address {
                 font-size: 1.8rem;
             }
@@ -2019,12 +1923,12 @@
                 max-width: 80%;
             }
             .dresscode-palette {
-                gap: 1.5rem;
+                gap: 2rem;
                 margin-top: 2rem;
             }
             .palette-item .color-swatch {
-                width: 110px;
-                height: 55px;
+                width: 130px;
+                height: 70px;
             }
             .dresscode-image {
                 max-width: 50%;
@@ -2138,74 +2042,78 @@
                 </div>
             </div>
 
+            <!-- БЛОК 1: ПЕРВЫЙ ТЕКСТ -->
             <div class="text-section" id="textSection">
-                <div class="greeting">Дорогие родные и друзья!</div>
-                <div class="message">Приглашаем вас разделить с нами радость этого дня, наполненного светом, теплом и искренней любовью.</div>
-                <div class="message-bold">Пусть каждый миг этого вечера останется в ваших сердцах тёплым воспоминанием, а наша любовь вдохновляет вас на самые светлые чувства.</div>
+                <div class="greeting section-title">Дорогие родные и друзья!</div>
+                <div class="message section-text">Приглашаем вас разделить с нами радость этого дня, наполненного светом, теплом и искренней любовью.</div>
+                <div class="message-bold section-text">Пусть каждый миг этого вечера останется в ваших сердцах тёплым воспоминанием, а наша любовь вдохновляет вас на самые светлые чувства.</div>
                 <div class="calendar-img">
                     <img src="IMG_8833.PNG" alt="календарь" />
                 </div>
             </div>
 
+            <!-- БЛОК 2: ПРОГРАММА ДНЯ -->
             <div class="program-section" id="programSection">
                 <img class="program-bg" src="image_2026-07-27_20-07-43.png" alt="фон программы" />
                 <div class="program-content">
-                    <div class="program-title">Программа дня</div>
+                    <div class="program-title section-title">Программа дня</div>
                     <div class="program-list">
                         <div class="program-item">
-                            <div class="title">Сбор гостей и Welcome</div>
-                            <div class="time">16:00</div>
+                            <div class="title section-text">Сбор гостей и Welcome</div>
+                            <div class="time section-text">16:00</div>
                             <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
-                            <div class="title">Торжественная Церемония</div>
-                            <div class="time">17:00</div>
+                            <div class="title section-text">Торжественная Церемония</div>
+                            <div class="time section-text">17:00</div>
                             <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
-                            <div class="title">Банкет</div>
-                            <div class="time">18:00</div>
+                            <div class="title section-text">Банкет</div>
+                            <div class="time section-text">18:00</div>
                             <div class="divider-line"></div>
                         </div>
                         <div class="program-item">
-                            <div class="title">Финал</div>
-                            <div class="time">23:00</div>
+                            <div class="title section-text">Финал</div>
+                            <div class="time section-text">23:00</div>
                             <div class="divider-line"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- БЛОК 3: МЕСТО ПРОВЕДЕНИЯ -->
             <div class="location-section" id="locationSection">
                 <img class="location-bg" src="локация.png" alt="фон локации" />
                 <div class="location-content">
-                    <div class="location-title">Место проведения</div>
-                    <div class="location-name">Винодельня Акчурина</div>
-                    <div class="location-address">Севастополь, Балаклавский муниципальный округ, село Хмельницкое</div>
+                    <div class="location-title section-title">Место проведения</div>
+                    <div class="location-name section-text">Винодельня Акчурина</div>
+                    <div class="location-address section-text">Севастополь, Балаклавский муниципальный округ, село Хмельницкое</div>
                     <a href="https://yandex.com/maps/org/vinodelnya_akchurina/2225582887/" target="_blank" class="location-btn">Открыть на карте</a>
                 </div>
             </div>
 
-            <!-- БЛОК ПОЖЕЛАНИЙ -->
+            <!-- БЛОК 4: ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <div class="wishes-bg-top">
                     <img src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="фон пожеланий" />
                 </div>
                 <div class="wishes-frame">
                     <div class="wishes-content">
-                        <div class="wishes-title">Пожелания</div>
+                        <div class="wishes-title section-title">Пожелания</div>
                         <div class="wishes-text">
-                            <div class="paragraph">Дорогие гости!</div>
-                            <div class="paragraph">Мы предлагаем вам стать частью нашей коллекции вин. Каждая бутылка, подаренная вами, будет хранить особый смысл — мы просим прикрепить бирку с указанием важного момента в нашей жизни, когда её следует открыть: отпуск, годовщина, рождение ребёнка или любое другое знаковое событие. Так мы соберём целую коллекцию воспоминаний, которые будем бережно хранить и открывать в самые тёплые моменты.</div>
-                            <div class="paragraph">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
-                            <div class="paragraph">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
+                            <div class="paragraph section-text">Дорогие гости!</div>
+                            <div class="paragraph section-text">Мы предлагаем вам стать частью нашей коллекции вин. Каждая бутылка, подаренная вами, будет хранить особый смысл — мы просим прикрепить бирку с указанием важного момента в нашей жизни, когда её следует открыть: отпуск, годовщина, рождение ребёнка или любое другое знаковое событие. Так мы соберём целую коллекцию воспоминаний, которые будем бережно хранить и открывать в самые тёплые моменты.</div>
+                            <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
+                            <div class="paragraph section-text">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- БЛОК 5: ТАЙМЕР -->
             <div class="timer-section" id="timerSection">
-                <div class="timer-title">До нашей свадьбы осталось:</div>
+                <div class="timer-title section-title">До нашей свадьбы осталось:</div>
                 <div class="timer-container">
                     <div class="timer-item">
                         <div class="number" id="days">00</div>
@@ -2226,12 +2134,12 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД -->
+            <!-- БЛОК 6: ДРЕСС-КОД -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="image_2026-07-28_13-22-36.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
-                    <div class="dresscode-title">Дресс-код</div>
-                    <div class="dresscode-text">
+                    <div class="dresscode-title section-title">Дресс-код</div>
+                    <div class="dresscode-text section-text">
                         <div class="dc-paragraph">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, шампань, чёрный.</div>
                         <div class="dc-paragraph">Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи.</div>
                         <div class="dc-paragraph">Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
@@ -2253,9 +2161,10 @@
                 </div>
             </div>
 
+            <!-- БЛОК 7: АНКЕТА -->
             <div class="guest-section" id="guestSection">
-                <div class="guest-title">Анкета гостя</div>
-                <div class="guest-deadline-top">
+                <div class="guest-title section-title">Анкета гостя</div>
+                <div class="guest-deadline-top section-text">
                     Подтвердите присутствие до <strong>12.08.2026</strong>
                 </div>
                 <form class="guest-form" action="https://formspree.io/f/mwvgnowr" method="POST">
@@ -2301,12 +2210,13 @@
                 </form>
             </div>
 
+            <!-- БЛОК 8: КОНТАКТЫ -->
             <div class="contacts-section" id="contactsSection">
-                <div class="contacts-title">Контакты</div>
+                <div class="contacts-title section-title">Контакты</div>
                 <div class="contacts-info">
-                    <div class="contact-item"><strong>Организатор:</strong> Полина</div>
-                    <div class="contact-item">+7 978 535-49-46</div>
-                    <div class="contact-item"><a href="https://t.me/Aist_Wedding" target="_blank">https://t.me/Aist_Wedding</a></div>
+                    <div class="contact-item section-text"><strong>Организатор:</strong> Полина</div>
+                    <div class="contact-item section-text">+7 978 535-49-46</div>
+                    <div class="contact-item section-text"><a href="https://t.me/Aist_Wedding" target="_blank">https://t.me/Aist_Wedding</a></div>
                 </div>
             </div>
 
