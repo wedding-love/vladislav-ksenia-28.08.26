@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+          <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -684,13 +685,15 @@
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
+            min-height: 50vh;
+            max-height: 60vh;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 3rem 1rem 4rem 1rem;
+            justify-content: center;
+            padding: 1.5rem 1rem 2rem 1rem;
+            background: #f5ede4;
         }
         .dresscode-bg {
             position: absolute;
@@ -708,49 +711,47 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             width: 100%;
-            max-width: 700px;
-            padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+            max-width: 600px;
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
             text-align: center;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
             backdrop-filter: blur(3px);
             border: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
         }
         .dresscode-title {
-            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+            font-size: clamp(1.8rem, 3vw, 3.2rem);
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.4rem;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             font-weight: 700;
-            margin-top: 0.5rem;
-            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
+            margin-top: 0;
         }
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
             transform: translateY(0);
         }
         .dresscode-text {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            font-size: clamp(0.9rem, 1.4vw, 1.4rem);
             color: #4a1a1a;
             font-family: 'Nunito', sans-serif;
-            max-width: 90%;
-            line-height: 1.8;
+            max-width: 95%;
+            line-height: 1.6;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            margin-top: 0.3rem;
+            margin-top: 0;
             font-weight: 300;
-            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
         }
         .dresscode-text .dc-paragraph {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.6rem;
         }
         .dresscode-text .dc-paragraph:last-child {
             margin-bottom: 0;
@@ -763,11 +764,11 @@
         .dresscode-palette {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            margin-top: 1.8rem;
+            gap: 1.5rem;
+            margin-top: 1rem;
             flex-wrap: wrap;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
         }
         .dresscode-section.visible .dresscode-palette {
@@ -775,30 +776,30 @@
             transform: translateY(0);
         }
         .palette-item .color-swatch {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
         }
         .palette-item .color-swatch:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
 
         .dresscode-image {
             position: relative;
             z-index: 2;
-            margin-top: 2rem;
-            max-width: 50%;
+            margin-top: 1rem;
+            max-width: 40%;
             height: auto;
             display: block;
             border-radius: 0;
             box-shadow: none;
             border: none;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
         }
         .dresscode-section.visible .dresscode-image {
@@ -1502,36 +1503,39 @@
                 margin-bottom: 0.8rem;
             }
             .dresscode-section {
-                min-height: 100vh;
-                padding: 2rem 0.5rem 3rem 0.5rem;
+                min-height: 40vh;
+                max-height: 50vh;
+                padding: 0.8rem 0.5rem 1rem 0.5rem;
             }
             .dresscode-content {
-                padding: 0.5rem 1rem 1.5rem 1rem;
+                padding: 0.5rem 0.8rem 1rem 0.8rem;
                 max-width: 100%;
                 margin: 0;
-                background: rgba(255, 255, 255, 0.6);
+                background: rgba(255, 255, 255, 0.7);
                 backdrop-filter: blur(3px);
+                border-radius: 12px;
             }
             .dresscode-title {
-                font-size: clamp(2rem, 4vw, 3rem);
-                margin-bottom: 0.6rem;
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
+                margin-bottom: 0.3rem;
             }
             .dresscode-text {
-                font-size: clamp(1rem, 2vw, 1.4rem);
+                font-size: clamp(0.8rem, 1.4vw, 1.1rem);
                 max-width: 100%;
-                margin-top: 0.2rem;
+                margin-top: 0;
             }
             .dresscode-palette {
-                gap: 1.5rem;
-                margin-top: 1.5rem;
+                gap: 1rem;
+                margin-top: 0.6rem;
             }
             .palette-item .color-swatch {
-                width: 60px;
-                height: 60px;
+                width: 45px;
+                height: 45px;
+                border-radius: 4px;
             }
             .dresscode-image {
-                max-width: 60%;
-                margin-top: 1.5rem;
+                max-width: 45%;
+                margin-top: 0.6rem;
             }
             .timer-section {
                 min-height: 45vh;
@@ -1718,36 +1722,39 @@
                 margin-bottom: 0.6rem;
             }
             .dresscode-section {
-                min-height: 100vh;
-                padding: 1.5rem 0.3rem 2.5rem 0.3rem;
+                min-height: 35vh;
+                max-height: 45vh;
+                padding: 0.5rem 0.3rem 0.8rem 0.3rem;
             }
             .dresscode-content {
-                padding: 0.3rem 0.8rem 1.2rem 0.8rem;
+                padding: 0.3rem 0.6rem 0.8rem 0.6rem;
                 max-width: 100%;
                 margin: 0;
-                background: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.75);
                 backdrop-filter: blur(3px);
+                border-radius: 10px;
             }
             .dresscode-title {
-                font-size: 1.8rem;
-                margin-bottom: 0.4rem;
+                font-size: 1.4rem;
+                margin-bottom: 0.2rem;
             }
             .dresscode-text {
-                font-size: 0.9rem;
+                font-size: 0.75rem;
                 max-width: 100%;
-                margin-top: 0.2rem;
+                margin-top: 0;
             }
             .dresscode-palette {
-                gap: 1rem;
-                margin-top: 1rem;
+                gap: 0.8rem;
+                margin-top: 0.5rem;
             }
             .palette-item .color-swatch {
-                width: 45px;
-                height: 45px;
+                width: 35px;
+                height: 35px;
+                border-radius: 3px;
             }
             .dresscode-image {
-                max-width: 70%;
-                margin-top: 1rem;
+                max-width: 50%;
+                margin-top: 0.5rem;
             }
             .timer-section {
                 min-height: 40vh;
@@ -1922,33 +1929,36 @@
                 margin-bottom: 1.2rem;
             }
             .dresscode-section {
-                min-height: 100vh;
-                padding: 4rem 2rem 5rem 2rem;
+                min-height: 40vh;
+                max-height: 50vh;
+                padding: 2rem 2rem 2.5rem 2rem;
             }
             .dresscode-content {
-                max-width: 700px;
-                padding: 1rem 3rem 2rem 3rem;
-                background: rgba(255, 255, 255, 0.45);
+                max-width: 600px;
+                padding: 1.2rem 2.5rem 1.8rem 2.5rem;
+                background: rgba(255, 255, 255, 0.5);
                 backdrop-filter: blur(4px);
+                border-radius: 20px;
             }
             .dresscode-title {
-                font-size: 4.5rem;
+                font-size: 3.2rem;
             }
             .dresscode-text {
-                font-size: 1.8rem;
-                max-width: 80%;
+                font-size: 1.4rem;
+                max-width: 90%;
             }
             .dresscode-palette {
-                gap: 3rem;
-                margin-top: 2.5rem;
+                gap: 2rem;
+                margin-top: 1.5rem;
             }
             .palette-item .color-swatch {
-                width: 90px;
-                height: 90px;
+                width: 70px;
+                height: 70px;
+                border-radius: 6px;
             }
             .dresscode-image {
-                max-width: 45%;
-                margin-top: 2rem;
+                max-width: 35%;
+                margin-top: 1.2rem;
             }
             .timer-section {
                 min-height: 60vh;
@@ -2141,12 +2151,12 @@
 
             <!-- БЛОК ДРЕСС-КОД -->
             <div class="dresscode-section" id="dresscodeSection">
-                <img class="dresscode-bg" src="image_2026-07-28_13-56-05.png" alt="фон дресс-код" />
+                <img class="dresscode-bg" src="image_2026-07-28_13-22-36.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
                     <div class="dresscode-title">Дресс-код</div>
                     <div class="dresscode-text">
-                        <div class="dc-paragraph">В этот день мы хотим видеть вас в оттенках, созвучных нашему празднику: бордовый, шампань, чёрный.</div>
-                        <div class="dc-paragraph">Пусть ваш образ будет таким же тёплым и светлым, как момент нашей встречи. Выбирайте близкие сердцу тона и дарите нам свою красоту.</div>
+                        <div class="dc-paragraph">В этот день мы хотим видеть вас в оттенках: бордовый, шампань, чёрный.</div>
+                        <div class="dc-paragraph">Пусть ваш образ будет тёплым и светлым, как момент нашей встречи.</div>
                     </div>
 
                     <div class="dresscode-palette">
