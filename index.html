@@ -162,9 +162,52 @@
             font-weight: 600;
             margin-top: 0.5rem;
         }
+
+        /* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БЛОКОВ ===== */
+        .section-padding {
+            padding: 4rem 2rem;
+        }
+        .section-padding-top {
+            padding-top: 4rem;
+        }
+        .section-padding-bottom {
+            padding-bottom: 4rem;
+        }
+
+        /* Единый размер заголовков — одинаковый во всех блоках */
+        .section-title {
+            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Единый размер текста — одинаковый во всех блоках */
+        .section-text {
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .section-text strong,
+        .section-text b {
+            font-weight: 400;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+        .text-dark {
+            color: #4a1a1a;
+        }
+
         .text-section {
             width: 100%;
-            min-height: 110vh;
+            min-height: 100vh;
             flex-shrink: 0;
             background: #4a1a1a;
             display: flex;
@@ -206,18 +249,17 @@
             transition-delay: 0.7s;
         }
         .text-section .greeting {
-            font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #ffffff;
             margin-bottom: 0.2rem;
             font-weight: 700;
             font-family: 'Cormorant Garamond', serif;
-            white-space: nowrap;
         }
         .text-section .message {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            line-height: 1.7;
+            line-height: 1.8;
             letter-spacing: 0.04em;
             color: #ffffff;
             max-width: 85%;
@@ -226,7 +268,7 @@
         }
         .text-section .message-bold {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            line-height: 1.7;
+            line-height: 1.8;
             letter-spacing: 0.04em;
             color: #ffffff;
             max-width: 85%;
@@ -253,27 +295,30 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ===== ПРОГРАММА ДНЯ ===== */
         .program-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 120vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
-            margin-top: 2rem;
+            background: #4a1a1a;
         }
         .program-bg {
             position: absolute;
-            top: -15%;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 130%;
+            height: 100%;
             object-fit: cover;
             z-index: 0;
+            opacity: 0.85;
         }
         .program-content {
             position: relative;
@@ -284,14 +329,12 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 1000px;
-            padding-top: 4rem;
-            margin-top: 40px;
         }
         .program-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             color: #ffffff;
             font-weight: 700;
-            margin-bottom: 4rem;
+            margin-bottom: 1.8rem;
             letter-spacing: 0.05em;
             text-align: center;
             width: 100%;
@@ -310,7 +353,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3rem;
+            gap: 2.5rem;
             width: 100%;
             max-width: 600px;
             padding: 0 1rem;
@@ -349,7 +392,7 @@
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             color: #ffffff;
             font-weight: 300;
-            line-height: 1.4;
+            line-height: 1.8;
             font-family: 'Nunito', sans-serif;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 0.03em;
@@ -368,23 +411,23 @@
             width: 60px;
             height: 1px;
             background: rgba(255, 255, 255, 0.3);
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
         .program-item:last-child .divider-line {
             display: none;
         }
+
         .location-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 120vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
-            margin-top: 2rem;
         }
         .location-bg {
             position: absolute;
@@ -448,7 +491,7 @@
             color: #ffffff;
             opacity: 0;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
             max-width: 90%;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             transform: translateY(30px);
@@ -501,11 +544,10 @@
             align-items: center;
             justify-content: flex-start;
             padding: 0;
-            margin-top: -2px;
         }
         .wishes-bg-top {
             width: 100%;
-            max-height: 35vh;
+            max-height: 45vh;
             overflow: hidden;
             display: flex;
             align-items: flex-start;
@@ -516,25 +558,25 @@
             flex-shrink: 0;
         }
         .wishes-bg-top img {
-            width: 110%;
+            width: 100%;
             height: auto;
-            max-height: 35vh;
+            max-height: 45vh;
             object-fit: cover;
             object-position: top center;
             display: block;
-            margin: 0 -5%;
+            margin: 0;
             padding: 0;
         }
         .wishes-frame {
             width: 100%;
             max-width: 850px;
-            margin: -2px auto 0 auto;
+            margin: -4px auto 0 auto;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 0.8rem 1.5rem 1.5rem 1.5rem;
+            padding: 2rem 1.5rem 3rem 1.5rem;
             background: #f2e8df;
             z-index: 2;
         }
@@ -555,8 +597,8 @@
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 0.8rem;
-            margin-top: 0.2rem;
+            margin-bottom: 1.8rem;
+            margin-top: 0.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
@@ -572,7 +614,7 @@
             color: #4a1a1a;
             font-family: 'Nunito', sans-serif;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.8;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
@@ -587,9 +629,9 @@
         }
         .wishes-text .paragraph {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
@@ -607,13 +649,12 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 50vh;
-            margin-top: 2rem;
         }
         .timer-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;
             text-align: center;
             letter-spacing: 0.05em;
             white-space: nowrap;
@@ -709,7 +750,6 @@
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
-            margin-top: 2rem;
         }
         .dresscode-bg {
             position: absolute;
@@ -759,7 +799,7 @@
             color: #4a1a1a;
             font-family: 'Nunito', sans-serif;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
             max-width: 85%;
             opacity: 0;
             transform: translateY(30px);
@@ -836,14 +876,13 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 100vh;
-            margin-top: 2rem;
         }
         .guest-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.8rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
@@ -864,6 +903,7 @@
             transform: translateY(15px);
             transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
             font-weight: 300;
+            line-height: 1.8;
         }
         .guest-section.visible .guest-deadline-top {
             opacity: 1;
@@ -910,6 +950,7 @@
             font-weight: 300;
             opacity: 0.9;
             letter-spacing: 0.03em;
+            line-height: 1.8;
         }
         .guest-form input[type="text"] {
             padding: 1.2rem 1.5rem;
@@ -1062,14 +1103,13 @@
             padding: 3rem 2rem 4rem 2rem;
             min-height: 40vh;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 2rem;
         }
         .contacts-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             letter-spacing: 0.05em;
             opacity: 0;
             transform: translateY(30px);
@@ -1101,6 +1141,7 @@
             opacity: 0.9;
             text-align: center;
             font-weight: 300;
+            line-height: 1.8;
             padding: 0.2rem 0;
         }
         .contacts-info .contact-item strong {
@@ -1431,15 +1472,34 @@
                 font-size: clamp(1.2rem, 2.5vw, 1.8rem);
                 margin-top: 0.3rem;
             }
+
+            .section-padding {
+                padding: 2.5rem 1.2rem;
+            }
+            .section-padding-top {
+                padding-top: 2.5rem;
+            }
+            .section-padding-bottom {
+                padding-bottom: 2.5rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                margin-bottom: 1.2rem;
+            }
+            .section-text {
+                font-size: clamp(1rem, 1.6vw, 1.4rem);
+                line-height: 1.6;
+            }
+
             .text-section {
                 padding: 2.5rem 1.2rem 0 1.2rem;
                 min-height: 100vh;
                 gap: 0.8rem;
             }
             .text-section .greeting {
-                font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+                font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.15rem;
-                white-space: nowrap;
             }
             .text-section .message {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
@@ -1448,18 +1508,14 @@
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.2rem;
             }
+
             .program-section {
                 padding: 2.5rem 1.2rem;
                 min-height: 100vh;
-                margin-top: 1rem;
-            }
-            .program-content {
-                padding-top: 2rem;
-                margin-top: 20px;
             }
             .program-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-                margin-bottom: 2.5rem;
+                margin-bottom: 1.2rem;
             }
             .program-list {
                 gap: 2rem;
@@ -1472,12 +1528,12 @@
             }
             .program-item .divider-line {
                 width: 40px;
-                margin-top: 1.2rem;
+                margin-top: 1rem;
             }
+
             .location-section {
                 padding: 2.5rem 1.2rem;
-                min-height: 90vh;
-                margin-top: 1rem;
+                min-height: 100vh;
             }
             .location-content {
                 gap: 1rem;
@@ -1495,20 +1551,19 @@
                 padding: 0.4rem 1.2rem;
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
+
             .wishes-section {
                 min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 25vh;
+                max-height: 35vh;
             }
             .wishes-bg-top img {
-                width: 115%;
-                margin: 0 -7.5%;
-                max-height: 25vh;
+                max-height: 35vh;
             }
             .wishes-frame {
-                padding: 0.5rem 0.8rem 1rem 0.8rem;
+                padding: 1.2rem 0.8rem 2.5rem 0.8rem;
             }
             .wishes-content {
                 padding: 0.3rem;
@@ -1516,18 +1571,18 @@
             }
             .wishes-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-                margin-bottom: 0.6rem;
-                margin-top: 0.1rem;
+                margin-bottom: 1.2rem;
+                margin-top: 0.3rem;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.6rem;
                 line-height: 1.6;
             }
+
             .dresscode-section {
                 min-height: 100vh;
                 padding: 2.5rem 1.2rem;
-                margin-top: 1rem;
             }
             .dresscode-content {
                 gap: 1rem;
@@ -1551,15 +1606,15 @@
                 max-width: 60%;
                 margin-top: 1.2rem;
             }
+
             .timer-section {
                 min-height: 45vh;
                 padding: 2.5rem 1.2rem;
-                margin-top: 1rem;
             }
             .timer-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
                 white-space: normal;
-                margin-bottom: 2rem;
+                margin-bottom: 1.2rem;
             }
             .timer-container {
                 gap: 1.2rem;
@@ -1574,14 +1629,14 @@
             .timer-item .label {
                 font-size: clamp(0.6rem, 1vw, 0.9rem);
             }
+
             .guest-section {
                 padding: 2.5rem 1.2rem;
-                min-height: 90vh;
-                margin-top: 1rem;
+                min-height: 100vh;
             }
             .guest-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-                margin-bottom: 0.6rem;
+                margin-bottom: 1.2rem;
             }
             .guest-deadline-top {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
@@ -1611,10 +1666,10 @@
                 padding: 1rem 2.5rem;
                 font-size: clamp(1.1rem, 1.8vw, 1.4rem);
             }
+
             .contacts-section {
                 padding: 2.5rem 1.2rem 3.5rem 1.2rem;
                 min-height: 35vh;
-                margin-top: 1rem;
             }
             .contacts-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
@@ -1648,15 +1703,34 @@
                 font-size: 1.2rem;
                 margin-top: 0.2rem;
             }
+
+            .section-padding {
+                padding: 2rem 0.8rem;
+            }
+            .section-padding-top {
+                padding-top: 2rem;
+            }
+            .section-padding-bottom {
+                padding-bottom: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            .section-text {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
             .text-section {
                 padding: 2rem 0.8rem 0 0.8rem;
                 min-height: 90vh;
                 gap: 0.6rem;
             }
             .text-section .greeting {
-                font-size: 1.2rem;
+                font-size: 0.9rem;
                 margin-bottom: 0.1rem;
-                white-space: nowrap;
             }
             .text-section .message {
                 font-size: 0.9rem;
@@ -1665,18 +1739,14 @@
                 font-size: 0.9rem;
                 margin-bottom: 0.15rem;
             }
+
             .program-section {
                 padding: 2rem 0.8rem;
                 min-height: 90vh;
-                margin-top: 0.5rem;
-            }
-            .program-content {
-                padding-top: 1.5rem;
-                margin-top: 15px;
             }
             .program-title {
                 font-size: 1.6rem;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
             .program-list {
                 gap: 1.5rem;
@@ -1689,12 +1759,12 @@
             }
             .program-item .divider-line {
                 width: 30px;
-                margin-top: 1rem;
+                margin-top: 0.8rem;
             }
+
             .location-section {
                 padding: 2rem 0.8rem;
-                min-height: 80vh;
-                margin-top: 0.5rem;
+                min-height: 90vh;
             }
             .location-content {
                 gap: 0.8rem;
@@ -1712,20 +1782,19 @@
                 padding: 0.3rem 1rem;
                 font-size: 0.8rem;
             }
+
             .wishes-section {
                 min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 20vh;
+                max-height: 28vh;
             }
             .wishes-bg-top img {
-                width: 120%;
-                margin: 0 -10%;
-                max-height: 20vh;
+                max-height: 28vh;
             }
             .wishes-frame {
-                padding: 0.3rem 0.5rem 0.8rem 0.5rem;
+                padding: 0.8rem 0.5rem 2rem 0.5rem;
             }
             .wishes-content {
                 padding: 0.2rem;
@@ -1733,18 +1802,18 @@
             }
             .wishes-title {
                 font-size: 1.5rem;
-                margin-bottom: 0.4rem;
-                margin-top: 0.1rem;
+                margin-bottom: 1rem;
+                margin-top: 0.2rem;
             }
             .wishes-text .paragraph {
                 font-size: 0.85rem;
-                margin-bottom: 0.3rem;
+                margin-bottom: 0.4rem;
                 line-height: 1.5;
             }
+
             .dresscode-section {
                 min-height: 100vh;
                 padding: 2rem 0.8rem;
-                margin-top: 0.5rem;
             }
             .dresscode-content {
                 gap: 0.8rem;
@@ -1768,15 +1837,15 @@
                 max-width: 70%;
                 margin-top: 1rem;
             }
+
             .timer-section {
                 min-height: 40vh;
                 padding: 2rem 0.8rem;
-                margin-top: 0.5rem;
             }
             .timer-title {
                 font-size: 1.6rem;
                 white-space: normal;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
             .timer-container {
                 gap: 0.8rem;
@@ -1791,14 +1860,14 @@
             .timer-item .label {
                 font-size: 0.5rem;
             }
+
             .guest-section {
                 padding: 2rem 0.8rem;
-                min-height: 85vh;
-                margin-top: 0.5rem;
+                min-height: 90vh;
             }
             .guest-title {
                 font-size: 1.6rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 1rem;
             }
             .guest-deadline-top {
                 font-size: 0.9rem;
@@ -1827,10 +1896,10 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 1.1rem;
             }
+
             .contacts-section {
                 padding: 2rem 0.8rem 2.5rem 0.8rem;
                 min-height: 30vh;
-                margin-top: 0.5rem;
             }
             .contacts-title {
                 font-size: 1.6rem;
@@ -1860,12 +1929,32 @@
                 font-size: 2.8rem;
                 margin-top: 0.5rem;
             }
+
+            .section-padding {
+                padding: 5rem 3rem;
+            }
+            .section-padding-top {
+                padding-top: 5rem;
+            }
+            .section-padding-bottom {
+                padding-bottom: 5rem;
+            }
+
+            .section-title {
+                font-size: 3.5rem;
+                margin-bottom: 2rem;
+            }
+            .section-text {
+                font-size: 1.8rem;
+                line-height: 1.8;
+            }
+
             .text-section {
-                min-height: 110vh;
+                min-height: 100vh;
                 padding: 5rem 3rem 0 3rem;
             }
             .text-section .greeting {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
             .text-section .message {
                 font-size: 1.8rem;
@@ -1873,22 +1962,18 @@
             .text-section .message-bold {
                 font-size: 1.8rem;
             }
+
             .program-section {
-                min-height: 130vh;
+                min-height: 100vh;
                 padding: 5rem 3rem;
-                margin-top: 3rem;
-            }
-            .program-content {
-                padding-top: 5rem;
-                margin-top: 50px;
             }
             .program-title {
                 font-size: 3.5rem;
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
             }
             .program-list {
                 max-width: 700px;
-                gap: 3.5rem;
+                gap: 3rem;
             }
             .program-item .title {
                 font-size: 1.8rem;
@@ -1898,12 +1983,12 @@
             }
             .program-item .divider-line {
                 width: 80px;
-                margin-top: 2rem;
+                margin-top: 1.5rem;
             }
+
             .location-section {
-                min-height: 130vh;
+                min-height: 100vh;
                 padding: 5rem 3rem;
-                margin-top: 3rem;
             }
             .location-content {
                 gap: 1.5rem;
@@ -1921,22 +2006,21 @@
                 padding: 0.6rem 1.8rem;
                 font-size: 1.4rem;
             }
+
             .wishes-section {
                 min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 38vh;
+                max-height: 50vh;
             }
             .wishes-bg-top img {
-                width: 105%;
-                margin: 0 -2.5%;
-                max-height: 38vh;
+                max-height: 50vh;
             }
             .wishes-frame {
                 max-width: 850px;
-                margin: -2px auto 0 auto;
-                padding: 1rem 2.5rem 2rem 2.5rem;
+                margin: -4px auto 0 auto;
+                padding: 2.5rem 2.5rem 4rem 2.5rem;
             }
             .wishes-content {
                 padding: 0.5rem 1rem;
@@ -1944,17 +2028,17 @@
             }
             .wishes-title {
                 font-size: 3.5rem;
-                margin-bottom: 1.2rem;
-                margin-top: 0.2rem;
+                margin-bottom: 2rem;
+                margin-top: 0.8rem;
             }
             .wishes-text .paragraph {
                 font-size: 1.8rem;
                 margin-bottom: 0.8rem;
             }
+
             .dresscode-section {
-                min-height: 110vh;
+                min-height: 100vh;
                 padding: 5rem 3rem;
-                margin-top: 3rem;
             }
             .dresscode-content {
                 max-width: 700px;
@@ -1979,13 +2063,14 @@
                 max-width: 50%;
                 margin-top: 2rem;
             }
+
             .timer-section {
-                min-height: 60vh;
+                min-height: 50vh;
                 padding: 5rem 3rem;
-                margin-top: 3rem;
             }
             .timer-title {
                 font-size: 3.5rem;
+                margin-bottom: 2rem;
                 white-space: nowrap;
             }
             .timer-item {
@@ -1998,14 +2083,14 @@
             .timer-item .label {
                 font-size: 1.2rem;
             }
+
             .guest-section {
-                min-height: 110vh;
+                min-height: 100vh;
                 padding: 5rem 3rem;
-                margin-top: 3rem;
             }
             .guest-title {
                 font-size: 3.5rem;
-                margin-bottom: 0.8rem;
+                margin-bottom: 2rem;
             }
             .guest-deadline-top {
                 font-size: 1.8rem;
@@ -2032,10 +2117,10 @@
                 font-size: 2rem;
                 padding: 1.4rem 4rem;
             }
+
             .contacts-section {
                 min-height: 35vh;
                 padding: 4rem 3rem 5rem 3rem;
-                margin-top: 3rem;
             }
             .contacts-title {
                 font-size: 3.5rem;
