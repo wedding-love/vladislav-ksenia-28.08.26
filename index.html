@@ -162,49 +162,6 @@
             font-weight: 600;
             margin-top: 0.5rem;
         }
-
-        /* ===== ЕДИНЫЕ СТИЛИ ДЛЯ ВСЕХ БЛОКОВ ===== */
-        .section-padding {
-            padding: 4rem 2rem;
-        }
-        .section-padding-top {
-            padding-top: 4rem;
-        }
-        .section-padding-bottom {
-            padding-bottom: 4rem;
-        }
-
-        /* Единый размер заголовков */
-        .section-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Единый размер текста */
-        .section-text {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            font-family: 'Nunito', sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        .section-text strong,
-        .section-text b {
-            font-weight: 400;
-        }
-
-        .text-white {
-            color: #ffffff;
-        }
-        .text-dark {
-            color: #4a1a1a;
-        }
-
         .text-section {
             width: 100%;
             min-height: 110vh;
@@ -296,7 +253,6 @@
             margin: 0;
             padding: 0;
         }
-
         .program-section {
             width: 100%;
             flex-shrink: 0;
@@ -308,6 +264,7 @@
             justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
+            margin-top: 2rem;
         }
         .program-bg {
             position: absolute;
@@ -327,8 +284,8 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 1000px;
-            padding-top: 3rem;
-            margin-top: 30px;
+            padding-top: 4rem;
+            margin-top: 40px;
         }
         .program-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
@@ -416,7 +373,6 @@
         .program-item:last-child .divider-line {
             display: none;
         }
-
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -428,6 +384,7 @@
             justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
+            margin-top: 2rem;
         }
         .location-bg {
             position: absolute;
@@ -537,7 +494,6 @@
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
             overflow: hidden;
             background: #f2e8df;
             display: flex;
@@ -549,7 +505,7 @@
         }
         .wishes-bg-top {
             width: 100%;
-            max-height: 30vh;
+            max-height: 35vh;
             overflow: hidden;
             display: flex;
             align-items: flex-start;
@@ -560,13 +516,13 @@
             flex-shrink: 0;
         }
         .wishes-bg-top img {
-            width: 100%;
+            width: 110%;
             height: auto;
-            max-height: 30vh;
+            max-height: 35vh;
             object-fit: cover;
             object-position: top center;
             display: block;
-            margin: 0;
+            margin: 0 -5%;
             padding: 0;
         }
         .wishes-frame {
@@ -578,8 +534,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 1rem 1.5rem 3rem 1.5rem;
-            min-height: 40vh;
+            padding: 0.8rem 1.5rem 1.5rem 1.5rem;
             background: #f2e8df;
             z-index: 2;
         }
@@ -592,16 +547,15 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 90%;
-            padding: 0.5rem;
+            padding: 0.3rem 0.5rem;
             text-align: center;
-            min-height: 15vh;
         }
         .wishes-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
             margin-top: 0.2rem;
             opacity: 0;
             transform: translateY(20px);
@@ -622,7 +576,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.2rem;
             font-weight: 300;
             margin: 0 auto;
             width: 100%;
@@ -633,7 +587,7 @@
         }
         .wishes-text .paragraph {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             font-weight: 300;
             line-height: 1.7;
             word-wrap: break-word;
@@ -653,6 +607,7 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 50vh;
+            margin-top: 2rem;
         }
         .timer-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
@@ -754,6 +709,7 @@
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
+            margin-top: 2rem;
         }
         .dresscode-bg {
             position: absolute;
@@ -880,6 +836,7 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 100vh;
+            margin-top: 2rem;
         }
         .guest-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
@@ -1105,6 +1062,7 @@
             padding: 3rem 2rem 4rem 2rem;
             min-height: 40vh;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
         }
         .contacts-title {
             font-size: clamp(2.2rem, 3.5vw, 3.5rem);
@@ -1473,26 +1431,6 @@
                 font-size: clamp(1.2rem, 2.5vw, 1.8rem);
                 margin-top: 0.3rem;
             }
-
-            .section-padding {
-                padding: 2.5rem 1.2rem;
-            }
-            .section-padding-top {
-                padding-top: 2.5rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 2.5rem;
-            }
-
-            .section-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-                margin-bottom: 1.2rem;
-            }
-            .section-text {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
-                line-height: 1.6;
-            }
-
             .text-section {
                 padding: 2.5rem 1.2rem 0 1.2rem;
                 min-height: 100vh;
@@ -1510,14 +1448,14 @@
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.2rem;
             }
-
             .program-section {
                 padding: 2.5rem 1.2rem;
                 min-height: 100vh;
+                margin-top: 1rem;
             }
             .program-content {
                 padding-top: 2rem;
-                margin-top: 30px;
+                margin-top: 20px;
             }
             .program-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
@@ -1536,10 +1474,10 @@
                 width: 40px;
                 margin-top: 1.2rem;
             }
-
             .location-section {
                 padding: 2.5rem 1.2rem;
                 min-height: 90vh;
+                margin-top: 1rem;
             }
             .location-content {
                 gap: 1rem;
@@ -1557,20 +1495,20 @@
                 padding: 0.4rem 1.2rem;
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
-
             .wishes-section {
-                min-height: 90vh;
+                min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 20vh;
+                max-height: 25vh;
             }
             .wishes-bg-top img {
-                max-height: 20vh;
+                width: 115%;
+                margin: 0 -7.5%;
+                max-height: 25vh;
             }
             .wishes-frame {
-                padding: 0.5rem 0.8rem 2.5rem 0.8rem;
-                min-height: 35vh;
+                padding: 0.5rem 0.8rem 1rem 0.8rem;
             }
             .wishes-content {
                 padding: 0.3rem;
@@ -1578,18 +1516,18 @@
             }
             .wishes-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-                margin-bottom: 0.8rem;
+                margin-bottom: 0.6rem;
                 margin-top: 0.1rem;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
-                margin-bottom: 0.6rem;
+                margin-bottom: 0.5rem;
                 line-height: 1.6;
             }
-
             .dresscode-section {
                 min-height: 100vh;
                 padding: 2.5rem 1.2rem;
+                margin-top: 1rem;
             }
             .dresscode-content {
                 gap: 1rem;
@@ -1613,10 +1551,10 @@
                 max-width: 60%;
                 margin-top: 1.2rem;
             }
-
             .timer-section {
                 min-height: 45vh;
                 padding: 2.5rem 1.2rem;
+                margin-top: 1rem;
             }
             .timer-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
@@ -1636,10 +1574,10 @@
             .timer-item .label {
                 font-size: clamp(0.6rem, 1vw, 0.9rem);
             }
-
             .guest-section {
                 padding: 2.5rem 1.2rem;
                 min-height: 90vh;
+                margin-top: 1rem;
             }
             .guest-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
@@ -1673,10 +1611,10 @@
                 padding: 1rem 2.5rem;
                 font-size: clamp(1.1rem, 1.8vw, 1.4rem);
             }
-
             .contacts-section {
                 padding: 2.5rem 1.2rem 3.5rem 1.2rem;
                 min-height: 35vh;
+                margin-top: 1rem;
             }
             .contacts-title {
                 font-size: clamp(1.8rem, 3.2vw, 2.8rem);
@@ -1710,26 +1648,6 @@
                 font-size: 1.2rem;
                 margin-top: 0.2rem;
             }
-
-            .section-padding {
-                padding: 2rem 0.8rem;
-            }
-            .section-padding-top {
-                padding-top: 2rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 1rem;
-            }
-            .section-text {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
             .text-section {
                 padding: 2rem 0.8rem 0 0.8rem;
                 min-height: 90vh;
@@ -1747,14 +1665,14 @@
                 font-size: 0.9rem;
                 margin-bottom: 0.15rem;
             }
-
             .program-section {
                 padding: 2rem 0.8rem;
                 min-height: 90vh;
+                margin-top: 0.5rem;
             }
             .program-content {
                 padding-top: 1.5rem;
-                margin-top: 20px;
+                margin-top: 15px;
             }
             .program-title {
                 font-size: 1.6rem;
@@ -1773,10 +1691,10 @@
                 width: 30px;
                 margin-top: 1rem;
             }
-
             .location-section {
                 padding: 2rem 0.8rem;
                 min-height: 80vh;
+                margin-top: 0.5rem;
             }
             .location-content {
                 gap: 0.8rem;
@@ -1794,20 +1712,20 @@
                 padding: 0.3rem 1rem;
                 font-size: 0.8rem;
             }
-
             .wishes-section {
-                min-height: 85vh;
+                min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 18vh;
+                max-height: 20vh;
             }
             .wishes-bg-top img {
-                max-height: 18vh;
+                width: 120%;
+                margin: 0 -10%;
+                max-height: 20vh;
             }
             .wishes-frame {
-                padding: 0.3rem 0.5rem 2rem 0.5rem;
-                min-height: 30vh;
+                padding: 0.3rem 0.5rem 0.8rem 0.5rem;
             }
             .wishes-content {
                 padding: 0.2rem;
@@ -1815,18 +1733,18 @@
             }
             .wishes-title {
                 font-size: 1.5rem;
-                margin-bottom: 0.6rem;
+                margin-bottom: 0.4rem;
                 margin-top: 0.1rem;
             }
             .wishes-text .paragraph {
                 font-size: 0.85rem;
-                margin-bottom: 0.4rem;
+                margin-bottom: 0.3rem;
                 line-height: 1.5;
             }
-
             .dresscode-section {
                 min-height: 100vh;
                 padding: 2rem 0.8rem;
+                margin-top: 0.5rem;
             }
             .dresscode-content {
                 gap: 0.8rem;
@@ -1850,10 +1768,10 @@
                 max-width: 70%;
                 margin-top: 1rem;
             }
-
             .timer-section {
                 min-height: 40vh;
                 padding: 2rem 0.8rem;
+                margin-top: 0.5rem;
             }
             .timer-title {
                 font-size: 1.6rem;
@@ -1873,10 +1791,10 @@
             .timer-item .label {
                 font-size: 0.5rem;
             }
-
             .guest-section {
                 padding: 2rem 0.8rem;
                 min-height: 85vh;
+                margin-top: 0.5rem;
             }
             .guest-title {
                 font-size: 1.6rem;
@@ -1909,10 +1827,10 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 1.1rem;
             }
-
             .contacts-section {
                 padding: 2rem 0.8rem 2.5rem 0.8rem;
                 min-height: 30vh;
+                margin-top: 0.5rem;
             }
             .contacts-title {
                 font-size: 1.6rem;
@@ -1942,26 +1860,6 @@
                 font-size: 2.8rem;
                 margin-top: 0.5rem;
             }
-
-            .section-padding {
-                padding: 5rem 3rem;
-            }
-            .section-padding-top {
-                padding-top: 5rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 5rem;
-            }
-
-            .section-title {
-                font-size: 3.5rem;
-                margin-bottom: 2rem;
-            }
-            .section-text {
-                font-size: 1.8rem;
-                line-height: 1.8;
-            }
-
             .text-section {
                 min-height: 110vh;
                 padding: 5rem 3rem 0 3rem;
@@ -1975,13 +1873,13 @@
             .text-section .message-bold {
                 font-size: 1.8rem;
             }
-
             .program-section {
                 min-height: 130vh;
                 padding: 5rem 3rem;
+                margin-top: 3rem;
             }
             .program-content {
-                padding-top: 4rem;
+                padding-top: 5rem;
                 margin-top: 50px;
             }
             .program-title {
@@ -2002,10 +1900,10 @@
                 width: 80px;
                 margin-top: 2rem;
             }
-
             .location-section {
                 min-height: 130vh;
                 padding: 5rem 3rem;
+                margin-top: 3rem;
             }
             .location-content {
                 gap: 1.5rem;
@@ -2023,41 +1921,40 @@
                 padding: 0.6rem 1.8rem;
                 font-size: 1.4rem;
             }
-
             .wishes-section {
-                min-height: 100vh;
+                min-height: auto;
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 35vh;
+                max-height: 38vh;
             }
             .wishes-bg-top img {
-                max-height: 35vh;
+                width: 105%;
+                margin: 0 -2.5%;
+                max-height: 38vh;
             }
             .wishes-frame {
                 max-width: 850px;
                 margin: -2px auto 0 auto;
-                min-height: 40vh;
-                padding: 1.5rem 2.5rem 4rem 2.5rem;
+                padding: 1rem 2.5rem 2rem 2.5rem;
             }
             .wishes-content {
                 padding: 0.5rem 1rem;
                 max-width: 85%;
-                min-height: 20vh;
             }
             .wishes-title {
                 font-size: 3.5rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
                 margin-top: 0.2rem;
             }
             .wishes-text .paragraph {
                 font-size: 1.8rem;
                 margin-bottom: 0.8rem;
             }
-
             .dresscode-section {
                 min-height: 110vh;
                 padding: 5rem 3rem;
+                margin-top: 3rem;
             }
             .dresscode-content {
                 max-width: 700px;
@@ -2082,10 +1979,10 @@
                 max-width: 50%;
                 margin-top: 2rem;
             }
-
             .timer-section {
                 min-height: 60vh;
                 padding: 5rem 3rem;
+                margin-top: 3rem;
             }
             .timer-title {
                 font-size: 3.5rem;
@@ -2101,10 +1998,10 @@
             .timer-item .label {
                 font-size: 1.2rem;
             }
-
             .guest-section {
                 min-height: 110vh;
                 padding: 5rem 3rem;
+                margin-top: 3rem;
             }
             .guest-title {
                 font-size: 3.5rem;
@@ -2135,10 +2032,10 @@
                 font-size: 2rem;
                 padding: 1.4rem 4rem;
             }
-
             .contacts-section {
                 min-height: 35vh;
                 padding: 4rem 3rem 5rem 3rem;
+                margin-top: 3rem;
             }
             .contacts-title {
                 font-size: 3.5rem;
