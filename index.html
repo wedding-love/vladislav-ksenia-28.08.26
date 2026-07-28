@@ -486,13 +486,11 @@
         .location-btn:active {
             transform: scale(0.96);
         }
-
-        /* ===== БЛОК ПОЖЕЛАНИЙ (УВЕЛИЧЕН) ===== */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 150vh; /* Было 130vh */
+            min-height: 150vh;
             overflow: hidden;
             background: #f2e8df;
             display: flex;
@@ -511,7 +509,7 @@
             justify-content: center;
             flex: 1;
             padding: 0 1.5rem;
-            min-height: 80vh; /* Было 70vh */
+            min-height: 80vh;
         }
         .wishes-frame-bg {
             position: absolute;
@@ -519,7 +517,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Фон растягивается */
+            object-fit: contain;
             object-position: center;
             z-index: 0;
             pointer-events: none;
@@ -578,7 +576,6 @@
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
-
         .timer-section {
             width: 100%;
             flex-shrink: 0;
@@ -678,13 +675,17 @@
             transition-delay: 0.6s;
         }
 
-        /* ===== БЛОК ДРЕСС-КОД (УВЕЛИЧЕН) ===== */
+        /* ===== ДРЕСС-КОД ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 150vh; /* Было 130vh */
+            min-height: 150vh;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .dresscode-bg {
             position: absolute;
@@ -692,7 +693,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Фон растягивается */
+            object-fit: cover;
             object-position: center;
             z-index: 0;
         }
@@ -703,6 +704,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
             height: 100%;
             padding: 4rem 2rem;
             text-align: center;
@@ -715,8 +717,8 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-            margin-top: 1rem;
             font-weight: 700;
+            margin-top: 2rem;
         }
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
@@ -731,7 +733,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             font-weight: 300;
         }
         .dresscode-text .dc-paragraph {
@@ -789,7 +791,6 @@
             transform: translateY(0);
         }
 
-        /* ===== ОСТАЛЬНЫЕ СЕКЦИИ ===== */
         .guest-section {
             width: 100%;
             flex-shrink: 0;
@@ -1369,7 +1370,6 @@
             animation-delay: 0.04s;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -1461,12 +1461,12 @@
                 font-size: clamp(0.9rem, 1.4vw, 1.1rem);
             }
             .wishes-section {
-                min-height: 120vh; /* Уменьшено для мобильных */
+                min-height: 120vh;
             }
             .wishes-frame {
                 margin: 1rem auto;
                 padding: 0 0.8rem;
-                min-height: 60vh; /* Уменьшено для мобильных */
+                min-height: 60vh;
             }
             .wishes-content {
                 padding: 3rem 1rem;
@@ -1485,7 +1485,7 @@
                 margin-bottom: 0.8rem;
             }
             .dresscode-section {
-                min-height: 120vh; /* Уменьшено для мобильных */
+                min-height: 120vh;
             }
             .dresscode-bg {
                 left: 0;
@@ -1497,7 +1497,7 @@
             .dresscode-title {
                 font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1rem;
-                margin-top: 0.5rem;
+                margin-top: 1rem;
             }
             .dresscode-text {
                 font-size: clamp(1rem, 2vw, 1.4rem);
@@ -1718,7 +1718,7 @@
             .dresscode-title {
                 font-size: 1.8rem;
                 margin-bottom: 0.8rem;
-                margin-top: 0.3rem;
+                margin-top: 0.5rem;
             }
             .dresscode-text {
                 font-size: 0.9rem;
@@ -1926,13 +1926,13 @@
             }
             .dresscode-title {
                 font-size: 4.5rem;
-                margin-top: 1.5rem;
+                margin-top: 2rem;
             }
             .dresscode-text {
                 font-size: 1.8rem;
                 max-width: 70%;
                 transform: translateY(30px);
-                margin-top: 0.5rem;
+                margin-top: 1rem;
             }
             .dresscode-section.visible .dresscode-text {
                 transform: translateY(0);
@@ -2018,14 +2018,12 @@
 <body>
     <div class="screen-container">
 
-        <!-- ПЕРВЫЙ ЭКРАН -->
         <div id="firstScreen" class="screen">
             <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
             <audio id="bgMusic" src="Elodie_-_Niente_Canzoni_DAmore_68249488.mp3" preload="auto"></audio>
         </div>
 
-        <!-- СЛОЙ С ТОЧКАМИ -->
         <div id="dotsLayer">
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -2043,7 +2041,6 @@
             <div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
 
-        <!-- ВТОРОЙ ЭКРАН -->
         <div id="secondScreen" class="screen">
 
             <div class="second-bg">
@@ -2105,7 +2102,6 @@
                 </div>
             </div>
 
-            <!-- БЛОК ПОЖЕЛАНИЯ С РАМКОЙ -->
             <div class="wishes-section" id="wishesSection">
                 <div class="wishes-frame">
                     <img class="wishes-frame-bg" src="0bda8176-444c-4a7a-b888-4658d78aea96_removalai_preview.png" alt="рамка" />
@@ -2143,7 +2139,6 @@
                 </div>
             </div>
 
-            <!-- БЛОК ДРЕСС-КОД -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="image_2026-07-27_20-28-21.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
