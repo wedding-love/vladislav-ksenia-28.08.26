@@ -164,27 +164,15 @@
         }
 
         /* ===== ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ БЛОКОВ ===== */
-        .section-padding {
-            padding: 4rem 2rem;
-        }
-        .section-padding-top {
-            padding-top: 4rem;
-        }
-        .section-padding-bottom {
-            padding-bottom: 4rem;
-        }
-
-        /* Единый размер заголовков — одинаковый во всех блоках */
         .section-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-align: center;
             margin-bottom: 1.8rem;
         }
 
-        /* Единый размер текста — одинаковый во всех блоках */
         .section-text {
             font-size: clamp(1.2rem, 1.8vw, 1.8rem);
             font-family: 'Nunito', sans-serif;
@@ -305,7 +293,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             padding: 4rem 2rem;
             overflow: hidden;
             background: #4a1a1a;
@@ -318,7 +306,6 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.85;
         }
         .program-content {
             position: relative;
@@ -326,16 +313,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             width: 100%;
             max-width: 1000px;
+            padding: 2rem 0;
         }
         .program-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-weight: 700;
             margin-bottom: 1.8rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-align: center;
             width: 100%;
             opacity: 0;
@@ -456,10 +444,10 @@
             gap: 1.2rem;
         }
         .location-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin: 0;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
@@ -593,7 +581,7 @@
             text-align: center;
         }
         .wishes-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
@@ -604,6 +592,7 @@
             transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
             width: 100%;
             font-weight: 700;
+            letter-spacing: 0.08em;
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -651,12 +640,12 @@
             min-height: 50vh;
         }
         .timer-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
             margin-bottom: 1.8rem;
             text-align: center;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             white-space: nowrap;
             opacity: 0;
             transform: translateY(30px);
@@ -778,11 +767,11 @@
             gap: 1.2rem;
         }
         .dresscode-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #4a1a1a;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin: 0;
             opacity: 0;
             transform: translateY(30px);
@@ -878,12 +867,12 @@
             min-height: 100vh;
         }
         .guest-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
             margin-bottom: 1.8rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
@@ -1105,12 +1094,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .contacts-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+            font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             color: #ffffff;
             font-family: 'Cormorant Garamond', serif;
             text-align: center;
             margin-bottom: 1.8rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
@@ -1473,18 +1462,8 @@
                 margin-top: 0.3rem;
             }
 
-            .section-padding {
-                padding: 2.5rem 1.2rem;
-            }
-            .section-padding-top {
-                padding-top: 2.5rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 2.5rem;
-            }
-
             .section-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
             }
             .section-text {
@@ -1514,7 +1493,7 @@
                 min-height: 100vh;
             }
             .program-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
             }
             .program-list {
@@ -1539,7 +1518,7 @@
                 gap: 1rem;
             }
             .location-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
             }
             .location-name {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
@@ -1570,7 +1549,7 @@
                 max-width: 95%;
             }
             .wishes-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
                 margin-top: 0.3rem;
             }
@@ -1588,11 +1567,15 @@
                 gap: 1rem;
             }
             .dresscode-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
             }
             .dresscode-text {
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
+                font-size: clamp(1.1rem, 1.8vw, 1.6rem);
                 max-width: 90%;
+                line-height: 1.6;
+            }
+            .dresscode-text .dc-paragraph {
+                margin-bottom: 0.6rem;
             }
             .dresscode-palette {
                 gap: 0.8rem;
@@ -1612,7 +1595,7 @@
                 padding: 2.5rem 1.2rem;
             }
             .timer-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 white-space: normal;
                 margin-bottom: 1.2rem;
             }
@@ -1635,7 +1618,7 @@
                 min-height: 100vh;
             }
             .guest-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
             }
             .guest-deadline-top {
@@ -1672,7 +1655,7 @@
                 min-height: 35vh;
             }
             .contacts-title {
-                font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+                font-size: clamp(2rem, 4vw, 3rem);
                 margin-bottom: 1.2rem;
             }
             .contacts-info .contact-item {
@@ -1704,18 +1687,8 @@
                 margin-top: 0.2rem;
             }
 
-            .section-padding {
-                padding: 2rem 0.8rem;
-            }
-            .section-padding-top {
-                padding-top: 2rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 2rem;
-            }
-
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-bottom: 1rem;
             }
             .section-text {
@@ -1745,7 +1718,7 @@
                 min-height: 90vh;
             }
             .program-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-bottom: 1rem;
             }
             .program-list {
@@ -1770,7 +1743,7 @@
                 gap: 0.8rem;
             }
             .location-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             .location-name {
                 font-size: 0.9rem;
@@ -1801,7 +1774,7 @@
                 max-width: 98%;
             }
             .wishes-title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 margin-bottom: 1rem;
                 margin-top: 0.2rem;
             }
@@ -1819,11 +1792,15 @@
                 gap: 0.8rem;
             }
             .dresscode-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             .dresscode-text {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 max-width: 95%;
+                line-height: 1.5;
+            }
+            .dresscode-text .dc-paragraph {
+                margin-bottom: 0.5rem;
             }
             .dresscode-palette {
                 gap: 0.6rem;
@@ -1843,7 +1820,7 @@
                 padding: 2rem 0.8rem;
             }
             .timer-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 white-space: normal;
                 margin-bottom: 1rem;
             }
@@ -1866,7 +1843,7 @@
                 min-height: 90vh;
             }
             .guest-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-bottom: 1rem;
             }
             .guest-deadline-top {
@@ -1902,7 +1879,7 @@
                 min-height: 30vh;
             }
             .contacts-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-bottom: 1rem;
             }
             .contacts-info .contact-item {
@@ -1930,18 +1907,8 @@
                 margin-top: 0.5rem;
             }
 
-            .section-padding {
-                padding: 5rem 3rem;
-            }
-            .section-padding-top {
-                padding-top: 5rem;
-            }
-            .section-padding-bottom {
-                padding-bottom: 5rem;
-            }
-
             .section-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
             }
             .section-text {
@@ -1968,7 +1935,7 @@
                 padding: 5rem 3rem;
             }
             .program-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
             }
             .program-list {
@@ -1994,7 +1961,7 @@
                 gap: 1.5rem;
             }
             .location-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
             }
             .location-name {
                 font-size: 1.8rem;
@@ -2027,7 +1994,7 @@
                 max-width: 85%;
             }
             .wishes-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
                 margin-top: 0.8rem;
             }
@@ -2045,7 +2012,7 @@
                 gap: 1.5rem;
             }
             .dresscode-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
             }
             .dresscode-text {
                 font-size: 1.8rem;
@@ -2069,7 +2036,7 @@
                 padding: 5rem 3rem;
             }
             .timer-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
                 white-space: nowrap;
             }
@@ -2089,7 +2056,7 @@
                 padding: 5rem 3rem;
             }
             .guest-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
             }
             .guest-deadline-top {
@@ -2123,7 +2090,7 @@
                 padding: 4rem 3rem 5rem 3rem;
             }
             .contacts-title {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 margin-bottom: 2rem;
             }
             .contacts-info .contact-item {
