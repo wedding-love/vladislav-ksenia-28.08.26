@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,6 +6,7 @@
     <title>Приглашение</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
+        /* Стили остались без изменений */
         * {
             margin: 0;
             padding: 0;
@@ -164,7 +164,6 @@
             margin-top: 0.5rem;
         }
 
-        /* ===== ЕДИНЫЕ СТИЛИ ДЛЯ ВСЕХ БЛОКОВ ===== */
         .section-title {
             font-size: clamp(2.5rem, 4.5vw, 4.5rem);
             font-family: 'Cormorant Garamond', serif;
@@ -194,7 +193,6 @@
             color: #4a1a1a;
         }
 
-        /* ===== ПЕРВЫЙ БЛОК С ТЕКСТОМ ===== */
         .text-section {
             width: 100%;
             min-height: 100vh;
@@ -239,7 +237,6 @@
             transition-delay: 0.7s;
         }
         .text-section .greeting {
-            /* уже имеет section-title, но дополнительно можно задать цвет */
             color: #ffffff;
             margin-bottom: 0.2rem;
         }
@@ -272,7 +269,6 @@
             padding: 0;
         }
 
-        /* ===== ПРОГРАММА ДНЯ ===== */
         .program-section {
             width: 100%;
             flex-shrink: 0;
@@ -382,7 +378,6 @@
             display: none;
         }
 
-        /* ===== ЛОКАЦИЯ ===== */
         .location-section {
             width: 100%;
             flex-shrink: 0;
@@ -486,7 +481,6 @@
             transform: scale(0.96);
         }
 
-        /* ===== ПОЖЕЛАНИЯ ===== */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
@@ -573,14 +567,12 @@
             transform: translateY(0);
         }
         .wishes-text .paragraph {
-            /* использует section-text */
             margin-bottom: 0.8rem;
         }
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
         }
 
-        /* ===== ТАЙМЕР ===== */
         .timer-section {
             width: 100%;
             flex-shrink: 0;
@@ -675,7 +667,6 @@
             transition-delay: 0.6s;
         }
 
-        /* ===== ДРЕСС-КОД ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -791,7 +782,6 @@
             transform: translateY(0);
         }
 
-        /* ===== АНКЕТА ===== */
         .guest-section {
             width: 100%;
             flex-shrink: 0;
@@ -1009,7 +999,6 @@
             transform: scale(0.96);
         }
 
-        /* ===== КОНТАКТЫ ===== */
         .contacts-section {
             width: 100%;
             flex-shrink: 0;
@@ -1357,7 +1346,6 @@
             animation-delay: 0.04s;
         }
 
-        /* ===== АДАПТИВНОСТЬ ===== */
         @media (max-width: 600px) {
             .circle-btn {
                 width: 140px;
@@ -2009,7 +1997,8 @@
         <div id="firstScreen" class="screen">
             <img class="main-bg-first" src="главная.png" alt="фон" />
             <button class="circle-btn" id="fadeBtn" aria-label="Перейти"></button>
-            <audio id="bgMusic" src="Elodie_-_Niente_Canzoni_DAmore_68249488.mp3" preload="auto"></audio>
+            <!-- Изменен путь к аудиофайлу -->
+            <audio id="bgMusic" src="Spokojjnaya_fonovaya_muzyka_onovaya_muzyka_Muzyka_dlya_sna_Rasslablyayushhaya_Muzyka_dlya_Sna_Spokojjnaya_muzyka_dlya_sna_-_Muzyka_dlya_garmonii_i_ljogkogo_vechernego_otdykha_80052187.mp3" preload="auto"></audio>
         </div>
 
         <div id="dotsLayer">
@@ -2042,11 +2031,11 @@
                 </div>
             </div>
 
-            <!-- БЛОК 1: ПЕРВЫЙ ТЕКСТ -->
+            <!-- БЛОК 1: ПЕРВЫЙ ТЕКСТ - изменен текст -->
             <div class="text-section" id="textSection">
-                <div class="greeting section-title">Дорогие родные и друзья!</div>
-                <div class="message section-text">Приглашаем вас разделить с нами радость этого дня, наполненного светом, теплом и искренней любовью.</div>
-                <div class="message-bold section-text">Пусть каждый миг этого вечера останется в ваших сердцах тёплым воспоминанием, а наша любовь вдохновляет вас на самые светлые чувства.</div>
+                <div class="greeting section-title">Дорогие близкие и друзья!</div>
+                <div class="message section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
+                <div class="message-bold section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит ее открыть? (Например: «Для первого совместного отпуска»).</div>
                 <div class="calendar-img">
                     <img src="IMG_8833.PNG" alt="календарь" />
                 </div>
@@ -2093,16 +2082,17 @@
                 </div>
             </div>
 
-            <!-- БЛОК 4: ПОЖЕЛАНИЯ -->
+            <!-- БЛОК 4: ПОЖЕЛАНИЯ - изменен фон и первый абзац -->
             <div class="wishes-section" id="wishesSection">
                 <div class="wishes-bg-top">
-                    <img src="ea124cc0-31a6-48df-ae23-6955d82902a9 (1).png" alt="фон пожеланий" />
+                    <img src="photo_2026-08-01_09-45-43.jpg" alt="фон пожеланий" />
                 </div>
                 <div class="wishes-frame">
                     <div class="wishes-content">
                         <div class="wishes-title section-title">Пожелания</div>
                         <div class="wishes-text">
-                            <div class="paragraph section-text">Дорогие гости!</div>
+                            <!-- Изменен первый абзац -->
+                            <div class="paragraph section-text">Дорогие близкие и друзья! Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
                             <div class="paragraph section-text">Мы предлагаем вам стать частью нашей коллекции вин. Каждая бутылка, подаренная вами, будет хранить особый смысл — мы просим прикрепить бирку с указанием важного момента в нашей жизни, когда её следует открыть: отпуск, годовщина, рождение ребёнка или любое другое знаковое событие. Так мы соберём целую коллекцию воспоминаний, которые будем бережно хранить и открывать в самые тёплые моменты.</div>
                             <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
                             <div class="paragraph section-text">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
