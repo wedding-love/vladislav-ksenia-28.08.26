@@ -418,7 +418,9 @@
             backdrop-filter: blur(4px);
             border-radius: 12px;
             gap: 1.2rem;
-            border: none; /* Убрали обводку */
+            border: none;
+            outline: none;
+            box-shadow: none;
         }
         .location-title {
             color: #ffffff;
@@ -472,6 +474,8 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.8s, transform 1s ease 0.8s, background 0.3s ease, color 0.3s ease;
+            box-shadow: none;
+            outline: none;
         }
         .location-section.visible .location-btn {
             opacity: 1;
@@ -2076,8 +2080,7 @@
                 <div class="wishes-content">
                     <div class="wishes-title section-title">Пожелания</div>
                     <div class="wishes-text">
-                        <div class="paragraph section-text">Дорогие близкие и друзья!</div>
-                        <div class="paragraph section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
+                        <div class="paragraph section-text">Дорогие близкие и друзья! Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
                         <div class="paragraph section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит её открыть? (Например: «Для первого совместного отпуска»).</div>
                         <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                         <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
