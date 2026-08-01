@@ -497,21 +497,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
             min-height: 100vh;
-            background-color: #f5f0eb;
         }
         .wishes-bg {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            object-fit: none;
+            object-fit: cover;
             z-index: 0;
+            background-color: #f5f0eb;
+        }
+        /* Для узких экранов используем другое фото */
+        @media (max-width: 600px) {
+            .wishes-bg {
+                content: url('photo_2026-08-01_09-43-53.jpg');
+                object-fit: cover;
+            }
         }
         .wishes-content {
             position: relative;
@@ -519,12 +525,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             text-align: center;
             max-width: 700px;
             width: 100%;
             padding: 2rem 1.5rem;
             gap: 1.2rem;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
         }
         .wishes-title {
             color: #4a1a1a;
@@ -555,7 +564,7 @@
             transform: translateY(0);
         }
         .wishes-text .paragraph {
-            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
             max-width: 85%;
             margin-left: auto;
             margin-right: auto;
@@ -1440,6 +1449,10 @@
                 padding: 2.5rem 1.2rem;
                 min-height: 100vh;
             }
+            .wishes-bg {
+                content: url('photo_2026-08-01_09-43-53.jpg');
+                object-fit: cover;
+            }
             .wishes-content {
                 padding: 1.5rem 1rem;
                 max-width: 100%;
@@ -1657,6 +1670,10 @@
             .wishes-section {
                 padding: 2rem 0.8rem;
                 min-height: 90vh;
+            }
+            .wishes-bg {
+                content: url('photo_2026-08-01_09-43-53.jpg');
+                object-fit: cover;
             }
             .wishes-content {
                 padding: 1rem 0.8rem;
