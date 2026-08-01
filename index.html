@@ -508,7 +508,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             z-index: 0;
             background-color: #f5f0eb;
         }
@@ -535,6 +535,7 @@
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
             text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
+            font-size: clamp(2.2rem, 4vw, 4rem);
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -557,11 +558,11 @@
         }
         .wishes-text .paragraph {
             text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
-            max-width: 78%;
+            max-width: 85%;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.8;
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            font-size: clamp(1rem, 1.8vw, 1.8rem);
             font-family: 'Nunito', sans-serif;
             font-weight: 300;
         }
@@ -1454,7 +1455,7 @@
             }
             .wishes-text .paragraph {
                 max-width: 85%;
-                font-size: clamp(1rem, 1.6vw, 1.4rem);
+                font-size: clamp(0.9rem, 1.6vw, 1.2rem);
                 line-height: 1.6;
             }
 
@@ -1671,7 +1672,7 @@
             }
             .wishes-text .paragraph {
                 max-width: 92%;
-                font-size: 0.9rem;
+                font-size: 0.8rem;
                 line-height: 1.5;
             }
 
