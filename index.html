@@ -485,19 +485,18 @@
             transform: scale(0.96);
         }
 
-        /* ===== БЛОК 4: ПОЖЕЛАНИЯ ===== */
+        /* ===== БЛОК 4: ПОЖЕЛАНИЯ (БЕЗ ПОДЛОЖКИ, ФОН ПОД ТЕКСТ) ===== */
         .wishes-section {
             width: 100%;
             flex-shrink: 0;
             position: relative;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             padding: 4rem 2rem;
             overflow: hidden;
-            background: #f2e8df;
+            min-height: 100vh;
         }
         .wishes-bg {
             position: absolute;
@@ -519,10 +518,10 @@
             max-width: 700px;
             width: 100%;
             padding: 2rem 1.5rem;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(4px);
-            border-radius: 12px;
             gap: 1.2rem;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
         }
         .wishes-title {
             color: #4a1a1a;
@@ -530,6 +529,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
         }
         .wishes-section.visible .wishes-title {
             opacity: 1;
@@ -549,6 +549,10 @@
         }
         .wishes-text .paragraph {
             margin-bottom: 0.8rem;
+            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
         }
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
@@ -649,7 +653,7 @@
             transition-delay: 0.6s;
         }
 
-        /* ===== БЛОК 6: ДРЕСС-КОД ===== */
+        /* ===== БЛОК 6: ДРЕСС-КОД (БЕЗ ПОДЛОЖКИ) ===== */
         .dresscode-section {
             width: 100%;
             flex-shrink: 0;
@@ -684,9 +688,9 @@
             width: 100%;
             padding: 2rem 1.5rem;
             gap: 1.2rem;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(4px);
-            border-radius: 12px;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
         }
         .dresscode-title {
             color: #4a1a1a;
@@ -694,6 +698,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
         }
         .dresscode-section.visible .dresscode-title {
             opacity: 1;
@@ -705,6 +710,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
         }
         .dresscode-section.visible .dresscode-text {
             opacity: 1;
@@ -1434,12 +1440,12 @@
             }
             .wishes-title {
                 font-size: clamp(2rem, 4vw, 3rem);
-                margin-bottom: 0;
             }
             .wishes-text .paragraph {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.6rem;
                 line-height: 1.6;
+                max-width: 98%;
             }
 
             .dresscode-section {
@@ -1649,12 +1655,12 @@
             }
             .wishes-title {
                 font-size: 1.8rem;
-                margin-bottom: 0;
             }
             .wishes-text .paragraph {
                 font-size: 0.85rem;
                 margin-bottom: 0.4rem;
                 line-height: 1.5;
+                max-width: 100%;
             }
 
             .dresscode-section {
@@ -1856,11 +1862,11 @@
             }
             .wishes-title {
                 font-size: 4.5rem;
-                margin-bottom: 0;
             }
             .wishes-text .paragraph {
                 font-size: 1.8rem;
                 margin-bottom: 0.8rem;
+                max-width: 90%;
             }
 
             .dresscode-section {
@@ -2054,13 +2060,16 @@
                 </div>
             </div>
 
-            <!-- БЛОК 4: ПОЖЕЛАНИЯ -->
+            <!-- БЛОК 4: ПОЖЕЛАНИЯ (БЕЗ ПОДЛОЖКИ, ФОН ПОД ТЕКСТ) -->
             <div class="wishes-section" id="wishesSection">
                 <img class="wishes-bg" src="photo_2026-08-01_09-45-43.jpg" alt="фон пожеланий" />
                 <div class="wishes-content">
                     <div class="wishes-title section-title">Пожелания</div>
                     <div class="wishes-text">
-                        <div class="paragraph section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго. Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит ее открыть? (Например: «Для первого совместного отпуска»).</div>
+                        <div class="paragraph section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам.</div>
+                        <div class="paragraph section-text">Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
+                        <div class="paragraph section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина.</div>
+                        <div class="paragraph section-text">Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит ее открыть? (Например: «Для первого совместного отпуска»).</div>
                         <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                         <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
                         <div class="paragraph section-text">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
@@ -2091,7 +2100,7 @@
                 </div>
             </div>
 
-            <!-- БЛОК 6: ДРЕСС-КОД -->
+            <!-- БЛОК 6: ДРЕСС-КОД (БЕЗ ПОДЛОЖКИ) -->
             <div class="dresscode-section" id="dresscodeSection">
                 <img class="dresscode-bg" src="image_2026-07-28_13-22-36.png" alt="фон дресс-код" />
                 <div class="dresscode-content">
