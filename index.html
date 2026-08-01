@@ -494,7 +494,7 @@
         }
         .wishes-bg-top {
             width: 100%;
-            max-height: 45vh;
+            max-height: 50vh;
             overflow: hidden;
             display: flex;
             align-items: flex-start;
@@ -507,7 +507,7 @@
         .wishes-bg-top img {
             width: 100%;
             height: auto;
-            max-height: 45vh;
+            max-height: 50vh;
             object-fit: cover;
             object-position: top center;
             display: block;
@@ -570,6 +570,11 @@
         }
         .wishes-text .paragraph:last-child {
             margin-bottom: 0;
+        }
+        /* Строго одна строка для обращения */
+        .wishes-text .paragraph-greeting {
+            margin-bottom: 0.8rem;
+            white-space: nowrap;
         }
 
         .timer-section {
@@ -1437,10 +1442,10 @@
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 35vh;
+                max-height: 40vh;
             }
             .wishes-bg-top img {
-                max-height: 35vh;
+                max-height: 40vh;
             }
             .wishes-frame {
                 padding: 1.2rem 0.8rem 2.5rem 0.8rem;
@@ -1454,7 +1459,8 @@
                 margin-bottom: 1.2rem;
                 margin-top: 0.3rem;
             }
-            .wishes-text .paragraph {
+            .wishes-text .paragraph,
+            .wishes-text .paragraph-greeting {
                 font-size: clamp(1rem, 1.6vw, 1.4rem);
                 margin-bottom: 0.6rem;
                 line-height: 1.6;
@@ -1658,10 +1664,10 @@
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 28vh;
+                max-height: 30vh;
             }
             .wishes-bg-top img {
-                max-height: 28vh;
+                max-height: 30vh;
             }
             .wishes-frame {
                 padding: 0.8rem 0.5rem 2rem 0.5rem;
@@ -1675,7 +1681,8 @@
                 margin-bottom: 1rem;
                 margin-top: 0.2rem;
             }
-            .wishes-text .paragraph {
+            .wishes-text .paragraph,
+            .wishes-text .paragraph-greeting {
                 font-size: 0.85rem;
                 margin-bottom: 0.4rem;
                 line-height: 1.5;
@@ -1870,10 +1877,10 @@
                 padding: 0;
             }
             .wishes-bg-top {
-                max-height: 50vh;
+                max-height: 55vh;
             }
             .wishes-bg-top img {
-                max-height: 50vh;
+                max-height: 55vh;
             }
             .wishes-frame {
                 max-width: 850px;
@@ -1889,7 +1896,8 @@
                 margin-bottom: 2rem;
                 margin-top: 0.8rem;
             }
-            .wishes-text .paragraph {
+            .wishes-text .paragraph,
+            .wishes-text .paragraph-greeting {
                 font-size: 1.8rem;
                 margin-bottom: 0.8rem;
             }
@@ -2080,7 +2088,7 @@
                 </div>
             </div>
 
-            <!-- БЛОК 4: ПОЖЕЛАНИЯ - изменен текст и фон -->
+            <!-- БЛОК 4: ПОЖЕЛАНИЯ -->
             <div class="wishes-section" id="wishesSection">
                 <div class="wishes-bg-top">
                     <img src="photo_2026-08-01_09-45-43.jpg" alt="фон пожеланий" />
@@ -2089,7 +2097,7 @@
                     <div class="wishes-content">
                         <div class="wishes-title section-title">Пожелания</div>
                         <div class="wishes-text">
-                            <div class="paragraph section-text">Дорогие близкие и друзья!</div>
+                            <div class="paragraph-greeting section-text">Дорогие близкие и друзья!</div>
                             <div class="paragraph section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго. Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит ее открыть? (Например: «Для первого совместного отпуска»).</div>
                             <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                             <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
