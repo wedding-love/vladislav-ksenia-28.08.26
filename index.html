@@ -414,17 +414,17 @@
             max-width: 700px;
             width: 100%;
             padding: 2rem 1.5rem;
-            background: rgba(74, 26, 26, 0.5);
-            backdrop-filter: blur(4px);
-            border-radius: 12px;
-            gap: 1.2rem;
+            background: transparent;
+            backdrop-filter: none;
             border: none;
             outline: none;
             box-shadow: none;
+            border-radius: 0;
+            gap: 1.2rem;
         }
         .location-title {
             color: #ffffff;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             margin: 0;
             opacity: 0;
             transform: translateY(30px);
@@ -437,7 +437,7 @@
         .location-name,
         .location-address {
             color: #ffffff;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease, transform 1s ease;
@@ -2080,8 +2080,9 @@
                 <div class="wishes-content">
                     <div class="wishes-title section-title">Пожелания</div>
                     <div class="wishes-text">
-                        <div class="paragraph section-text">Дорогие близкие и друзья! Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
-                        <div class="paragraph section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит её открыть? (Например: «Для первого совместного отпуска»).</div>
+                        <div class="paragraph section-text">Дорогие близкие и друзья!</div>
+                                               <div class="paragraph section-text">Дорогие близкие и друзья! Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.
+Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит её открыть? (Например: «Для первого совместного отпуска»).</div>
                         <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                         <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
                         <div class="paragraph section-text">Пусть этот день будет наполнен только приятными эмоциями и теплом — берегите себя, мы вас очень любим.</div>
@@ -2216,6 +2217,14 @@
             const fadeBtn = document.getElementById('fadeBtn');
             const bgMusic = document.getElementById('bgMusic');
             const dots = document.querySelectorAll('#dotsLayer .dot');
+
+            // Зацикливание музыки
+            bgMusic.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play().catch(function(error) {
+                    console.log('Не удалось перезапустить музыку:', error);
+                });
+            });
 
             let isTransitioning = false;
             let dotsActivated = false;
