@@ -798,6 +798,7 @@
             justify-content: center;
             padding: 4rem 2rem;
             min-height: 100vh;
+            position: relative;
         }
         .guest-title {
             color: #ffffff;
@@ -1003,6 +1004,38 @@
         }
         .submit-btn:active {
             transform: scale(0.96);
+        }
+
+        /* Стили для всплывающего сообщения */
+        .form-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #4a1a1a;
+            color: #ffffff;
+            padding: 1.5rem 3rem;
+            border-radius: 12px;
+            font-family: 'Nunito', sans-serif;
+            font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInOut 0.5s ease;
+            max-width: 90%;
+        }
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
         /* ===== БЛОК 8: КОНТАКТЫ ===== */
@@ -2140,7 +2173,7 @@
                         <div class="paragraph section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит её открыть? (Например: «Для первого совместного отпуска»).</div>
                         <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                         <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
-                        <div class="paragraph section-text">Пусть этот день будет наполнен<br> приятными эмоциями и теплом.</br></div>
+                        <div class="paragraph section-text">Пусть этот день будет наполнен<br>только приятными, эмоциями и теплом.</div>
                         <div class="paragraph section-text">Берегите себя,<br>мы вас очень любим!</div>
                     </div>
                 </div>
@@ -2201,7 +2234,7 @@
                 <div class="guest-deadline-top section-text">
                     Подтвердите присутствие до <strong>12.08.2026</strong>
                 </div>
-                <form class="guest-form" action="https://formspree.io/f/mwvgnowr" method="POST">
+                <form class="guest-form" id="guestForm" action="https://formspree.io/f/mwvgnowr" method="POST">
                     <div class="form-group">
                         <label>Ваше имя и фамилия</label>
                         <input type="text" name="name" placeholder="Например: Анна Иванова" required />
@@ -2281,6 +2314,26 @@
                 this.play().catch(function(error) {
                     console.log('Не удалось перезапустить музыку:', error);
                 });
+            });
+
+            // Обработка отправки формы без перезагрузки
+            const form = document.getElementById('guestForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Очищаем форму
+                this.reset();
+
+                // Создаём и показываем сообщение
+                const message = document.createElement('div');
+                message.className = 'form-message';
+                message.textContent = 'Спасибо! Ваш ответ получен.';
+                document.body.appendChild(message);
+
+                // Через 5 секунд удаляем сообщение
+                setTimeout(() => {
+                    message.remove();
+                }, 5000);
             });
 
             let isTransitioning = false;
