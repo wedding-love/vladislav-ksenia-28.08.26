@@ -1,3 +1,24 @@
+Я немного обрезал фоновое фото в блоке «Пожелания» сверху, чтобы на более узких экранах (например, iPhone 12 Pro) фото не растягивалось и текст не выходил за пределы блока. Теперь фото центрировано и обрезано ровно настолько, чтобы сохранить композицию.
+
+```css
+/* ===== БЛОК 4: ПОЖЕЛАНИЯ ===== */
+.wishes-bg {
+    position: absolute;
+    top: -8%; /* Чуть больше обрезаем сверху */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 115%; /* Немного увеличиваем высоту для заполнения */
+    object-fit: cover;
+    object-position: center top; /* Фокусируемся на центре сверху */
+    z-index: 0;
+    pointer-events: none;
+}
+```
+
+Вот полный код с этим изменением:
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -505,12 +526,13 @@
         }
         .wishes-bg {
             position: absolute;
-            top: -5%;
+            top: -8%;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            height: 110%;
+            height: 115%;
             object-fit: cover;
+            object-position: center top;
             z-index: 0;
             pointer-events: none;
         }
@@ -1449,12 +1471,13 @@
                 background-color: #f2e7de;
             }
             .wishes-bg {
-                top: -5%;
+                top: -8%;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 100%;
-                height: 110%;
+                height: 115%;
                 object-fit: cover;
+                object-position: center top;
             }
             .wishes-content {
                 padding: 1.5rem 1rem;
@@ -1680,12 +1703,13 @@
                 background-color: #f2e7de;
             }
             .wishes-bg {
-                top: -5%;
+                top: -8%;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 100%;
-                height: 110%;
+                height: 115%;
                 object-fit: cover;
+                object-position: center top;
             }
             .wishes-content {
                 padding: 1rem 0.8rem;
@@ -1901,12 +1925,13 @@
                 background-color: #f2e7de;
             }
             .wishes-bg {
-                top: -5%;
+                top: -8%;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 100%;
-                height: 110%;
+                height: 115%;
                 object-fit: cover;
+                object-position: center top;
             }
             .wishes-content {
                 padding: 2.5rem 2rem;
@@ -2128,7 +2153,7 @@
                     <div class="wishes-title section-title">Пожелания</div>
                     <div class="wishes-text">
                         <div class="paragraph section-text">Дорогие близкие и друзья!</div>
-                        <div class="paragraph section-text">Мы будем бесконечно рады вашим улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
+                        <div class="paragraph section-text">Мы будем бесконечно рады вашим<br>улыбкам и теплым словам. Часто на свадьбу дарят цветы, но они быстро вянут, а нам хочется сохранить частичку вашего внимания надолго.</div>
                         <div class="paragraph section-text">Если вы захотите порадовать нас подарком, мы будем счастливы, если вместо букета вы выберете бутылочку вина. Прикрепите к ней небольшую бирку с пожеланием: когда нам стоит её открыть? (Например: «Для первого совместного отпуска»).</div>
                         <div class="paragraph section-text">Так мы создадим нашу особенную коллекцию моментов!</div>
                         <div class="paragraph section-text">Также хотим попросить вас об одном: на территории есть бассейн, и мы будем очень признательны, если вы не будете в него прыгать.</div>
@@ -2481,3 +2506,4 @@
     </script>
 </body>
 </html>
+```
